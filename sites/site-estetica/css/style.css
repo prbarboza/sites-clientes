@@ -420,14 +420,14 @@ ol {
 }
 
 /*---------------------
-  Hero - Corrigido e Responsivo
+  Hero - Ajuste Final
 -----------------------*/
-
 .hero {
     padding-top: 145px;
     padding-bottom: 215px;
     background-size: cover;
     background-position: center right;
+    background-repeat: no-repeat;
 }
 
 .hero__text span {
@@ -449,20 +449,15 @@ ol {
     margin-bottom: 35px;
 }
 
-/* --- CORREÇÃO DEFINITIVA PARA MOBILE --- */
+/* --- CORREÇÃO MOBILE --- */
 @media (max-width: 767px) {
     .hero.set-bg {
-        /* AQUI ESTÁ A MUDANÇA: Apontando para a imagem de celular */
+        /* O !important aqui é vital para trocar a imagem do HTML */
         background-image: url('img/hero-mobile.jpg') !important; 
         
-        min-height: 450px !important; 
-        height: auto !important;
-        
-        /* Ajuste de posição para a imagem mobile */
-        background-position: center center !important; 
+        background-position: center center !important;
         background-size: cover !important;
-        background-repeat: no-repeat !important;
-        
+        min-height: 450px !important; 
         display: flex !important;
         align-items: center !important;
         padding-top: 60px !important;
@@ -472,19 +467,13 @@ ol {
     .hero__text {
         width: 100%;
         padding: 20px;
-        background: rgba(255, 255, 255, 0.3); /* Fundo bem sutil */
+        background: rgba(255, 255, 255, 0.3); 
         border-radius: 10px;
     }
 
-    /* Ajuste do tamanho do título no mobile para não sobrepor */
     .hero__text h2 {
         font-size: 26px !important; 
         line-height: 34px !important;
-        margin-bottom: 15px;
-    }
-    
-    .hero__text span {
-        font-size: 15px !important;
     }
 }
 
