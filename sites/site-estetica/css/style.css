@@ -2933,57 +2933,46 @@ ol {
 	}
 }
 
-/* Faz o item que tem submenu ocupar a largura toda e ser clicável */
-.header__menu .header__menu__dropdown li {
-    display: block;
-    width: 100%;
-}
-
-/* Ajuste específico para o Mobile (Slicknav ou Menu do Template) */
+/* --- MENU MOBILE UNIFICADO (FONTE + CLIQUE) --- */
 @media (max-width: 767px) {
-    /* Seleciona o item que tem o dropdown */
-    .slicknav_parent > a {
-        display: block !important;
-        width: 100% !important;
-        position: relative;
-    }
-
-    /* Garante que a "setinha" não bloqueie o clique no texto */
-    .slicknav_arrow {
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    /* Força o link de "Páginas" a agir como o gatilho do menu */
-    .slicknav_item {
-        cursor: pointer;
-        display: block !important;
-    }
-}
-
-/* --- AJUSTE DE TAMANHO DO MENU MOBILE --- */
-@media (max-width: 767px) {
-    /* Aumenta o texto dos itens principais */
-    .slicknav_nav a, 
-    .header__menu ul li a,
-    .mobile-menu a {
-        font-size: 20px !important; /* Ajuste aqui o tamanho desejado */
-        font-weight: 600 !important;
-        padding: 12px 10px !important; /* Aumenta a área de clique */
-        color: #111111 !important;
-    }
-
-    /* Aumenta o texto dos submenus (dentro de Páginas) */
-    .slicknav_nav .slicknav_item a,
-    .slicknav_nav ul li a {
-        font-size: 18px !important;
-        padding-left: 20px !important; /* Dá um recuo para o submenu */
-    }
     
-    /* Melhora o espaçamento entre as linhas do menu */
+    /* 1. Aumenta a fonte e melhora o espaçamento de todos os links */
+    .slicknav_nav a, 
+    .slicknav_item,
+    .header__menu ul li a {
+        font-size: 18px !important; 
+        font-weight: 600 !important;
+        color: #111111 !important;
+        display: block !important;
+        padding: 12px 15px !important;
+        text-decoration: none !important;
+    }
+
+    /* 2. Faz a linha "Páginas" ser clicável por inteiro */
+    .slicknav_item {
+        position: relative !important;
+        cursor: pointer !important;
+    }
+
+    /* 3. Ajusta a seta para a direita sem bloquear o texto */
+    .slicknav_arrow {
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        font-size: 16px !important;
+    }
+
+    /* 4. Estilo específico para o Submenu (o que abre dentro de Páginas) */
+    .slicknav_nav ul li a {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        padding-left: 30px !important; /* Recuo para parecer submenu */
+        background-color: #f9f9f9 !important; /* Diferencia levemente o fundo */
+    }
+
+    /* 5. Espaçamento entre os itens da lista */
     .slicknav_nav li {
-        margin-bottom: 5px !important;
+        margin-bottom: 2px !important;
     }
 }
