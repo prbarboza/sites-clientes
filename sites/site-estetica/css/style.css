@@ -453,40 +453,39 @@ ol {
 /* --- AJUSTES PARA CELULAR (MOBILE) --- */
 @media (max-width: 767px) {
     .hero {
-        padding-top: 80px !important;
-        padding-bottom: 100px !important;
-        background-position: 70% center !important;
+        /* 1. Troca para a imagem específica do celular */
+        background-image: url('img/hero-mobile.jpg') !important; 
+        background-position: center top !important;
+        background-size: cover !important;
+        
+        /* 2. Controla a altura para não ficar muito comprida */
+        padding-top: 50px !important;
+        padding-bottom: 40px !important;
+        min-height: 400px !important; 
+        display: flex;
+        align-items: flex-end; /* Empurra o texto para a base da imagem */
+    }
+
+    .hero__text {
+        background: none !important; /* Limpa os fundos brancos das tentativas anteriores */
+        padding: 20px !important;
+        text-align: left;
     }
 
     .hero__text span {
-        font-size: 14px !important; /* Texto menor */
-        background: rgba(255, 255, 255, 0.7);
-        display: inline-block;
-        padding: 4px 10px;
-        border-radius: 3px;
-        margin-bottom: 10px; /* Espaço para não encostar no título */
+        font-size: 14px !important;
+        background: none !important;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* Sombra leve para leitura */
     }
 
     .hero__text h2 {
-        font-size: 24px !important; /* Tamanho reduzido para evitar sobreposição */
-        line-height: 1.4 !important; /* Espaçamento maior entre as linhas */
-        margin-bottom: 20px;
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        background: none !important;
+        margin-bottom: 15px;
         color: #111111;
-        
-        /* Ajuste para o fundo não sobrepor */
-        display: block; 
-        background: none; /* Removemos o fundo do H2 para evitar o erro visual do print */
-    }
-    
-    /* Criamos uma "caixa" atrás do H2 para garantir leitura sem bugar as linhas */
-    .hero__text {
-        background: rgba(255, 255, 255, 0.5); 
-        padding: 15px;
-        border-radius: 8px;
-        max-width: 90%;
     }
 }
-
 /*---------------------
   Consultation
 -----------------------*/
