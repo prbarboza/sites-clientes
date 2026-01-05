@@ -131,10 +131,17 @@ ol {
 }
 
 .set-bg {
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
 }
+
+@media (max-width: 768px) {
+  .set-bg {
+    background-position: center center;
+  }
+}
+
 
 .spad {
 	padding-top: 100px;
