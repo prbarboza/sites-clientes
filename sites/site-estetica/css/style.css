@@ -428,6 +428,24 @@ ol {
 	padding-bottom: 215px;
 }
 
+.hero {
+  background-image: url("img/hero-bg.jpg"); /* aplica direto */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* garante altura para aparecer */
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("img/hero-bg-mobile.jpg"); /* versão simplificada */
+    min-height: 70vh;
+    background-position: center;
+  }
+}
+
+
 .hero__text span {
 	font-size: 15px;
 	font-weight: 500;
