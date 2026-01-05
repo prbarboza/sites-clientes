@@ -453,32 +453,37 @@ ol {
 /* --- AJUSTES PARA CELULAR (MOBILE) --- */
 @media (max-width: 767px) {
     .hero {
-        padding-top: 100px;      /* Reduz espaço no mobile */
-        padding-bottom: 120px;
-        background-position: 70% center !important; /* Mantém o foco que você gostou */
+        padding-top: 80px !important;
+        padding-bottom: 100px !important;
+        background-position: 70% center !important;
     }
 
     .hero__text span {
-        font-size: 16px;
-        background: rgba(255, 255, 255, 0.6); /* Aumentei um pouco a opacidade para 0.6 */
+        font-size: 14px !important; /* Texto menor */
+        background: rgba(255, 255, 255, 0.7);
         display: inline-block;
-        padding: 2px 8px;
+        padding: 4px 10px;
         border-radius: 3px;
-        margin-bottom: 5px;
+        margin-bottom: 10px; /* Espaço para não encostar no título */
     }
 
     .hero__text h2 {
-        font-size: 28px;         /* Ajustado levemente para não ocupar a tela toda */
-        line-height: 36px;
+        font-size: 24px !important; /* Tamanho reduzido para evitar sobreposição */
+        line-height: 1.4 !important; /* Espaçamento maior entre as linhas */
         margin-bottom: 20px;
+        color: #111111;
         
-        /* ESTILO IGUAL AO SPAN */
-        background: rgba(255, 255, 255, 0.6); /* Tarja sutil branca */
-        display: inline;                     /* Faz o fundo envolver apenas o texto */
-        padding: 5px 10px;
-        border-radius: 5px;
-        box-decoration-break: clone;         /* Garante que o fundo apareça em todas as linhas */
-        -webkit-box-decoration-break: clone;
+        /* Ajuste para o fundo não sobrepor */
+        display: block; 
+        background: none; /* Removemos o fundo do H2 para evitar o erro visual do print */
+    }
+    
+    /* Criamos uma "caixa" atrás do H2 para garantir leitura sem bugar as linhas */
+    .hero__text {
+        background: rgba(255, 255, 255, 0.5); 
+        padding: 15px;
+        border-radius: 8px;
+        max-width: 90%;
     }
 }
 
