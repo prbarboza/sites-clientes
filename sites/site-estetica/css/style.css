@@ -2962,3 +2962,28 @@ ol {
         display: block !important;
     }
 }
+
+/* --- AJUSTE DE TAMANHO DO MENU MOBILE --- */
+@media (max-width: 767px) {
+    /* Aumenta o texto dos itens principais */
+    .slicknav_nav a, 
+    .header__menu ul li a,
+    .mobile-menu a {
+        font-size: 20px !important; /* Ajuste aqui o tamanho desejado */
+        font-weight: 600 !important;
+        padding: 12px 10px !important; /* Aumenta a área de clique */
+        color: #111111 !important;
+    }
+
+    /* Aumenta o texto dos submenus (dentro de Páginas) */
+    .slicknav_nav .slicknav_item a,
+    .slicknav_nav ul li a {
+        font-size: 18px !important;
+        padding-left: 20px !important; /* Dá um recuo para o submenu */
+    }
+    
+    /* Melhora o espaçamento entre as linhas do menu */
+    .slicknav_nav li {
+        margin-bottom: 5px !important;
+    }
+}
