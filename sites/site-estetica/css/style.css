@@ -452,6 +452,32 @@ ol {
 	margin-bottom: 35px;
 }
 
+.hero {
+  background-image: url("img/hero-bg.jpg");
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2); /* reduza a opacidade */
+  z-index: 1;
+}
+
+.hero__text {
+  position: relative;
+  z-index: 2; /* garante que o texto fique acima do overlay */
+}
+
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+  }
+}
+
+
 /*---------------------
   Consultation
 -----------------------*/
