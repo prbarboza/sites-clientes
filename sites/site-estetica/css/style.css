@@ -453,7 +453,7 @@ ol {
 /* --- AJUSTES PARA CELULAR (MOBILE) --- */
 @media (max-width: 768px) {
   .hero {
-    background-image: url("../img/hero-bg-mobile.jpg") !important;
+    background-image: url("../img/hero-mobile.jpg") !important;
     background-position: center top;
     background-size: cover;
   }
