@@ -2862,17 +2862,29 @@ ol {
 	}
 }
 
-/* Imagem padrão para Computador */
+/* Configuração Geral do Banner */
 .hero.set-bg {
-    background-image: url('img/hero-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right; /* No PC foca na direita */
+    display: flex;
+    align-items: center;
 }
 
-/* Troca a imagem apenas no Celular */
+/* Ajuste específico para Celular */
 @media (max-width: 767px) {
     .hero.set-bg {
-        background-image: url('img/hero-mobile.jpg') !important;
-        background-position: center center;
-        background-size: cover;
-        min-height: 600px; /* Ajuste a altura para aparecer bem o rosto */
+        /* Garante que a imagem carregue no mobile */
+        background-image: url('img/hero-bg.jpg') !important; 
+        
+        /* Centraliza a moça no meio da tela do celular */
+        background-position: center center !important; 
+        
+        /* Define uma altura mínima para o banner não "esmagar" */
+        min-height: 500px; 
+        
+        /* Adiciona um leve escurecimento para o texto não sumir no rosto */
+        background-blend-mode: overlay;
+        background-color: rgba(255, 255, 255, 0.3); 
     }
 }
