@@ -115,10 +115,10 @@ section{
 /* Navbar em mobile */
 @media (max-width: 767px) {
   .navbar-default {
-    background-color: #fff !important; /* fundo branco */
+    background-color: #8e7cc3 !important; /* fundo branco */
   }
   .navbar-default .navbar-nav>li>a {
-    color: #8e7cc3 !important; /* texto lilás */
+    color: #ffffff !important; /* texto lilás */
     font-weight: 600;
   }
   .navbar-default .navbar-nav>.active>a,
