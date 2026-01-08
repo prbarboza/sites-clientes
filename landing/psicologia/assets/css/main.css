@@ -1123,14 +1123,34 @@ section#contact .contact-info-block h3 {
     text-align: justify; /* Deixa o bloco de texto mais elegante */
 }
 
+/* Trava de segurança para o scroll horizontal sem quebrar o desktop */
 html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
-    position: relative;
 }
 
-.container, .row {
-    max-width: 100vw !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+/* Ajuste específico para as linhas (rows) */
+.row {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+
+/* Garante que o container continue centralizando no Desktop */
+.container {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+/* Ajuste fino apenas para o Mobile */
+@media (max-width: 767px) {
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Previne que elementos longos forcem o scroll lateral */
+    * {
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
 }
