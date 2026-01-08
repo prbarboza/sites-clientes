@@ -1,0 +1,1124 @@
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+body{
+	font-family: 'Lora';
+}
+section{
+	padding: 100px 0 70px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.title-box{
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 60px;
+}
+.title-box:after{
+	content: '';
+	width: 50px;
+	height: 3px;
+	position: absolute;
+	bottom: -20px;
+	left: calc(50% - 25px);
+	background-color: #BEAEE2;
+}
+.section-title{
+	margin-top: 0;
+}
+.section-subtitle{
+	/*margin-bottom: 0;*/
+}
+
+.title-box .section-subtitle {
+    font-size: 18px !important; /* Ajuste o número para o tamanho que desejar */
+    font-weight: 600 !important; /* Deixa o texto um pouco mais grosso */
+    color: #a594d1 !important;  /* Mantém no seu tom de lilás */
+    letter-spacing: 2px;        /* Dá um espaço elegante entre as letras */
+    margin-bottom: 10px;        /* Afasta um pouco do título de baixo */
+    display: block;             /* Garante que o espaçamento funcione bem */
+}
+
+.c-table{
+	width: 100%;
+	height: 100%;
+	display: table;
+	text-align: center;
+}
+.ct-cell{
+	color: #fff;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.overlay-light, .overlay-dark{
+	position: relative;
+}
+.overlay-light div, .overlay-dark div{
+	z-index: 2;
+}
+.overlay-light:after, .overlay-dark:after{
+	top: 0;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+}
+.overlay-light:after{
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.overlay-dark:after{
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.img-full{
+	width: 100%;
+}
+
+
+
+
+
+/*navbar*/
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	color: #fff;
+	background-color: #979696;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #fff;
+	text-transform: uppercase;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+	color: #fff;
+}
+.navbar-default{
+	background-color: #BEAEE2;
+	border-color: transparent;
+}
+.navbar-brand img{
+	width: 60px;
+	transition: all 0.4s ease-in-out;
+}
+.navbar-toggle{
+	border-radius: 0;
+}
+@media (min-width: 768px){
+	.navbar-brand img{
+		width: 110px;
+	}
+	.navbar-nav>li>a{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}	
+}
+
+
+
+
+
+/**********************
+		Header
+**********************/
+.header{
+	background-image: url(../images/header.jpg);
+	height: 100vh;
+	position: relative;
+}
+.intro-box{
+	height: 100vh;
+}
+.intro h1{
+	position: relative;
+	color: #fff;
+	font-size: 90px;
+	text-transform: uppercase;
+	line-height: 1;
+}
+.intro h1:after, .intro h1:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background-color: #fff;
+}
+.intro h1:after{
+	bottom: 0;
+}
+.intro h1:before{
+	top: 0;
+}
+.btn-header{
+	position: absolute;
+	bottom: 100px;
+	text-transform: uppercase;
+	font-size: 12px;
+	padding: 12px 50px;
+	left: calc(50% - 89px);
+	border-radius: 0;
+}
+@media (max-width: 991px){
+	.btn-header{
+		bottom: 30px;
+	}
+}
+
+
+
+
+
+/**********************
+		Fun
+**********************/
+.fun{
+	text-align: center;
+	text-transform: uppercase;
+}
+.fun-box{
+	margin-bottom: 30px;
+}
+.fun-number{
+	font-size: 50px;
+}
+.fun-title{
+	font-size: 18px;
+}
+
+
+
+
+
+
+
+/**********************
+		CTA
+**********************/
+.cta{
+	color: #fff;
+	text-align: center;
+	padding: 0;
+}
+.cta-bg{
+	background-color: #253250;
+	padding: 100px 0;
+}
+.cta h1{
+	text-transform: uppercase;
+}
+.cta-btn{
+	margin-top: 20px;
+	display: inline-block;
+	font-size: 30px;
+	padding: 10px 30px;
+	border: 3px solid #fff;
+}
+.cta-btn a{
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Ajuste para alinhar o botão no centro vertical da sessão CTA */
+.cta-bg .row {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+}
+
+/* Garante que o botão tenha um bom tamanho e cor */
+.cta-btn a {
+    color: #232946 !important; /* Texto escuro no botão lilás para ler melhor */
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+.cta-btn a:hover {
+    background-color: #a899d3 !important; /* Escurece um pouquinho no hover */
+    transform: translateY(-3px);
+}
+
+/* Ajuste para celulares */
+@media (max-width: 767px) {
+    .text-center-xs {
+        text-align: center !important;
+        margin-bottom: 20px;
+    }
+}
+
+/* Remove qualquer borda ou fundo que o template coloque no botão do CTA */
+.cta-btn, .cta-btn a {
+    border: none !important;
+    background: none !important;
+}
+
+/* Garante que em telas pequenas o conteúdo continue centralizado */
+@media (max-width: 767px) {
+    #cta .row {
+        display: block !important;
+    }
+    #cta .col-sm-6 {
+        margin-top: 20px;
+    }
+}
+
+
+/**********************
+		Choose
+**********************/
+.choose{
+	text-align: center;
+	background-image: url(../images/choose.jpg);
+}
+.choose-box{
+	margin-bottom: 30px;
+}
+.choose-icon{
+	color: #000000;
+	font-size: 72px;
+}
+.choose-title{
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 2px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.choose-detail {
+    font-size: 16px !important; /* Aumenta o tamanho da letra */
+    line-height: 1.6 !important; /* Melhora o respiro entre as linhas */
+    color: #000000 !important;   /* Deixa o cinza um pouco mais escuro para leitura */
+    margin-top: 15px;            /* Afasta o texto do título acima */
+}
+
+
+
+
+
+
+/**********************
+		Practice
+**********************/
+.practice{
+	text-transform: uppercase;
+}
+.practice-box{
+	position: relative;
+	margin-bottom: 30px;
+	font-family: 'Roboto';
+}
+.practice-box:hover .overlay{
+	opacity: 1;
+}
+.overlay{
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: all 0.4s ease-in-out;
+	background-color: rgba(0, 84, 166, 0.7);
+}
+.paractice-icon{
+	font-size: 72px;
+}
+.practice-title{
+	font-size: 20px;
+	margin: 0;	
+}
+
+
+
+
+
+
+/**********************
+		Consultation
+**********************/
+.consultation{
+	background-color: #F2EEED;
+}
+.consultation-form .form-control{
+	margin-bottom: 30px;
+	border-radius: 0;
+}
+.consultation-form  .bootstrap-select .btn, .consultation-form .dropdown-menu{
+	border-radius: 0;
+}
+.btn-cn{
+	background-color: #455579;
+	border-radius: 0;
+	color: #fff;
+}
+.btn-cn:hover{
+	border-color: #455579;
+	background-color: transparent;
+	color: #455579;
+}
+
+
+
+
+
+
+
+
+/**********************
+		Slider
+**********************/
+.slider-1{
+	text-align: center;
+	background-image: url(../images/escritorio-psicologia.jpg);
+}
+#slider_1{
+	background-color: #39496D;
+}
+.slider-1-item-box{
+	color: #fff;
+	padding: 50px;
+}
+.slider-1-item-box h2{
+	margin:10px auto 20px;
+	text-transform: uppercase;
+}
+.slider-icon{
+	font-size: 72px;
+}
+.slider-1-item-box p{
+	line-height: 1.5;
+	font-size: 16px;
+}
+.slider_1{
+	position: relative;
+}
+.slider_1 .owl-controls .owl-dots{
+	bottom: 40px;
+    position: relative;
+}
+.mb0{
+	margin-bottom: -70px;
+}
+
+
+/**********************
+		Team
+**********************/
+.team{
+	background-color: #F2EEED;
+}
+.team-box{
+	padding: 10px;
+	margin-bottom: 30px;
+	/*background-color: #fff;*/
+	transition: all 0.4s ease-in-out;
+}
+.team-box:hover{
+	box-shadow: 2px 2px 5px #0054A6;
+}
+.team-detail{
+	background-color: #e1e1e1;
+	color: #4b4b4b;
+	padding: 20px;
+}
+.team-box ul{
+	text-align: center;
+	padding-left: 0;
+}
+.team-box ul li{
+	list-style-type: none;
+}
+.team-box h3{
+	/*font-weight: 700;*/
+}
+
+
+
+
+
+/**********************
+		Clients
+**********************/
+.client-box{
+	margin-bottom: 30px;
+}
+.client-box img{
+	opacity: 0.5;
+	transition: all 0.4s ease-in-out;
+}
+@media (min-width: 768px){
+	.client-box img{
+		padding: 50px 0;
+	}
+}
+.client-box:hover img{
+	opacity: 1;
+}
+
+
+
+
+
+
+
+/**********************
+		Testimonial
+**********************/
+.testimonial {
+    background: #faf8fc;
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #030303;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+    color: #8d82a6;
+    font-size: 16px;
+}
+
+/* Card */
+.testimonial-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(111, 90, 138, 0.08);
+    height: 100%;
+}
+
+/* Texto */
+.testimonial-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #5f5f5f;
+    position: relative;
+}
+
+.testimonial-card p::before {
+    content: "“";
+    font-size: 40px;
+    color: #d8cde6;
+    position: absolute;
+    left: -10px;
+    top: -15px;
+}
+
+/* Autor */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.testimonial-author img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-author span {
+    font-size: 13px;
+    color: #9a8fb0;
+}
+
+@media (max-width: 768px) {
+    .testimonial {
+        padding: 70px 0;
+    }
+
+    .testimonial-card {
+        margin-bottom: 30px;
+    }
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+    color: #8d82a6;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* === REFINO DEPOIMENTOS === */
+
+/* texto do depoimento */
+.testimonial-card p {
+    font-size: 18px;       /* maior */
+    line-height: 1.8;      /* mais respiro */
+    padding-left: 20px;    /* espaço interno */
+}
+
+/* aspas mais afastadas */
+.testimonial-card p::before {
+    left: -22px;           /* afasta da frase */
+    top: -28px;
+    font-size: 48px;       /* um pouco maior */
+}
+
+/* autor mais legível */
+.testimonial-author span {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.testimonial-card {
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(111, 90, 138, 0.12);
+}
+
+/* === CARDS COM ALTURA IGUAL === */
+.testimonial-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial .row {
+    display: flex;
+    align-items: stretch;
+}
+
+.testimonial-card p {
+    flex-grow: 1;
+}
+
+.testimonial-card {
+    min-height: 260px;
+}
+
+
+/**********************
+		FAQ
+**********************/
+.faq{
+	background-image: url(../images/faq.jpg);
+}
+.faq .panel-group .panel{
+	margin-bottom: 20px;
+}
+.faq .panel-default>.panel-heading{
+	background-color: #455579;
+}
+.faq .panel-body{
+	background-color: #5B6B8D;
+	color: #bcbcbc;
+}
+.faq .panel-default>.panel-heading a{
+	color: #fff;
+	text-transform: uppercase;
+}
+.faq .panel-heading, .faq .panel-body, .faq .panel-group .panel{
+	border-radius: 0;
+}
+
+/* ======================
+   FAQ – novo visual
+====================== */
+
+#faq {
+    background-color: #f7f5fb;
+    padding: 80px 0;
+}
+
+#faq .panel-group {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#faq .panel {
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+#faq .panel-heading {
+    background-color: #ffffff;
+    padding: 18px 24px;
+}
+
+#faq .panel-title a {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #5f4b8b;
+    text-decoration: none;
+    position: relative;
+    padding-right: 30px;
+}
+
+#faq .panel-title a::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #b4a7d6;
+    transition: transform 0.3s ease;
+}
+
+#faq .panel-title a[aria-expanded="true"]::after {
+    content: "–";
+    color: #5f4b8b;
+}
+
+#faq .panel-body {
+    background-color: #ffffff;
+    padding: 20px 24px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/**********************
+		Contact
+**********************/
+.contact{
+	background-color: #F2EEED;
+	color: #969595;
+}
+.contact-logo{
+	margin-bottom: 30px;
+}
+.contact ul{
+	padding-left: 0;
+}
+.contact ul li{
+	list-style-type: none;
+}
+.contact ul li span{
+	padding-right: 10px;
+}
+.contact ul, .contact p{
+	line-height: 1.7;
+	font-family: 'Roboto';
+}
+.input-group-addon, .form-control{
+	background-color: #fff;
+	border-color: transparent;
+}
+.contact .input-group{
+	padding-bottom: 20px;
+}
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not(:first-child)>.btn, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle{
+	border-radius: 0;
+}
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle){
+	border-radius: 0;
+}
+.contact button{
+	background-color: #435174;
+	border-radius: 0;
+	color: #fff;
+}
+.contact button{
+	padding: 8px;
+}
+
+
+
+
+
+.subscribe{
+	border-bottom: 3px solid #2C3447;
+	background-color: #10182D;
+	color: #969595;
+}
+.subscribe h2{
+	color: #fff;
+}
+.subscribe-form{
+	margin-top: 30px;
+}
+
+
+
+
+/*Footer*/
+.footer{
+	background-color: #3A4A6A;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: #969595;
+}
+
+.footer .footer-social {
+  font-size: 24px;
+}
+.footer .footer-social a {
+  color: #969595;
+  margin: 8px;
+}
+@media (min-width: 768px){
+	.footer .footer-social{
+		float: right;
+	}
+}
+@media (max-width: 767px){
+	footer, .subscribe{
+		text-align: center;
+	}
+}
+
+/* Ajuste da Sessão de Números */
+.fun-number {
+    font-size: 50px !important; /* Número bem visível */
+    color: #BEAEE2 !important;  /* Seu tom de lilás */
+    font-weight: bold !important;
+    margin-bottom: 10px;
+}
+
+.fun-title {
+    font-size: 18px !important;  /* Texto maior como você pediu */
+    color: #555 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fun {
+    padding: 80px 0; /* Dá um respiro para a sessão */
+    background-color: #fcfaff; /* Um fundo lilás quase branco para destacar */
+}
+
+.cta-bg {
+    border-radius: 15px; /* Bordas arredondadas para suavizar */
+    padding: 50px 30px !important;
+}
+
+/* Ajuste do Título Principal no Card Azul */
+.cta-bg h1 {
+    font-size: 32px !important; /* Tamanho do 'AGENDE SEU' */
+    color: #ffffff !important;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* Ajuste do subtítulo que estava muito pequeno */
+.cta-bg h1 small {
+    font-size: 28px !important; /* Aumenta o 'ATENDIMENTO HOJE' */
+    color: #BEAEE2 !important;  /* Cor lilás */
+    display: block;             /* Garante que fique na linha de baixo */
+    font-weight: 300;
+}
+
+.cta-btn a {
+    background-color: #BEAEE2 !important; /* Seu tom de lilás */
+    color: #fff !important;
+    border: none !important;
+    padding: 15px 30px !important;
+    border-radius: 50px !important;
+    font-size: 20px !important;
+    display: inline-block;
+    transition: 0.3s;
+    margin-top: 20px; /* Espaço extra para não grudar no texto */
+}
+
+.cta-btn a:hover {
+    background-color: #a594d1 !important; /* Lilás um pouco mais escuro no hover */
+    text-decoration: none;
+}
+
+.cta-btn span {
+    margin-right: 10px;
+}
+
+/* Container Principal */
+.rotating-card {
+    position: relative;
+    min-height: 420px; 
+    background: #3a4a6a !important; /* Força o AZUL em todos */
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Estilo de cada Slide individual */
+.card-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Quando o slide está ativo */
+.card-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* FORÇAR TEXTO BRANCO E TAMANHO MAIOR */
+.card-slide h2 {
+    color: #ffffff !important; /* Branco puro */
+    font-size: 32px !important; /* Aumentado */
+    font-weight: bold !important;
+    margin-bottom: 20px !important;
+    text-transform: none !important;
+}
+
+.card-slide p {
+    color: #ffffff !important; /* Branco puro */
+    font-size: 16px !important; /* Aumentado */
+    line-height: 1.6 !important;
+}
+
+/* Ícone Lilás */
+.slider-icon {
+    font-size: 50px !important;
+    color: #BEAEE2 !important;
+    margin-bottom: 15px !important;
+    display: block;
+}
+
+/* =========================
+   CONTATO – Psicologia
+========================= */
+
+#contact {
+    background-color: #FAF8FC;
+    padding: 100px 0;
+}
+
+/* Título */
+#contact .title-box {
+    margin-bottom: 60px;
+}
+
+#contact .section-subtitle {
+    color: #BEAEE2;
+}
+
+#contact .section-title {
+    color: #000000;
+}
+
+/* Texto e informações */
+#contact p,
+#contact ul li {
+    color: #BEAEE2;
+    opacity: 0.95;
+    line-height: 1.7;
+}
+
+#contact ul {
+    padding: 0;
+    margin-top: 25px;
+}
+
+#contact ul li {
+    list-style: none;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+#contact ul li span {
+    margin-right: 8px;
+    color: #ffffff;
+}
+
+/* Logo */
+.contact-logo {
+    max-width: 160px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+/* Estilo da Sessão de Contato */
+.contact {
+    padding: 80px 0;
+    background-color: #ffffff;
+    font-family: 'Lora', serif; /* Aplica a base para a seção toda */
+}
+
+.contact-text {
+    font-family: 'Lora', serif; /* Garante Lora no parágrafo de introdução */
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Itens de Contato com ícones */
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #BEAEE2;
+    margin-right: 15px;
+}
+
+.contact-item p {
+    font-family: 'Lora', serif; /* Aplica Lora nos textos ao lado dos ícones */
+    margin: 0;
+    font-size: 16px;
+    color: #444;
+}
+
+/* Estilo do Formulário */
+.custom-form .form-group {
+    margin-bottom: 20px;
+}
+
+.custom-input {
+    font-family: 'Lora', serif; /* Aplica Lora no que o usuário digita e no placeholder */
+    border: none !important;
+    border-bottom: 2px solid #eee !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 12px 5px !important;
+    transition: border-color 0.3s;
+}
+
+.custom-input:focus {
+    border-bottom-color: #BEAEE2 !important;
+}
+
+/* Botão de Envio */
+.btn-contact {
+    font-family: 'Lora', serif; /* Aplica Lora no texto do botão */
+    background-color: #979696 !important;
+    color: #fff !important;
+    padding: 15px 35px !important;
+    border-radius: 30px !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border: none;
+}
+
+/* Seletor ultra específico para garantir a fonte Lora no texto de acolhimento */
+section#contact .contact-info-block p.contact-text {
+    font-family: 'Lora', serif !important;
+    font-size: 16px !important; /* Aumentei um pouco para melhorar a leitura na fonte Lora */
+    line-height: 1.8 !important;
+    color: #666 !important;
+    margin-bottom: 30px !important;
+    font-style: normal !important;
+}
+
+/* Também garante que o nome "Cris Nuñez" acima dele use a mesma identidade */
+section#contact .contact-info-block h3 {
+    font-family: 'Lora', serif !important;
+    font-weight: 700 !important;
+}
+
+.btn-contact:hover {
+    background-color: #BEAEE2 !important;
+    transform: translateY(-2px);
+}
+
+.subscribe {
+    background-color: #f4f1fa !important; /* Lilás bem clarinho para dar destaque suave */
+    padding: 60px 0 !important;
+}
+
+.subscribe h2 {
+    color: #444 !important;
+    font-size: 24px !important;
+    margin-bottom: 10px !important;
+    text-transform: none !important; /* Evita que o template coloque tudo em maiúsculo */
+}
+
+.subscribe p {
+    color: #979696 !important;
+    font-size: 16px !important;
+}
+
+/* Ajuste do Campo de E-mail */
+.subscribe .input-group-addon {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #BEAEE2 !important;
+    color: #BEAEE2 !important;
+}
+
+.subscribe .form-control {
+    border: none !important;
+    border-bottom: 2px solid #BEAEE2 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    height: 45px !important;
+}
+
+/* Botão de Inscrição */
+.btn-subscribe {
+    background-color: #BEAEE2 !important;
+    color: #fff !important;
+    border-radius: 25px !important;
+    padding: 10px 30px !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 15px;
+    border: none !important;
+}
+
+.btn-subscribe:hover {
+    background-color: #979696 !important; /* Muda para o seu cinza no hover */
+}
+
+.contact-info-block {
+    padding-right: 60px; /* Cria o espaço entre o texto e o formulário */
+    border-right: 1px solid #f0f0f0; /* Opcional: uma linha bem fina para separar */
+}
+
+/* Garante que em telas menores (celular) a linha suma e o espaço mude */
+@media (max-width: 767px) {
+    .contact-info-block {
+        padding-right: 0;
+        margin-bottom: 40px;
+        border-right: none;
+        text-align: center;
+    }
+}
+
+/* Melhora a legibilidade do parágrafo específico que você mencionou */
+.contact-text {
+    font-family: 'Lora', serif !important;
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+    color: #777 !important;
+    margin-top: 10px;
+    text-align: justify; /* Deixa o bloco de texto mais elegante */
+}
