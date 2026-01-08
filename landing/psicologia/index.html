@@ -161,7 +161,7 @@
                                   font-weight: bold; 
                                   font-size: 18px;
                                   box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-                            <span class="ion-social-whatsapp" style="margin-right: 10px;"></span> (11) 95807-3965
+                            <span class="ion-social-whatsapp" style="margin-right: 10px;"></span> (11) 95555-5555
                         </a>
                     </div>
                 </div>
@@ -733,7 +733,7 @@
                         </div>
                         <div class="contact-item">
                             <i class="ion-social-whatsapp"></i>
-                            <p>(11) 99999-9999</p>
+                            <p>(11) 95555-5555</p>
                         </div>
                         <div class="contact-item">
                             <i class="ion-email"></i>
@@ -744,7 +744,7 @@
             </div>
 
             <div class="col-sm-7">
-                <form id="contactForm" class="custom-form" action="php/contact_form.php" method="post">
+                <form id="contactForm" class="custom-form">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -773,56 +773,54 @@
 
 
         <!-- Subscribe -->
-            <div id="subscribe" class="subscribe">
+            <!-- CTA Final -->
+<div id="cta-final" class="subscribe">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h2>Receba conteúdos sobre saúde mental</h2>
-                <p>Reflexões semanais para o seu bem-estar. Não envio spam.</p>
+        <div class="row align-items-center">
+            <div class="col-sm-7">
+                <h2>Você não precisa passar por isso sozinha(o)</h2>
+                <p>
+                    Se algo te trouxe até aqui, talvez seja o momento de cuidar de você.
+                    Vamos conversar com calma, no seu tempo.
+                </p>
             </div>
-            <div class="col-sm-6">
-                <form class="subscribe-form" id="subscription-form">
-                    <div class="form-group">
-                        <label class="sr-only" for="subscriber-email">Endereço de e-mail</label>
-                        <div class="form-group has-feedback">
-                            <div class="input-group">
-                                <span class="input-group-addon ion-email"></span>
-                                <input type="email" id="subscriber-email" class="form-control" placeholder="Seu melhor e-mail" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button type="submit" id="subscribe-button" class="btn btn-subscribe">
-                        <i class="ion-android-send"></i> Quero receber
-                    </button>
-                </form>
-
-                <div id="subscription-response"></div>
+            <div class="col-sm-5 text-center">
+                <a 
+                    href="https://wa.me/5511955555555?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20atendimento."
+                    class="btn btn-subscribe"
+                    target="_blank"
+                >
+                    <i class="ion-social-whatsapp"></i> Falar no WhatsApp
+                </a>
             </div>
         </div>
     </div>
 </div>
 
+
         <!-- Footer -->
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <p>
-                                @ Cris Nuñez Psicóloga - Todos os direitos reservados.
-                            </p>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="footer-social">
-                                <a href="#"><i class="ion-social-facebook"></i></a>
-                                <a href="#"><i class="ion-social-linkedin-outline"></i></a>
-                                <a href="#"><i class="ion-social-skype-outline"></i></a>
-                                <a href="#"><i class="ion-social-twitter"></i></a>
-                            </div>
-                        </div>
-                    </div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p>
+                    © Cris Nuñez · Psicóloga · Todos os direitos reservados
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <i class="ion-social-instagram-outline"></i>
+                    </a>
+                    <a href="#" aria-label="WhatsApp">
+                        <i class="ion-social-whatsapp"></i>
+                    </a>
                 </div>
-            </footer>
+            </div>
+        </div>
+    </div>
+</footer>
+
         
         <!-- Scripts -->
         <script src="assets/js/jquery-1.12.3.min.js"></script>
@@ -844,6 +842,26 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<script>
+document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const phone = '551195555555'; // 👈 COLOQUE SEU WHATSAPP AQUI (com DDI e DDD)
+
+    const text = `Olá, meu nome é ${name}.
+E-mail: ${email}
+
+Mensagem:
+${message}`;
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+});
+</script>
 
         
     </body>
