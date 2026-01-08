@@ -508,54 +508,42 @@ section{
   padding: 40px 30px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  min-height: 300px; /* garante altura mínima */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-/* Cada slide dentro do card */
 .card-slide {
   margin-bottom: 40px;
-  text-align: left;
+  text-align: center;
 }
 
-/* Ícones */
 .slider-icon {
-  font-size: 64px;
+  font-size: 72px;
   color: #8e7cc3;
   margin-bottom: 20px;
   display: block;
 }
 
-/* Títulos */
 .card-slide h2 {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 15px;
-  text-transform: none;
   color: #ffffff;
 }
 
-/* Texto */
 .card-slide p {
   font-size: 17px;
   line-height: 1.6;
   color: #f0f0f0;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 90%;
 }
 
 /* Responsivo */
 @media (max-width: 767px) {
   .rotating-card {
     padding: 25px 20px;
-    min-height: auto;
-  }
-  .card-slide {
-    text-align: center;
   }
   .slider-icon {
-    font-size: 48px;
+    font-size: 56px;
     margin-bottom: 15px;
   }
   .card-slide h2 {
@@ -565,6 +553,7 @@ section{
     font-size: 16px;
   }
 }
+
 
 
 /**********************
