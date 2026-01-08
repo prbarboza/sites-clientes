@@ -79,9 +79,6 @@ section{
 }
 
 
-
-
-
 /*navbar*/
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
 	color: #fff;
@@ -114,6 +111,23 @@ section{
 		padding-bottom: 30px;
 	}	
 }
+
+/* Ajuste do menu quando expandido em mobile */
+@media (max-width: 767px) {
+  .navbar-default .navbar-collapse {
+    background-color: #fff !important; /* fundo branco */
+  }
+  .navbar-default .navbar-collapse .navbar-nav>li>a {
+    color: #8e7cc3 !important; /* texto lilás */
+    font-weight: 600;
+  }
+  .navbar-default .navbar-collapse .navbar-nav>li>a:hover {
+    background-color: #f2f2f2 !important;
+    color: #6f5aa8 !important;
+  }
+}
+
+
 
 
 /**********************
@@ -165,14 +179,14 @@ section{
 /* Tablets */
 @media (max-width: 991px) {
   .header-title {
-    font-size: 36px; /* edite aqui */
+    font-size: 32px; /* edite aqui */
   }
 }
 
 /* Celulares */
 @media (max-width: 576px) {
   .header-title {
-    font-size: 28px; /* edite aqui */
+    font-size: 20px; /* edite aqui */
     line-height: 1.3;
   }
 }
