@@ -1122,3 +1122,38 @@ html, body {
   font-size: 16px;
 }
 
+/* Header */
+.header {
+  background-image: url(../images/header.jpg);
+  height: 100vh;
+  position: relative;
+}
+
+.intro-box {
+  height: 100vh;
+}
+
+.header-title {
+  color: #8e7cc3;       /* lilás mais forte */
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 1.2;
+  text-transform: none;
+  border: none;
+  text-align: center;   /* centraliza */
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+  .header-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-title {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+}
+
