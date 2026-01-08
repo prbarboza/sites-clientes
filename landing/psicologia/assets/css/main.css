@@ -189,7 +189,7 @@ section{
 /* Celulares */
 @media (max-width: 576px) {
   .header-title {
-    font-size: 24px;
+    font-size: 26px;
     line-height: 1.3;
   }
 }
@@ -215,78 +215,65 @@ section{
 }
 
 
-/**********************
-		CTA
-**********************/
-.cta{
-	color: #fff;
-	text-align: center;
-	padding: 0;
-}
-.cta-bg{
-	background-color: #253250;
-	padding: 100px 0;
-}
-.cta h1{
-	text-transform: uppercase;
-}
-.cta-btn{
-	margin-top: 20px;
-	display: inline-block;
-	font-size: 30px;
-	padding: 10px 30px;
-	border: 3px solid #fff;
-}
-.cta-btn a{
-	color: #fff;
-	text-decoration: none;
+.cta-bg {
+  background: linear-gradient(135deg, #232946 0%, #1a1f3b 100%);
+  padding: 60px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-/* Ajuste para alinhar o botão no centro vertical da sessão CTA */
-.cta-bg .row {
-    display: flex !important;
-    align-items: center !important;
-    flex-wrap: wrap;
+.cta p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #ffffff;
 }
 
-/* Garante que o botão tenha um bom tamanho e cor */
+.cta h2 {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.cta h2 span {
+  color: #8e7cc3;
+  font-style: italic;
+}
+
 .cta-btn a {
-    color: #232946 !important; /* Texto escuro no botão lilás para ler melhor */
-    font-weight: bold;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    border: none !important;
-    text-decoration: none !important;
+  background-color: #8e7cc3;
+  color: #fff;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .cta-btn a:hover {
-    background-color: #a899d3 !important; /* Escurece um pouquinho no hover */
-    transform: translateY(-3px);
+  background-color: #a899d3;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
 
-/* Ajuste para celulares */
 @media (max-width: 767px) {
-    .text-center-xs {
-        text-align: center !important;
-        margin-bottom: 20px;
-    }
+  .cta h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+  .cta-btn a {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
 }
 
-/* Remove qualquer borda ou fundo que o template coloque no botão do CTA */
-.cta-btn, .cta-btn a {
-    border: none !important;
-    background: none !important;
-}
-
-/* Garante que em telas pequenas o conteúdo continue centralizado */
-@media (max-width: 767px) {
-    #cta .row {
-        display: block !important;
-    }
-    #cta .col-sm-6 {
-        margin-top: 20px;
-    }
-}
 
 
 /**********************
