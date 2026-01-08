@@ -454,106 +454,60 @@ section{
   box-shadow: 0 6px 20px #8e7cc3;
 }
 
-.rotating-card {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.card-slide {
-  margin-bottom: 40px;
-}
-
-.slider-icon {
-  font-size: 64px;
-  color: #8e7cc3;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.card-slide h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  text-transform: none;
-}
-
-.card-slide p {
-  font-size: 17px;
-  line-height: 1.6;
-  color: #f0f0f0;
-}
-
-/* Responsivo */
-@media (max-width: 767px) {
-  .slider-1 {
-    text-align: center;
-    padding: 40px 20px;
-  }
-  .slider-1 img {
-    margin-bottom: 18px;
-  }
-  .card-slide h2 {
-    font-size: 18px;
-  }
-  .card-slide p {
-    font-size: 14px;
-  }
-}
-
 /* Ajuste geral dos cards */
 .rotating-card {
-  background: rgba(255,255,255,0.05);
+  background: #344265; /* Cor sólida levemente mais clara que o fundo para destacar o card */
   padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.card-slide {
-  margin-bottom: 40px;
-  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  margin-top: 20px;
 }
 
 .slider-icon {
-  font-size: 72px;
-  color: #8e7cc3;
+  font-size: 60px;
+  color: #BEAEE2; /* Seu lilás padrão */
   margin-bottom: 20px;
-  display: block;
+  display: inline-block; /* Mudado de block para inline-block para evitar bugs de altura */
+  line-height: 1; /* Garante que o ícone não tenha sobra de espaço */
 }
 
-.card-slide h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
-.card-slide p {
-  font-size: 17px;
-  line-height: 1.6;
-  color: #f0f0f0;
-  margin: 0 auto;
-  max-width: 90%;
-}
-
-/* Responsivo */
+/* Responsivo - Ajustes Críticos para Celular */
 @media (max-width: 767px) {
+  .slider-1 {
+    padding: 60px 0 !important;
+  }
+
+  /* Faz o card ocupar quase toda a largura da tela no celular */
+  .col-sm-7.col-sm-offset-1 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
   .rotating-card {
-    padding: 25px 20px;
+    padding: 40px 20px !important; /* Mais espaço interno nas laterais */
+    margin: 0 10px; /* Margem externa para não encostar na borda da tela */
   }
+
   .slider-icon {
-    font-size: 56px;
-    margin-bottom: 15px;
+    font-size: 50px !important;
+    margin-top: 10px; /* Garante que o ícone não suma no topo */
   }
+
   .card-slide h2 {
-    font-size: 22px;
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
   }
+
   .card-slide p {
-    font-size: 16px;
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    max-width: 100% !important; /* Libera o texto para usar toda a largura do card */
+    color: #ffffff !important;
   }
 }
-
 
 
 /**********************
