@@ -1227,7 +1227,7 @@ header img,
   .navbar-brand img,
   .logo img,
   .img-responsive {
-    max-height: 42px !important;
+    max-height: 34px !important;
   }
 
   /* Altura correta da barra */
@@ -1244,5 +1244,38 @@ header img,
 
 }
 
+/* ===== CORREÇÃO TOTAL DA SEÇÃO PRACTICE ===== */
+#practice .practice-box {
+  position: relative;
+  overflow: hidden;
+  height: 260px;
+}
+
+#practice .practice-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: none !important;
+}
+
+#practice .overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #practice .practice-box {
+    height: 220px;
+  }
+}
+
+/* === CORREÇÃO IMAGEM SLIDER 1 === */
+#slider-1 img {
+  max-height: none !important;
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 
