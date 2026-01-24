@@ -1,0 +1,106 @@
+Tema psicologia
+
+Cores Navbar
+
+#979696
+#BEAEE2
+
+sessão sub-title
+#8d82a6
+
+
+subscribe
+
+botão hover
+
+cinza #979696
+
+
+/*navbar*/
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	color: #fff;
+	background-color: #979696;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #fff;
+	text-transform: uppercase;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+	color: #fff;
+}
+.navbar-default{
+	background-color: #8e7cc3;
+	border-color: transparent;
+}
+.navbar-brand img{
+	width: 60px;
+	transition: all 0.4s ease-in-out;
+}
+.navbar-toggle{
+	border-radius: 0;
+}
+@media (min-width: 768px){
+	.navbar-brand img{
+		width: 110px;
+	}
+	.navbar-nav>li>a{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}	
+}
+
+Me senti acolhida desde o primeiro encontro. Um espaço seguro para falar e me compreender.
+
+
+campos do formulario do blog
+
+ .comment-form .form-control {
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid #e2e2e2; /* borda suave visível */
+  border-radius: 4px;        /* leve suavização */
+  width: 100%;
+  font-size: 14px;
+  color: #777777;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

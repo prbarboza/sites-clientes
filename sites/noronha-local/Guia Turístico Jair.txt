@@ -1,0 +1,388 @@
+============NOME DO SITE=============
+
+Registro = NORONHALOCAL.COM.BR
+
+
+=========CORES==========
+
+BARRA TOPO #4B9391
+AMARELO #FDE02F
+AZUL #0083B8
+Azul petroleo #0C2B36
+
+
+=========================================================
+BANNERS GLOBAL PARA SESSÕES - TEXTOS - CORES - FONTES
+=========================================================
+
+/* =========================================
+  ========BANNER - TEXTOS - CTA ============
+  ======================================== */
+
+.trilhas-hero__title {
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 4px !important;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.trilhas-hero__title span {
+    font-family: 'Satisfy', cursive !important;
+    font-size: 100px !important; /* Valor real de Passeios */
+    color: #fde02f !important;
+    display: block !important;
+    background: url('../images/hero-_ineShape1.png') no-repeat bottom left / 80% 25% !important;
+    padding-bottom: 20px;
+}
+
+==================================================
+/* --- BOTÃO HERO PADRÃO PARA TODO O SITE --- */
+==================================================
+.hero-cta {
+    display: inline-block !important;
+    padding: 14px 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    margin-top: 50px !important; /* Distância no Desktop */
+    background-color: #25d366 !important;
+    color: #fff !important;
+    border-radius: 40px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important; 
+    transition: all 0.25s ease !important;
+    text-decoration: none !important;
+    text-align: center !important;
+}
+
+.hero-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3) !important;
+    background-color: #1eb959 !important;
+    color: #fff !important;
+}
+
+/* --- AJUSTE MOBILE DO BOTÃO --- */
+@media (max-width: 767.98px) {
+    .hero-cta {
+        margin-top: 30px !important; /* Menos espaço no topo para telas menores */
+        padding: 12px 20px !important; /* Leve redução para não ocupar a tela toda */
+        font-size: 15px !important;
+        display: inline-block !important; /* Mantém ele como botão e não bloco largo */
+        width: fit-content !important; /* Garante que ele não estique sozinho */
+    }
+}
+
+/* Ajuste Mobile para ficar IDENTICO ao Passeios */
+@media (max-width: 767.98px) {
+    .trilhas-hero__title { font-size: 24px !important; }
+    .trilhas-hero__title span { font-size: 56px !important; }
+    .slider-text { text-align: left !important; align-items: flex-start !important; }
+}
+
+==================================================================
+FIM DA SESSÃO BANNER E CTA PADRÃO
+===================================================================
+
+
+
+ALTERAR A POSIÇÃO DA LOGO
+
+/* 2. Estado NORMAL da navbar (antes do scroll) */
+.ftco-navbar-light:not(.scrolled) {
+    background: transparent !important;
+    position: absolute;
+    top: 8px !important;
+    z-index: 999;
+}
+
+.navbar-brand img {
+  height: 50px;       /* ideal para desktop */
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 40px;
+  }
+}
+
+===========DEFINE A ALTURA DO BANNER NA PAGINA PASSEIOS ==============
+
+.hero-wrap.hero-passeios {
+  height: 600px;             /* altura fixa só para o banner de passeios */
+  display: flex;             /* flexbox para centralizar conteúdo */
+  align-items: center;       /* centraliza verticalmente */
+  justify-content: center;   /* centraliza horizontalmente */
+  background-size: cover;    /* imagem cobre toda a área */
+  background-position: center;
+}
+
+=====================================================================
+
+==============ALTERAR BARRA MENU===================
+/* HERO – MOBILE (FTCO OVERRIDE) */
+@media (max-width: 768px) {
+  .hero-wrap {
+    min-height: 90vh !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 !important;
+  }
+}
+
+/* HERO – FINAL */
+.hero-wrap {
+  background-image: url('../images/banner-home.jpg') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 991.98px) {
+  .ftco-navbar-light:not(.scrolled) {
+    background: #000000 !important; /* cor no topo no mobile */
+  }
+
+  .ftco-navbar-light.scrolled {
+    background: #ffffff !important;     /* cor ao rolar no mobile */
+  }
+}
+
+=============ALTERA AS FONTES DO MENU=============
+
+/* Cor padrão */
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+  color: #000000 !important; /* cor normal */
+}
+
+/* Hover e ativo */
+.ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link,
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+  color: #0083B8 !important; /* cor ao passar o mouse ou ativo */
+}
+
+/* Estado NORMAL (barra transparente, fonte branca) */
+.ftco-navbar-light:not(.scrolled) .navbar-nav > .nav-item > .nav-link {
+  color: #ffffff !important; /* fonte branca */
+}
+
+/* Estado SCROLLED (barra branca, fonte preta) */
+.ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link {
+  color: #000000 !important; /* fonte preta */
+}
+
+/* Hover em qualquer estado */
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+  color: #0083B8 !important; /* azul no hover, por exemplo */
+}
+
+
+=================================================================
+
+/* 2. Mantém o menu na direita e com letras brancas */
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+/* 3. Cor amarela APENAS no texto do link (evita o bloco amarelo) */
+.ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link,
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+    color: #FDE02F !important;
+    background: transparent !important; /* Garante que não crie bloco de cor */
+}
+
+/* 2. Ajuste do botão CTA para contrastar com o novo fundo */
+.ftco-navbar-light .navbar-nav > .nav-item.cta > .nav-link {
+    background: #0083B8 !important; /* Mantemos o amarelo ouro */
+    border: 1px solid #0083B8 !important;
+    color: #0a2b38 !important; /* Texto em azul escuro para ler melhor no amarelo */
+    font-weight: 700;
+}
+
+/* Hover real do botão CTA */
+.ftco-navbar-light .navbar-nav > .nav-item.cta > .nav-link:hover {
+    background: #0083B8 !important; /* Amarelo mais escuro */
+    border-color: #ffffff !important;
+    color: #0a2b38 !important;
+}
+
+
+/* Garante que o nome da marca (Noronha Local) seja visível e branco */
+.navbar-brand {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Força a cor branca mesmo quando o rato passa por cima (hover) */
+.navbar-brand:hover, .navbar-brand:focus {
+    color: #FDE02F !important; /* Muda para amarelo no hover para dar um efeito legal */
+}
+
+/* Resolve o problema do menu "sumir" ou piscar no topo */
+.ftco_navbar {
+    background: #ffffff !important; /* Cor da barra Hover Topo */
+    top: 0 !important;
+}
+
+/* Mantém o alinhamento correto dos itens na direita */
+.navbar-nav {
+    margin-left: auto !important;
+}
+
+==========MUDA A COR DA BARRA DO TOPO NO DESKTOP================
+
+/* Estado NORMAL da navbar (topo da página) */
+.ftco-navbar-light:not(.scrolled) {
+  background: transparent !important;   /* transparente no topo */
+  position: absolute;
+  top: 0 !important;                     /* cola no topo */
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+/* Estado SCROLLED da navbar (após rolar) */
+.ftco-navbar-light.scrolled {
+  background: #ffffff !important;        /* fundo branco ao rolar */
+  transition: background 0.3s ease;
+}
+
+
+/* Resolve o problema do menu "sumir" ou piscar no topo */
+.ftco_navbar {
+    background: #000000 !important; /* Cor da barra Hover Topo */
+    top: 0 !important;
+}
+
+=============MUDAR A COR DA BARRA NO MOBILE================
+
+CONTROLA A ALTURA DOS BANNERS
+
+/* ===============================
+   HERO / BANNER – FINAL ÚNICO
+   =============================== */
+
+.hero-wrap {
+  /* IMAGEM */
+  background-image: url('../images/banner-home.jpg'); /* ajuste o caminho se necessário */
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* ALTURA */
+  min-height: 95vh;          /* DESKTOP – AQUI você controla */
+  height: auto;
+
+  /* LAYOUT */
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* OVERLAY */
+.hero-wrap .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-wrap {
+    min-height: 90vh;        /* MOBILE – AQUI você controla */
+  }
+}
+
+
+===========IMPORTANTE COLOCA O EFEITO DE PASSAR A PAGINA COM OS DEDOS================
+
+/* PERMITE ROLAR A PÁGINA SOBRE OS SLIDERS NO MOBILE */
+@media (max-width: 991px) {
+
+  .destination-slider,
+  .destination-slider .owl-stage,
+  .destination-slider .owl-item,
+
+  .carousel-testimony,
+  .carousel-testimony .owl-stage,
+  .carousel-testimony .owl-item,
+
+  .boat-slider,
+  .boat-slider .owl-stage,
+  .boat-slider .owl-item {
+    touch-action: pan-y !important;
+  }
+
+}
+
+@media (max-width: 991.98px) {
+  .ftco-navbar-light:not(.scrolled) {
+    background: #000000 !important; /* cor no topo no mobile */
+  }
+
+==================================================================================
+
+ALINHA O EXTO DO BOTÃO DO BLOG
+
+.noronha-blog-card .tag {
+    display: inline-flex;       /* Usa flexbox para alinhamento total */
+    justify-content: center;    /* Centraliza horizontalmente */
+    align-items: center;        /* Centraliza verticalmente */
+    text-align: center;         /* Garante o alinhamento do texto */
+    
+    /* Ajustes extras para o visual do botão */
+    padding: 5px 15px;          /* Espaço interno (ajuste conforme necessário) */
+    min-width: 100px;           /* Opcional: define uma largura mínima para o botão */
+    border-radius: 50px;        /* Deixa as pontas do botão redondas */
+    line-height: 1;             /* Remove espaços extras de linha que jogam o texto para baixo */
+}
+
+
+IMPORTANTE
+/* ===============================
+   CARDS DE BARCO - QUADRADOS E MAIORES
+================================ */
+
+/* 1. Container da imagem: Força o formato quadrado */
+.boat-img {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important; /* Faz ser sempre um quadrado perfeito */
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    margin-bottom: 15px !important; /* Espaço para o título abaixo */
+    padding: 0 !important; /* Remove recuos que deixam a imagem pequena */
+}
+
+/* 2. A imagem dentro do container */
+.boat-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Preenche o quadrado sem distorcer */
+    display: block !important;
+}
+
+/* 3. Se o card tiver um padding que limita a imagem, nós o removemos */
+.boat-card-fixed {
+    padding: 10px !important; /* Ajuste conforme necessário para o card todo */
+}
+
+/* Ajuste Mobile */
+@media (max-width: 767px) {
+    .boat-img {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}

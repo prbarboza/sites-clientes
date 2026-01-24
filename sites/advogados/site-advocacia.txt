@@ -1,0 +1,66 @@
+Site Advogados
+
+Paleta de cores
+
+Amarelo #F2C64D
+Dourado amarelo #CEA159
+Box e Rodapé Ciza #202020
+Brnco #FFFFFF
+Preto #000000
+
+
+Site Advogado Color
+
+Principal Color #f13d80
+Icons Hover Cinza #999999
+
+-------------Sessão Start Features Area desativado no css------------
+
+#features_counter {
+    display: none !important;
+}
+------------desable------------
+
+background: linear-gradient
+
+Remover a tarja rosa do topo
+
+colar no final do css
+
+/* Header começa transparente */
+.header_area {
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Header com degradê após scroll */
+.header_area.scrolled {
+  background: linear-gradient(90deg, #f13d80 0%, #f48464 100%) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+
+--------------end---------------
+
+Colar no js theme
+
+<script>
+(function () {
+  const header = document.querySelector(".header_area");
+  if (!header) return;
+
+  function toggleHeader() {
+    if (window.scrollY > 30) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+
+  window.addEventListener("scroll", toggleHeader);
+  window.addEventListener("load", toggleHeader);
+})();
+</script>
+
+
+

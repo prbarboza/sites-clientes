@@ -1,0 +1,1281 @@
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+body{
+	font-family: 'Lora';
+}
+section{
+	padding: 100px 0 70px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.title-box{
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 60px;
+}
+.title-box:after{
+	content: '';
+	width: 50px;
+	height: 3px;
+	position: absolute;
+	bottom: -20px;
+	left: calc(50% - 25px);
+	background-color: #8e7cc3;
+}
+.section-title{
+	margin-top: 0;
+}
+.section-subtitle{
+	/*margin-bottom: 0;*/
+}
+
+.title-box .section-subtitle {
+    font-size: 18px !important; /* Ajuste o número para o tamanho que desejar */
+    font-weight: 600 !important; /* Deixa o texto um pouco mais grosso */
+    color: #8e7cc3 !important;  /* Mantém no seu tom de lilás */
+    letter-spacing: 2px;        /* Dá um espaço elegante entre as letras */
+    margin-bottom: 10px;        /* Afasta um pouco do título de baixo */
+    display: block;             /* Garante que o espaçamento funcione bem */
+}
+
+.c-table{
+	width: 100%;
+	height: 100%;
+	display: table;
+	text-align: center;
+}
+.ct-cell{
+	color: #fff;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.overlay-light, .overlay-dark{
+	position: relative;
+}
+.overlay-light div, .overlay-dark div{
+	z-index: 2;
+}
+.overlay-light:after, .overlay-dark:after{
+	top: 0;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+}
+.overlay-light:after{
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.overlay-dark:after{
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.img-full{
+	width: 100%;
+}
+
+
+/*navbar*/
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	color: #fff;
+	background-color: #979696;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #fff;
+	text-transform: uppercase;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+	color: #fff;
+}
+.navbar-default{
+	background-color: #8e7cc3;
+	border-color: transparent;
+}
+.navbar-brand img{
+	width: 60px;
+	transition: all 0.4s ease-in-out;
+}
+.navbar-toggle{
+	border-radius: 0;
+}
+@media (min-width: 768px){
+	.navbar-brand img{
+		width: 110px;
+	}
+	.navbar-nav>li>a{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}	
+}
+
+/* Navbar em mobile */
+@media (max-width: 767px) {
+  .navbar-default {
+    background-color: #8e7cc3 !important; /* fundo branco */
+  }
+  .navbar-default .navbar-nav>li>a {
+    color: #ffffff !important; /* texto lilás */
+    font-weight: 600;
+  }
+  .navbar-default .navbar-nav>.active>a,
+  .navbar-default .navbar-nav>.active>a:focus,
+  .navbar-default .navbar-nav>.active>a:hover {
+    background-color: #f2f2f2 !important; /* leve cinza no hover */
+    color: #6f5aa8 !important; /* lilás mais escuro */
+  }
+}
+
+/* Hambúrguer branco */
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff; /* cor branca */
+}
+
+
+
+
+/**********************
+        Header
+**********************/
+.header {
+  background-image: url(../images/header.jpg);
+  background-position: center center;   /* centraliza imagem */
+  background-size: cover;               /* ocupa todo espaço */
+  background-repeat: no-repeat;
+  background-attachment: scroll;        /* evita bug em mobile */
+  height: 100vh;
+  position: relative;
+}
+
+.intro-box {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Título */
+.header-title {
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: none;
+  text-align: center;
+  font-size: 48px; /* tamanho base desktop */
+  display: inline-block;
+  background-color: rgba(255,255,255,0.2); /* leve transparência */
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+  .header-title {
+    font-size: 56px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 991px) {
+  .header-title {
+    font-size: 32px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+  .header-title {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+}
+
+
+
+
+/**********************
+		Fun
+**********************/
+.fun{
+	text-align: center;
+	text-transform: uppercase;
+}
+.fun-box{
+	margin-bottom: 30px;
+}
+.fun-number{
+	font-size: 50px;
+}
+.fun-title{
+	font-size: 18px;
+}
+
+
+.cta-bg {
+  background: linear-gradient(135deg, #232946 0%, #1a1f3b 100%);
+  padding: 60px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.cta p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+.cta h2 {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.cta h2 span {
+  color: #8e7cc3;
+  font-style: italic;
+}
+
+.cta-btn a {
+  background-color: #8e7cc3;
+  color: #fff;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-btn a:hover {
+  background-color: #a899d3;
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 767px) {
+  .cta h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+  .cta-btn a {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+
+
+/**********************
+		Choose
+**********************/
+.choose{
+	text-align: center;
+	background-image: url(../images/choose.jpg);
+}
+.choose-box{
+	margin-bottom: 30px;
+}
+.choose-icon{
+	color: #000000;
+	font-size: 72px;
+}
+.choose-title {
+  text-transform: uppercase;
+  font-size: 20px;              /* um pouco maior */
+  font-weight: 700;             /* mais grosso */
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #6f5aa8;               /* lilás mais forte */
+  text-align: center;           /* centralizado */
+  position: relative;
+}
+
+/* Linha decorativa abaixo do título */
+.choose-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #6f5aa8;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.choose-detail {
+    font-size: 17px !important; /* Aumenta o tamanho da letra */
+    line-height: 1.6 !important; /* Melhora o respiro entre as linhas */
+    color: #000000 !important;   /* Deixa o cinza um pouco mais escuro para leitura */
+    margin-top: 15px;            /* Afasta o texto do título acima */
+}
+
+
+
+
+
+
+/**********************
+		Practice
+**********************/
+.practice{
+	text-transform: uppercase;
+}
+.practice-box{
+	position: relative;
+	margin-bottom: 30px;
+	font-family: 'Roboto';
+}
+.practice-box:hover .overlay{
+	opacity: 1;
+}
+.overlay{
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: all 0.4s ease-in-out;
+	background-color: rgba(0, 84, 166, 0.7);
+}
+.paractice-icon{
+	font-size: 72px;
+}
+.practice-title{
+	font-size: 20px;
+	margin: 0;	
+}
+
+
+
+
+
+
+/**********************
+		Consultation
+**********************/
+.consultation{
+	background-color: #F2EEED;
+}
+.consultation-form .form-control{
+	margin-bottom: 30px;
+	border-radius: 0;
+}
+.consultation-form  .bootstrap-select .btn, .consultation-form .dropdown-menu{
+	border-radius: 0;
+}
+.btn-cn{
+	background-color: #455579;
+	border-radius: 0;
+	color: #fff;
+}
+.btn-cn:hover{
+	border-color: #455579;
+	background-color: transparent;
+	color: #455579;
+}
+
+/* Campos de texto e textarea */
+.consultation-form input.form-control,
+.consultation-form textarea.form-control {
+  color: #000 !important;   /* texto digitado em preto */
+  background-color: #fff;   /* fundo branco para contraste */
+}
+
+/* Placeholders */
+.consultation-form input.form-control::placeholder,
+.consultation-form textarea.form-control::placeholder {
+  color: #000 !important;   /* placeholder preto */
+  opacity: 0.7;             /* opcional: deixa mais suave */
+}
+
+
+
+
+/**********************
+		Slider
+**********************/
+.slider-1{
+	text-align: center;
+	background-image: url(../images/escritorio-psicologia.jpg);
+}
+#slider_1{
+	background-color: #39496D;
+}
+.slider-1-item-box{
+	color: #fff;
+	padding: 50px;
+}
+.slider-1-item-box h2{
+	margin:10px auto 20px;
+	text-transform: uppercase;
+}
+.slider-icon{
+	font-size: 72px;
+}
+.slider-1-item-box p{
+	line-height: 1.5;
+	font-size: 16px;
+}
+.slider_1{
+	position: relative;
+}
+.slider_1 .owl-controls .owl-dots{
+	bottom: 40px;
+    position: relative;
+}
+.mb0{
+	margin-bottom: -70px;
+}
+
+
+/**********************
+		Team
+**********************/
+.team{
+	background-color: #F2EEED;
+}
+.team-box{
+	padding: 10px;
+	margin-bottom: 30px;
+	/*background-color: #fff;*/
+	transition: all 0.4s ease-in-out;
+}
+.team-box:hover{
+	box-shadow: 2px 2px 5px #8e7cc3;
+}
+.team-detail{
+	background-color: #e1e1e1;
+	color: #4b4b4b;
+	padding: 20px;
+}
+.team-box ul{
+	text-align: center;
+	padding-left: 0;
+}
+.team-box ul li{
+	list-style-type: none;
+}
+.team-box h3{
+	/*font-weight: 700;*/
+}
+
+
+
+
+
+/**********************
+		Clients
+**********************/
+.client-box{
+	margin-bottom: 30px;
+}
+.client-box img{
+	opacity: 0.5;
+	transition: all 0.4s ease-in-out;
+}
+@media (min-width: 768px){
+	.client-box img{
+		padding: 50px 0;
+	}
+}
+.client-box:hover img{
+	opacity: 1;
+}
+
+
+
+
+
+
+
+/**********************
+/**********************
+  TESTIMONIAL
+**********************/
+.testimonial {
+  background: #faf8fc;
+  padding: 100px 0;
+}
+
+/* Títulos */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  color: #030303;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  color: #8d82a6;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Swiper base */
+.testimonial-swiper {
+  padding-bottom: 60px;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Card */
+.testimonial-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(111, 90, 138, 0.08);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(111, 90, 138, 0.12);
+}
+
+/* Texto */
+.testimonial-card p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #5f5f5f;
+  position: relative;
+  padding-left: 20px;
+  flex-grow: 1;
+}
+
+.testimonial-card p::before {
+  content: "“";
+  font-size: 48px;
+  color: #d8cde6;
+  position: absolute;
+  left: 0; /* traz para dentro do card */
+  top: -24px;
+}
+
+  .testimonial-card p::before {
+    font-size: 36px;
+    top: -20px;
+  }
+
+.testimonial-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(111, 90, 138, 0.08);
+  border: 1px solid rgba(142, 124, 195, 0.25);
+}
+
+
+/* Autor */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.testimonial-author img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-author span {
+  font-size: 14px;
+  color: #9a8fb0;
+  line-height: 1.4;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .testimonial {
+    padding: 70px 0;
+  }
+
+  .testimonial-card {
+    padding: 28px 22px;
+  }
+
+  .testimonial-card p {
+    font-size: 18px;
+  }
+}
+
+/* === ALTURA IGUAL PARA TODOS OS DEPOIMENTOS === */
+
+/* Swiper força altura igual */
+.testimonial-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+/* Slide ocupa altura total */
+.testimonial-swiper .swiper-slide {
+  display: flex;
+  height: auto;
+}
+
+/* Card ocupa toda a altura do slide */
+.testimonial-card {
+  height: 100%;
+  min-height: 320px; /* ajuste fino aqui */
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    min-height: 280px;
+  }
+}
+
+
+
+/**********************
+		FAQ
+**********************/
+.faq{
+	background-image: url(../images/faq.jpg);
+}
+.faq .panel-group .panel{
+	margin-bottom: 20px;
+}
+.faq .panel-default>.panel-heading{
+	background-color: #455579;
+}
+.faq .panel-body{
+	background-color: #5B6B8D;
+	color: #bcbcbc;
+}
+.faq .panel-default>.panel-heading a{
+	color: #fff;
+	text-transform: uppercase;
+}
+.faq .panel-heading, .faq .panel-body, .faq .panel-group .panel{
+	border-radius: 0;
+}
+
+/* ======================
+   FAQ – novo visual
+====================== */
+
+#faq {
+    background-color: #f7f5fb;
+    padding: 80px 0;
+}
+
+#faq .panel-group {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#faq .panel {
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+#faq .panel-heading {
+    background-color: #ffffff;
+    padding: 18px 24px;
+}
+
+#faq .panel-title a {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #5f4b8b;
+    text-decoration: none;
+    position: relative;
+    padding-right: 30px;
+}
+
+#faq .panel-title a::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #b4a7d6;
+    transition: transform 0.3s ease;
+}
+
+#faq .panel-title a[aria-expanded="true"]::after {
+    content: "–";
+    color: #5f4b8b;
+}
+
+#faq .panel-body {
+    background-color: #ffffff;
+    padding: 20px 24px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+
+
+
+.subscribe{
+	border-bottom: 3px solid #2C3447;
+	background-color: #10182D;
+	color: #969595;
+}
+.subscribe h2{
+	color: #fff;
+}
+.subscribe-form{
+	margin-top: 30px;
+}
+
+
+
+
+/*Footer*/
+.footer{
+	background-color: #1E2340;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	color: #ffffff;
+}
+
+.footer .footer-social {
+  font-size: 24px;
+}
+.footer .footer-social a {
+  color: #ffffff;
+  margin: 8px;
+}
+@media (min-width: 768px){
+	.footer .footer-social{
+		float: right;
+	}
+}
+@media (max-width: 767px){
+	footer, .subscribe{
+		text-align: center;
+	}
+}
+
+/* Ajuste da Sessão de Números */
+.fun-number {
+    font-size: 50px !important; /* Número bem visível */
+    color: #8e7cc3 !important;  /* Seu tom de lilás */
+    font-weight: bold !important;
+    margin-bottom: 10px;
+}
+
+.fun-title {
+    font-size: 18px !important;  /* Texto maior como você pediu */
+    color: #555 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fun {
+    padding: 80px 0; /* Dá um respiro para a sessão */
+    background-color: #fcfaff; /* Um fundo lilás quase branco para destacar */
+}
+
+.cta-bg {
+    border-radius: 15px; /* Bordas arredondadas para suavizar */
+    padding: 50px 30px !important;
+}
+
+/* Ajuste do Título Principal no Card Azul */
+.cta-bg h1 {
+    font-size: 32px !important; /* Tamanho do 'AGENDE SEU' */
+    color: #ffffff !important;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* Ajuste do subtítulo que estava muito pequeno */
+.cta-bg h1 small {
+    font-size: 28px !important; /* Aumenta o 'ATENDIMENTO HOJE' */
+    color: #8e7cc3 !important;  /* Cor lilás */
+    display: block;             /* Garante que fique na linha de baixo */
+    font-weight: 300;
+}
+
+.cta-btn a {
+    background-color: #8e7cc3 !important; /* Seu tom de lilás */
+    color: #fff !important;
+    border: none !important;
+    padding: 15px 30px !important;
+    border-radius: 50px !important;
+    font-size: 20px !important;
+    display: inline-block;
+    transition: 0.3s;
+    margin-top: 20px; /* Espaço extra para não grudar no texto */
+}
+
+.cta-btn a:hover {
+    background-color: #a594d1 !important; /* Lilás um pouco mais escuro no hover */
+    text-decoration: none;
+}
+
+.cta-btn span {
+    margin-right: 10px;
+}
+
+.rotating-card {
+    position: relative;
+    min-height: 420px; 
+    background: #1E2340; /* azul escuro translúcido */
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    padding: 40px 30px;
+}
+
+
+
+/* Estilo de cada Slide individual */
+.card-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Quando o slide está ativo */
+.card-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* FORÇAR TEXTO BRANCO E TAMANHO MAIOR */
+.card-slide h2 {
+    color: #ffffff !important; /* Branco puro */
+    font-size: 30px !important; /* Aumentado */
+    font-weight: bold !important;
+    margin-bottom: 20px !important;
+    text-transform: none !important;
+}
+
+.card-slide p {
+    color: #ffffff !important; /* Branco puro */
+    font-size: 16px !important; /* Aumentado */
+    line-height: 1.6 !important;
+}
+
+/* Ícone Lilás */
+.slider-icon {
+    font-size: 50px !important;
+    color: #8e7cc3 !important;
+    margin-bottom: 15px !important;
+    display: block;
+}
+
+/* AJUSTES PARA CELULAR */
+@media (max-width: 767px) {
+
+  .rotating-card {
+    min-height: 320px; /* reduz altura no mobile */
+    padding: 20px;
+  }
+
+  .card-slide {
+    padding: 20px;
+  }
+
+  .card-slide h2 {
+    font-size: 24px !important; /* título menor no celular */
+    margin-bottom: 12px !important;
+  }
+
+  .card-slide p {
+    font-size: 16px !important; /* texto menor */
+    line-height: 1.5 !important;
+  }
+
+  .slider-icon {
+    font-size: 36px !important; /* ícone menor */
+    margin-bottom: 10px !important;
+  }
+}
+
+
+/* Estilo do Formulário */
+.custom-form .form-group {
+    margin-bottom: 20px;
+}
+
+.custom-input {
+    font-family: 'Lora', serif; /* Aplica Lora no que o usuário digita e no placeholder */
+    border: none !important;
+    border-bottom: 2px solid #eee !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 12px 5px !important;
+    transition: border-color 0.3s;
+}
+
+.custom-input:focus {
+    border-bottom-color: #8e7cc3 !important;
+}
+
+
+/**********************
+   /* ===============================
+   CONTATO – VISUAL PREMIUM
+================================ */
+
+#contact {
+  background: linear-gradient(180deg, #faf8fc 0%, #f2edf9 100%);
+  padding: 100px 0;
+  font-family: 'Lora', serif;
+}
+
+/* Título */
+#contact .title-box {
+  margin-bottom: 60px;
+}
+
+#contact .section-subtitle {
+  color: #8e7cc3;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+#contact .section-title {
+  color: #2d2a33;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+/* Cards */
+.contact-card {
+  height: 100%;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 25px 60px rgba(111, 90, 138, 0.15);
+}
+
+/* ===============================
+   CARD INFORMAÇÕES
+================================ */
+.info-card {
+  background: linear-gradient(160deg, #8e7cc3, #beaee2);
+  color: #ffffff;
+}
+
+.info-card h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.info-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+.contact-details {
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.contact-item i {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* ===============================
+   CARD FORMULÁRIO
+================================ */
+.form-card {
+  background: #ffffff;
+}
+
+.custom-form .row {
+  margin-bottom: 10px;
+}
+
+.custom-input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  transition: all .3s ease;
+}
+
+.custom-input:focus {
+  border-color: #8e7cc3;
+  box-shadow: 0 0 0 4px rgba(142,124,195,0.15);
+  outline: none;
+}
+
+/* Botão */
+.btn-contact {
+  background: linear-gradient(135deg, #8e7cc3, #beaee2);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 15px 38px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  transition: all .3s ease;
+}
+
+.btn-contact i {
+  margin-left: 8px;
+}
+
+.btn-contact:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(142,124,195,0.35);
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 767px) {
+  #contact {
+    padding: 70px 0;
+  }
+
+  .contact-card {
+    padding: 30px;
+    margin-bottom: 25px;
+  }
+
+  #contact .section-title {
+    font-size: 28px;
+  }
+
+  .contact-item {
+    justify-content: flex-start;
+  }
+}
+
+
+
+.subscribe {
+    background-color: #f4f1fa !important; /* Lilás bem clarinho para dar destaque suave */
+    padding: 60px 0 !important;
+}
+
+.subscribe h2 {
+    color: #444 !important;
+    font-size: 24px !important;
+    margin-bottom: 10px !important;
+    text-transform: none !important; /* Evita que o template coloque tudo em maiúsculo */
+}
+
+.subscribe p {
+    color: #979696 !important;
+    font-size: 16px !important;
+}
+
+/* Ajuste do Campo de E-mail */
+.subscribe .input-group-addon {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #8e7cc3 !important;
+    color: #8e7cc3 !important;
+}
+
+.subscribe .form-control {
+    border: none !important;
+    border-bottom: 2px solid #8e7cc3 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    height: 45px !important;
+}
+
+/* Botão de Inscrição */
+
+.btn-subscribe {
+  background: #8e7cc3;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 14px 32px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  transition: 0.3s;
+  font-family: 'Lora', serif;
+}
+
+.btn-subscribe:hover {
+  background-color: #9c8bcf;
+  transform: translateY(-2px);
+}
+
+/* Trava de segurança para o scroll horizontal sem quebrar o desktop */
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Ajuste específico para as linhas (rows) */
+.row {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+
+/* Garante que o container continue centralizando no Desktop */
+.container {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+/* Ajuste fino apenas para o Mobile */
+@media (max-width: 767px) {
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Previne que elementos longos forcem o scroll lateral */
+    * {
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+}
+
+.title-box .section-title {
+  color: #333;
+  font-size: 32px;
+  font-weight: bold;
+}
+.title-box .section-subtitle {
+  color: #666;
+  font-size: 16px;
+}
+
+/* ===== FORÇAR TAMANHO DA LOGO NO TOPO ===== */
+header img,
+.navbar img,
+.navbar-brand img,
+.logo img,
+.img-responsive {
+  max-height: 80px !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+@media (max-width: 768px) {
+
+  /* Logo menor */
+  header img,
+  .navbar img,
+  .navbar-brand img,
+  .logo img,
+  .img-responsive {
+    max-height: 34px !important;
+  }
+
+  /* Altura correta da barra */
+  header,
+  .navbar {
+    min-height: 64px;
+  }
+
+  /* Remove excesso de padding */
+  .navbar-brand {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+}
+
+/* ===== CORREÇÃO TOTAL DA SEÇÃO PRACTICE ===== */
+#practice .practice-box {
+  position: relative;
+  overflow: hidden;
+  height: 260px;
+}
+
+#practice .practice-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: none !important;
+}
+
+#practice .overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  #practice .practice-box {
+    height: 220px;
+  }
+}
+
+/* === CORREÇÃO IMAGEM SLIDER 1 === */
+#slider-1 img {
+  max-height: none !important;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
