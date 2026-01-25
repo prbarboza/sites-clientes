@@ -16294,11 +16294,13 @@ display: none !important;
 
 .ta-hero-content p {
   font-size: 16px;
+  margin-top: 24px;     /* DESCE o texto */
   margin-bottom: 28px;
   text-align: center;
   color: #fff;
-   font-weight: 500;
+  font-weight: 400;
 }
+
 
 .ta-hero-btn {
   align-self: flex-start;
@@ -16325,7 +16327,7 @@ display: none !important;
   }
 
   .ta-hero-content h1 {
-    font-size: 38px;
+    font-size: 36px;
     text-align: center;
   }
 }
@@ -16353,4 +16355,41 @@ display: none !important;
   margin-top: 32px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.ta-hero-btn {
+  display: inline-block;
+  margin-top: 70px; /* desktop */
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .ta-hero-btn {
+    margin-top: 10px !important; /* sobe o botão */
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .ta-hero-box {
+    grid-template-columns: 1fr;
+  }
+
+  .ta-hero-images {
+    height: 260px;
+  }
+
+  .ta-hero-content {
+    padding: 32px;
+  }
+
+  .ta-hero-content h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .ta-hero-content p {
+    font-size: 16px;   /* mobile */
+    text-align: center;
+  }
 }
