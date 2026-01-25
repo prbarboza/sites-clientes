@@ -16723,6 +16723,49 @@ display: none !important;
   }
 }
 
+.carrossel-geral .owl-nav,
+.interesses-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none; /* evita empurrar os cards */
+}
+
+.carrossel-geral .owl-nav button,
+.interesses-carousel .owl-nav button {
+  background: none;
+  border: none;
+  font-size: 24px; /* tamanho da seta */
+  pointer-events: all; /* ativa clique */
+}
+
+/* Container das setas */
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10; /* garante que fique acima dos cards */
+}
+
+/* Botões das setas */
+.owl-nav button {
+  background: none !important;
+  border: none !important;
+  font-size: 40px;       /* aumenta tamanho */
+  color: #000 !important; /* cor preta visível */
+  cursor: pointer;
+  opacity: 1 !important; /* força visibilidade */
+}
+
+
+
+
 
 
 

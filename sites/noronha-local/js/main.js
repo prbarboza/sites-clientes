@@ -206,33 +206,30 @@
       });
     });
 
-    $('.carrossel-geral').each(function () {
-   $(this).owlCarousel({
-    loop: false,
-    dots: false,
-    nav: true,
-    margin: 12, // espaçamento global
-    navText: ['', ''],
-    responsive: {
-      0: { items: 1.1, stagePadding: 20 }, // mostra 1 card + parte do próximo
-      1000: { items: 4 }
-    }
-  });
+    $('.carrossel-geral').owlCarousel({
+  loop: false,
+  dots: false,
+  nav: true,
+  margin: 12,
+  navText: ['‹','›'], // ← agora tem conteúdo
+  responsive: {
+    0: { items: 1, stagePadding: 0 },
+    1000: { items: 4 }
+  }
 });
 
-$('.interesses-carousel').each(function () {
-  $(this).owlCarousel({
-    loop: false,
-    dots: false,
-    nav: true,
-    margin: 12,
-    navText: ['', ''],
-    responsive: {
-      0: { items: 1.1, stagePadding: 20 },
-      1000: { items: 4 }
-    }
-  });
+$('.interesses-carousel').owlCarousel({
+  loop: false,
+  dots: false,
+  nav: true,
+  margin: 12,
+  navText: ['‹','›'], // idem
+  responsive: {
+    0: { items: 1, stagePadding: 0 },
+    1000: { items: 4 }
+  }
 });
+
 
   }
 
