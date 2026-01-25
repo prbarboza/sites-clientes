@@ -3621,12 +3621,12 @@ input[type="button"].btn-block {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
-  color: #212529;
+  color: #fff !important;
   text-align: left;
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid #fff;
   border-radius: 0.25rem;
 }
 
@@ -13454,8 +13454,8 @@ textarea.form-control {
 }
 
 /* Estado NORMAL (barra transparente, fonte branca) */
-.ftco-navbar-light:not(.scrolled) .navbar-nav > .nav-item > .nav-link {
-  color: #fff !important; /* fonte branca */
+.ftco-navbar-light:not(.scrolled) .navbar-nav > .nav-item > .nav-link { /*BARRA MENU FONTE */
+  color: #000 !important; /* fonte branca */
 }
 
 /* Estado SCROLLED (barra branca, fonte preta) */
@@ -13465,7 +13465,7 @@ textarea.form-control {
 
 /* Hover em qualquer estado */
 .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-  color: #000!important; /* azul no hover, por exemplo */
+  color: #000 !important; /* azul no hover, por exemplo */
 }
 
 
@@ -14377,7 +14377,7 @@ ou, em último caso:
   left: 0;
 
   min-width: 230px;
-  background: #fff;
+  background: #fff !important;
   border-radius: 14px;
   padding: 10px 0;
 
@@ -14394,6 +14394,7 @@ ou, em último caso:
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+  
 }
 
 /* Links do submenu */
@@ -14405,9 +14406,10 @@ ou, em último caso:
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background: rgba(0,131,184,.08);
-  color: #0083B8;
+  background: #9FBCC7;
+  color: #fff;
 }
+
 
 /* Setinha do dropdown */
 .dropdown-toggle::after {
@@ -16249,7 +16251,7 @@ display: none !important;
 .ta-hero-box {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  background: #00aa6c;
+  background: #0083B8;
   border-radius: 18px;
   overflow: hidden;
   min-height: 420px;
@@ -16280,19 +16282,20 @@ display: none !important;
   padding: 56px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .ta-hero-content h1 {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .ta-hero-content p {
   font-size: 16px;
   margin-bottom: 28px;
+  text-align: center;
 }
 
 .ta-hero-btn {
@@ -16320,7 +16323,7 @@ display: none !important;
   }
 
   .ta-hero-content h1 {
-    font-size: 28px;
+    font-size: 34px;
   }
 }
 
@@ -16336,4 +16339,15 @@ display: none !important;
 /* Ajuste por causa do header fixo */
 .ta-hero {
   margin-top: 96px; /* altura do menu */
+}
+
+.ta-hero-btn {
+  display: inline-block;
+  margin-top: 70px !important;   /* desce o botão */
+}
+
+.ta-hero-btn {
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
 }
