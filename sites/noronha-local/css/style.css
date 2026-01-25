@@ -16640,12 +16640,8 @@ display: none !important;
   .carrossel-geral .owl-item {
     width: 265px;
   }
-
-  .carrossel-geral .owl-item:last-child {
-    padding-right: 0;
-  }
 }
-
+  
 @media (max-width: 767px) {
   /* Zera os containers que empurram o carrossel */
   .ftco-section.bg-light.pt-4 > .container,
@@ -16669,7 +16665,6 @@ display: none !important;
 
   /* Define o tamanho fixo e o espaço entre eles */
   .carrossel-geral .owl-item {
-    float: left !important; /* mantém o comportamento original */ 
     margin-right: 10px !important; /* espaçamento entre cards */
     width: 265px !important;
     flex: 0 0 265px !important;
@@ -16818,8 +16813,7 @@ display: none !important;
     padding-right: 8px !important;  /* evita corte no último card */
   }
 
-  .carrossel-geral .owl-item {
-    float: left !important;          /* mantém o comportamento original */
+  .carrossel-geral .owl-item {             
     margin-right: 6px !important;    /* controla o espaço entre os cards */
   }
 
@@ -17025,9 +17019,11 @@ display: none !important;
 
 /* === INTERESSES – alinhamento correto TripAdvisor === */
 .interesses-carousel {
-  margin-left: -15px;
+  
   margin-right: -15px;
   padding-left: 3px;
 }
+
+
 
 

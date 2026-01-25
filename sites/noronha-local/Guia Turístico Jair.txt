@@ -9,6 +9,7 @@ BARRA TOPO #4B9391
 AMARELO #FDE02F
 AZUL #0083B8
 Azul petroleo #0C2B36
+TEXTOS SUBTITULOS SESSÃO #1e2340
 
 
 =========================================================
@@ -385,4 +386,141 @@ IMPORTANTE
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
+}
+
+.btn {
+  cursor: pointer;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+
+.btn.btn-primary {
+  background: #f85959;
+  border: 1px solid #f85959;
+  color: #fff;
+}
+
+.btn.btn-primary:hover {
+  border: 1px solid #f85959;
+  background: transparent;
+  color: #f85959;
+}
+
+.btn.btn-primary.btn-outline-primary {
+  border: 1px solid #f85959;
+  background: transparent;
+  color: #f85959;
+}
+
+.btn.btn-primary.btn-outline-primary:hover {
+  border: 1px solid transparent;
+  background: #f85959;
+  color: #fff;
+}
+
+.btn.btn-outline-white {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: none;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+  border-width: 1px;
+  color: #fff;
+}
+
+.btn.btn-outline-white:hover,
+.btn.btn-outline-white:focus,
+.btn.btn-outline-white:active {
+  background: #fff;
+  border-color: #fff;
+  color: #f85959;
+}
+
+
+$('.cta-slider').owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 5000,
+    loop: true,
+    items: 1,
+    margin: 0,
+    stagePadding: 0,
+    nav: false,
+    dots: true,
+    animateOut: 'fadeOut', // Transição suave estilo TripAdvisor
+    animateIn: 'fadeIn'
+});
+
+/* ================================
+   MOBILE – TAMANHO CORRETO DOS CARDS
+================================ */
+@media (max-width: 991px) {
+
+  .interesses-carousel .owl-item {
+    width: 230px !important;   /* 👈 tamanho ideal mobile */
+    flex: 0 0 240px !important;
+  }
+
+}
+
+.carousel-geral .owl-item {
+    width: 265px !important;
+    min-width: 265px !important; 
+    flex: 0 0 265px !important;  /* 👈 tamanho cards ideal mobile */
+    margin-right: 20px !important;
+  }
+
+/* ================================
+   SETAS – ESTILO TRIPADVISOR
+================================ */
+
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.owl-nav button {
+  pointer-events: all;
+  position: absolute;
+  top: -50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff !important;
+  border: 1px solid #ddd !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  transition: all .2s ease;
+}
+
+.owl-nav button:hover {
+  transform: scale(1.08);
+}
+
+/* esquerda */
+.owl-nav .owl-prev {
+  left: -20px;
+}
+
+/* direita */
+.owl-nav .owl-next {
+  right: -20px;
+}
+
+/* ícones */
+.owl-nav button span {
+  font-size: 26px;
+  color: #333;
+  line-height: 1;
 }

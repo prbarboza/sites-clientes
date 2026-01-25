@@ -233,6 +233,8 @@
       </div>
     </div>
     
+    <div class="row">
+  <div class="col-12">
     <div class="interesses-carousel owl-carousel">
 
       <div class="item">
@@ -529,35 +531,46 @@
         <p>Atividades exclusivas para complementar seu roteiro</p>
       </div>
     </div>
-    
+
     <div class="row">
-      <div class="col-md-3 col-6 mb-4" data-aos="fade-up">
-        <a href="" class="card-interesses">
-          <div class="img-bg" style="background-image: url('images/home/interesses/card-plana-sub-noronha.jpg');"></div>
-          <div class="overlay-text"><h3>Plana Sub</h3></div>
-        </a>
-      </div>
-      <div class="col-md-3 col-6 mb-4" data-aos="fade-up">
-        <a href="" class="card-interesses">
-          <div class="img-bg" style="background-image: url('images/home/interesses/card-snoker.jpg');"></div>
-          <div class="overlay-text"><h3>Snorkel</h3></div>
-        </a>
-      </div>
-      <div class="col-md-3 col-6 mb-4" data-aos="fade-up">
-        <a href="" class="card-interesses">
-          <div class="img-bg" style="background-image: url('images/home/interesses/card-bike-aquatica.jpg');"></div>
-          <div class="overlay-text"><h3>Bike Aquática</h3></div>
-        </a>
-      </div>
-      <div class="col-md-3 col-6 mb-4" data-aos="fade-up">
-        <a href="" class="card-interesses">
-          <div class="img-bg" style="background-image: url('images/home/interesses/card-caiaque-noronha.jpg');"></div>
-          <div class="overlay-text"><h3>Caiaque</h3></div>
-        </a>
+      <div class="col-12">
+        <div class="interesses-carousel owl-carousel">
+
+          <div class="item">
+            <a href="plana-sub.html" class="card-interesses">
+              <div class="img-bg" style="background-image: url('images/home/interesses/card-plana-sub-noronha.jpg');"></div>
+              <div class="overlay-text"><h3>Plana Sub</h3></div>
+            </a>
+          </div>
+
+          <div class="item">
+            <a href="snorkel.html" class="card-interesses">
+              <div class="img-bg" style="background-image: url('images/home/interesses/card-snoker.jpg');"></div>
+              <div class="overlay-text"><h3>Snorkel</h3></div>
+            </a>
+          </div>
+
+          <div class="item">
+            <a href="bike-aquatica.html" class="card-interesses">
+              <div class="img-bg" style="background-image: url('images/home/interesses/card-bike-aquatica.jpg');"></div>
+              <div class="overlay-text"><h3>Bike Aquática</h3></div>
+            </a>
+          </div>
+
+          <div class="item">
+            <a href="caiaque.html" class="card-interesses">
+              <div class="img-bg" style="background-image: url('images/home/interesses/card-caiaque-noronha.jpg');"></div>
+              <div class="overlay-text"><h3>Caiaque</h3></div>
+            </a>
+          </div>
+
+        </div>
       </div>
     </div>
+
   </div>
 </section>
+
 <!--------- Fim Outras Atividades -------->
 
  <!--------Inicio Sobre Nós e Depoimentos --------->  
@@ -900,7 +913,38 @@ function sendToWhatsAppBoat(button) {
 }
 </script>
 
+<script>
+$(function () {
 
+  $(document).on('click touchstart', function (e) {
+
+    const $navbar = $('#ftco-navbar');
+    const $menu = $navbar.find('.navbar-collapse');
+    const $toggler = $navbar.find('.navbar-toggler');
+
+    if (window.innerWidth > 991) return;
+    if (!$menu.hasClass('show')) return;
+
+    if (
+      $(e.target).closest('.navbar-collapse').length ||
+      $(e.target).closest('.navbar-toggler').length
+    ) {
+      return;
+    }
+
+    // fecha o menu
+    $menu.removeClass('show');
+    $toggler
+      .addClass('collapsed')
+      .attr('aria-expanded', 'false');
+
+    $('body').removeClass('menu-show');
+  });
+
+});
+</script>
+
+<button id="backToTop" aria-label="Voltar ao topo">↑</button>
 
 
 <button id="backToTop" aria-label="Voltar ao topo">↑</button>
