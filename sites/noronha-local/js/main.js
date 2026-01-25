@@ -206,34 +206,37 @@
       });
     });
 
-    /* GERAL */
     $('.carrossel-geral').each(function () {
-      $(this).owlCarousel({
-        loop: false,
-        dots: false,
-        nav: true,
-        navText: ['', ''],
-        responsive: {
-          0: { items: 1.15, margin: 12 },
-          1000: { items: 4, margin: 20 }
-        }
-      });
-    });
+   $(this).owlCarousel({
+    loop: false,
+    dots: false,
+    nav: true,
+    margin: 12, // espaçamento global
+    navText: ['', ''],
+    responsive: {
+      0: { items: 1.1, stagePadding: 20 }, // mostra 1 card + parte do próximo
+      1000: { items: 4 }
+    }
+  });
+});
 
-    /* INTERESSES */
-    $('.interesses-carousel').each(function () {
-      $(this).owlCarousel({
-        loop: false,
-        dots: false,
-        nav: true,
-        navText: ['', ''],
-        responsive: {
-          0: { items: 1.15, margin: 12 },
-          768: { items: 4, margin: 20, nav: false }
-        }
-      });
-    });
+$('.interesses-carousel').each(function () {
+  $(this).owlCarousel({
+    loop: false,
+    dots: false,
+    nav: true,
+    margin: 12,
+    navText: ['', ''],
+    responsive: {
+      0: { items: 1.1, stagePadding: 20 },
+      1000: { items: 4 }
+    }
+  });
+});
+
   }
+
+
 
   $(window).on('load', initCarousels);
 

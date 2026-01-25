@@ -16456,572 +16456,271 @@ display: none !important;
   color: #777;
 }
 
-/* ===========================
-   INTERESSES – AJUSTE FINO MOBILE
-=========================== */
-@media (max-width: 767px) {
-
- .interesses-carousel .owl-item {
-    padding-right: 10px; /* espaço real entre cards */
-  }
-}
-
- /* Garante que nada saia do limite do container */
+/* INTERESSES CARROSSEL */
 .interesses-carousel {
-  margin: 0 auto !important;
-  width: 100% !important;
-  display: block !important;
-  
-}
-
-/* Força cada item a respeitar a divisão de 4 por linha */
-.interesses-carousel .owl-item {
-    width: 25%; /* Se o JS falhar, o CSS garante o tamanho da sessão boa */
-}
-
-.card-interesses {
-    display: block;
-    width: 100% !important;
-    height: 0 !important; /* Reseta a altura base */
-    padding-top: 100% !important; /* Cria o quadrado perfeito via proporção */
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background-color: #eee;
-}
-
-.card-interesses .img-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Remove qualquer recuo que o Owl Carousel coloque por padrão */
-.interesses-carousel .owl-stage-outer {
-    padding: 0 !important;
-}
-
-.heading-section {
-    width: 100%;
-    margin-bottom: 40px; /* Dá um respiro melhor entre o título e os cards */
-}
-
-.card-interesses .overlay-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); /* Melhora a leitura */
-    z-index: 2;
-}
-
-.card-interesses .overlay-text h3 {
-    color: #fff;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-/* ============================================================
-   SESSÃO GERAL - ESTRUTURA E CARD (ALINHAMENTO 265px)
-   ============================================================ */
-
-/* Container da Imagem - Força o quadrado perfeito 265x265 no Desktop */
-.carrossel-geral .img-container {
-    width: 100% !important;
-    aspect-ratio: 1 / 1 !important; 
-    height: auto !important;
-    border-radius: 12px;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 8px;
-    overflow: hidden;
-}
-
-.carrossel-geral .card-trip-vibe {
-    display: block;
-    width: 100%;
-    background: transparent;
-    text-decoration: none;
-}
-
-/* ============================================================
-   TEXTOS E ESTILIZAÇÃO
-   ============================================================ */
-.carrossel-geral .text-container { padding: 0; }
-.carrossel-geral .kicker-category { font-size: 12px; color: #6b6b6b; }
-
-.carrossel-geral h3 {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.25;
-    margin: 4px 0;
-    color: #111;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Estrelas */
-.carrossel-geral .rating-stars { display: flex; align-items: center; gap: 2px; }
-.carrossel-geral .rating-stars .fa-star { font-size: 12px; color: #0083B8; }
-.carrossel-geral .review-count { font-size: 12px; color: #6b6b6b; margin-left: 4px; }
-
-/* ============================================================
-   NAVEGAÇÃO (SETAS)
-   ============================================================ */
-.carrossel-geral .owl-nav {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.carrossel-geral .owl-nav button {
-  pointer-events: auto;
-}
-
-.carrossel-geral .owl-prev {
-  position: absolute;
-  left: -30px;
-}
-
-.carrossel-geral .owl-next {
-  position: absolute;
-  right: -30px;
-}
-
-
-/* ============================================================
-   RESPONSIVO (MOBILE)
-   ============================================================ */
-@media (max-width: 767px) {
-    .carrossel-geral .card-trip-vibe {
-        /* Se você quer exatamente 265x265 no mobile também: */
-        max-width: 265px !important;
-        margin: 0 auto !important;
-    }
-
-  .carrossel-geral .img-container {
-    width: 265px;
-    height: 265px;
-  }
-}
-
-
-/* ============================================================
-   CARROSSEL GERAL – BASE
-============================================================ */
-.carrossel-geral {
   position: relative;
-  max-width: 1140px; /* mesmo do container desktop */
-  margin-left: auto;
-  margin-right: auto;
 }
 
-
-.carrossel-geral .owl-stage-outer {
-  overflow: hidden;
-}
-
-/* ============================================================
-   ESPAÇO ENTRE CARDS – DESKTOP
-============================================================ */
-@media (min-width: 992px) {
-  .carrossel-geral .owl-item {
-    width: 265px;
-  }
-}
-  
 @media (max-width: 767px) {
-  /* Zera os containers que empurram o carrossel */
-  .ftco-section.bg-light.pt-4 > .container,
-  .carrossel-geral {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
+  .interesses-carousel .owl-nav {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 5;
+    pointer-events: none;
   }
 
-  /* Força o palco a começar no pixel zero */
-  .carrossel-geral .owl-stage {
-    padding-left: 15 !important;
-    justify-content: flex-start !important; 
-    margin-left: 0 !important; 
-    padding-left: 15px !important; /* cria o respiro alinhado com o container */
-  }
-  .carrossel-geral .card-trip-vibe { 
-    
-    margin-left: 0 !important;
-   } 
-
-  /* Define o tamanho fixo e o espaço entre eles */
-  .carrossel-geral .owl-item {
-    margin-right: 10px !important; /* espaçamento entre cards */
-    width: 265px !important;
-    flex: 0 0 265px !important;
-    min-width: 265px !important;
+  .interesses-carousel .owl-nav button.owl-prev,
+  .interesses-carousel .owl-nav button.owl-next {
+    background-color: #00867f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
   }
 
-  /* Mostra o que vaza na direita sem scroll de barra */
-  .carrossel-geral .owl-stage-outer {
-    overflow: visible !important;
-    clip-path: inset(0px -100vw 0px 0px);
+  .interesses-carousel .owl-nav button.owl-prev {
+    left: -10px;
+  }
+
+  .interesses-carousel .owl-nav button.owl-next {
+    right: -10px;
   }
 }
+
+@media (min-width: 768px) {
+  .interesses-carousel .owl-nav {
+    display: none !important;
+  }
+}
+
+
+
 
 /*======================================
-=========INTERESSES CARROSSEL===========
+=========CARROSSEL GERAL================
 ======================================*/
 
 @media (max-width: 767px) {
-  /* Cola o carrossel de interesses na borda esquerda */
-  .interesses-carousel .owl-stage {
-    padding-left: 0 !important;
+  .carrossel-geral .owl-stage {
     margin-left: 0 !important;
-    display: flex !important;
-    transform: translate3d(0, 0, 0) !important;
+    padding-left: 17px !important;
+    padding-right: 8px !important;
+    justify-content: flex-start !important;
   }
 
-  /* AQUI resolve os 255px: trava em 265px e não deixa encolher */
-  .interesses-carousel .owl-item {
-    width: 265px !important;
-    min-width: 265px !important; 
-    flex: 0 0 265px !important;
-    margin-right: 20px !important;
+  .carrossel-geral .owl-item {
+    float: left !important;
+    margin-right: 6px !important;
   }
 
-  /* Garante que a imagem siga o tamanho do card */
-  .interesses-carousel .img-container {
-    width: 265px !important;
-    height: 265px !important;
-  }
-
-  /* Remove o overflow-x:auto que buga o arraste do Owl */
-  .interesses-carousel .owl-stage-outer {
-    overflow: visible !important;
-    clip-path: inset(0px -100vw 0px 0px);
-  }
-}
-
-@media (max-width: 767px) {
-  /* Padroniza tamanho dos cards */
-  .card-interesses,
-  .carrossel-geral .card-trip-vibe {
-    max-width: 265px !important;
-    min-width: 265px !important;
-    margin-left: 0 !important; /* remove centralização */
+  .carrossel-geral .owl-item:last-child {
     margin-right: 0 !important;
   }
 
-  /* Mantém quadrado perfeito nas imagens */
-  .interesses-carousel .img-container,
+  .carrossel-geral .card-trip-vibe {
+    max-width: 265px !important;
+    min-width: 265px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
   .carrossel-geral .img-container {
     aspect-ratio: 1 / 1 !important;
     width: 100% !important;
     height: auto !important;
-  }
-
-  /* Espaçamento entre os cards */
-  .interesses-carousel .owl-item,
-  .carrossel-geral .owl-item {
-    margin-right: 6px !important; /* diminui espaço entre cards */
-  }
-
-  /* Remove espaço extra no último card */
-  .interesses-carousel .owl-item:last-child,
-  .carrossel-geral .owl-item:last-child {
-    margin-right: 0 !important;
-  }
-
-  /* Respiro no fim para não cortar */
-    .carrossel-geral .owl-stage {
-    padding-right: 6px !important;
-    padding-left: 15px !important; /* alinhado com o container */
-    justify-content: flex-start !important;
-  }
-
-  .carrossel-geral .card-trip-vibe,
-  .card-interesses {
-    margin-left: 0 !important; /* remove centralização automática */
-  }
-}
-
-@media (max-width: 767px) {
-  /* Padroniza tamanho dos cards de Interesses para 265x265 */
-  .card-interesses {
-    max-width: 265px !important;
-    min-width: 265px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  .interesses-carousel .img-container {
-    aspect-ratio: 1 / 1 !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  /* Espaçamento entre os cards */
-  .interesses-carousel .owl-item {
-    margin-right: 6px !important; /* diminui espaço entre cards */
-  }
-  .interesses-carousel .owl-item:last-child {
-    margin-right: 0 !important;
-  }
-
-  /* Alinhamento à esquerda */
-  .interesses-carousel .owl-stage {
-    justify-content: flex-start !important;
-    margin-left: 0 !important;
-    padding-left: 0px !important; /* respiro alinhado com o container */
-    padding-right: 10px !important; /* evita corte no último card */
-  }
-}
-
-@media (max-width: 767px) {
-  /* Remove o efeito de hover no mobile */
-  .interesses-carousel .card-interesses img:hover,
-  .interesses-carousel .img-container:hover img {
-    transform: none !important;
-    transition: none !important;
-  }
-
-  /* Dá respiro entre a imagem e o bloco de cima */
-  .interesses-carousel .card-interesses {
-    margin-top: 15px !important;   /* ajusta o valor conforme o layout */
-  }
-
-  /* Garante que a imagem não ultrapasse o container */
-  .interesses-carousel .img-container {
-    overflow: hidden !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .carrossel-geral .owl-stage {
-    margin-left: 0 !important;       /* remove centralização */
-    padding-left: 17px !important;   /* respiro alinhado com o container */
-    padding-right: 8px !important;  /* evita corte no último card */
-  }
-
-  .carrossel-geral .owl-item {             
-    margin-right: 6px !important;    /* controla o espaço entre os cards */
-  }
-
-  .carrossel-geral .owl-item:last-child {
-    margin-right: 0 !important;
   }
 }
 
 /* Desktop mantém o efeito */
 @media (min-width: 768px) {
-  .card-interesses:hover {
+  .card-trip-vibe:hover {
     transform: scale(1.02);
     transition: transform 0.3s ease;
   }
 }
 
-/* Mobile remove o efeito */
+@media (min-width: 768px) {
+  .carrossel-geral .img-container {
+    width: 100%;
+    height: 265px;              /* altura fixa */
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 @media (max-width: 767px) {
-  .card-interesses:hover {
-    transform: none !important;
-    transition: none !important;
+  .carrossel-geral .img-container {
+    width: 100%;
+    height: 265px;              /* quadrado */
+    background-size: cover;
+    background-position: center;
   }
 }
 
-@media (min-width: 768px) {
-  .card-interesses {
-    position: relative;
-    overflow: hidden; /* impede que a imagem ultrapasse o card */
-  }
-
-  .card-interesses:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
-  }
+.interesses-carousel .card-interesses {
+  width: 265px;
+  height: 265px;
+  flex: 0 0 265px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  /* O card segura o overflow da imagem */
-  .card-interesses {
-    position: relative;
+.carrossel-geral .card-trip-vibe {
+  border-radius: 12px;   /* mesmo arredondamento da sessão Interesses */
+  overflow: hidden;      /* garante que a imagem respeite o arredondamento */
+}
+
+.carrossel-geral .img-container {
+  border-radius: 12px;   /* arredonda também a imagem */
+  overflow: hidden;
+}
+
+.card-interesses:hover,
+.card-trip-vibe:hover {
+  transform: none;
+  transition: transform 0.3s ease;
+}
+
+/* INTERESSES */
+.card-interesses .img-bg {
+  transition: opacity 0.4s ease; /* suavidade */
+}
+
+.card-interesses:hover .img-bg {
+  opacity: 0.85; /* esmaece suavemente */
+}
+
+/* GERAL */
+.card-trip-vibe .img-container {
+  transition: opacity 0.4s ease;
+}
+
+.card-trip-vibe:hover .img-container {
+  opacity: 0.85;
+}
+
+.card-interesses .img-bg {
+  transition: opacity 0.4s ease;
+}
+
+.card-interesses:hover .img-bg {
+  opacity: 0.85; /* esmaece suavemente */
+}
+
+.carrossel-geral .card-trip-vibe h3 {
+  font-family: 'Poppins', sans-serif; /* ou Arial/Sans-serif */
+  font-size: 18px;       /* título */
+  font-weight: 700;
+  color: #002b11;        /* verde escuro */
+  margin: 6px 0;
+}
+
+.carrossel-geral .card-trip-vibe .kicker-category {
+  font-size: 14px;       /* subtítulo */
+  font-weight: 600;
+  color: #555;
+}
+
+.carrossel-geral .card-trip-vibe .rating-stars {
+  font-size: 14px;       /* estrelas */
+  color: #0083B8;        /* azul/turquesa */
+}
+
+.carrossel-geral .card-trip-vibe .review-count {
+  font-size: 13px;
+  color: #777;
+}
+
+@media (max-width: 767px) {
+  /* Sessão Interesses */
+  .interesses-carousel .card-interesses {
+    width: 265px;
+    height: 265px;
+    flex: 0 0 265px;
+    margin: 0 6px;          /* espaçamento lateral */
+    border-radius: 12px;
     overflow: hidden;
   }
-}
 
-  /* ===============================
-   EFEITO TRIPADVISOR – HOVER
-   Geral + Interesses (Desktop)
-================================ */
-
-/* Base das imagens */
-.card-trip-vibe .img-container,
-.card-interesses .img-bg {
-  transition: filter 0.35s ease;
-  will-change: filter;
-}
-
-/* Hover apenas no desktop */
-@media (hover: hover) and (min-width: 992px) {
-
-  .card-trip-vibe:hover .img-container,
-  .card-interesses:hover .img-bg {
-    filter: brightness(0.82) contrast(1.05);
+  /* Sessão Geral */
+  .carrossel-geral .card-trip-vibe {
+    width: 265px;
+    flex: 0 0 265px;
+    margin: 0 6px;
+    border-radius: 12px;
+    overflow: hidden;
   }
 
-}
-
-/* Garante que nenhum card anime */
-.card-trip-vibe,
-.card-interesses {
-  transform: none !important;
-}
-
-
-.card-trip-vibe .img-container {
-  height: 265px; /* ou o seu padrão */
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  transition: filter 0.35s ease, opacity 0.35s ease;
-}
-
-@media (hover: hover) and (min-width: 992px) {
-  .card-trip-vibe:hover .img-container {
-    filter: brightness(0.85);
+  .carrossel-geral .img-container {
+    width: 100%;
+    height: 265px;          /* altura fixa da imagem */
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
   }
 }
 
-/* ===============================
-   SETAS CARROSSEL – ESTILO TRIPADVISOR
-================================ */
-
-/* container das setas */
-.owl-nav {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  pointer-events: none; /* não bloqueia swipe */
-}
-
-/* botões */
-.owl-nav button {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #fff !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: auto;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* hover (desktop) */
-@media (hover: hover) {
-  .owl-nav button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+@media (max-width: 767px) {
+  .interesses-carousel .item,
+  .carrossel-geral .item {
+    width: 265px; /* força cada item a ter a mesma largura */
   }
 }
 
-/* ícone */
-.owl-nav button span {
-  font-size: 26px;
-  line-height: 1;
-  color: #000;
+@media (max-width: 767px) {
+  .owl-stage {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-/* posições */
-.owl-nav .owl-prev {
-  margin-left: -12px;
-}
+@media (max-width: 767px) {
+  /* Força alinhamento à esquerda */
+  .interesses-carousel .owl-stage,
+  .carrossel-geral .owl-stage {
+    display: flex;
+    justify-content: flex-start; /* alinha os itens à esquerda */
+  }
 
-.owl-nav .owl-next {
-  margin-right: -12px;
-}
-
-/* desativada */
-.owl-nav button.disabled {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* ===============================
-   SETAS ESTILO TRIPADVISOR
-================================ */
-
-.interesses-carousel,
-.carrossel-geral {
-  position: relative;
-}
-
-/* container das setas */
-.owl-nav {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  pointer-events: none;
-}
-
-/* botão */
-.owl-nav button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #fff !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,.2);
-  pointer-events: auto;
-  border: none;
-  position: relative;
-}
-
-/* seta (desenhada em CSS – igual TripAdvisor) */
-.owl-nav button::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-top: 3px solid #000;
-  border-right: 3px solid #000;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.owl-nav .owl-prev::before {
-  transform: translate(-50%, -50%) rotate(-135deg);
-}
-
-/* esconder quando não ativa */
-.owl-nav button.disabled {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* === INTERESSES – alinhamento correto TripAdvisor === */
-.interesses-carousel {
   
-  margin-right: -15px;
-  padding-left: 3px;
+  /* Remove margem extra no último card */
+  .interesses-carousel .item:last-child,
+  .carrossel-geral .item:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .carrossel-geral .owl-stage,
+  .interesses-carousel .owl-stage {
+    display: flex;
+    justify-content: flex-start !important;
+  }
+
+  .carrossel-geral .owl-item,
+  .interesses-carousel .owl-item {
+    margin-right: -18px !important; /* espaçamento uniforme */
+  }
+}
+
+@media (max-width: 767px) {
+  .carrossel-geral .owl-item,
+  .interesses-carousel .owl-item {
+    width: 265px !important;   /* largura fixa */
+    margin-right: 5px !important; /* espaçamento uniforme */
+  }
 }
 
 
