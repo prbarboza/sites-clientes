@@ -1,8 +1,9 @@
 (function ($) {
+
   "use strict";
 
   /* ===========================
-     AOS
+     AOS (seguro)
   ============================ */
   if (typeof AOS !== 'undefined') {
     AOS.init({
@@ -28,18 +29,19 @@
   fullHeight();
 
   /* ===========================
-     LOADER
+     LOADER (CRÍTICO)
   ============================ */
-  $(window).on('load', function () {
+  function removeLoader() {
     if ($('#ftco-loader').length > 0) {
       $('#ftco-loader').removeClass('show').fadeOut('slow', function () {
         $(this).remove();
       });
     }
-  });
+  }
+  $(window).on('load', removeLoader);
 
   /* ===========================
-     STELLAR
+     STELLAR (seguro)
   ============================ */
   if ($.fn.stellar) {
     $(window).stellar({
@@ -50,27 +52,29 @@
   }
 
   /* ===========================
-     SCROLLAX
+     SCROLLAX (seguro)
   ============================ */
   if ($.Scrollax) {
     $.Scrollax();
   }
 
   /* ===========================
-     OWL CAROUSELS (CENTRALIZADO)
+     CAROUSELS (OWL)
   ============================ */
   function initCarousels() {
-    if (!$.fn.owlCarousel) return;
 
-    /* Destination */
-    $('.destination-slider').each(function () {
-      $(this).owlCarousel({
+    if ($.fn.owlCarousel) {
+
+      $('.destination-slider').owlCarousel({
         autoplay: true,
         loop: true,
         margin: 20,
         nav: true,
         dots: true,
         smartSpeed: 600,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
         navText: [
           '<span class="ion-ios-arrow-back"></span>',
           '<span class="ion-ios-arrow-forward"></span>'
@@ -82,197 +86,231 @@
           1200: { items: 4 }
         }
       });
-    });
 
-    /* Testimony */
-    $('.carousel-testimony').each(function () {
-      $(this).owlCarousel({
+      $('.carousel-testimony').owlCarousel({
         autoplay: true,
         loop: true,
         items: 1,
         nav: true,
+        mouseDrag: true,
+        touchDrag: true,
+        pullDrag: true,
         navText: [
-          '<span class="ion-ios-arrow-back"></span>',
-          '<span class="ion-ios-arrow-forward"></span>'
+          '<span class="ion-ios-arrow-back">',
+          '<span class="ion-ios-arrow-forward">'
         ]
       });
-    });
 
-    /* Single */
-    $('.single-slider').each(function () {
-      $(this).owlCarousel({
+      $('.single-slider').owlCarousel({
         autoplay: true,
         loop: true,
         items: 1,
         nav: true,
         dots: true
       });
-    });
 
-    /* Boat */
-    $('.boat-slider').each(function () {
-      const $slider = $(this);
-      const total = $slider.find('.boat-card').length;
-
-      $slider.owlCarousel({
+      var boatSlider = $('.boat-slider').owlCarousel({
         items: 1,
         loop: false,
         autoplay: false,
         dots: false,
         nav: false,
-        smartSpeed: 500
+        smartSpeed: 500,
+        mouseDrag: true,
+        touchDrag: true
       });
 
-      function updateCounter(index) {
+      var totalBoats = $('.boat-slider .boat-card').length;
+
+      function updateBoatCounter(index) {
+        var current = index + 1;
         $('#boat-counter, #boat-counter-bottom')
-          .text('Barco ' + (index + 1) + ' de ' + total);
+          .text('Barco ' + current + ' de ' + totalBoats);
       }
 
-      $slider.on('initialized.owl.carousel changed.owl.carousel', function (e) {
-        updateCounter(e.item.index);
+      boatSlider.on('initialized.owl.carousel changed.owl.carousel', function (e) {
+        updateBoatCounter(e.item.index);
       });
 
       $('.boat-prev').on('click', function () {
-        $slider.trigger('prev.owl.carousel');
+        boatSlider.trigger('prev.owl.carousel');
       });
 
       $('.boat-next').on('click', function () {
-        $slider.trigger('next.owl.carousel');
+        boatSlider.trigger('next.owl.carousel');
       });
-    });
 
-    /* Premium */
-    $('.carrossel-premium__owl').each(function () {
-      $(this).owlCarousel({
-        loop: true,
-        margin: 20,
-        nav: true,
-        dots: false,
-        responsive: {
-          0: { items: 1 },
-          768: { items: 2 },
-          1200: { items: 3 }
+    }
+
+ $('.carrossel-premium__owl').owlCarousel({
+  autoplay: false,
+  loop: true,
+  margin: 20,
+  nav: true,      // ⬅️ obrigatório
+  dots: false,
+  mouseDrag: true,
+  touchDrag: true,
+  pullDrag: true,
+  responsive: {
+    0: { items: 1 },
+    768: { items: 2 },
+    1200: { items: 3 }
+  }
+});
+
+// Fecha o menu mobile ao clicar fora
+document.addEventListener('click', function (event) {
+  const navbar = document.querySelector('.navbar-collapse');
+  const toggler = document.querySelector('.navbar-toggler');
+
+  if (!navbar || !toggler) return;
+
+  const isOpen = navbar.classList.contains('show');
+
+  if (isOpen && !navbar.contains(event.target) && !toggler.contains(event.target)) {
+    toggler.click();
+  }
+});
+
+  }
+
+    initCarousels();
+
+ /* ===========================
+   ONE PAGE SCROLL (âncoras) – SIMPLES
+=========================== */
+$("#ftco-nav a[href^='#']").on('click', function (e) {
+  var target = $(this.hash);
+
+  if (target.length) {
+    e.preventDefault();
+
+    $('html, body').animate({
+      scrollTop: target.offset().top
+    }, 700);
+  }
+});
+
+/* ===========================
+   BOTÃO VOLTAR AO TOPO
+=========================== */
+$(window).on('scroll', function () {
+  if ($(this).scrollTop() > 300) {
+    $('#backToTop').fadeIn();
+  } else {
+    $('#backToTop').fadeOut();
+  }
+});
+
+$('#backToTop').on('click', function () {
+  $('html, body').animate({ scrollTop: 0 }, 600);
+});
+  
+
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 300) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+
+  btn.addEventListener('click', function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Corrige menu mobile: fecha ao clicar fora
+$(document).on('click', function (e) {
+  const menu = $('#ftco-nav');
+  const toggle = $('.navbar-toggler');
+
+  if (
+    menu.hasClass('show') &&
+    !$(e.target).closest('#ftco-nav, .navbar-toggler').length
+  ) {
+    toggle.trigger('click');
+  }
+});
+
+/* ===========================
+    TRILHAS – CARROSSEL + DETALHES
+=========================== */
+$('.trilhas-carousel').owlCarousel({
+    loop: true,
+    nav: true,
+    dots: true,
+    // Removi a margin daqui para não dar conflito global
+    responsive: {
+        0: { 
+            items: 1.15,           // Um card inteiro
+            margin: 10,          // Espaço pequeno entre eles
+            stagePadding: 0,   // A espiada lateral (ajuste conforme o seu gosto)
+            nav: false          // Esconde setas no mobile para não cobrir o card
+        },
+        992: { 
+            items: 4,           // Seus 4 cards perfeitos
+            margin: 30,         // Espaçamento elegante no desktop
+            stagePadding: 0     // IMPORTANTE: Zero no desktop para não cortar os cards das pontas
         }
-      });
-    });
+    }
+});
 
-    /* Trilhas / Mergulho */
-    $('.trilhas-carousel, .mergulho-carousel').each(function () {
-      $(this).owlCarousel({
-        loop: false,
-        nav: true,
-        dots: true,
-        responsive: {
-          0: {
+$(document).on('click', '.trilha-toggle', function () {
+  $(this).next('.trilha-details').slideToggle();
+});
+
+// Ativa tanto o carrossel de Trilhas quanto o de Mergulho com a mesma configuração
+$('.trilhas-carousel, .mergulho-carousel').owlCarousel({
+    loop: false,
+    nav: true,
+    dots: true,
+    responsive: {
+        0: { 
             items: 1.15,
             margin: 20,
+            stagePadding: 0,
             nav: false
-          },
-          992: {
+        },
+        992: { 
             items: 4,
-            margin: 20
-          }
+            margin: 20,
+            stagePadding: 0
         }
-      });
-    });
-
-    /* Barcos */
-    $('.barcos-carousel').each(function () {
-      $(this).owlCarousel({
-        loop: true,
-        margin: 15,
-        nav: false,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 4000,
-        responsive: {
-          0: { items: 1.3, stagePadding: 20 },
-          768: { items: 2.3 },
-          1000: { items: 4 }
-        }
-      });
-    });
-
-    /* CTA */
-    $('.cta-slider').each(function () {
-      $(this).owlCarousel({
-        autoplay: true,
-        autoplayTimeout: 5000,
-        loop: true,
-        items: 1,
-        dots: true,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn'
-      });
-    });
-
-    $('.carrossel-geral').owlCarousel({
-  loop: false,
-  dots: false,
-  nav: true,
-  margin: 12,
-  navText: ['‹','›'], // ← agora tem conteúdo
-  responsive: {
-    0: { items: 1, stagePadding: 0 },
-    1000: { items: 4 }
-  }
+    }
 });
 
-$('.interesses-carousel').owlCarousel({
-  loop: false,
-  dots: false,
-  nav: true,
-  margin: 12,
-  navText: ['‹','›'], // idem
+/* ===========================
+    BARCOS – CARROSSEL (10 ITENS)
+=========================== */
+$('.barcos-carousel').owlCarousel({
+  loop: true,
+  margin: 15,
+  nav: false,
+  dots: true, // Para 10 itens, os pontinhos ajudam a saber que tem muita opção
+  autoplay: true,
+  autoplayTimeout: 4000,
   responsive: {
-    0: { items: 1, stagePadding: 0 },
-    1000: { items: 4 }
+    0: { 
+      items: 1.3, // Um pouco mais de "espiada"
+      stagePadding: 20
+    },
+    768: {
+      items: 2.3
+    },
+    1000: {
+      items: 4 // No desktop, como são 10, podemos mostrar 4 por vez
+    }
   }
 });
-
-
-  }
-
-
-
-  $(window).on('load', initCarousels);
-
-  /* ===========================
-     ONE PAGE SCROLL
-  ============================ */
-  $("#ftco-nav a[href^='#']").on('click', function (e) {
-    const target = $(this.hash);
-    if (target.length) {
-      e.preventDefault();
-      $('html, body').animate({ scrollTop: target.offset().top }, 700);
-    }
-  });
-
-  /* ===========================
-     BACK TO TOP
-  ============================ */
-  const $backTop = $('#backToTop');
-  $(window).on('scroll', function () {
-    $backTop.toggle($(this).scrollTop() > 300);
-  });
-
-  $backTop.on('click', function () {
-    $('html, body').animate({ scrollTop: 0 }, 600);
-  });
-
-  /* ===========================
-     FECHA MENU MOBILE AO CLICAR FORA
-  ============================ */
-  $(document).on('click', function (e) {
-    const menu = $('#ftco-nav');
-    const toggle = $('.navbar-toggler');
-
-    if (
-      menu.hasClass('show') &&
-      !$(e.target).closest('#ftco-nav, .navbar-toggler').length
-    ) {
-      toggle.trigger('click');
-    }
-  });
 
 })(jQuery);
+
+
