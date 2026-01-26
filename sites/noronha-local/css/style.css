@@ -16251,7 +16251,7 @@ display: none !important;
 .ta-hero-box {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  background: #0083B8;
+  background: #0083B8 !important;
   border-radius: 12px;
   overflow: hidden;
   min-height: 420px;
