@@ -16616,7 +16616,7 @@ display: none !important;
 
 .service-eyebrow {
   display: inline-block;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -17031,11 +17031,11 @@ html, body {
 
 /* posições */
 .mp-left {
-  left: 8px;
+  left: 2px;
 }
 
 .mp-right {
-  right: 8px;
+  right: 2px;
 }
 
 /* ===============================
@@ -17049,19 +17049,61 @@ html, body {
 }
 
 @media (max-width: 767px) {
-
   .mobile-passeios-nav {
-    margin-left: -15px;
-    margin-right: -15px;
-    padding-left: 44px;
-    padding-right: 44px;
+    position: relative;
+    width: 100%;
+
+    /* volta a respeitar o container */
+    margin-left: 0;
+    margin-right: 0;
+
+    /* padding igual ao conteúdo */
+    padding-left: 15px;
+    padding-right: 15px;
+
+    overflow: hidden;
   }
 }
 
 @media (max-width: 767px) {
 
   .mobile-passeios-track {
-    padding-left: 4px;   /* 🔑 empurra o primeiro card pra dentro */
+    padding-left: 10px !important;   /* 🔑 empurra o primeiro card pra dentro */
     padding-right: 4px;  /* mantém simetria */
   }
 }
+
+.mobile-passeios-track {
+  scroll-padding-left: 30px;
+  scroll-padding-right: 4px;
+}
+
+.mobile-passeios-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-passeios-track {
+  max-width: 100%;
+}
+
+.mobile-passeios-track {
+  padding-left: calc((100% - ((100% - 24px) / 3 * 3 + 24px)) / 2);
+}
+
+@media (max-width: 767px) {
+  .mobile-passeio-card {
+    margin: 0;
+  }
+}
+
+.mobile-passeio-card {
+  flex: 0 0 calc((100% - 24px) / 3);
+}
+
+@media (max-width: 767px) {
+  .service-body {
+    padding-top: 24px; /* 👈 DESCE TUDO que vem depois */
+  }
+}
+
