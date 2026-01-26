@@ -16329,6 +16329,13 @@ display: none !important;
     text-align: center !important;
   }
 
+  .ta-hero-content p {
+    font-size: 16px;   /* mobile */
+    text-align: center;
+    margin-top: 24px;     /* DESCE o texto */
+    margin-bottom: 28px;
+  }
+
   .ta-hero-content h1 {
     font-size: 36px;
     text-align: center !important;
@@ -16337,6 +16344,14 @@ display: none !important;
   .ta-image-card {
   border-radius: 12px;
 }
+
+.ta-image-card {
+  border-radius: 12px;
+}
+
+ .ta-hero-btn {
+    margin-top: 20px !important; /* sobe o botão */
+  }
 }
 
 /* REMOVE QUALQUER HOVER DO HERO */
@@ -16367,23 +16382,6 @@ display: none !important;
 .ta-hero-btn {
   display: inline-block;
   margin-top: 70px; /* desktop */
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .ta-hero-btn {
-    margin-top: 20px !important; /* sobe o botão */
-  }
-}
-
-  .ta-hero-content p {
-    font-size: 16px;   /* mobile */
-    text-align: center;
-    margin-top: 24px;     /* DESCE o texto */
-    margin-bottom: 28px;
-  }
-  .ta-image-card {
-  border-radius: 12px;
 }
 
 /* ==============================
