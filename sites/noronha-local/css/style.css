@@ -16384,7 +16384,7 @@ display: none !important;
 ============================== */
 
 .service-page h1 {
-  font-size: 36px;
+  font-size: 32px;
   margin-bottom: 8px;
 }
 
@@ -16436,7 +16436,7 @@ display: none !important;
 }
 
 .service-content h3 {
-  margin-top: 32px;
+  margin-top: 30px;
 }
 
 /* SIDEBAR */
@@ -16487,13 +16487,14 @@ display: none !important;
   }
 }
 
-/* ===== GALERIA ESTILO TRIPADVISOR ===== */
+/* =====BANNER PASSEIOS GALERIA ESTILO TRIPADVISOR ===== */
 
 .ta-gallery {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 8px;
   margin-top: 24px;
+  
 }
 
 .ta-gallery img {
@@ -16520,14 +16521,23 @@ display: none !important;
 @media (max-width: 768px) {
   .ta-gallery {
     grid-template-columns: 1fr;
+    height: 160px;   /* antes estava alto demais */
+    margin-bottom: 16px;
   }
-
+  
   .ta-gallery-side {
     display: none;
   }
 
   .ta-gallery-main {
     height: 260px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ta-gallery img {
+    object-fit: cover;
+    object-position: center top;
   }
 }
 
@@ -16589,6 +16599,7 @@ display: none !important;
     display: none;
   }
 }
+
 
 /* ==================================================
    DESCRIÇÃO DO PASSEIO – MODELO TRIPADVISOR
@@ -16776,11 +16787,16 @@ display: none !important;
   /* CAIXA DO MENU MOBILE */
   .navbar-collapse {
     background: #fff;
-    margin: 16px;
+    margin: 0;
     border-radius: 16px;
-    padding: 16px 0;
-
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    padding: 0;
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);       
+    transition: transform .25s ease, opacity .2s ease;
   }
 
   /* ITENS DO MENU */
@@ -16803,6 +16819,53 @@ display: none !important;
   .navbar-nav .dropdown-menu a {
     padding: 10px 16px;
     font-weight: 500;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-eyebrow {
+    display: block;
+    margin-bottom: 8px !important;
+  }
+
+  #visao-geral h2 {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  #visao-geral {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-page > section.container:first-of-type {
+    margin-bottom: 40px;
+    padding-bottom: 80px;
+  }
+}
+
+.ta-gallery-main img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* estado normal: levemente escurecida */
+  filter: brightness(0.9);
+  transition: filter 0.10s ease;
+}
+
+@media (min-width: 992px) {
+  .ta-gallery-main:hover img {
+    filter: brightness(1);
+  }
+}
+
+@media (max-width: 767px) {
+  .ta-gallery-main img {
+    filter: none;
   }
 }
 

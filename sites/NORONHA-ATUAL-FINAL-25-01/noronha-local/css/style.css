@@ -14418,24 +14418,19 @@ ou, em último caso:
   margin-left: 6px;
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE – DROPDOWN IGUAL DESKTOP ===== */
 @media (max-width: 991px) {
 
-  .nav-item .dropdown-menu {
-    position: static;
+  
+
+  .nav-item.dropdown.show > .dropdown-menu {
     opacity: 1;
     visibility: visible;
-    transform: none;
-    box-shadow: none;
-    background: transparent;
-    padding-left: 15px;
-  }
-
-  .dropdown-toggle::after {
-    display: none;
+    transform: translateY(0);
   }
 
 }
+
 
 /* =========================
    HERO / BANNER – PADRÃO
@@ -16314,7 +16309,7 @@ display: none !important;
 
 /* mobile */
 @media (max-width: 768px) {
-  
+
   .ta-hero-box {
     grid-template-columns: 1fr;
     border-radius: 12px;
@@ -16327,6 +16322,10 @@ display: none !important;
   .ta-hero-content {
     padding: 32px;
     text-align: center !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
   }
 
   .ta-hero-content h1 {
@@ -16334,10 +16333,21 @@ display: none !important;
     text-align: center !important;
   }
 
+  .ta-hero-content p {
+    font-size: 16px;
+    margin-top: 24px;
+    margin-bottom: 28px;
+  }
+
+  .ta-hero-btn {
+    margin-top: -10px !important;
+  }
+
   .ta-image-card {
-  border-radius: 12px;
+    border-radius: 12px;
+  }
 }
-}
+
 
 /* REMOVE QUALQUER HOVER DO HERO */
 .ta-hero-images img,
@@ -16369,29 +16379,12 @@ display: none !important;
   margin-top: 70px; /* desktop */
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .ta-hero-btn {
-    margin-top: 20px !important; /* sobe o botão */
-  }
-}
-
-  .ta-hero-content p {
-    font-size: 16px;   /* mobile */
-    text-align: center;
-    margin-top: 24px;     /* DESCE o texto */
-    margin-bottom: 28px;
-  }
-  .ta-image-card {
-  border-radius: 12px;
-}
-
 /* ==============================
    SERVICE PAGE – TRIPADVISOR STYLE
 ============================== */
 
 .service-page h1 {
-  font-size: 36px;
+  font-size: 32px;
   margin-bottom: 8px;
 }
 
@@ -16443,7 +16436,7 @@ display: none !important;
 }
 
 .service-content h3 {
-  margin-top: 32px;
+  margin-top: 30px;
 }
 
 /* SIDEBAR */
@@ -16474,10 +16467,7 @@ display: none !important;
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .ta-hero-box {
-    grid-template-columns: 1fr;
-  }
-
+ 
   .service-grid {
     grid-template-columns: 1fr;
   }
@@ -16485,15 +16475,6 @@ display: none !important;
   .service-sidebar {
     position: static;
   }
-}
-
-.ta-hero-images {
-  position: relative;
-  min-height: 380px; /* garante altura real */
-}
-
-.ta-hero-box {
-  min-height: 380px;
 }
 
 .service-page {
@@ -16506,7 +16487,7 @@ display: none !important;
   }
 }
 
-/* ===== GALERIA ESTILO TRIPADVISOR ===== */
+/* =====BANNER PASSEIOS GALERIA ESTILO TRIPADVISOR ===== */
 
 .ta-gallery {
   display: grid;
@@ -16539,7 +16520,10 @@ display: none !important;
 @media (max-width: 768px) {
   .ta-gallery {
     grid-template-columns: 1fr;
+    height: 160px;   /* antes estava alto demais */
+    margin-bottom: 16px;
   }
+  
 
   .ta-gallery-side {
     display: none;
@@ -16547,6 +16531,13 @@ display: none !important;
 
   .ta-gallery-main {
     height: 260px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ta-gallery img {
+    object-fit: cover;
+    object-position: center top;
   }
 }
 
@@ -16608,6 +16599,7 @@ display: none !important;
     display: none;
   }
 }
+
 
 /* ==================================================
    DESCRIÇÃO DO PASSEIO – MODELO TRIPADVISOR
@@ -16713,4 +16705,143 @@ display: none !important;
   font-size: 15px;
   line-height: 1.4;
   color: #666;
+}
+
+/* ===============================
+   HERO HOME – MOBILE (FINAL)
+================================ */
+@media (max-width: 768px) {
+
+  .ta-hero-box {
+    grid-template-columns: 1fr;
+  }
+
+  .ta-hero-images {
+    height: 200px;              /* 🔥 altura retangular */
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .ta-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 32px 20px; /* 🔥 ISSO impede colar nas laterais */
+  }
+
+  .ta-hero-content h1,
+  .ta-hero-content p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ta-hero-btn {
+    margin-top: -5px !important;
+  }
+
+ .ta-hero-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* corta sem distorcer */
+    object-position: center;    /* foco no centro */
+  }
+
+}
+
+/* ===============================
+   HERO HOME – IMAGEM MOBILE (FINAL)
+================================ */
+@media (max-width: 768px) {
+
+  /* trava o grid */
+  .ta-hero-box {
+    grid-template-rows: auto auto; /* imagem + conteúdo */
+  }
+
+  /* CAIXA DA IMAGEM (ALTURA REAL) */
+  .ta-hero-images {
+    height: 200px !important;   /* 🔥 altura real */
+    min-height: 200px !important;
+    max-height: 200px !important;
+    overflow: hidden;
+  }
+
+  /* IMAGEM DENTRO DA CAIXA */
+  .ta-hero-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+}
+
+/* ===== MOBILE MENU ESTILO DESKTOP ===== */
+@media (max-width: 991px) {
+
+  /* CAIXA DO MENU MOBILE */
+  .navbar-collapse {
+    background: #fff;
+    margin: 0;
+    border-radius: 16px;
+    padding: 0;
+    position: absolute !important;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);       
+    transition: transform .25s ease, opacity .2s ease;
+  }
+
+  /* ITENS DO MENU */
+  .navbar-nav .nav-link {
+    color: #222 !important;
+    padding: 12px 20px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  /* DROPDOWN DENTRO DO MENU */
+  .navbar-nav .dropdown-menu {
+    background: #f9f9f9;
+    border-radius: 12px;
+    margin: 8px 16px;
+    padding: 8px 0;
+    box-shadow: none;
+  }
+
+  .navbar-nav .dropdown-menu a {
+    padding: 10px 16px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-eyebrow {
+    display: block;
+    margin-bottom: 8px !important;
+  }
+
+  #visao-geral h2 {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  #visao-geral {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-page > section.container:first-of-type {
+    margin-bottom: 40px;
+    padding-bottom: 80px;
+  }
 }
