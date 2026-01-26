@@ -16252,7 +16252,7 @@ display: none !important;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   background: #0083B8;
-  border-radius: 18px;
+  border-radius: 12px;
   overflow: hidden;
   min-height: 420px;
 }
@@ -16314,8 +16314,10 @@ display: none !important;
 
 /* mobile */
 @media (max-width: 768px) {
+  
   .ta-hero-box {
     grid-template-columns: 1fr;
+    border-radius: 12px;
   }
 
   .ta-hero-images {
@@ -16330,6 +16332,10 @@ display: none !important;
     font-size: 36px;
     text-align: center;
   }
+
+  .ta-image-card {
+  border-radius: 12px;
+}
 }
 
 /* REMOVE QUALQUER HOVER DO HERO */
@@ -16365,31 +16371,309 @@ display: none !important;
 /* MOBILE */
 @media (max-width: 768px) {
   .ta-hero-btn {
-    margin-top: 10px !important; /* sobe o botão */
+    margin-top: 20px !important; /* sobe o botão */
   }
 }
 
-/* mobile */
+  .ta-hero-content p {
+    font-size: 16px;   /* mobile */
+    text-align: center;
+    margin-top: 24px;     /* DESCE o texto */
+    margin-bottom: 28px;
+  }
+  .ta-image-card {
+  border-radius: 12px;
+}
+
+/* ==============================
+   SERVICE PAGE – TRIPADVISOR STYLE
+============================== */
+
+.service-page h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.service-subtitle {
+  margin-bottom: 24px;
+  color: #555;
+}
+
+/* HERO */
+.ta-hero-box {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: #00aa6c;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 380px;
+}
+
+.ta-hero-images {
+  position: relative;
+  min-height: 380px;   /* desktop */
+}
+
+.ta-hero-images img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+
+.ta-hero-images img.active {
+  opacity: 1;
+}
+
+.ta-hero-content {
+  padding: 40px;
+  color: #fff;
+}
+
+/* GRID */
+.service-grid {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.service-content h3 {
+  margin-top: 32px;
+}
+
+/* SIDEBAR */
+.service-sidebar {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+}
+
+.sidebar-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  margin-bottom: 24px;
+}
+
+.sidebar-btn {
+  display: block;
+  text-align: center;
+  background: #25D366;
+  color: #fff;
+  padding: 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
   .ta-hero-box {
     grid-template-columns: 1fr;
   }
 
-  .ta-hero-images {
-    height: 260px;
+  .service-grid {
+    grid-template-columns: 1fr;
   }
 
-  .ta-hero-content {
-    padding: 32px;
-  }
-
-  .ta-hero-content h1 {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  .ta-hero-content p {
-    font-size: 16px;   /* mobile */
-    text-align: center;
+  .service-sidebar {
+    position: static;
   }
 }
+
+.ta-hero-images {
+  position: relative;
+  min-height: 380px; /* garante altura real */
+}
+
+.ta-hero-box {
+  min-height: 380px;
+}
+
+.service-page {
+  padding-top: 140px; /* altura da navbar */
+}
+
+@media (max-width: 768px) {
+  .service-page {
+    padding-top: 140px;
+  }
+}
+
+/* ===== GALERIA ESTILO TRIPADVISOR ===== */
+
+.ta-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.ta-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.ta-gallery-main {
+  height: 420px;
+}
+
+.ta-gallery-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+}
+
+.ta-gallery-side img {
+  height: 206px;
+}
+
+@media (max-width: 768px) {
+  .ta-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .ta-gallery-side {
+    display: none;
+  }
+
+  .ta-gallery-main {
+    height: 260px;
+  }
+}
+
+/*========================
+=====SIDEBAR MENU========*/
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.service-sidebar {
+  position: sticky;
+  top: 120px;
+}
+
+/* MENU LATERAL */
+.service-menu {
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.service-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.service-menu a {
+  display: block;
+  padding: 12px 24px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+.service-menu a:hover {
+  background: #f5f7f9;
+}
+
+.service-menu a.active {
+  color: #0083b8;
+  border-left-color: #0083b8;
+  background: #f0f8fc;
+}
+
+/* MOBILE */
+@media (max-width: 991px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-sidebar {
+    display: none;
+  }
+}
+
+/* ==================================================
+   DESCRIÇÃO DO PASSEIO – MODELO TRIPADVISOR
+   ================================================== */
+
+.service-section {
+  margin-bottom: 48px;
+}
+
+.service-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #0083b8;
+  margin-bottom: 8px;
+}
+
+.service-section h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.service-section h3 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: #0083b8;
+}
+
+.service-intro {
+  max-width: 650px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+}
+
+.service-list li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.service-list .icon {
+  font-size: 18px;
+}
+
+.service-warning {
+  background: #fff4e5;
+  padding: 24px;
+  border-radius: 10px;
+}
+
+.service-alerts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-alerts li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
