@@ -16678,3 +16678,39 @@ display: none !important;
   color: #555;
 }
 
+/* ===============================
+   ROTEIRO – DESCRIÇÃO DO PASSEIO
+================================ */
+
+.roteiro-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.roteiro-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.roteiro-icon {
+  font-size: 22px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.roteiro-text strong {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.roteiro-text p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #666;
+}
