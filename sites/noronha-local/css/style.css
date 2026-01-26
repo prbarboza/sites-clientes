@@ -16333,7 +16333,7 @@ display: none !important;
 
   .ta-hero-content h1,
   .ta-hero-content p {
-    max-width: 280px;   /* 🔥 ESSENCIAL */
+    max-width: 260px;   /* 🔥 ESSENCIAL */
     margin-left: auto;
     margin-right: auto;
   }
