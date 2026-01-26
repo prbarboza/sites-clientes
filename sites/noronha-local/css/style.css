@@ -16711,7 +16711,9 @@ display: none !important;
   }
 
   .ta-hero-images {
-    height: 260px;
+    height: 200px;              /* 🔥 altura retangular */
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
   }
 
   .ta-hero-content {
@@ -16734,6 +16736,41 @@ display: none !important;
 
   .ta-hero-btn {
     margin-top: -5px !important;
+  }
+
+ .ta-hero-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* corta sem distorcer */
+    object-position: center;    /* foco no centro */
+  }
+
+}
+
+/* ===============================
+   HERO HOME – IMAGEM MOBILE (FINAL)
+================================ */
+@media (max-width: 768px) {
+
+  /* trava o grid */
+  .ta-hero-box {
+    grid-template-rows: auto auto; /* imagem + conteúdo */
+  }
+
+  /* CAIXA DA IMAGEM (ALTURA REAL) */
+  .ta-hero-images {
+    height: 200px !important;   /* 🔥 altura real */
+    min-height: 200px !important;
+    max-height: 200px !important;
+    overflow: hidden;
+  }
+
+  /* IMAGEM DENTRO DA CAIXA */
+  .ta-hero-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
 }
