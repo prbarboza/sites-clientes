@@ -139,6 +139,53 @@
     <!-- COLUNA PRINCIPAL -->
     <div class="service-main">
 
+    <!-- MINI NAVEGAÇÃO DE PASSEIOS (MOBILE) -->
+<div class="mobile-passeios-nav">
+
+  <!-- SETA ESQUERDA -->
+  <button class="mp-arrow mp-left" type="button" aria-label="Anterior">
+    &#8249;
+  </button>
+
+  <!-- TRACK -->
+  <div class="mobile-passeios-track">
+
+    <a href="baia-do-sancho.html" class="mobile-passeio-card active">
+      <img src="images/home/sancho-carrossel1.jpg" alt="Baía do Sancho">
+      <span>Sancho</span>
+    </a>
+
+    <a href="trilha-tour.html" class="mobile-passeio-card">
+      <img src="images/home/trilha-carrossel1.jpg" alt="Trilha Tour">
+      <span>Trilha</span>
+    </a>
+
+    <a href="mergulho.html" class="mobile-passeio-card">
+      <img src="images/home/mergulho-diurno-carrossel1.jpg" alt="Mergulho">
+      <span>Mergulho</span>
+    </a>
+
+    <a href="entardecer-vip.html" class="mobile-passeio-card">
+      <img src="images/passeios/entardecer-vip-1.jpg" alt="Entardecer VIP">
+      <span>Entardecer</span>
+    </a>
+
+    <a href="plana-sub.html" class="mobile-passeio-card">
+      <img src="images/home/plana-sub-carrossel1.jpg" alt="Plana Sub">
+      <span>Plana Sub</span>
+    </a>
+
+  </div>
+
+  <!-- SETA DIREITA -->
+  <button class="mp-arrow mp-right" type="button" aria-label="Próximo">
+    &#8250;
+  </button>
+
+</div>
+
+
+
       <!-- VISÃO GERAL -->
 <section id="visao-geral" class="service-section">
   <span class="service-eyebrow">Experiência em Fernando de Noronha</span>
@@ -364,6 +411,21 @@
       document.getElementById(btn.dataset.tab).classList.add('active');
     });
   });
+</script>
+
+<script>
+document.querySelectorAll('.mp-arrow').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const track = btn.parentElement.querySelector('.mobile-passeios-track');
+    const card = track.querySelector('.mobile-passeio-card');
+    const scroll = card.offsetWidth + 12;
+
+    track.scrollBy({
+      left: btn.classList.contains('mp-right') ? scroll : -scroll,
+      behavior: 'smooth'
+    });
+  });
+});
 </script>
 
 

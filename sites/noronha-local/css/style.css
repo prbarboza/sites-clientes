@@ -16920,3 +16920,148 @@ display: none !important;
     max-width: 1350px;
   }
 }
+
+/* ===============================
+   MINI NAVEGAÇÃO PASSEIOS (MOBILE)
+================================ */
+
+/* trava overflow lateral global */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* wrapper geral */
+.mobile-passeios-nav {
+  position: relative;
+  width: 100%;
+  margin: 20px 0 28px;
+  padding: 0 44px; /* espaço real das setas */
+  overflow: hidden;
+}
+
+/* trilho horizontal */
+.mobile-passeios-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* esconde scrollbar */
+.mobile-passeios-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===============================
+   CARDS
+   3 visíveis no mobile
+================================ */
+
+.mobile-passeio-card {
+  flex: 0 0 calc((100% - 24px) / 3);
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+}
+
+/* imagem quadrada */
+.mobile-passeio-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+/* texto */
+.mobile-passeio-card span {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* ativo */
+.mobile-passeio-card.active img {
+  outline: 2px solid #0083B8;
+  outline-offset: 2px;
+}
+
+/* ===============================
+   SETAS (BOTÃO LIMPO E CORRETO)
+================================ */
+
+.mp-arrow {
+  all: unset; /* 🔥 remove foco, outline, bootstrap, browser */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  background: #f1f1f1; /* cinza claro */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* ícone da seta */
+.mp-arrow i {
+  font-size: 20px !important; /* seta maior */
+  color: #000;     /* seta preta */
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* feedback ao clicar (sem deformar) */
+.mp-arrow:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+/* posições */
+.mp-left {
+  left: 8px;
+}
+
+.mp-right {
+  right: 8px;
+}
+
+/* ===============================
+   DESKTOP
+================================ */
+
+@media (min-width: 992px) {
+  .mobile-passeios-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .mobile-passeios-nav {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .mobile-passeios-track {
+    padding-left: 4px;   /* 🔑 empurra o primeiro card pra dentro */
+    padding-right: 4px;  /* mantém simetria */
+  }
+}
