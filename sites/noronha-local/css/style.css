@@ -16846,26 +16846,17 @@ display: none !important;
   }
 }
 
-.ta-gallery-main img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  /* estado normal: levemente escurecida */
-  filter: brightness(0.9);
-  transition: filter 0.10s ease;
+.ta-gallery-main img,
+.ta-gallery-side img {
+  filter: brightness(0.92);
+  transition: filter 0.35s ease;
 }
 
 @media (min-width: 992px) {
-  .ta-gallery-main:hover img {
+  .ta-gallery-main:hover img,
+  .ta-gallery-side:hover img {
     filter: brightness(1);
   }
 }
 
-@media (max-width: 767px) {
-  .ta-gallery-main img {
-    filter: none;
-  }
-}
 
