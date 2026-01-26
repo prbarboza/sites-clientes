@@ -16713,19 +16713,34 @@ display: none !important;
   color: #666;
 }
 
+/* ===============================
+   HERO HOME – AJUSTE MOBILE
+================================ */
 @media (max-width: 768px) {
 
-  /* container full-width no hero */
+  /* deixa o hero ocupar a tela inteira */
   .ta-hero > .container {
     padding-left: 0;
     padding-right: 0;
   }
 
-  /* padding correto no conteúdo */
+  /* controla o respiro interno (não encosta nos cantos) */
   .ta-hero-content {
-    padding: 32px 20px; /* 👈 controla distância das bordas */
+    padding: 32px 20px;
     text-align: center;
   }
 
+  /* garante alinhamento do texto */
+  .ta-hero-content h1,
+  .ta-hero-content p {
+    text-align: center;
+  }
+
+  /* posição do botão */
+  .ta-hero-btn {
+    margin-top: 8px;
+  }
+
 }
+
 
