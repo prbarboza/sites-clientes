@@ -16894,12 +16894,6 @@ display: none !important;
   color: #fff;
 }
 
-/* === ALTERAÇÃO | menos espaço entre os cards === */
-#experiencias .row {
-  margin-left: -8px;
-  margin-right: -8px;
-}
-
 #experiencias .col-sm,
 #experiencias .col-md-6,
 #experiencias .col-lg {
@@ -17222,7 +17216,7 @@ html, body {
         width: 100% !important;
     }
     #ftco-nav .nav-link {
-        padding: 15px 25px !important;
+        padding: 10px 16px !important;
         color: #333 !important;
         font-size: 15px !important;
         text-align: left !important;
@@ -17252,7 +17246,7 @@ html, body {
         padding: 12px 40px !important; /* Recuo para parecer sub-item */
         font-size: 14px !important;
         color: #666 !important;
-        border-bottom: 1px solid #f0f0f0 !important;
+        border-bottom: 1px solid #f0f0f0!important;
     }
 
     /* Botão fechar (X) */
@@ -17262,6 +17256,7 @@ html, body {
         position: fixed !important;
         right: 15px; top: 22px;
         border: none !important;
+        color: #000 !important;
     }
 }
 
@@ -17295,3 +17290,152 @@ html, body {
 }
 
 /* --- OVERLAY ISOLADO --- */
+
+@media (max-width: 991.98px) {
+    /* O MENU LATERAL */
+    #ftco-nav.collapse.show {
+        display: flex !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 300px !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        z-index: 999999 !important;
+        flex-direction: column !important;
+        padding: 0 !important;
+        
+        /* O SEGREDO: Uma sombra de 100 view-widths que escurece o site */
+        /* Isso cria o efeito SIM sem precisar de script ou div extra */
+        box-shadow: 0 0 0 100vw rgba(0,0,0,0.5) !important;
+    }
+
+    /* Título Noronha Local (Forte e Fino) */
+    .mobile-menu-header {
+        display: block !important;
+        padding: 30px 20px 20px 25px !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+    .mobile-menu-header h2 {
+        font-family: "Poppins", Arial, sans-serif !important;
+        font-weight: 800 !important;
+        font-size: 22px !important;
+        color: #000 !important;
+        margin: 0 !important;
+    }
+    .mobile-menu-header h2 span {
+        font-weight: 300 !important;
+    }
+
+    /* SUBMENU ESTILO LISTA (ACORDEÃO) */
+    #ftco-nav .dropdown-menu {
+        position: static !important;
+        float: none !important;
+        display: none !important; /* Começa fechado */
+        background: #fafafa !important;
+        border: none !important;
+        padding: 0 0 0 15px !important;
+    }
+    /* Só abre quando o Bootstrap coloca a classe .show */
+    #ftco-nav .nav-item.dropdown.show .dropdown-menu {
+        display: block !important;
+    }
+
+    /* BOTÃO DE FECHAR (X) */
+    .navbar-toggler[aria-expanded="true"] i::before,
+    .navbar-toggler[aria-expanded="true"] .fa-bars::before {
+        content: "\f00d" !important; /* Ícone do X */
+    }
+    .navbar-toggler {
+        z-index: 1000000 !important;
+        position: fixed !important;
+        right: 15px;
+        top: 22px;
+    }
+}
+
+/* Trava para o Desktop não herdar a sombra gigante */
+@media (min-width: 992px) {
+    #ftco-nav.collapse {
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    /* 1. O BOTÃO (Link) - Aqui controlamos a caixa azul */
+    #ftco-nav .nav-item.cta .nav-link {
+        padding: 10px 20px !important; 
+        background: #007bff !important; 
+        border: 1px solid #007bff !important; 
+        
+        display: table !important; /* Melhor para centralizar com margin auto */
+        width: auto !important;
+        
+        /* Centralização e posição do botão no menu */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 15px !important; 
+        margin-bottom: 15px !important;
+        
+        font-size: 14px !important;
+        border-radius: 30px !important; 
+        text-align: center !important;
+        color: #fff !important;
+        
+        /* REMOVI o transform daqui para o texto não descer junto */
+    }
+
+    /* 2. O ÍCONE - Aqui controlamos APENAS o desenho do WhatsApp */
+    #ftco-nav .nav-item.cta .nav-link i {
+        font-size: 20px !important;
+        color: #ffffff !important;
+        margin-right: 8px !important;
+        display: inline-block !important;
+        
+        /* O SEGREDO: Só o ícone desce agora */
+        transform: translateY(3px) !important; 
+        /* Ou use margin-top se preferir, mas o transform é mais preciso */
+    }
+
+    /* 3. EFEITO HOVER */
+    #ftco-nav .nav-item.cta .nav-link:hover {
+        background: #0056b3 !important;
+        border-color: #004085 !important;
+    }
+}
+
+.navbar-toggler[aria-expanded="true"] i {
+    color: #000000 !important;
+}
+
+/* ============================
+   FIX DEFINITIVO – ESPAÇO ENTRE CARDS
+   Seção: Experiências (mobile)
+============================ */
+@media (max-width: 767.98px) {
+
+  /* devolve padding vertical da seção */
+  #experiencias.ftco-section {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  /* neutraliza margem negativa da row */
+  #experiencias .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* espaço ENTRE os cards */
+  #experiencias .col-sm {
+    margin-bottom: 24px !important;
+  }
+
+  /* último card sem sobra */
+  #experiencias .col-sm:last-child {
+    margin-bottom: 0 !important;
+  }
+
+}
+
+

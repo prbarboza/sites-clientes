@@ -35,18 +35,17 @@
   </head>
   <body>
 
-<!-- Inicio Nav -->
-  
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+ <!-- Inicio Nav -->
 
+	
 
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
   <div class="container">
 
     <a class="navbar-brand" href="index.html">
       <img src="images/logo.png" alt="Noronha Local" class="logo-custom">
     </a>
 
-    <!-- Botão mobile padrão -->
     <button class="navbar-toggler" type="button"
             data-toggle="collapse"
             data-target="#ftco-nav"
@@ -57,9 +56,13 @@
     </button>
 
     <div class="collapse navbar-collapse" id="ftco-nav">
-      <ul class="navbar-nav ml-auto">
+      
+      <div class="mobile-menu-header">
+          <h2 class="heading-section">Noronha <span>Local</span></h2>
+      </div>
 
-        <li class="nav-item">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
           <a href="index.html" class="nav-link">Home</a>
         </li>
 
@@ -67,16 +70,16 @@
           <a href="index.html#sobre-nos" class="nav-link">A Nossa Essência</a>
         </li>
 
-        <!-- DROPDOWN -->
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle"
+             id="navbarDropdown"
              role="button"
              data-toggle="dropdown"
-             aria-haspopup="true"
+             aria-haspopup="true" 
              aria-expanded="false">
             Nossos Passeios
           </a>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a href="passeios-barcos.html" class="dropdown-item">Passeios de Barco</a>
             <a href="trilhas-tour-noronha.html" class="dropdown-item">Trilhas Guiadas</a>
             <a href="#" class="dropdown-item">Mergulhos</a>
@@ -96,10 +99,8 @@
             <span><i class="icon-whatsapp"></i> Fale com um Local</span>
           </a>
         </li>
-
       </ul>
     </div>
-
   </div>
 </nav>
 <!-- END nav -->
@@ -452,6 +453,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+</script>
+
+<script>
+  const taImages = document.querySelectorAll('.ta-hero-images img');
+  let index = 0;
+
+  setInterval(() => {
+    taImages[index].classList.remove('active');
+    index = (index + 1) % taImages.length;
+    taImages[index].classList.add('active');
+  }, 1500);
+</script>
+
+
+<button id="backToTop" aria-label="Voltar ao topo">↑</button>
 
 </body>
 </html>

@@ -16894,12 +16894,6 @@ display: none !important;
   color: #fff;
 }
 
-/* === ALTERAÇÃO | menos espaço entre os cards === */
-#experiencias .row {
-  margin-left: -8px;
-  margin-right: -8px;
-}
-
 #experiencias .col-sm,
 #experiencias .col-md-6,
 #experiencias .col-lg {
@@ -17252,7 +17246,7 @@ html, body {
         padding: 12px 40px !important; /* Recuo para parecer sub-item */
         font-size: 14px !important;
         color: #666 !important;
-        border-bottom: 1px solid #f8f8f8!important;
+        border-bottom: 1px solid #f0f0f0!important;
     }
 
     /* Botão fechar (X) */
@@ -17409,3 +17403,39 @@ html, body {
         border-color: #004085 !important;
     }
 }
+
+.navbar-toggler[aria-expanded="true"] i {
+    color: #000000 !important;
+}
+
+/* ============================
+   FIX DEFINITIVO – ESPAÇO ENTRE CARDS
+   Seção: Experiências (mobile)
+============================ */
+@media (max-width: 767.98px) {
+
+  /* devolve padding vertical da seção */
+  #experiencias.ftco-section {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  /* neutraliza margem negativa da row */
+  #experiencias .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* espaço ENTRE os cards */
+  #experiencias .col-sm {
+    margin-bottom: 24px !important;
+  }
+
+  /* último card sem sobra */
+  #experiencias .col-sm:last-child {
+    margin-bottom: 0 !important;
+  }
+
+}
+
+
