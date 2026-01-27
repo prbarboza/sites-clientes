@@ -15221,6 +15221,9 @@ body {
 
   }
 
+  
+
+
 /* PERMITE ROLAR A PÁGINA SOBRE OS SLIDERS NO MOBILE */
 @media (max-width: 991px) {
 
@@ -16611,15 +16614,15 @@ display: none !important;
    ================================================== */
 
 .service-section {
-  margin-bottom: 48px;
+  margin-bottom: 20px;
+  padding-top: 50px !important; /* 🔑 distancia os mini cards da descrição */
 }
 
 .service-eyebrow {
   display: inline-block;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 26px;
+  font-weight: 500;
+  text-transform: none !important;
   color: #0083b8;
   margin-bottom: 8px;
 }
@@ -16831,6 +16834,8 @@ display: none !important;
   .service-eyebrow {
     display: block;
     margin-bottom: 8px !important;
+    margin-top: 20px !important; /* 🔑 controla a distância dos mini cards */
+    display: inline-block; /* garante que o margin funcione */
   }
 
   #visao-geral h2 {
@@ -16979,7 +16984,7 @@ html, body {
 /* texto */
 .mobile-passeio-card span {
   display: block;
-  margin-top: 6px;
+  margin-top: 20px !important;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.2;
@@ -16996,29 +17001,23 @@ html, body {
    SETAS (BOTÃO LIMPO E CORRETO)
 ================================ */
 
-.mp-arrow {
-  all: unset; /* 🔥 remove foco, outline, bootstrap, browser */
-  pointer-events: auto;
-  cursor: pointer;
-  pointer-events: auto;
-  touch-action: manipulation;
+  .mp-arrow {
+  all: unset;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
   width: 36px;
   height: 36px;
   border-radius: 50%;
-
-  background: #f1f1f1; /* cinza claro */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
-
+  background: #f1f1f1;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
   z-index: 5;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 /* ícone da seta */
@@ -17069,7 +17068,7 @@ html, body {
 
   .mobile-passeios-track {
     padding-left: 10px !important;   /* 🔑 empurra o primeiro card pra dentro */
-    padding-right: 4px;  /* mantém simetria */
+    padding-right: 10px;  /* mantém simetria */
   }
 }
 
@@ -17109,153 +17108,22 @@ html, body {
 }
 
 /* ============================
-   DESKTOP — 4 CARDS CENTRALIZADOS
+   DESKTOP — CARROSSEL COM SETAS
 ============================ */
-
-@media (min-width: 992px) {
-
-  .mobile-passeios-nav {
-    overflow: visible;
-  }
-
-  .mobile-passeios-track {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    overflow: visible;
-    padding: 0;
-    justify-content: center;
-  }
-
-  /* efeito visual que você queria */
-  .mobile-passeio-card {
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-  }
-
-  .mobile-passeio-card:hover,
-  .mobile-passeio-card.active {
-    opacity: 1;
-  }
-}
-
-@media (min-width: 992px) {
-
-  /* remove setas */
-  .mp-arrow {
-    display: none;
-  }
-
-  /* transforma em grid */
-  .mobile-passeios-track {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    overflow: visible;
-    padding: 0;
-  }
-
-  /* garante que cards não usem flex */
-  .mobile-passeio-card {
-    flex: none;
-  }
-
-  /* mostra só os 4 primeiros */
-  .mobile-passeio-card:nth-child(n + 5) {
-    display: none;
-  }
-}
-
-@media (min-width: 992px) {
-
-  /* remove setas */
-  .mp-arrow {
-    display: none;
-  }
-
-  /* transforma em grid */
-  .mobile-passeios-track {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    overflow: visible;
-    padding: 0;
-  }
-
-  /* cards não usam flex */
-  .mobile-passeio-card {
-    flex: none;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-  }
-
-  .mobile-passeio-card:hover,
-  .mobile-passeio-card.active {
-    opacity: 1;
-  }
-
-  /* mostra só os 4 primeiros */
-  .mobile-passeio-card:nth-child(n + 5) {
-    display: none;
-  }
-}
-
-@media (min-width: 992px) {
-
-  .mobile-passeios-nav {
-    display: block !important;
-  }
-
-   
-
-  .mobile-passeio-card {
-    flex: none;
-  }
-}
- 
-@media (min-width: 992px) {
-  .mobile-passeios-nav {
-    display: block;
-  }
-}
-
-@media (min-width: 992px) {
-  .mp-arrow {
-    display: flex !important;
-  }
-
-  .mobile-passeio-card {
-    flex: none;
-  }
-}
-
-@media (min-width: 992px) {
-  .mobile-passeio-card:nth-child(n + 5) {
-    display: none;
-  }
-}
-
-/* DESKTOP – centralizar cards na largura total */
-@media (min-width: 992px) {
-
-   .mobile-passeios-track {
-    max-width: 900px;     /* controla largura visual */
-    margin: 0 auto;       /* centraliza */
-  }
-}
-
 @media (min-width: 992px) {
 
   .mobile-passeios-nav {
     position: relative;
+    margin-bottom: 16px !important; /* 🔑 empurra a descrição pra baixo */
     width: 100%;
     padding: 0 44px;
     overflow: hidden;
   }
 
   .mobile-passeios-track {
-    display: flex;
+    display: flex;              /* carrossel */
     gap: 20px;
-    overflow-x: auto;
+    overflow-x: auto;           /* scroll real */
     scroll-behavior: smooth;
   }
 
@@ -17264,6 +17132,30 @@ html, body {
   }
 
   .mp-arrow {
-    display: flex; /* 🔑 setas APARECEM no desktop */
+    display: flex;              /* setas ativas */
   }
 }
+
+@media (max-width: 767px) {
+  #visao-geral {
+    padding-top: 20px; /* 🔑 distância real dos mini cards */
+  }
+}
+
+@media (max-width: 767px) {
+  .service-section {
+    padding-top: 20px; /* 🔑 distancia os mini cards da descrição */
+  }
+}
+
+.mp-arrow i {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+@media (max-width: 767.98px) {
+  .ftco-section {
+    padding: 3em 0 !important;
+  }
+}
+

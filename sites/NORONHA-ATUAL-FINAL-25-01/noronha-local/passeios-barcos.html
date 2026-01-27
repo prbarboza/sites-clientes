@@ -143,9 +143,9 @@
 <div class="mobile-passeios-nav">
 
   <!-- SETA ESQUERDA -->
-  <button class="mp-arrow mp-left" type="button" aria-label="Anterior">
-    &#8249;
-  </button>
+  <button class="mp-arrow mp-left">
+  <i class="fas fa-chevron-left"></i>
+</button>
 
   <!-- TRACK -->
   <div class="mobile-passeios-track">
@@ -178,9 +178,9 @@
   </div>
 
   <!-- SETA DIREITA -->
-  <button class="mp-arrow mp-right" type="button" aria-label="Próximo">
-    &#8250;
-  </button>
+  <button class="mp-arrow mp-right">
+  <i class="fas fa-chevron-right"></i>
+</button>
 
 </div>
 
@@ -452,19 +452,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".mp-arrow").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      console.log("CLIQUE NA SETA:", btn.className);
-      const track = document.querySelector(".mobile-passeios-track");
-      if (!track) return;
-      track.scrollLeft += btn.classList.contains("mp-right") ? 300 : -300;
-    }, true); // <-- CAPTURE (importante)
-  });
-});
-
-</script>
 
 </body>
 </html>

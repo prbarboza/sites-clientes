@@ -311,6 +311,29 @@ $('.barcos-carousel').owlCarousel({
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".mobile-passeios-nav");
+  if (!nav) return;
+
+  const track = nav.querySelector(".mobile-passeios-track");
+  const left = nav.querySelector(".mp-left");
+  const right = nav.querySelector(".mp-right");
+  if (!track || !left || !right) return;
+
+  const step = () => {
+    const card = track.querySelector(".mobile-passeio-card");
+    const gap = parseInt(getComputedStyle(track).gap) || 12;
+    return card ? card.offsetWidth + gap : 300;
+  };
+
+  right.addEventListener("click", () => {
+    track.scrollBy({ left: step(), behavior: "smooth" });
+  });
+
+  left.addEventListener("click", () => {
+    track.scrollBy({ left: -step(), behavior: "smooth" });
+  });
+});
 
 
 })(jQuery);
