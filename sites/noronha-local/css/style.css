@@ -16567,12 +16567,14 @@ display: none !important;
   top: 120px;
 }
 
-/* MENU LATERAL */
+/* CONTAINER DO MENU */
 .service-menu {
-  background: #fff;
+  background: #ffffff;
   border-radius: 16px;
-  padding: 12px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  padding: 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #eeeeee;
+  overflow: hidden;
 }
 
 .service-menu ul {
@@ -16581,34 +16583,62 @@ display: none !important;
   padding: 0;
 }
 
+/* CADA ITEM DA LISTA */
+.service-menu li {
+  position: relative;
+  border-bottom: 1px solid #eeeeee; /* Divisor sutil */
+}
+
+.service-menu li:last-child {
+  border-bottom: none;
+}
+
+/* LINKS */
 .service-menu a {
-  display: block;
-  padding: 12px 24px;
-  font-weight: 500;
-  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  font-weight: 600;
+  color: #666;
   text-decoration: none;
-  border-left: 3px solid transparent;
+  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
+/* ÍCONE DE SETA (Invisível por padrão) */
+.service-menu a::after {
+  content: '\f105'; /* Ícone de seta do FontAwesome */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-left: auto;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translateX(-10px);
+}
+
+/* HOVER (Passar o mouse) */
 .service-menu a:hover {
-  background: #f5f7f9;
-}
-
-.service-menu a.active {
+  background: #fcfdfd;
   color: #0083b8;
-  border-left-color: #0083b8;
-  background: #f0f8fc;
+  padding-left: 30px; /* Efeito de deslize */
 }
 
-/* MOBILE */
-@media (max-width: 991px) {
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
+.service-menu a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-  .service-sidebar {
-    display: none;
-  }
+/* ITEM ATIVO (Onde o cliente está) */
+.service-menu a.active {
+  background: linear-gradient(to right, rgba(0, 131, 184, 0.05), rgba(0, 131, 184, 0.01));
+  color: #0083b8;
+  border-left: 4px solid #0083b8; /* A barrinha aqui volta, mas só no ativo */
+}
+
+.service-menu a.active::after {
+  opacity: 1;
+  transform: translateX(0);
+  color: #0083b8;
 }
 
 
@@ -16631,7 +16661,7 @@ display: none !important;
 }
 
 .service-section h2 {
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 16px;
 }
 
@@ -16837,7 +16867,7 @@ display: none !important;
 @media (max-width: 767px) {
   .service-eyebrow {
     display: block;
-    margin-bottom: 8px !important;
+    margin-bottom: 4px !important;
     margin-top: 20px !important; /* 🔑 controla a distância dos mini cards */
     display: inline-block; /* garante que o margin funcione */
   }
@@ -17690,3 +17720,163 @@ html, body {
   font-weight: 400;
   color: #555;
 }
+
+/* Container Principal do Card */
+.card-reserva-sidebar {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    box-sizing: border-box; /* Importante para não desconfigurar largura */
+}
+
+.card-reserva-title {
+    color: #00838f; /* Azul Noronha */
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-reserva-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Botão Premium sem a borda do degradê */
+.btn-reserva-premium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    background: #00a884; /* Cor base */
+    background: linear-gradient(to right, #00a884, #00d084);
+    
+    color: #ffffff !important;
+    text-decoration: none !important;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* Remove bordas fantasmas */
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 4px 12px rgba(0, 168, 132, 0.25);
+    transition: 0.3s ease;
+}
+
+.btn-reserva-premium:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 6px 18px rgba(0, 168, 132, 0.35);
+}
+
+.btn-reserva-premium i {
+    font-size: 18px;
+}
+
+/* Card dentro da seção de Observações */
+.cta-observacoes-card {
+    margin-top: 30px;
+    background: #fdfdfd; /* Um branco quase gelo para destacar do fundo bege/creme */
+    border: 1px dashed #00a884; /* Borda tracejada para dar charme */
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+.cta-obs-badge {
+    background: rgba(0, 168, 132, 0.1);
+    color: #00a884;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.cta-obs-content h4 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.cta-obs-content p {
+    color: #666;
+    margin-bottom: 25px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Reutilizando o botão com ajuste de largura */
+.cta-observacoes-card .btn-reserva-premium {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 480px) {
+    .cta-observacoes-card {
+        padding: 20px 15px;
+    }
+    .cta-obs-content h4 {
+        font-size: 18px;
+    }
+}
+
+.card-reserva-sidebar {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    margin-top: 25px;
+    
+    /* Efeito de profundidade: sombra mais suave e espalhada */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
+    
+    /* Borda lateral sutil para conectar com a cor da marca */
+    border-left: 4px solid #00a884; 
+    
+    border-top: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Efeito interativo: o card "flutua" levemente quando o mouse passa */
+.card-reserva-sidebar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-reserva-title {
+    color: #00838f; 
+    font-size: 18px;
+    font-weight: 800; /* Mais peso no título */
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.card-reserva-text {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0 5px; /* Evita que o texto encoste na borda interna */
+}
+
