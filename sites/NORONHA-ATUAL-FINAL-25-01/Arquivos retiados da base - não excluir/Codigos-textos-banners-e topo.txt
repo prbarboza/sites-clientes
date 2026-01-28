@@ -1,0 +1,188 @@
+
+============CODIGOS PARA ALTERAR CORES E FONTES DO BANNER=============
+
+/* 1. O Texto "O MELHOR DE" (Reto e Elegante) */
+/* ===============================
+   HERO HOME – TEXTO PRINCIPAL
+   (ex-slider, agora hero fixo)
+=============================== */
+
+/* 1. "O MELHOR DE" */
+.hero-wrap .slider-text h1 {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 4px !important;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5) !important;
+  margin-bottom: 0 !important;
+  line-height: 1.35 !important; /* CONTROLA O ESPAÇO ENTRE AS LINHAS */
+}
+
+/* 2. "Noronha Local" */
+.hero-wrap .slider-text h1 span {
+  font-family: 'Satisfy', cursive !important;
+  color: #fde02f !important;
+  font-size: 100px !important;
+  display: block !important;
+
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+
+  margin-top: 0 !important;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3) !important;
+
+  background-image: url('../images/hero-_ineShape.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: bottom center !important;
+  background-size: 90% 18% !important;
+  padding-bottom: 14px;
+}
+
+/* 3. Texto descritivo */
+.hero-wrap .slider-text p {
+  font-size: 24px !important;
+  color: #ffffff !important;
+  font-weight: 300 !important;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
+  margin-top: 25px !important;
+}
+
+
+/* Estado NORMAL da navbar (topo da página) */
+.ftco-navbar-light:not(.scrolled) {
+  background: transparent !important;   /* transparente no topo */
+  position: absolute;
+  top: 0 !important;                     /* cola no topo */
+  z-index: 999;
+  transition: background 0.3s ease;
+}
+
+/* Estado SCROLLED da navbar (após rolar) */
+.ftco-navbar-light.scrolled {
+  background: #ffffff !important;        /* fundo branco ao rolar */
+  transition: background 0.3s ease;
+}
+
+
+/* 2. Mantém o menu na direita e com letras brancas */
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+/* 3. Cor amarela APENAS no texto do link (evita o bloco amarelo) */
+.ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link,
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+    color: #FDE02F !important;
+    background: transparent !important; /* Garante que não crie bloco de cor */
+}
+
+/* 2. Ajuste do botão CTA para contrastar com o novo fundo */
+.ftco-navbar-light .navbar-nav > .nav-item.cta > .nav-link {
+    background: #0083B8 !important; /* Mantemos o amarelo ouro */
+    border: 1px solid #0083B8 !important;
+    color: #0a2b38 !important; /* Texto em azul escuro para ler melhor no amarelo */
+    font-weight: 700;
+}
+
+/* Hover real do botão CTA */
+.ftco-navbar-light .navbar-nav > .nav-item.cta > .nav-link:hover {
+    background: #0083B8 !important; /* Amarelo mais escuro */
+    border-color: #ffffff !important;
+    color: #0a2b38 !important;
+}
+
+
+/* Garante que o nome da marca (Noronha Local) seja visível e branco */
+.navbar-brand {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Força a cor branca mesmo quando o rato passa por cima (hover) */
+.navbar-brand:hover, .navbar-brand:focus {
+    color: #FDE02F !important; /* Muda para amarelo no hover para dar um efeito legal */
+}
+
+/* Resolve o problema do menu "sumir" ou piscar no topo */
+.ftco_navbar {
+    background: #000000 !important; /* Cor da barra Hover Topo */
+    top: 0 !important;
+}
+
+/* Mantém o alinhamento correto dos itens na direita */
+.navbar-nav {
+    margin-left: auto !important;
+}
+
+
+.ftco-navbar-light {
+  transition: opacity 0.3s ease;
+}
+
+/* === APENAS VISUAL DO TEXTO DO MENU === */
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+  color: #0083B8 !important;      /* Branco mais forte */
+  font-weight: 00;               /* Texto mais encorpado */
+  letter-spacing: 0.4px;          /* Melhor leitura */
+  font-weight: 500;
+}
+
+/* Cor padrão */
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+  color: #FFFFFF !important; /* cor normal */
+}
+
+/* Hover e ativo */
+.ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link,
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+  color: #0083B8 !important; /* cor ao passar o mouse ou ativo */
+}
+
+/* Estado NORMAL (barra transparente, fonte branca) */
+.ftco-navbar-light:not(.scrolled) .navbar-nav > .nav-item > .nav-link {
+  color: #ffffff !important; /* fonte branca */
+}
+
+/* Estado SCROLLED (barra branca, fonte preta) */
+.ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link {
+  color: #0083B8 !important; /* fonte preta */
+}
+
+/* Hover em qualquer estado */
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
+  color: #0083B8 !important; /* azul no hover, por exemplo */
+}
+
+
+.navbar-brand img {
+  height: 55px;       /* ideal para desktop */
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 45px;
+  }
+}
+
+/* PREVINE TRAVAMENTO NO LOAD */
+.ftco-navbar-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(0) !important;
+}
+
+body {
+  padding-top: 0px; /* ajuste para a altura real da navbar */
+}
+
+html {
+  scroll-behavior: auto !important;
+}

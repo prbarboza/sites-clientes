@@ -16251,7 +16251,7 @@ display: none !important;
 .ta-hero-box {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  background: #0066FF !important; /* azul mais intenso */
+  background: #0A6CFF !important; /* azul mais intenso */
   border-radius: 8px !important;
   overflow: hidden;
   min-height: 420px;
@@ -17541,6 +17541,117 @@ html, body {
   }
 }
 
+/* ============================
+   HERO PASSEIOS – VÍDEO
+============================ */
 
+.ta-gallery-main.ta-video {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
- 
+.ta-gallery-main.ta-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ta-hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0px; /* mantém o visual atual */
+}
+
+/* Segurança mobile */
+.ta-hero-video {
+  overflow: hidden;
+}
+
+.ta-hero-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.25)
+  );
+}
+
+ /* =========================
+   MENU SUPERIOR – ESTILO CLEAN
+========================= */
+
+#ftco-navbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
+}
+
+#ftco-navbar .nav-link {
+  color: #111 !important;
+  font-weight: 500;
+}
+
+#ftco-navbar .nav-link:hover {
+  color: #000 !important;
+}
+
+.nav-item.cta .nav-link {
+  background: #00bfa5;
+  color: #fff !important;
+  border-radius: 30px;
+  padding: 8px 18px;
+}
+
+/* LOGO */
+.logo-icon {
+  height: 30px !important; /* mobile */
+  width: auto;
+}
+
+.logo-text {
+  font-size: 18px !important;
+  font-weight: 600;
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .logo-icon {
+    height: 40px !important;
+  }
+
+  .logo-text {
+    font-size: 24px !important;
+  }
+}
+
+/* =========================
+   LOGO TEXTO SEMPRE VISÍVEL
+========================= */
+
+.navbar-brand,
+.logo-brand {
+  opacity: 1 !important;
+}
+
+.logo-text {
+  color: #111 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.navbar-brand:hover .logo-text {
+  color: #000 !important;
+}
+
+@media (max-width: 768px) {
+  .ta-hero-media,
+  .ta-hero-images {
+    border-radius: 0 !important;
+    overflow: visible !important;
+  }
+}

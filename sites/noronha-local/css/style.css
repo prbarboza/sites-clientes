@@ -15565,12 +15565,12 @@ display: none !important;
   content: 'Menu';
   font-size: 14px;
   font-weight: 600;
-  color: #fff !important;
+  color: #000 !important;
 }
 
 /* Cor do ícone hamburguer */
 .navbar-toggler i.fa-bars {
-  color: #fff; /* azul do site */
+  color: #000; /* azul do site */
   font-size: 22px;
 }
 
@@ -17369,8 +17369,8 @@ html, body {
     /* 1. O BOTÃO (Link) - Aqui controlamos a caixa azul */
     #ftco-nav .nav-item.cta .nav-link {
         padding: 10px 20px !important; 
-        background: #007bff !important; 
-        border: 1px solid #007bff !important; 
+        background: #0A6CFF !important; 
+        border: 1px solid #0A6CFF !important; 
         
         display: table !important; /* Melhor para centralizar com margin auto */
         width: auto !important;
@@ -17403,8 +17403,8 @@ html, body {
 
     /* 3. EFEITO HOVER */
     #ftco-nav .nav-item.cta .nav-link:hover {
-        background: #0056b3 !important;
-        border-color: #004085 !important;
+        background: #007bff !important;
+        border-color: #007bff !important;
     }
 }
 
@@ -17654,4 +17654,39 @@ html, body {
     border-radius: 0 !important;
     overflow: visible !important;
   }
+}
+
+/* Header do menu mobile */
+.mobile-menu-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Logo + texto */
+.mobile-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Arraia */
+.mobile-logo img {
+  height: 28px; /* ajuste aqui */
+  width: auto;
+}
+
+/* Texto */
+.logo-text {
+  font-size: 22px;
+  line-height: 1;
+  color: #000;
+}
+
+.logo-text strong {
+  font-weight: 700;
+}
+
+.logo-text span {
+  font-weight: 400;
+  color: #555;
 }
