@@ -14375,7 +14375,7 @@ ou, em último caso:
 
 .noronha-blog-card .block-20 img {
     height: 100% !important;
-    border-radius: 20px 20px 0 0 !important;
+    border-radius: 8px 8px 0 0 !important;
 }
 
 /* ===== SUBMENU NORONHA ===== */
@@ -15072,6 +15072,7 @@ body {
     height: 100%;
     object-fit: cover; /* Faz a foto preencher sem esticar */
     transition: transform 0.5s ease;
+    border-radius: 8px 8px 0 0 !important;
   }
 
   .noronha-blog-card:hover .block-20 img {
@@ -16251,7 +16252,7 @@ display: none !important;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   background: #0066FF !important; /* azul mais intenso */
-  border-radius: 8px;
+  border-radius: 8px !important;
   overflow: hidden;
   min-height: 420px;
   color: #fff; /* garante contraste */
@@ -16263,6 +16264,7 @@ display: none !important;
   position: relative;
   background-size: cover;
   background-position: center;
+  border-radius: 8px;
   }
 
 .ta-hero-images img {
@@ -16273,6 +16275,7 @@ display: none !important;
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  border-radius: 8px;
 }
 
 .ta-hero-images img.active {
@@ -16777,6 +16780,7 @@ display: none !important;
     min-height: 200px !important;
     max-height: 200px !important;
     overflow: hidden;
+    border-radius: inherit;
   }
 
   /* IMAGEM DENTRO DA CAIXA */
@@ -16897,8 +16901,8 @@ display: none !important;
 #experiencias .col-sm,
 #experiencias .col-md-6,
 #experiencias .col-lg {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* === AJUSTE | títulos dos cards em uma linha === */
@@ -17420,12 +17424,7 @@ html, body {
     padding-bottom: 32px !important;
   }
 
-  /* neutraliza margem negativa da row */
-  #experiencias .row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
+   
   /* espaço ENTRE os cards */
   #experiencias .col-sm {
     margin-bottom: 24px !important;
@@ -17438,4 +17437,110 @@ html, body {
 
 }
 
+/* ============================
+   FIX BORDA DO BANNER (HERO)
+============================ */
+.ta-hero-box {
+  border-radius: 8px !important;
+  overflow: hidden; /* corta tudo dentro */
+}
 
+.ta-hero-images {
+  border-radius: 8px !important;
+}
+
+@media (max-width: 991.98px) {
+    /* 1. Adiciona a transição suave no painel do menu */
+    #ftco-nav.collapse {
+        transition: all 0.4s ease-in-out !important;
+        /* Garante que o menu comece fora da tela ou invisível para o efeito funcionar */
+        visibility: hidden;
+        display: block !important;
+        transform: translateX(-100%); 
+    }
+
+    /* 2. Quando o menu estiver aberto (.show), ele volta para a posição original */
+    #ftco-nav.collapse.show {
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+/* Footer isolado – não interfere no site */
+.ftco-footer {
+  padding: 60px 0;
+}
+
+
+/* ============================
+   BLOG – BORDA ARREDONDADA DOS CARDS
+============================ */
+
+/* Card inteiro */
+#blog .blog-entry {
+  border-radius: 8px !important;
+  overflow: hidden; /* corta tudo */
+  background: #fff;
+}
+
+/* Wrapper da imagem */
+#blog .blog-entry .block-20 {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+}
+
+/* Imagem */
+#blog .blog-entry .block-20 img {
+  border-radius: 0; /* evita conflito */
+  display: block;
+}
+
+/* ============================
+   BLOG – CARDS MAIS ROBUSTOS NO DESKTOP
+   (mantém 4 colunas)
+============================ */
+@media (min-width: 992px) {
+
+  /* aumenta a altura da imagem */
+  #blog .blog-entry .block-20 {
+    height: 220px;
+  }
+
+  /* garante que a imagem preencha */
+  #blog .blog-entry .block-20 img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* mais respiro no conteúdo */
+  #blog .blog-entry .text {
+    padding: 20px 22px;
+  }
+
+}
+
+/* ============================
+   BLOG – CONTAINER MAIS LARGO NO DESKTOP
+============================ */
+@media (min-width: 992px) {
+  #blog .container {
+    max-width: 1320px; /* mais largo que o padrão */
+  }
+}
+
+@media (min-width: 992px) {
+  #blog .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  #blog .col-md-3 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
+
+ 
