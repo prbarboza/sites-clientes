@@ -1,0 +1,305 @@
+HTML======================
+
+<section class="ftco-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 text-center heading-section ftco-animate">
+        <span class="subheading" style="font-family: 'Satisfy', cursive; font-size: 26px; color: #0083B8; text-transform: none;">Dicas de Noronha</span>
+        <h2 class="mb-4">Blog & Conteúdos</h2>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- CARD 1 -->
+      <div class="col-md-3 d-flex ftco-animate">
+        <div class="blog-entry noronha-blog-card align-self-stretch">
+
+          <a href="#" class="block-20">
+            <img
+              src="images/home/blog-trilhas.jpg"
+              alt="Passeio privativo ou compartilhado em Fernando de Noronha"
+              loading="lazy"
+            >
+          </a>
+
+          <div class="text p-4">
+            <span class="tag">Trilha tour</span>
+            <h3 class="heading mt-3">
+              <a href="#">Guia de Trilhas em Noronha: Saiba como se planejar para explorar os caminhos mais exuberantes da ilha.</a>
+            </h3>
+            <span class="blog-date">Ver roteiros</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-md-3 d-flex ftco-animate">
+        <div class="blog-entry noronha-blog-card align-self-stretch">
+
+          <a href="#" class="block-20">
+            <img
+              src="images/home/blog-melhores-horarios.jpg"
+              alt="Melhores horários para passeios de barco em Fernando de Noronha"
+              loading="lazy"
+            >
+          </a>
+
+          <div class="text p-4">
+            <span class="tag">Passeios</span>
+            <h3 class="heading mt-3">
+              <a href="#">Melhores horários para passeios de barco: Descubra quando a luz do sol deixa as águas de Noronha ainda mais cristalinas.</a>
+            </h3>
+            <span class="blog-date">Dica local</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-md-3 d-flex ftco-animate">
+        <div class="blog-entry noronha-blog-card align-self-stretch">
+
+          <a href="#" class="block-20">
+            <img
+              src="images/home/blog-o-que-leva-na-bagagem.jpg"
+              alt="O que levar para um passeio no mar em Fernando de Noronha"
+              loading="lazy"
+            >
+          </a>
+
+          <div class="text p-4">
+            <span class="tag">Planejamento</span>
+            <h3 class="heading mt-3">
+              <a href="#">Tudo o que você precisa para um dia perfeito a bordo: Um passeio de barco inesquecível exige planejamento.</a>
+            </h3>
+            <span class="blog-date">Checklist essencial</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD 4 (opcional – pode remover se não usar) -->
+      <div class="col-md-3 d-flex ftco-animate">
+        <div class="blog-entry noronha-blog-card align-self-stretch">
+
+          <a href="#" class="block-20">
+            <img
+              src="images/home/blog-passeios.jpg"
+              alt="Dicas para aproveitar melhor Fernando de Noronha"
+              loading="lazy"
+            >
+          </a>
+
+          <div class="text p-4">
+            <span class="tag">Dicas local</span>
+            <h3 class="heading mt-3">
+              <a href="#">Dicas essenciais para Noronha: Tudo o que você precisa saber antes de embarcar para o paraíso.</a>
+            </h3>
+            <span class="blog-date">Guia prático</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+CSS====================================
+
+/* Card refinado */
+.noronha-blog-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+.noronha-blog-card {
+  transition: box-shadow .3s ease;
+}
+
+.noronha-blog-card:hover {
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+
+/* Tag */
+.noronha-blog-card .tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0083B8;
+  background: rgba(0,131,184,0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Título */
+.noronha-blog-card h3 a {
+  color: #000;
+  font-weight: 600;
+}
+
+.noronha-blog-card h3 a:hover {
+  color: #0083B8;
+  text-decoration: none;
+}
+
+/* Subtexto */
+.noronha-blog-card .blog-date {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Badge / Tag dos cards */
+.noronha-blog-card .tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+
+  color: #0083B8;                 /* azul do site */
+  background: #0083B8;/* azul suave */
+  
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.noronha-blog-card .tag {
+  color: #fff!important;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+/* Card inteiro como flex */
+.noronha-blog-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Área de texto cresce corretamente */
+.noronha-blog-card .text {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* <-- ESSENCIAL */
+}
+
+/* Empurra o texto final para baixo */
+.noronha-blog-card .blog-date {
+  margin-top: auto;
+}
+
+.noronha-blog-card {
+  will-change: box-shadow;
+  backface-visibility: hidden;
+}
+
+/* Deixa a imagem menor e força o arredondamento nos cantos superiores */
+.noronha-blog-card .block-20 {
+    height: 180px !important; /* Diminuímos de 210 para 180 */
+    display: block !important;
+    overflow: hidden !important;
+}
+
+.noronha-blog-card .block-20 img {
+    height: 100% !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+ /* AJUSTE MOBILE */
+  @media (max-width: 768px) {
+    .noronha-blog-card .block-20 {
+      height: 200px;
+    }
+    .noronha-blog-card .heading {
+      min-height: auto; /* No mobile pode ser fluido */
+    }
+  }
+  
+  /* Container do Card do Blog */
+  .noronha-blog-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .noronha-blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  }
+
+  /* RESOLUÇÃO DA FOTO ESTOURADA */
+  .noronha-blog-card .block-20 {
+    height: 220px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+
+  .noronha-blog-card .block-20 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher sem esticar */
+    transition: transform 0.5s ease;
+  }
+
+  .noronha-blog-card:hover .block-20 img {
+    transform: scale(1.1); /* Efeito de zoom no hover */
+  }
+
+  /* TEXTO E TAGS */
+  .noronha-blog-card .text {
+    padding: 25px !important;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .noronha-blog-card .tag {
+    background: #e1f5fe; /* O cinza azulado clarinho que você pediu */
+    color: #546E7A !important; /* Um tom de azul acinzentado mais escuro para o texto */
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-self: flex-start;
+}
+
+  .noronha-blog-card .heading {
+    min-height: 80px; /* Isso vai impedir que o texto empurre o botão pra baixo de forma desigual */
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  /* Altera a cor e o tamanho do título do card */
+.noronha-blog-card .heading a {
+    color: #333333 !important; /* Cor cinza escuro para melhor leitura */
+    font-size: 14px;            /* Tamanho da letra */
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif; /* Sua fonte principal */
+    text-decoration: none;      /* Remove o sublinhado de link */
+}
+
+/* Altera a cor quando o cliente passa o mouse */
+.noronha-blog-card .heading a:hover {
+    color: #0083B8 !important;  /* Muda para o azul do site no hover */
+}
