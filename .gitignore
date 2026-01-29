@@ -1,0 +1,18 @@
+# === VIDEOS ===
+*.mp4
+*.mov
+*.webm
+*.mkv
+
+videos/
+capcut/
+sites/**/videos/
+sites/**/capcut/
+
+# === IMAGENS TEMPORARIAS ===
+images/temporaria/
+sites/**/images/temporaria/
+
+# === SISTEMA ===
+.DS_Store
+Thumbs.db

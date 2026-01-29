@@ -14863,6 +14863,14 @@ body {
 
 }
 
+@media (max-width: 768px) {
+  .footer-logo {
+    width: 220px !important;
+  }
+}
+
+
+
 /* ===============================
   "NÃO REMOVER" CORREÇÃO DEFINITIVA VISIBILIDADE
    (FTCO + Waypoints + AOS)
