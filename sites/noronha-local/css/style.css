@@ -16666,7 +16666,7 @@ display: none !important;
   font-weight: 500;
   text-transform: none !important;
   color: #0083b8;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .service-section h2 {
@@ -16876,10 +16876,12 @@ display: none !important;
 
 @media (max-width: 767px) {
   .service-eyebrow {
-    display: block;
-    margin-bottom: 4px !important;
-    margin-top: -10px !important; /* 🔑 controla a distância dos mini cards */
-    display: inline-block; /* garante que o margin funcione */
+  display: block;
+  margin-bottom: 16px !important;
+  margin-top: -10px !important; /* 🔑 controla a distância dos mini cards */
+  display: inline-block; /* garante que o margin funcione */
+  font-size: 22px;
+  font-weight: 500;
   }
 
   #visao-geral h2 {
@@ -16893,6 +16895,12 @@ display: none !important;
   }
 }
 
+@media (max-width: 767px) {
+  .service-page > section.container:first-of-type {
+    margin-bottom: 40px;
+    padding-bottom: 80px;
+  }
+}
 
 .ta-gallery-main img,
 .ta-gallery-side img {
@@ -17119,18 +17127,6 @@ html, body {
   flex: 0 0 calc((100% - 24px) / 3);
 }
 
-@media (max-width: 767px) {
-  .service-hero {
-    margin-bottom: 4px; /* 👈 empurra tudo abaixo */
-  }
-}
-
-@media (max-width: 767px) {
-  .service-hero {
-    min-height: 24px;
-    padding-bottom: 24px;
-  }
-}
 
 /* remove qualquer contorno / destaque ativo */
 .mobile-passeio-card.active,
@@ -17973,171 +17969,38 @@ html, body {
     display: block;
 }
 
-/* Ajuste para eliminar o vão no topo do conteúdo */
 @media (max-width: 991px) {
-  /* 1. Ajusta o espaço que a página reserva para o banner */
-  .service-page {
-    padding-top: 100px !important; /* Estava 140px, baixamos para 100px */
-  }
-
-  /* 2. Remove o espaço interno exagerado da primeira seção de texto */
- /* DESKTOP */
-@media (min-width: 992px) {
-  .service-main .service-section:first-of-type,
-  #visao-geral.service-section {
-    padding-top: 16px !important;
-    margin-top: 0 !important;
-  }
+    .service-sidebar {
+        display: none !important;
+    }
+    .service-main {
+        width: 100% !important;
+        padding-bottom: 20px; /* Reforço de espaço no mobile */
+    }
+    /* Garante que o footer não suba */
+    .ftco-footer {
+        margin-top: 0 !important;
+        clear: both;
+    }
 }
 
-/* MOBILE – AGORA SIM */
-@media (max-width: 991px) {
-  .service-main .service-section:first-of-type,
-  #visao-geral.service-section {
-    padding-top: 4px !important;
-    margin-top: 0 !important;
-  }
-}
+@media (max-width: 767px) {
 
-
-  /* 3. Garante que o container principal não empurre mais nada para baixo */
-  .service-body.container {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
+  /* FORÇA o hero a colar no topo, independente do resto */
+  body .service-hero {
+    margin-top: -40px;
+    padding-top: 0;
   }
 
-  /* 4. Ajusta o respiro do título para não ficar colado */
-  .service-main h2 {
-    margin-top: 10px !important;
+  /* Ajuste fino do conteúdo interno */
+  body .service-hero h1 {
+    margin-top: 8px;
+    margin-bottom: 6px;
   }
-}
 
-@media (max-width: 991px) {
-
-  /* Remove espaço excessivo abaixo do hero */
-  .service-hero {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    margin-bottom: 10px !important;
+  body .service-hero .ta-rating {
+    margin-top: 0;
+    margin-bottom: 6px;
   }
 
 }
-
-@media (min-width: 992px) {
-
-  /* HERO NÃO EMPURRA MAIS */
-  .service-hero {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* CONTEÚDO COMEÇA QUASE IMEDIATAMENTE */
-  .service-main .service-section:first-of-type,
-  #visao-geral.service-section {
-    padding-top: 16px !important;
-    margin-top: 0 !important;
-  }
-
-}
-
-/* Sobe o bloco ROTEIRO (desktop e mobile) */
-#roteiro.service-section {
-  padding-top: 20px !important;
-}
-
-/* HERO MEDIA – espaço único */
-.hero-media {
-  width: 100%;
-  height: 460px;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 24px;
-}
-
-/* Vídeo ou imagem se comportam igual */
-.hero-media video,
-.hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Mobile */
-@media (max-width: 991px) {
-  .hero-media {
-    height: 260px;
-    margin-bottom: 16px;
-    border-radius: 12px;
-  }
-}
-
-/* Espaço entre avaliações e banner */
-.ta-rating {
-  margin-bottom: 16px;
-}
-
-@media (max-width: 991px) {
-  .hero-media {
-    height: 280px;
-  }
-}
-
-@media (max-width: 991px) {
-
-  /* Remove o vão criado pelo HERO */
-  .service-hero,
-  .service-hero-container {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* Remove qualquer respiro extra antes do conteúdo */
-  .service-body.container {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  /* Garante que a primeira section encoste corretamente */
-  #visao-geral.service-section {
-    padding-top: 4px !important;
-    margin-top: 0 !important;
-  }
-
-}
-
-@media (max-width: 991px) {
-
-  /* Remove o vão criado pelo HERO */
-  .service-hero,
-  .service-hero-container {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* Remove qualquer respiro extra antes do conteúdo */
-  .service-body.container {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  /* Garante que a primeira section encoste corretamente */
-  #visao-geral.service-section {
-    padding-top: 4px !important;
-    margin-top: 0 !important;
-  }
-
-}
-
-@media (max-width: 991px) {
-
-  .service-main > .service-section:first-child {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-}
-
-
-
-
