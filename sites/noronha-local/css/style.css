@@ -16878,7 +16878,7 @@ display: none !important;
   .service-eyebrow {
     display: block;
     margin-bottom: 4px !important;
-    margin-top: 20px !important; /* 🔑 controla a distância dos mini cards */
+    margin-top: -10px !important; /* 🔑 controla a distância dos mini cards */
     display: inline-block; /* garante que o margin funcione */
   }
 
@@ -16893,12 +16893,6 @@ display: none !important;
   }
 }
 
-@media (max-width: 767px) {
-  .service-page > section.container:first-of-type {
-    margin-bottom: 40px;
-    padding-bottom: 80px;
-  }
-}
 
 .ta-gallery-main img,
 .ta-gallery-side img {
@@ -17889,4 +17883,261 @@ html, body {
     margin-bottom: 20px;
     padding: 0 5px; /* Evita que o texto encoste na borda interna */
 }
+
+/* --- CORREÇÃO DE LAYOUT MOBILE --- */
+@media (max-width: 991px) {
+  /* Esconde a sidebar lateral no mobile para não quebrar o grid */
+  .service-sidebar {
+    display: none !important;
+  }
+  
+  /* Garante que o conteúdo principal use 100% da tela */
+  .service-grid, .service-body-container {
+    display: block !important;
+    width: 100% !important;
+  }
+}
+
+/* --- ESTILO DOS CARDS DE PASSEIOS --- */
+.related-tours-section {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+}
+
+.related-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.tours-grid-premium {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tour-card-premium {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 14px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.tour-card-premium:hover {
+  border-color: #0083b8;
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.tour-card-info strong {
+  display: block;
+  font-size: 16px;
+  color: #0083b8;
+  margin-bottom: 2px;
+}
+
+.tour-card-info span {
+  font-size: 14px;
+  color: #777;
+}
+
+.tour-card-premium i {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.link-back-all {
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #888;
+  text-decoration: none;
+}
+
+.link-back-all:hover {
+  color: #0083b8;
+}
+
+/* Espaçamento final para o rodapé */
+.spacer-bottom {
+    height: 60px; /* Ajuste aqui se quiser mais ou menos espaço */
+    width: 100%;
+    display: block;
+}
+
+/* Ajuste para eliminar o vão no topo do conteúdo */
+@media (max-width: 991px) {
+  /* 1. Ajusta o espaço que a página reserva para o banner */
+  .service-page {
+    padding-top: 100px !important; /* Estava 140px, baixamos para 100px */
+  }
+
+  /* 2. Remove o espaço interno exagerado da primeira seção de texto */
+ /* DESKTOP */
+@media (min-width: 992px) {
+  .service-main .service-section:first-of-type,
+  #visao-geral.service-section {
+    padding-top: 16px !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* MOBILE – AGORA SIM */
+@media (max-width: 991px) {
+  .service-main .service-section:first-of-type,
+  #visao-geral.service-section {
+    padding-top: 4px !important;
+    margin-top: 0 !important;
+  }
+}
+
+
+  /* 3. Garante que o container principal não empurre mais nada para baixo */
+  .service-body.container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* 4. Ajusta o respiro do título para não ficar colado */
+  .service-main h2 {
+    margin-top: 10px !important;
+  }
+}
+
+@media (max-width: 991px) {
+
+  /* Remove espaço excessivo abaixo do hero */
+  .service-hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-bottom: 10px !important;
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  /* HERO NÃO EMPURRA MAIS */
+  .service-hero {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* CONTEÚDO COMEÇA QUASE IMEDIATAMENTE */
+  .service-main .service-section:first-of-type,
+  #visao-geral.service-section {
+    padding-top: 16px !important;
+    margin-top: 0 !important;
+  }
+
+}
+
+/* Sobe o bloco ROTEIRO (desktop e mobile) */
+#roteiro.service-section {
+  padding-top: 20px !important;
+}
+
+/* HERO MEDIA – espaço único */
+.hero-media {
+  width: 100%;
+  height: 460px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+/* Vídeo ou imagem se comportam igual */
+.hero-media video,
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+  .hero-media {
+    height: 260px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+  }
+}
+
+/* Espaço entre avaliações e banner */
+.ta-rating {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 991px) {
+  .hero-media {
+    height: 280px;
+  }
+}
+
+@media (max-width: 991px) {
+
+  /* Remove o vão criado pelo HERO */
+  .service-hero,
+  .service-hero-container {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Remove qualquer respiro extra antes do conteúdo */
+  .service-body.container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Garante que a primeira section encoste corretamente */
+  #visao-geral.service-section {
+    padding-top: 4px !important;
+    margin-top: 0 !important;
+  }
+
+}
+
+@media (max-width: 991px) {
+
+  /* Remove o vão criado pelo HERO */
+  .service-hero,
+  .service-hero-container {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Remove qualquer respiro extra antes do conteúdo */
+  .service-body.container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Garante que a primeira section encoste corretamente */
+  #visao-geral.service-section {
+    padding-top: 4px !important;
+    margin-top: 0 !important;
+  }
+
+}
+
+@media (max-width: 991px) {
+
+  .service-main > .service-section:first-child {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+}
+
+
+
 
