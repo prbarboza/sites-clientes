@@ -16514,6 +16514,7 @@ display: none !important;
   grid-template-columns: 2fr 1fr;
   gap: 8px;
   margin-top: 24px;
+  position: relative;
   
 }
 
@@ -16538,11 +16539,17 @@ display: none !important;
   height: 206px;
 }
 
+.ta-gallery-wrapper {
+  position: relative;
+}
+
+
 @media (max-width: 768px) {
   .ta-gallery {
     grid-template-columns: 1fr;
     height: 160px;   /* antes estava alto demais */
     margin-bottom: 16px;
+    position: relative;
   }
   
   .ta-gallery-side {
@@ -16662,7 +16669,7 @@ display: none !important;
 
 .service-eyebrow {
   display: inline-block;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 500;
   text-transform: none !important;
   color: #0083b8;
@@ -16670,7 +16677,7 @@ display: none !important;
 }
 
 .service-section h2 {
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 16px;
 }
 
@@ -16880,7 +16887,7 @@ display: none !important;
   margin-bottom: 16px !important;
   margin-top: -10px !important; /* 🔑 controla a distância dos mini cards */
   display: inline-block; /* garante que o margin funcione */
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 500;
   }
 
@@ -17044,7 +17051,7 @@ html, body {
   .mp-arrow {
   all: unset;
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   width: 36px;
   height: 36px;
@@ -17161,8 +17168,16 @@ html, body {
 
   .mp-arrow {
     display: flex;              /* setas ativas */
+    
   }
 }
+
+@media (max-width: 767px) {
+  .mp-arrow {
+    top: 72%;
+  }
+}
+
 
 @media (max-width: 767px) {
   #visao-geral {
@@ -18003,4 +18018,24 @@ html, body {
     margin-bottom: 6px;
   }
 
+}
+
+.service-cards-intro {
+  margin: 24px 0 12px;
+}
+
+.service-cards-intro h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.service-cards-intro p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .ta-gallery .owl-nav {
+    top: 40%;
+  }
 }
