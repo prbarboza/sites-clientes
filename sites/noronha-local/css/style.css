@@ -16664,16 +16664,19 @@ display: none !important;
 
 .service-section {
   margin-bottom: 20px;
-  padding-top: 50px !important; /* 🔑 distancia os mini cards da descrição */
+  padding-top: 50px; /* 🔑 distancia os mini cards da descrição */
 }
+
 
 .service-eyebrow {
   display: inline-block;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: none !important;
   color: #0083b8;
   margin-bottom: 20px;
+  margin-top: 0;
+  line-height: 1.19; 
 }
 
 .service-section h2 {
@@ -16884,17 +16887,18 @@ display: none !important;
 @media (max-width: 767px) {
   .service-eyebrow {
   display: block;
-  margin-bottom: 16px !important;
-  margin-top: -10px !important; /* 🔑 controla a distância dos mini cards */
+  margin-bottom: 16px;
+  margin-top: 5px; /* 🔑 controla a distância dos mini cards */
   display: inline-block; /* garante que o margin funcione */
   font-size: 26px;
-  font-weight: 500;
+  font-weight: 400;
   }
 
   #visao-geral h2 {
     margin-top: 0;
   }
 }
+
 
 @media (max-width: 767px) {
   #visao-geral {
@@ -17069,7 +17073,7 @@ html, body {
 
 /* ícone da seta */
 .mp-arrow i {
-  font-size: 20px !important; /* seta maior */
+  font-size: 18px !important; /* seta maior */
   color: #000;     /* seta preta */
   line-height: 1;
   pointer-events: none;
@@ -17142,6 +17146,15 @@ html, body {
   box-shadow: none !important;
 }
 
+/* =================================================
+   PÁGINA INDIVIDUAL — ISOLAMENTO TOTAL
+   ================================================= */
+.service-single .mp-arrow,
+.service-single .mobile-passeios-nav {
+  display: none;
+}
+
+
 /* ============================
    DESKTOP — CARROSSEL COM SETAS
 ============================ */
@@ -17174,16 +17187,21 @@ html, body {
 
 @media (max-width: 767px) {
   .mp-arrow {
-    top: 72%;
+    top: 60%;
   }
 }
 
 
 @media (max-width: 767px) {
-  #visao-geral {
-    padding-top: 20px; /* 🔑 distância real dos mini cards */
+  .service-list #visao-geral {
+    padding-top: 20px; /* mantém o espaçamento da página PASSEIOS */
+  }
+
+  .service-single #visao-geral {
+    padding-top: 0; /* sobe o conteúdo na página INDIVIDUAL */
   }
 }
+
 
 @media (max-width: 767px) {
   .service-section {
@@ -18039,3 +18057,21 @@ html, body {
     top: 40%;
   }
 }
+
+.service-single .service-eyebrow {
+  line-height: 1.15;
+  display: block;
+  margin-top: -20px;          /* NÃO puxa para o banner */
+  margin-bottom: 8px;
+}
+
+@media (max-width: 767px) {
+  .service-single .service-eyebrow {
+    display: block;
+    margin-top: 0;          /* NÃO puxa para o banner */
+    margin-bottom: 8px;     /* controla a distância */
+    line-height: 1.19;      /* controla distância entre linhas */
+  }
+}
+
+
