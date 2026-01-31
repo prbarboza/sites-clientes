@@ -9,6 +9,11 @@ capcut/
 sites/**/videos/
 sites/**/capcut/
 
+# 🔓 Libera vídeos do Noronha Local
+!sites/noronha-local/videos/
+!sites/noronha-local/videos/**
+
+
 # === IMAGENS TEMPORARIAS ===
 images/temporaria/
 sites/**/images/temporaria/
@@ -16,3 +21,5 @@ sites/**/images/temporaria/
 # === SISTEMA ===
 .DS_Store
 Thumbs.db
+
+!sites/noronha-local/videos/estrela-lunar.mp4
