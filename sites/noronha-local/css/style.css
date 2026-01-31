@@ -18074,4 +18074,13 @@ html, body {
   }
 }
 
+.service-single .ta-gallery-main.ta-video {
+  height: 420px;
+}
+
+@media (max-width: 767px) {
+  .service-single .ta-gallery-main.ta-video {
+    height: 260px;
+  }
+}
 
