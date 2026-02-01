@@ -18108,3 +18108,212 @@ html, body {
 }
 
 
+/*====================================
+=====NOVA PAGINA PASSEIOS GRID========
+====================================*/
+/* ===============================
+   PÁGINA: LISTAGEM DE BARCOS
+   ESCOPO TOTAL
+================================ */
+
+.page-boats-list .boats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .page-boats-list .boats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-boats-list .boats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+.page-boats-list .boat-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.page-boats-list .boat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.12);
+}
+
+.page-boats-list .boat-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.page-boats-list .boat-card-body {
+  padding: 16px;
+}
+
+.page-boats-list .boat-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.page-boats-list .boat-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* BOTÃO */
+.page-boats-list .btn-card {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #0083b8;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 300;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page-boats-list .btn-card:hover {
+  color: #fde02f;
+}
+
+/* HERO VÍDEO */
+.page-boats-list .boats-hero {
+  position: relative;
+  width: 100%;
+  height: 52vh;
+  max-height: 520px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 40px auto 60px;
+}
+
+.page-boats-list .boats-hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-boats-list .boats-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,.15),
+    rgba(0,0,0,.35)
+  );
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .page-boats-list .boats-hero {
+    height: 28vh;
+    min-height: 180px;
+    max-height: 260px;
+    border-radius: 8px;
+    margin: 24px 0 32px;
+  }
+}
+
+/* CTA */
+.page-boats-list .cta-final {
+  margin: 80px auto 120px;
+  text-align: center;
+}
+
+/* FEEDBACK TOQUE */
+@media (hover: none) {
+  .page-boats-list .btn-card:focus {
+    color: #fde02f;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* aproxima texto do vídeo */
+  .service-hero.small .boats-hero {
+    margin-bottom: -60px;
+  }
+
+  /* diminui título principal no mobile */
+ @media (max-width: 768px) {
+
+  /* só o título "Escolha sua embarcação" */
+  main.service-page .service-summary h2 {
+    font-size: 22px !important;
+    line-height: 1.25;
+    margin-top: -30px;
+  }
+}
+
+  /* diminui texto da avaliação */
+  .service-hero.small .ta-rating {
+    font-size: 0.85rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .service-page .service-summary h2 {
+    font-size: 24px !important;
+    line-height: 1.2;
+    margin-top: 0; /* mantém o ajuste que você já fez */
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* diminui espaço entre os cards */
+  .boats-grid {
+    gap: 28px; /* antes era 24px */
+  }
+
+  /* garante que o card não empurre mais espaço */
+  .boat-card {
+    margin-bottom: 10px;
+  }
+
+}
+
+.rate {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.rate i {
+  color: #0066FF; /* azul premium */
+  font-size: 12px;
+}
+
+.rate span {
+  margin-left: 6px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Ajuste fino do conteúdo dos cards */
+.boats-grid .boat-card-body {
+  padding-top: 10px; /* antes ~16px */
+}
+
+/* Sobe o título em todos os tamanhos */
+.boats-grid .boat-card h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+
