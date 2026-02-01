@@ -14917,7 +14917,7 @@ body {
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: #00c26e;
+  background: #0083B8;
   color: #ffffff;
   font-size: 22px;
   cursor: pointer;
@@ -18376,6 +18376,7 @@ html, body {
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateX(-50%) translateY(10px);
+  white-space: nowrap;
   
   
 
@@ -18496,5 +18497,12 @@ html, body {
 @media (max-width: 768px) {
   .cta-final-box h2 {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .whatsapp-float {
+    padding: 12px 18px;
+    font-size: 14px;
   }
 }
