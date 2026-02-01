@@ -18148,11 +18148,13 @@ html, body {
   box-shadow: 0 16px 40px rgba(0,0,0,.12);
 }
 
-.page-boats-list .boat-card img {
+.boat-card img {
   width: 100%;
-  height: 220px;
+  height: 220px;          /* altura fixa */
   object-fit: cover;
+  flex-shrink: 0;         /* 🔑 ISSO impede a imagem de encolher */
 }
+
 
 .page-boats-list .boat-card-body {
   padding: 16px;
@@ -18215,6 +18217,15 @@ html, body {
   );
 }
 
+/* só o título "Escolha sua embarcação" */
+  main.service-page .service-summary h2 {
+    font-size: 24px !important;
+    line-height: 1.25;
+    margin-top: -10px;
+    color: #0083B8;
+    font-weight: 500;
+  }
+
 /* MOBILE */
 @media (max-width: 768px) {
   .page-boats-list .boats-hero {
@@ -18251,9 +18262,11 @@ html, body {
 
   /* só o título "Escolha sua embarcação" */
   main.service-page .service-summary h2 {
-    font-size: 22px !important;
+    font-size: 24px !important;
     line-height: 1.25;
     margin-top: -30px;
+    color: #0083B8;
+    font-weight: 500;
   }
 }
 
@@ -18282,6 +18295,7 @@ html, body {
   /* garante que o card não empurre mais espaço */
   .boat-card {
     margin-bottom: 10px;
+    margin-top: 12px;
   }
 
 }
@@ -18316,4 +18330,171 @@ html, body {
   margin-bottom: 6px;
 }
 
+.boat-highlight {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 10px;
+}
 
+.boat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.boat-card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* empurra o botão sempre para o final */
+.boat-card .btn-card {
+  margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+  .boat-card .btn-card {
+    margin-top: 20px;
+  }
+}
+
+.ta-gallery-main img.ta-gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* BOTÃO WHATSAPP FIXO */
+.whatsapp-float {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(-50%) translateY(10px);
+  
+  
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #25D366;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover (desktop) */
+.whatsapp-float:hover {
+  transform: translateX(-50%) scale(1.03);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Ícone */
+.whatsapp-float i {
+  font-size: 20px;
+}
+
+/* Esconde no desktop */
+@media (min-width: 769px) {
+  .whatsapp-float {
+    display: none;
+    
+  }
+}
+
+.boats-hero {
+  height: 65vh;
+  overflow: hidden;
+}
+
+.boats-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+  .boats-hero {
+    height: 45vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .boats-hero {
+    height: 45vh;
+  }
+}
+
+/* CTA FINAL */
+.cta-final {
+  padding: 80px 20px;
+}
+
+.cta-final-box {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+
+  background: #f8fbfd;
+  border-radius: 20px;
+  padding: 50px 30px;
+}
+
+.cta-final-box h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.cta-sub {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.cta-proof {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Botão */
+.btn-cta-final {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 16px 30px;
+  border-radius: 999px;
+
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cta-final:hover {
+  transform: scale(1.05);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cta-final-box h2 {
+    font-size: 24px;
+  }
+}

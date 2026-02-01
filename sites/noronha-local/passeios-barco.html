@@ -28,27 +28,67 @@
 <!-- NAVBAR (mantém igual ao projeto) -->
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
   <div class="container">
-    <a class="navbar-brand logo-brand" href="index.html">
-      <img src="images/logo/logo-arraia-1200x1200.svg" alt="Noronha Local" class="logo-icon">
-      <span class="logo-text">Noronha Local</span>
-    </a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav">
+    <a class="navbar-brand logo-brand" href="index.html">
+  <img src="images/logo/logo-arraia-1200x1200.svg" alt="Noronha Local" class="logo-icon">
+  <span class="logo-text">Noronha Local</span>
+</a>
+
+
+    <button class="navbar-toggler" type="button"
+            data-toggle="collapse"
+            data-target="#ftco-nav"
+            aria-controls="ftco-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
       <i class="fa-solid fa-bars"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="ftco-nav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="index.html#sobre-nos" class="nav-link">A Nossa Essência</a></li>
+      
+      <div class="mobile-menu-header">
+  <div class="mobile-logo">
+    <img src="images/logo/logo-arraia-1200x1200.svg" alt="Noronha Local">
+    <span class="logo-text">
+      <strong>Noronha</strong> <span>Local</span>
+    </span>
+  </div>
+</div>
 
-        <li class="nav-item dropdown active">
-          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Passeios</a>
-          <div class="dropdown-menu">
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a href="index.html" class="nav-link">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="index.html#sobre-nos" class="nav-link">A Nossa Essência</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle"
+             id="navbarDropdown"
+             role="button"
+             data-toggle="dropdown"
+             aria-haspopup="true" 
+             aria-expanded="false">
+            Passeios
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a href="passeios-barco.html" class="dropdown-item">Passeios de Barco</a>
-            <a href="#" class="dropdown-item">Trilhas</a>
-            <a href="#" class="dropdown-item">Mergulhos</a>
+            <a href="" class="dropdown-item">Trilhas</a>
+            <a href="" class="dropdown-item">Mergulhos</a>
+            <a href="" class="dropdown-item">Pesca</a>
+            <a href="" class="dropdown-item">Experiências Aquáticas</a>
           </div>
+        </li>
+
+        <li class="nav-item">
+          <a href="index.html#blog" class="nav-link">Voz da Ilha</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">Contato</a>
         </li>
 
         <li class="nav-item cta">
@@ -76,7 +116,7 @@
     <!-- VIDEO HERO -->
     <div class="boats-hero">
       <video autoplay muted loop playsinline>
-        <source src="videos/passeio-barco-video.mp4" type="video/mp4">
+        <source src="videos/estrela-lunar.mp4" type="video/mp4">
       </video>
       <div class="boats-hero-overlay"></div>
     </div>
@@ -93,123 +133,170 @@
   </section>
 
   <!-- GRID -->
-  <section class="boats-list container">
-    <div class="boats-grid">
+<section class="boats-list container">
+  <div class="boats-grid">
 
-      <!-- CARD -->
-      <article class="boat-card">
-        <img src="images/passeios/barcos/estrela-lunar.jpg" alt="Estrela Lunar">
-        <div class="boat-card-body">
-          <h3>Estrela Lunar</h3>
-          <div class="rate">
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <span>4.9</span>
-    </div>
-          <p>Entardecer • Até 12 pessoas • 3h</p>
-          <a href="passeio-estrela-lunar.html" class="btn-card">Ver detalhes</a>
+    <!-- Albatroz -->
+    <article class="boat-card">
+      <img src="images/passeios/barcos/albatroz.jpg" alt="Passeio de barco Albatroz em Fernando de Noronha" loading="lazy" decoding="async">
+      <div class="boat-card-body">
+        <h3>Albatroz NX Invictus 50 Fly</h3>
+
+        <div class="rate">
+          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+          <span>5.0</span>
         </div>
-      </article>
 
-      <article class="boat-card">
-        <img src="images/passeios/barcos/catamara-davi.jpg" alt="Catamarã Davi">
-        <div class="boat-card-body">
-          <h3>Catamarã Davi</h3>
-          <div class="rate">
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <span>4.9</span>
-    </div>
-          <p>Ideal para grupos • Até 25 pessoas</p>
-          <a href="passeio-catamara-davi.html" class="btn-card">Ver detalhes</a>
+        <p>Premium Baía do Sancho • Até 20 pessoas</p>
+        <p class="boat-highlight">🌊 Ritmo tranquilo para relaxar</p>
+
+        <a 
+          href="passeio-albatroz.html" 
+          class="btn-card"
+          title="Ver informações completas e reservar pelo WhatsApp">
+          Conhecer o passeio
+        </a>
+      </div>
+    </article>
+
+    <!-- Catamarã Davi -->
+    <article class="boat-card">
+      <img src="images/passeios/barcos/catamara-davi.jpg" alt="Passeio de barco Catamarã Davi em Fernando de Noronha" loading="lazy" decoding="async">
+      <div class="boat-card-body">
+        <h3>Catamarã Davi IL</h3>
+
+        <div class="rate">
+          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+          <span>5.0</span>
         </div>
-      </article>
 
-      <article class="boat-card">
-        <img src="images/passeios/barcos/jo-lancha-privativo.jpg" alt="Lancha Jô LL">
-        <div class="boat-card-body">
-          <h3>Lancha Jô LL</h3>
-          <div class="rate">
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <span>4.9</span>
-    </div>
-          <p>Rápida e confortável • Baía do Sancho</p>
-          <a href="passeio-lancha-jo.html" class="btn-card">Ver detalhes</a>
+        <p>Premium Baía do Sancho • Até 25 pessoas</p>
+        <p class="boat-highlight">👨‍👩‍👧‍👦 Perfeito para famílias e grupos</p>
+
+        <a 
+          href="passeio-catamara-davi.html" 
+          class="btn-card"
+          title="Ver informações completas e reservar pelo WhatsApp">
+          Conhecer o passeio
+        </a>
+      </div>
+    </article>
+
+    <!-- Lancha Jô LL -->
+    <article class="boat-card">
+      <img src="images/passeios/barcos/jo-lancha-privativo.jpg" alt="Passeio privativo de lancha Jô LL em Fernando de Noronha" loading="lazy" decoding="async">
+      <div class="boat-card-body">
+        <h3>Lancha Jô LL</h3>
+
+        <div class="rate">
+          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+          <span>5.0</span>
         </div>
-      </article>
 
-      <article class="boat-card">
-        <img src="images/passeios/barcos/albatroz.jpg" alt="Albatroz">
-        <div class="boat-card-body">
-          <h3>Albatroz</h3>
-          <div class="rate">
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <span>4.9</span>
-    </div>
-          <p>Passeio panorâmico • Conforto</p>
-          <a href="passeio-albatroz.html" class="btn-card">Ver detalhes</a>
+        <p>Passeio privativo • Baía do Sancho</p>
+        <p class="boat-highlight">🌊 Parada para banho na Baía do Sancho</p>
+
+        <a 
+          href="passeio-lancha-jo.html" 
+          class="btn-card"
+          title="Ver informações completas e reservar pelo WhatsApp">
+          Conhecer o passeio
+        </a>
+      </div>
+    </article>
+
+    <!-- Estrela Lunar -->
+    <article class="boat-card">
+      <img src="images/passeios/barcos/estrela-lunar.jpg" alt="Passeio ao entardecer Estrela Lunar em Fernando de Noronha" loading="lazy" decoding="async">
+      <div class="boat-card-body">
+        <h3>Estrela Lunar</h3>
+
+        <div class="rate">
+          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+          <span>5.0</span>
         </div>
-      </article>
 
-      <article class="boat-card">
-        <img src="images/passeios/barcos/trovao-dos-mares.jpg" alt="Trovão dos Mares">
-        <div class="boat-card-body">
-          <h3>Trovão dos Mares</h3>
-          <div class="rate">
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <span>4.9</span>
-    </div>
-          <p>Alta performance • Aventura</p>
-          <a href="passeio-trovao-dos-mares.html" class="btn-card">Ver detalhes</a>
+        <p>Entardecer em Noronha • Até 12 pessoas</p>
+        <p class="boat-highlight">✨ Ideal para casais e momentos especiais</p>
+
+        <a 
+          href="passeio-estrela-lunar.html" 
+          class="btn-card"
+          title="Ver informações completas e reservar pelo WhatsApp">
+          Conhecer o passeio
+        </a>
+      </div>
+    </article>
+
+    <!-- Trovão dos Mares -->
+    <article class="boat-card">
+      <img src="images/passeios/barcos/trovao-dos-mares.jpg" alt="Passeio de barco Trovão dos Mares em Fernando de Noronha" loading="lazy" decoding="async">
+      <div class="boat-card-body">
+        <h3>Trovão dos Mares</h3>
+
+        <div class="rate">
+          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+          <span>5.0</span>
         </div>
-      </article>
 
-      <article class="boat-card">
-        <img src="images/passeios/barcos/sea-paradise.jpg" alt="Sea Paradise">
-        <div class="boat-card-body">
-          <h3>Sea Paradise</h3>
-          <div class="rate">
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <i class="icon-star"></i>
-      <span>4.9</span>
-    </div>
-          <p>Experiência relax • Casais</p>
-          <a href="passeio-sea-paradise.html" class="btn-card">Ver detalhes</a>
+        <p>Roteiro dinâmico • Baía do Sancho</p>
+        <p class="boat-highlight">⚡ Para quem gosta de emoção no mar</p>
+
+        <a 
+          href="passeio-trovao-dos-mares.html" 
+          class="btn-card"
+          title="Ver informações completas e reservar pelo WhatsApp">
+          Conhecer o passeio
+        </a>
+      </div>
+    </article>
+
+    <!-- Escuna Só Deus VII -->
+    <article class="boat-card">
+      <img src="images/passeios/barcos/escuna-so-deus.jpg" alt="Passeio de escuna Só Deus VII em Fernando de Noronha" loading="lazy" decoding="async">
+      <div class="boat-card-body">
+        <h3>Escuna Só Deus VII</h3>
+
+        <div class="rate">
+          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+          <span>4.9</span>
         </div>
-      </article>
 
-    </div>
-  </section>
+        <p>Baía dos Golfinhos • Até 100 pessoas</p>
+        <p class="boat-highlight">🌊 Parada para banho na Baía do Sancho</p>
 
-  <!-- CTA -->
-  <section class="cta-final container">
-    <h3>Não sabe qual escolher?</h3>
-    <p>Fale com um local e receba orientação personalizada.</p>
-    <a href="#" class="btn-reserva-premium btn-whatsapp-dynamic">
-      <i class="fab fa-whatsapp"></i> Falar no WhatsApp
-    </a>
-  </section>
+        <a 
+          href="passeio-escuna-so-deus.html" 
+          class="btn-card"
+          title="Ver informações completas e reservar pelo WhatsApp">
+          Conhecer o passeio
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<div class="cta-final-box">
+  <h2>Pronto para viver o melhor passeio de barco em Noronha?</h2>
+
+  <p class="cta-sub">
+    Atendimento direto pelo WhatsApp, com operadores locais e embarcações credenciadas.
+  </p>
+
+  <div class="cta-proof">
+    ⭐⭐⭐⭐⭐ <strong>4.9</strong> • Recomendado por viajantes • Atendimento rápido
+  </div>
+
+  <a 
+    href="https://wa.me/558196514045?text=Olá!%20Quero%20ajuda%20para%20escolher%20o%20melhor%20passeio%20de%20barco%20em%20Fernando%20de%20Noronha."
+    class="btn-cta-final"
+    target="_blank"
+    title="Falar com especialista no WhatsApp">
+    Falar com especialista agora
+  </a>
+</div>
 
 </main>
 
@@ -359,6 +446,43 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    if (!whatsappBtn) return;
+
+    function toggleWhatsappButton() {
+      const triggerPoint = window.innerHeight * 0.3;
+
+      if (window.scrollY > triggerPoint) {
+        whatsappBtn.style.opacity = '1';
+        whatsappBtn.style.pointerEvents = 'auto';
+        whatsappBtn.style.transform = 'translateX(-50%) translateY(0)';
+      } else {
+        whatsappBtn.style.opacity = '0';
+        whatsappBtn.style.pointerEvents = 'none';
+        whatsappBtn.style.transform = 'translateX(-50%) translateY(10px)';
+      }
+    }
+
+    toggleWhatsappButton();
+    window.addEventListener('scroll', toggleWhatsappButton);
+  });
+</script>
+
+
+<!-- BOTÃO WHATSAPP FIXO (MOBILE) -->
+<a 
+  href="https://wa.me/558196514045?text=Olá!%20Quero%20informações%20sobre%20os%20passeios%20de%20barco%20em%20Fernando%20de%20Noronha%20🌊"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Falar com especialista no WhatsApp"
+  title="Falar com especialista no WhatsApp">
+  
+  <span class="whatsapp-text">Reservar agora</span>
+  <i class="icon-whatsapp"></i>
+</a>
 
 
 </body>
