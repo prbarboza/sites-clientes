@@ -16770,7 +16770,7 @@ display: none !important;
 .roteiro-text strong {
   display: block;
   font-weight: 600;
-  color: #333;
+  color: #000;
   margin-bottom: 4px;
 }
 
@@ -18017,7 +18017,7 @@ html, body {
   margin-top: 25px;
   font-size: 14px;
   font-weight: 600;
-  color: #888;
+  color: #000;
   text-decoration: none;
 }
 
@@ -18235,14 +18235,6 @@ html, body {
   );
 }
 
-/* só o título "Escolha sua embarcação" */
-  main.service-page .service-summary h2 {
-    font-size: 24px !important;
-    line-height: 1.25;
-    margin-top: -10px;
-    color: #0083B8;
-    font-weight: 500;
-  }
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -18275,19 +18267,7 @@ html, body {
     margin-bottom: -60px;
   }
 
-  /* diminui título principal no mobile */
- @media (max-width: 768px) {
-
-  /* só o título "Escolha sua embarcação" */
-  main.service-page .service-summary h2 {
-    font-size: 24px !important;
-    line-height: 1.25;
-    margin-top: -30px;
-    color: #0083B8;
-    font-weight: 500;
-  }
-}
-
+  
   /* diminui texto da avaliação */
   .service-hero.small .ta-rating {
     font-size: 0.85rem;
@@ -18452,29 +18432,65 @@ html, body {
     margin-left: 0;
 }
 
-.boats-hero {
-  height: 65vh;
+/* HERO VIDEO */
+/* ===== HERO VIDEO – PÁGINA PASSEIOS ===== */
+.boats-video-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 420px;
   overflow: hidden;
 }
 
-.boats-hero video {
+.boats-video-hero video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+.boats-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.45)
+  );
+}
 
+.boats-video-content {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  color: #fff;
+  text-align: left;
+}
+
+.boats-video-content h1 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.boats-video-content .ta-rating {
+  color: #fff;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .boats-hero {
+  .boats-video-hero {
     height: 45vh;
+    min-height: 320px;
+  }
+
+  .boats-video-content {
+    bottom: 24px;
+    text-align: center;
   }
 }
 
-@media (max-width: 480px) {
-  .boats-hero {
-    height: 45vh;
-  }
-}
+
 
 /* CTA FINAL */
 .cta-final {
@@ -18608,3 +18624,385 @@ html, body {
 
 }
 
+/* ================================================================
+   AJUSTES GERAIS - RESOLVE TEXTO ESCONDIDO E VÍDEO BAIXO
+   ================================================================ */
+
+/* 1. Garante que o conteúdo comece logo após o menu, sem sumir */
+.service-page.page-boats-list {
+    padding-top: 110px !important; /* Ajuste esse valor se o menu for maior/menor */
+}
+
+/* 2. Cabeçalho: Remove espaços vazios que empurram o vídeo para baixo */
+.page-boats-list .boats-list-header {
+    padding: 0 16px;
+    margin-top: 0 !important;
+    margin-bottom: 10px !important; /* Espaço exato entre texto e vídeo */
+}
+
+.page-boats-list .boats-list-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.2;
+    margin: 0 0 5px 0 !important;
+}
+
+/* Pinta apenas as estrelas */
+.page-boats-list .ta-rating .star-color {
+    color: #0A6CFF !important; /* Agora vai ficar dourada! */
+    font-size: 20px;            /* Ajuste o tamanho aqui */
+    margin-right: 5px;
+    letter-spacing: 2px;       /* Dá um respiro entre elas */
+}
+
+.page-boats-list .ta-rating span:last-child {
+    color: #666 !important;    /* Mantém o texto em cinza */
+    font-size: 15px;
+}
+
+/* 3. Vídeo Hero: Trava a altura e remove margens de afastamento */
+.page-boats-list .boats-video-hero {
+    position: relative;
+    width: 100%;
+    height: 400px !important; /* Altura ideal mobile */
+    margin-top: -50px !important;
+    margin-bottom: 24px;
+    overflow: hidden;
+    z-index: 1; /* Garante que o vídeo não cubra o clique do menu */
+}
+
+.page-boats-list .boats-video-hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 4. Textos dentro do Vídeo (Fontes e Sombras) */
+.page-boats-list .boats-video-cta {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    color: #fff;
+}
+
+.page-boats-list .boats-video-cta strong {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8); /* Fonte bem visível */
+}
+
+/* ================================================================
+   AJUSTES PARA DESKTOP (TELAS GRANDES)
+   ================================================================ */
+@media (min-width: 769px) {
+    .service-page.page-boats-list {
+        padding-top: 130px !important; /* Mais espaço no desktop */
+    }
+
+    .page-boats-list .boats-list-header {
+        max-width: 1140px;
+        margin: 0 auto 20px !important;
+        padding: 0;
+    }
+
+    .page-boats-list .boats-list-header h1 {
+        font-size: 32px;
+    }
+
+    .page-boats-list .boats-video-hero {
+        max-width: 1140px;
+        margin: 0 auto 40px !important;
+        border-radius: 12px;
+        height: 500px !important;
+    }
+}
+
+/* --- ESTILO PARA DESKTOP ---
+------TEXTO ESCOLHA SUA EMBARCAÇÃO-- */
+
+main.service-page .service-summary h2 {
+    font-size: 32px !important; 
+    line-height: 1.2;
+    color: #000;
+    font-weight: 700;
+    text-align: left;
+    /* Alinhamento e Espaçamento */
+    max-width: 1140px; /* Mesma largura do seu container de fotos */
+    margin: 40px auto 20px; /* Centraliza o bloco e dá espaço do vídeo */
+    padding: 0; /* Garante que encoste na borda esquerda do container */
+}
+
+/* --- ESTILO PARA MOBILE --- */
+@media (max-width: 768px) {
+    main.service-page .service-summary h2 {
+        font-size: 26px !important;
+        line-height: 1.25;
+        color: #000;
+        font-weight: 700;
+        text-align: left;
+        /* Correção de Posição */
+        margin-top: 30px !important;  /* DESCE O TEXTO (Remove o negativo) */
+        margin-bottom: 10px !important;
+        padding-left: 0 !important; /* Alinha com o 'padding' padrão dos seus cards */
+        padding-right: 15px !important;
+    }
+}
+
+/* Centraliza o bloco inteiro do rodapé */
+.cta-proof {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Alinha verticalmente estrelas e texto */
+    gap: 8px;                /* Espaçamento entre estrelas e frase */
+    flex-wrap: wrap;         /* Garante que quebre linha se o celular for muito pequeno */
+    margin: 15px auto 30px;     /* Espaço superior e centralização do container */
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Cor dourada para as estrelas do rodapé */
+.cta-proof .stars-gold {
+    color: #0A6CFF !important; /* Cor Ouro */
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+/* Garante que o número 4.9 se destaque */
+.cta-proof strong {
+    color: #333;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* Padronização de todos os blocos de descrição */
+.trip-card-style {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 12px !important;
+    padding: 25px 30px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02) !important;
+}
+
+/* Alinhamento dos Títulos internos */
+.trip-card-style h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Ajuste do Roteiro para o novo alinhamento */
+.roteiro-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.roteiro-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 15px;
+}
+
+.roteiro-item:not(:last-child) {
+    border-bottom: 1px dashed #eee; /* Linha sutil entre itens */
+}
+
+.roteiro-icon {
+    font-size: 20px;
+    min-width: 30px;
+}
+
+/* Garante que o container de alerta (service-warning) mantenha o destaque */
+.service-warning.trip-card-style {
+    border-left: 5px solid #ffc107 !important; /* Cor de destaque para avisos */
+}
+
+/* Container que centraliza a seção no site */
+.related-tours-section {
+    max-width: 1200px; /* Ou a largura do seu container padrão */
+    margin: 40px auto;
+    padding: 30px;
+}
+
+/* O segredo para não quebrar: Scroll Horizontal */
+.tours-slider-container {
+    width: 100%;
+    overflow-x: auto; /* Cria a barra de rolagem */
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch; /* Suavidade no celular */
+}
+
+.tours-slider-premium {
+    display: flex; /* Coloca um ao lado do outro */
+    flex-wrap: nowrap; /* Impede de pular linha */
+    gap: 15px;
+}
+
+/* Tamanho de cada barquinho */
+.tour-card-premium {
+    flex: 0 0 280px; /* Fixa a largura em 280px, não deixa esmagar */
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Esconde a barra de rolagem para ficar mais limpo */
+.tours-slider-container::-webkit-scrollbar {
+    height: 6px;
+}
+.tours-slider-container::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 10px;
+}
+
+/* Container da Seção */
+.related-tours-section {
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+.related-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #2c2c2c;
+}
+
+/* Mecanismo de Scroll */
+.tours-slider-container {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tours-slider-premium {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+}
+
+/* Card Minimalista */
+.tour-card-standard {
+    flex: 0 0 220px; /* Largura leve e discreta */
+    text-decoration: none;
+    color: #2c2c2c;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.2s ease;
+}
+
+.tour-card-standard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* Imagem */
+.tour-card-image {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+}
+
+.tour-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Conteúdo */
+.tour-card-content {
+    padding: 12px;
+}
+
+.tour-location {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #767676;
+    margin-bottom: 4px;
+}
+
+.tour-name {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Corta o nome se for muito longo */
+}
+
+.tour-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.stars {
+    color: #00aa6c; /* O verde das bolinhas do TripAdvisor */
+    letter-spacing: -1px;
+    font-size: 14px;
+}
+
+.rating-count {
+    color: #767676;
+}
+
+/* Isso cria o respiro na lateral esquerda no celular */
+.slider-mobile-wrapper {
+    padding: 0 15px; /* Ajuste o 15px se quiser mais ou menos espaço */
+}
+
+/* Garante que o container de scroll ocupe a largura disponível sem vazar */
+.tours-slider-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Mantém os cards em linha e com estrelinhas amarelas */
+.stars-gold {
+    color: #ffb400;
+}
+
+/* AJUSTE APENAS PARA MOBILE (CELULAR) */
+@media (max-width: 768px) {
+    .related-tours-section {
+        padding-left: 20px !important;  /* Empurra o conteúdo para a direita */
+        padding-right: 20px !important; /* Dá respiro na lateral direita também */
+    }
+
+    .related-title {
+        margin-left: 0; /* Garante que o título acompanhe o alinhamento */
+    }
+}
+
+/* Aumenta o texto da Visão Geral */
+#visao-geral p {
+    font-size: 16px; /* Aumente ou diminua este número conforme o seu gosto */
+    line-height: 1.6; /* Deixa o espaço entre as linhas mais confortável para leitura */
+    color: #444;      /* Uma cor cinza escuro profissional */
+    margin-bottom: 15px; /* Espaço entre os parágrafos se você usar mais de um */
+}
