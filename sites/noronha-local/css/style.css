@@ -19069,44 +19069,46 @@ main.service-page .service-summary h2 {
 }
 
 /* --- 3. MOBILE (CORRIGINDO O CORTE) --- */
+/* --- 3. MOBILE (VERSÃO FINAL COM DESLIZE DE DEDO) --- */
 @media (max-width: 768px) {
-    .mosaico-wrapper {
-        display: block !important; /* Desliga o grid para não esmagar a foto */
-        height: 350px; /* Define uma altura fixa para o banner mobile */
-    }
-
-    .item-2, .item-3 {
-        display: none !important; /* Esconde as outras para o JS alternar */
-    }
-
-    .item-1, .item-1 img {
-        height: 100% !important;
-        object-position: center 20%; /* Sobe a foto para o barco não ser cortado */
-    }
-    
-    .boats-video-cta {
-        z-index: 10; /* Garante que o texto fique acima de tudo */
-    }
-}
-
-@media (max-width: 768px) {
-    /* Garante que a seção tenha uma altura fixa no celular */
+    /* Garante a altura do banner e o posicionamento do texto */
     .mosaico-ativo {
         height: 400px !important; 
         position: relative;
+        overflow: hidden;
     }
 
+    /* Transforma o container em uma fila horizontal infinita */
     .mosaico-wrapper {
+        display: flex !important; /* Coloca as fotos lado a lado */
         height: 100% !important;
-        display: block !important;
+        overflow-x: auto !important; /* Habilita o deslize lateral */
+        scroll-snap-type: x mandatory; /* Faz a foto "travar" no centro */
+        -webkit-overflow-scrolling: touch; /* Deixa o deslize suave no iPhone */
+        scrollbar-width: none; /* Esconde a barra de rolagem */
     }
 
-    /* FORÇA A IMAGEM A PREENCHER TODO O ESPAÇO VERTICAL */
-    .mosaico-item.item-1, 
-    .mosaico-item.item-1 img {
+    .mosaico-wrapper::-webkit-scrollbar {
+        display: none; /* Esconde a barra no Chrome e Safari */
+    }
+
+    /* Configura cada item para ocupar a tela inteira */
+    .mosaico-item {
+        flex: 0 0 100%; /* Cada foto gasta 100% da largura disponível */
+        scroll-snap-align: start;
+        height: 100% !important;
+        display: block !important; /* MOSTRA todas as fotos para o dedo alcançar */
+    }
+
+    .mosaico-item img {
         width: 100% !important;
-        height: 100% !important; /* Aqui ela vai preencher os 400px */
+        height: 100% !important;
         object-fit: cover !important;
-        object-position: center 20% !important;
+        object-position: center 20% !important; /* Foca no barco, não no mar */
+    }
+    
+    .boats-video-cta {
+        z-index: 10; /* Mantém o texto fixo sobre o carrossel */
+        pointer-events: none; /* Deixa o toque passar para as fotos abaixo */
     }
 }
