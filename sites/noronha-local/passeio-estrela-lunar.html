@@ -128,39 +128,41 @@
   <!-- HERO -->
 <section class="service-hero container">
 
-  <h1>Passeio Privativo • Estrela Lunar</h1>
+  <h1>Catamarã Estrela Lunar</h1>
 
   <div class="ta-rating">
     ⭐⭐⭐⭐⭐ <span>4.9 · Experiência privativa em Fernando de Noronha</span>
   </div>
 
   <!-- GALERIA -->
-  <div class="ta-gallery">
-
-    <div class="ta-gallery-main ta-video">
-
-  <!-- VIDEO DESATIVADO (pode reativar depois)
-  <video autoplay muted loop playsinline>
-    <source src="videos/estrela-lunar.mp4" type="video/mp4">
-  </video>
-  -->
+<div class="ta-gallery" data-gallery>
 
   <!-- IMAGEM PRINCIPAL -->
-  <img 
-    src="images/passeios/banner-estrela-lunar.jpg" 
-    alt="Passeio Estrela Lunar em Fernando de Noronha"
-    class="ta-gallery-image"
-  >
+  <div class="ta-gallery-main">
+    <img 
+      src="images/passeios/barcos/banner-estrela-lunar-1.jpg"
+      alt="Passeio Estrela Lunar em Fernando de Noronha"
+      class="ta-gallery-current"
+    >
+  </div>
+
+  <!-- IMAGENS MENORES (THUMBS) -->
+  <div class="ta-gallery-side">
+    <img 
+      src="images/passeios/barcos/banner-estrela-lunar-2.jpg"
+      alt="Passeio Estrela Lunar em Fernando de Noronha"
+      class="ta-thumb active"
+    >
+    <img 
+      src="images/passeios/barcos/banner-estrela-lunar-3.jpg"
+      alt="Passeio Estrela Lunar em Noronha"
+      class="ta-thumb"
+    >
+    
+  </div>
 
 </div>
 
-<div class="ta-gallery-side">
-  <img src="images/passeios/barcos/estrela-lunar-1.jpg" alt="Passeio Estrela Lunar em Noronha">
-  <img src="images/passeios/barcos/estrela-lunar-2.jpg" alt="Entardecer no passeio Estrela Lunar">
-</div>
-
-
-</section>
 
 <section class="service-body container">
   <div class="service-grid">
@@ -169,7 +171,7 @@
 
       <section id="visao-geral" class="service-section">
   <span class="service-eyebrow">Passeio privativo • Mar de Dentro</span>
-  <h2>Lancha Estrela Lunar</h2>
+  <!-- <h2>Lancha Estrela Lunar</h2> -->
   <p class="service-intro">
     A Lancha Estrela Lunar é uma opção de passeio de barco privativo em Fernando de Noronha,
     ideal para quem busca conforto, exclusividade e uma experiência diferenciada, com foco
@@ -584,6 +586,83 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  const gallery = document.querySelector('[data-gallery]');
+  if (!gallery) return;
+
+  const mainImage = gallery.querySelector('.ta-gallery-current');
+  const thumbs = gallery.querySelectorAll('.ta-thumb');
+
+  let currentIndex = 0;
+  let autoInterval = null;
+
+  function showImage(index, isManualSwap = false) {
+    if (!thumbs[index]) return;
+
+    mainImage.style.opacity = '0';
+
+    setTimeout(() => {
+      // SALVA AS FOTOS ATUAIS
+      const currentMainSrc = mainImage.src;
+      const clickedThumbSrc = thumbs[index].src;
+
+      // FAZ A TROCA (SWAP)
+      mainImage.src = clickedThumbSrc;
+      
+      // Só troca a miniatura se for um clique manual no Desktop
+      if (isManualSwap && window.innerWidth > 768) {
+        thumbs[index].src = currentMainSrc;
+      }
+
+      mainImage.style.opacity = '1';
+
+      thumbs.forEach(t => t.classList.remove('active'));
+      thumbs[index].classList.add('active');
+
+      currentIndex = index;
+    }, 200);
+  }
+
+  // DESKTOP: clique nas thumbs com SWAP real
+  thumbs.forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      if (window.innerWidth > 768) {
+        stopAuto();
+        // Passamos 'true' para indicar que é uma troca manual de posição
+        showImage(index, true);
+      }
+    });
+  });
+
+  // MOBILE: troca automática (apenas carrossel visual)
+  function startAuto() {
+    if (window.innerWidth > 768) return;
+    autoInterval = setInterval(() => {
+      let next = (currentIndex + 1) % thumbs.length;
+      showImage(next, false); // false para não trocar a imagem da thumb no mobile
+    }, 2500);
+  }
+
+  function stopAuto() {
+    if (autoInterval) {
+      clearInterval(autoInterval);
+      autoInterval = null;
+    }
+  }
+
+  // Inicialização e Resize
+  if (window.innerWidth <= 768) startAuto();
+
+  window.addEventListener('resize', () => {
+    stopAuto();
+    if (window.innerWidth <= 768) startAuto();
+  });
+});
+
+</script>
 
 </body>
 </html>

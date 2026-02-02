@@ -16509,62 +16509,76 @@ display: none !important;
 
 /* =====BANNER PASSEIOS GALERIA ESTILO TRIPADVISOR ===== */
 
+/* Container da Galeria no Desktop */
 .ta-gallery {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 8px;
-  margin-top: 24px;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 1140px;
+  height: 400px;
+  margin: 20px auto;
   position: relative;
-  
 }
 
-.ta-gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Área da Imagem Grande (66% da largura) */
+.ta-gallery-main {
+  flex: 2;
+  overflow: hidden;
   border-radius: 8px;
 }
 
-.ta-gallery-main {
-  height: 420px;
+/* 🔧 CORREÇÃO AQUI */
+.ta-gallery-main img {
+  width: 100%;
+  height: 100%;              /* ocupa o container */
+  object-fit: contain;       /* NÃO corta a imagem principal */
+  transition: opacity 0.3s ease;
 }
 
+/* Área das Imagens Pequenas (33% da largura) */
 .ta-gallery-side {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .ta-gallery-side img {
-  height: 206px;
+  width: 100%;
+  height: calc(50% - 5px);
+  object-fit: cover;         /* thumbs podem cortar */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.ta-gallery-wrapper {
-  position: relative;
+.ta-gallery-side img:hover {
+  filter: brightness(0.8);
 }
 
-
-@media (max-width: 768px) {
+/* MOBILE */
+@media (max-width: 991px) {
   .ta-gallery {
-    grid-template-columns: 1fr;
-    height: 160px;   /* antes estava alto demais */
-    margin-bottom: 16px;
-    position: relative;
-  }
-  
-  .ta-gallery-side {
-    display: none;
+    display: block !important;
+    height: auto !important;
+    padding: 0 10px;
   }
 
   .ta-gallery-main {
-    height: 260px;
+    width: 100%;
+    height: 250px;
+    border-radius: 8px !important;
+    margin-bottom: 0;
   }
-}
 
-@media (max-width: 767px) {
-  .ta-gallery img {
-    object-fit: cover;
-    object-position: center top;
+  .ta-gallery-side {
+    display: none !important;
+  }
+
+  .ta-gallery-main img {
+    height: 100%;
+    object-fit: cover;       /* no mobile pode cortar */
+    border-radius: 8px !important;
   }
 }
 
@@ -17608,17 +17622,33 @@ html, body {
    HERO PASSEIOS – VÍDEO
 ============================ */
 
-.ta-gallery-main.ta-video {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
+@media (max-width: 768px) {
+  /* GALERIA DE IMAGEM (não vídeo) */
+  .ta-gallery-main:not(.ta-video) {
+    height: auto;          /* 🔑 deixa a imagem definir a altura */
+    overflow: visible;     /* 🔑 para de cortar */
+  }
+
+  .ta-gallery-main:not(.ta-video) img {
+    width: 100%;
+    height: auto;          /* 🔑 imagem natural */
+    object-fit: initial;  /* 🔑 igual página Passeios */
+    display: block;
+  }
+}
+
+/* APENAS IMAGEM (NÃO VÍDEO) */
+.ta-gallery-main:not(.ta-video) img {
+  width: 100%;
+  height: auto;
+  object-fit: initial;
+  display: block;
 }
 
 .ta-gallery-main.ta-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .ta-hero-video video {
@@ -18061,7 +18091,7 @@ html, body {
 .service-single .service-eyebrow {
   line-height: 1.15;
   display: block;
-  margin-top: -20px;          /* NÃO puxa para o banner */
+  margin-top: -40px;          /* NÃO puxa para o banner */
   margin-bottom: 8px;
 }
 
@@ -18074,20 +18104,11 @@ html, body {
   }
 }
 
-.service-single .ta-gallery-main.ta-video {
-  height: 420px;
-}
-
-@media (max-width: 767px) {
-  .service-single .ta-gallery-main.ta-video {
-    height: 260px;
-  }
-}
-
+/* ===== VÍDEO APENAS ===== */
 .ta-video {
   position: relative;
   width: 100%;
-  height: 100vh; /* ou 60vh se quiser menor */
+  height: 420px;
   overflow: hidden;
 }
 
@@ -18103,18 +18124,15 @@ html, body {
 
 @media (max-width: 768px) {
   .ta-video {
-    height: 60vh;
+    height: 260px;
   }
 }
+
 
 
 /*====================================
 =====NOVA PAGINA PASSEIOS GRID========
 ====================================*/
-/* ===============================
-   PÁGINA: LISTAGEM DE BARCOS
-   ESCOPO TOTAL
-================================ */
 
 .page-boats-list .boats-grid {
   display: grid;
@@ -18360,8 +18378,6 @@ html, body {
 
 .ta-gallery-main img.ta-gallery-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
 }
 
@@ -18414,6 +18430,26 @@ html, body {
     display: none;
     
   }
+}
+
+.boats-hero-content {
+    position: absolute;
+    bottom: 30px;
+    left: 30%; /* Move para o meio da tela */
+    transform: translateX(-50%); /* Puxa de volta metade da largura dele */
+    width: 100%;
+    max-width: 1140px; /* MESMA LARGURA que você colocou no .ta-gallery ou .boats-hero */
+    padding: 0 40px; /* Margem interna para o texto não encostar na borda do vídeo */
+    z-index: 5;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* Garante que o título e as estrelas fiquem alinhados à esquerda DENTRO desse bloco centralizado */
+.boats-hero-content h1, 
+.ta-rating-hero {
+    text-align: left;
+    margin-left: 0;
 }
 
 .boats-hero {
@@ -18506,3 +18542,69 @@ html, body {
     font-size: 14px;
   }
 }
+
+
+/* ===== GALERIA BANNER NOVA ===== */
+.gallery-banner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* IMAGEM PRINCIPAL */
+.gallery-main {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: auto;          /* imagem manda */
+  display: block;
+}
+
+/* IMAGENS LATERAIS */
+.gallery-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+}
+
+.gallery-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .gallery-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-side {
+    display: none; /* mobile mostra só a principal */
+  }
+}
+
+/* ===== FIX REAL HERO MOBILE ===== */
+@media (max-width: 768px) {
+
+  .service-hero.container {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .service-hero h1,
+  .service-hero .ta-rating {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+}
+
