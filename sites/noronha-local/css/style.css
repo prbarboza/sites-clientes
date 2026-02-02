@@ -18637,7 +18637,7 @@ html, body {
 .page-boats-list .boats-list-header {
     padding: 0 16px;
     margin-top: 0 !important;
-    margin-bottom: 10px !important; /* Espaço exato entre texto e vídeo */
+    margin-bottom: 5px !important; /* Espaço exato entre texto e vídeo */
 }
 
 .page-boats-list .boats-list-header h1 {
@@ -18651,14 +18651,14 @@ html, body {
 /* Pinta apenas as estrelas */
 .page-boats-list .ta-rating .star-color {
     color: #0A6CFF !important; /* Agora vai ficar dourada! */
-    font-size: 20px;            /* Ajuste o tamanho aqui */
-    margin-right: 5px;
+    font-size: 16px;            /* Ajuste o tamanho aqui */
+    margin-right: 2px;
     letter-spacing: 2px;       /* Dá um respiro entre elas */
 }
 
 .page-boats-list .ta-rating span:last-child {
     color: #666 !important;    /* Mantém o texto em cinza */
-    font-size: 15px;
+    font-size: 12px;
 }
 
 /* 3. Vídeo Hero: Trava a altura e remove margens de afastamento */
