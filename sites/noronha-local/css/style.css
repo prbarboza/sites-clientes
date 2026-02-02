@@ -10422,10 +10422,10 @@ a.text-dark:focus {
 body {
   font-family: "Poppins", Arial, sans-serif;
   background: #fff;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
-  font-weight: 300;
-  color: #4d4d4d;
+  font-weight: 400;
+  color: #444;
 }
 
 
@@ -14682,7 +14682,7 @@ body {
 }
 
 .nl-services .media-body p {
-  font-size: 14px;   /* <<< ALTERA AQUI */
+  font-size: 15px;   /* <<< ALTERA AQUI */
   line-height: 1.6;
 }
 
@@ -16768,6 +16768,7 @@ display: none !important;
 }
 
 .roteiro-text strong {
+  font-size: 15px;
   display: block;
   font-weight: 600;
   color: #000;
@@ -16778,7 +16779,8 @@ display: none !important;
   margin: 0;
   font-size: 15px;
   line-height: 1.4;
-  color: #666;
+  color: #444;
+  font-weight: 400;
 }
 
 /* ===============================
@@ -18448,14 +18450,17 @@ html, body {
   object-fit: cover;
 }
 
+/* Este seletor garante que a camada escura apareça sobre as fotos */
 .boats-video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.25),
-    rgba(0,0,0,0.45)
-  );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente que escurece a parte de baixo para o texto aparecer */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+    z-index: 2; /* Fica acima das imagens */
+    pointer-events: none;
 }
 
 .boats-video-content {
@@ -18635,7 +18640,7 @@ html, body {
 
 /* 2. Cabeçalho: Remove espaços vazios que empurram o vídeo para baixo */
 .page-boats-list .boats-list-header {
-    padding: 0 16px;
+    padding: 0 10px;
     margin-top: 0 !important;
     margin-bottom: 5px !important; /* Espaço exato entre texto e vídeo */
 }
@@ -18657,8 +18662,8 @@ html, body {
 }
 
 .page-boats-list .ta-rating span:last-child {
-    color: #666 !important;    /* Mantém o texto em cinza */
-    font-size: 12px;
+    color: #666 !important;    /* Mantém o texto rating em cinza */
+    font-size: 13px;
 }
 
 /* 3. Vídeo Hero: Trava a altura e remove margens de afastamento */
@@ -18681,18 +18686,31 @@ html, body {
 
 /* 4. Textos dentro do Vídeo (Fontes e Sombras) */
 .page-boats-list .boats-video-cta {
+    display: block; 
     position: absolute;
-    bottom: 20px;
+    /* 1. Subimos de 20px para 50px para ele não ficar tão colado embaixo */
+    bottom: 30px; 
     left: 20px;
-    z-index: 2;
+    z-index: 10 !important;
     color: #fff;
+    text-align: left;
 }
 
 .page-boats-list .boats-video-cta strong {
     display: block;
     font-size: 24px;
     font-weight: 600;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.8); /* Fonte bem visível */
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    /* 2. Aumentamos para 1.2 para as letras não baterem uma na outra */
+    line-height: 1.2; 
+    /* 3. Ajuste fino do espaço entre o Título e o Subtítulo */
+    margin-bottom: 12px !important; 
+}
+
+.page-boats-list .boats-video-cta span {
+    display: block;
+    font-size: 14px;
+    line-height: 1.2;
 }
 
 /* ================================================================
@@ -19001,8 +19019,94 @@ main.service-page .service-summary h2 {
 
 /* Aumenta o texto da Visão Geral */
 #visao-geral p {
-    font-size: 16px; /* Aumente ou diminua este número conforme o seu gosto */
+    font-size: 15px; /* Aumente ou diminua este número conforme o seu gosto */
     line-height: 1.6; /* Deixa o espaço entre as linhas mais confortável para leitura */
     color: #444;      /* Uma cor cinza escuro profissional */
     margin-bottom: 15px; /* Espaço entre os parágrafos se você usar mais de um */
+    font-weight: 400;
+}
+
+/* --- 1. CONFIGURAÇÃO GERAL (AFETA TODOS) --- */
+.mosaico-ativo {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* RECUPERANDO O OVERLAY: Ele precisa de z-index para ficar na frente das fotos */
+.boats-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.mosaico-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* --- 2. DESKTOP (MOSAICO) --- */
+@media (min-width: 992px) {
+    .mosaico-wrapper {
+        display: grid !important;
+        grid-template-columns: 1.5fr 1fr; 
+        grid-template-rows: 250px 250px; 
+        gap: 10px;
+        width: 100%;
+    }
+
+    .item-1 {
+        grid-row: 1 / span 2;
+    }
+}
+
+/* --- 3. MOBILE (CORRIGINDO O CORTE) --- */
+@media (max-width: 768px) {
+    .mosaico-wrapper {
+        display: block !important; /* Desliga o grid para não esmagar a foto */
+        height: 350px; /* Define uma altura fixa para o banner mobile */
+    }
+
+    .item-2, .item-3 {
+        display: none !important; /* Esconde as outras para o JS alternar */
+    }
+
+    .item-1, .item-1 img {
+        height: 100% !important;
+        object-position: center 20%; /* Sobe a foto para o barco não ser cortado */
+    }
+    
+    .boats-video-cta {
+        z-index: 10; /* Garante que o texto fique acima de tudo */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Garante que a seção tenha uma altura fixa no celular */
+    .mosaico-ativo {
+        height: 400px !important; 
+        position: relative;
+    }
+
+    .mosaico-wrapper {
+        height: 100% !important;
+        display: block !important;
+    }
+
+    /* FORÇA A IMAGEM A PREENCHER TODO O ESPAÇO VERTICAL */
+    .mosaico-item.item-1, 
+    .mosaico-item.item-1 img {
+        width: 100% !important;
+        height: 100% !important; /* Aqui ela vai preencher os 400px */
+        object-fit: cover !important;
+        object-position: center 20% !important;
+    }
 }
