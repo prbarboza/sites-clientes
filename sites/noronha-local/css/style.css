@@ -18630,7 +18630,7 @@ html, body {
 
 /* 1. Garante que o conteúdo comece logo após o menu, sem sumir */
 .service-page.page-boats-list {
-    padding-top: 110px !important; /* Ajuste esse valor se o menu for maior/menor */
+    padding-top: 100px !important; /* Ajuste esse valor se o menu for maior/menor */
 }
 
 /* 2. Cabeçalho: Remove espaços vazios que empurram o vídeo para baixo */
@@ -18666,7 +18666,7 @@ html, body {
     position: relative;
     width: 100%;
     height: 400px !important; /* Altura ideal mobile */
-    margin-top: -50px !important;
+    margin-top: -70px !important;
     margin-bottom: 24px;
     overflow: hidden;
     z-index: 1; /* Garante que o vídeo não cubra o clique do menu */
