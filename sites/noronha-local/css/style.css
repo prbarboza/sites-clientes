@@ -19051,7 +19051,9 @@ main.service-page .service-summary h2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.3s ease-in-out;
+    /* REMOVIDO: transition: opacity 0.3s (Isso tirou o lag) */
+    transition: none !important; 
+    opacity: 1 !important;
     cursor: pointer;
 }
 
@@ -19063,6 +19065,7 @@ main.service-page .service-summary h2 {
         grid-template-rows: 250px 250px; 
         gap: 10px;
         width: 100%;
+        overflow: hidden !important; /* Impede scroll e repetição no PC */
     }
 
     .item-1 {
@@ -19241,3 +19244,62 @@ main.service-page .service-summary h2 {
         min-width: 280px !important;
     }
 }
+
+@media (min-width: 992px) {
+    /* 1. Define a altura da linha de correr */
+    .tours-slider-container::-webkit-scrollbar {
+        height: 12px !important; /* Aumente aqui se quiser mais grossa */
+        display: block !important;
+    }
+
+    /* 2. O trilho (fundo da barra) */
+    .tours-slider-container::-webkit-scrollbar-track {
+        background: #f1f1f1 !important;
+        border-radius: 10px;
+    }
+
+    /* 3. O "pegador" (a parte que você arrasta) */
+    .tours-slider-container::-webkit-scrollbar-thumb {
+        background: #0088cc !important; /* Cor azul do seu site */
+        border-radius: 10px;
+    }
+
+    /* 4. Cor ao passar o mouse */
+    .tours-slider-container::-webkit-scrollbar-thumb:hover {
+        background: #005f99 !important;
+    }
+}
+
+@media (max-width: 991px) { /* Ajustado para cobrir tablets também */
+    .mosaico-ativo {
+        height: 400px !important; 
+    }
+
+    .mosaico-wrapper {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* PROÍBE REPETIÇÃO */
+        height: 100% !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mosaico-item {
+        flex: 0 0 100% !important; 
+        width: 100% !important;
+        min-width: 100% !important; /* Garante que uma não "vaze" na outra errado */
+        scroll-snap-align: start;
+        height: 100% !important;
+    }
+
+    /* Força as fotos 2 e 3 a existirem e serem clicáveis */
+    .item-2, .item-3 {
+        display: block !important;
+    }
+
+    .mosaico-item img {
+        object-position: center 20% !important;
+        transition: none !important; /* Sem lag no toque */
+    }
+}
+
