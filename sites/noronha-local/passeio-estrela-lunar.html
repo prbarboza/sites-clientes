@@ -131,18 +131,20 @@
     </div>
   </section>
 
-  <section class="boats-video-hero">
-    <div class="video-placeholder-img" style="width: 100%; height: 100%; position: absolute;">
-       <img src="images/passeios/barcos/banner-estrela-lunar-1.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+    <section class="boats-video-hero mosaico-ativo">
+    <div class="boats-video-overlay"></div> 
+    
+    <div class="mosaico-wrapper">
+        <div class="mosaico-item item-1"><img src="images/passeios/barcos/banner-estrela-lunar-1.jpg" alt="Entardecer Vip"></div>
+        <div class="mosaico-item item-2"><img src="images/passeios/barcos/banner-estrela-lunar-2.jpg" alt="Estrela Lunar Catamarâ"></div>
+        <div class="mosaico-item item-3"><img src="images/passeios/barcos/banner-estrela-lunar-3.jpg" alt="Vista Noronha"></div>
     </div>
-
-    <div class="boats-video-overlay"></div>
-
+    
     <div class="boats-video-cta">
-      <strong>Sua experiência privativa no paraíso</strong>
+      <strong>Experiência premium entardecer VIP</strong>
       <span>@noronhalocal</span>
     </div>
-  </section>
+</section>
 
   <section class="service-summary container">
     <h2>Passeio privativo • Mar de Dentro</h2>
@@ -246,14 +248,19 @@
     </div> <aside class="service-sidebar">
       <nav class="service-menu">
         <ul>
-          <li><a href="passeio-escuna-so-deus.html" class="active">Escuna Só Deus</a></li>
+          <li><a href="passeio-escuna-so-deus.html">Escuna Só Deus</a></li>
+          <li><a href="passeio-fish-hunter.html">Fish Hunter</a></li>
           <li><a href="passeio-catamara-davi.html">Catamarã Davi</a></li>
-          <li><a href="passeio-lancha-jo.html">Lancha Jô LL</a></li>
+          <li><a href="passeio-estrela-lunar.html" class="active">Lancha Estrela Lunar</a></li>
           <li><a href="passeio-albatroz.html">Albatroz</a></li>
           <li><a href="passeio-intrometida.html">Intrometida</a></li>
+          <li><a href="passeio-escuna-so-deus.html">Escuna Só Deus</a></li>
+          <li><a href="passeio-lancha-jo.html">Lancha Jô LL</a></li>
           <li><a href="passeios-use-noronha.html">Use Noronha</a></li>
           <li><a href="passeios-trovao-dos-mares.html">Trovão dos Mares</a></li>
           <li><a href="passeios-makaira.html">Makaira</a></li>
+          <li><a href="passeios-calebe.html">Calebe</a></li>
+        </ul>
         </ul>
       </nav>
       <div class="card-reserva-sidebar">
@@ -572,78 +579,69 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
 
 document.addEventListener('DOMContentLoaded', function () {
-  const gallery = document.querySelector('[data-gallery]');
+  // 1. Aponta para o seu novo container
+  const gallery = document.querySelector('.mosaico-wrapper');
   if (!gallery) return;
 
-  const mainImage = gallery.querySelector('.ta-gallery-current');
-  const thumbs = gallery.querySelectorAll('.ta-thumb');
+  // 2. No mosaico, a 'foto principal' é a item-1
+  const mainWrapper = gallery.querySelector('.item-1 img');
+  const allItems = gallery.querySelectorAll('.mosaico-item img');
 
   let currentIndex = 0;
   let autoInterval = null;
 
   function showImage(index, isManualSwap = false) {
-    if (!thumbs[index]) return;
+    if (!allItems[index]) return;
 
-    mainImage.style.opacity = '0';
+    // Transição suave
+    mainWrapper.style.opacity = '0.5';
 
     setTimeout(() => {
-      // SALVA AS FOTOS ATUAIS
-      const currentMainSrc = mainImage.src;
-      const clickedThumbSrc = thumbs[index].src;
+      const currentMainSrc = mainWrapper.src;
+      const nextImgSrc = allItems[index].src;
 
-      // FAZ A TROCA (SWAP)
-      mainImage.src = clickedThumbSrc;
+      // Troca a imagem principal
+      mainWrapper.src = nextImgSrc;
       
-      // Só troca a miniatura se for um clique manual no Desktop
+      // No Desktop, se clicar na pequena, elas trocam de lugar (Swap)
       if (isManualSwap && window.innerWidth > 768) {
-        thumbs[index].src = currentMainSrc;
+        allItems[index].src = currentMainSrc;
       }
 
-      mainImage.style.opacity = '1';
-
-      thumbs.forEach(t => t.classList.remove('active'));
-      thumbs[index].classList.add('active');
-
+      mainWrapper.style.opacity = '1';
       currentIndex = index;
-    }, 200);
+    }, 150);
   }
 
-  // DESKTOP: clique nas thumbs com SWAP real
-  thumbs.forEach((thumb, index) => {
-    thumb.addEventListener('click', () => {
+  // Cliques manuais (Desktop)
+  allItems.forEach((img, index) => {
+    img.addEventListener('click', () => {
       if (window.innerWidth > 768) {
         stopAuto();
-        // Passamos 'true' para indicar que é uma troca manual de posição
-        showImage(index, true);
+        showImage(index, true); 
       }
     });
   });
 
-  // MOBILE: troca automática (apenas carrossel visual)
+  // Mobile: Troca as fotos automaticamente na imagem principal
   function startAuto() {
     if (window.innerWidth > 768) return;
     autoInterval = setInterval(() => {
-      let next = (currentIndex + 1) % thumbs.length;
-      showImage(next, false); // false para não trocar a imagem da thumb no mobile
-    }, 2500);
+      let next = (currentIndex + 1) % allItems.length;
+      showImage(next, false);
+    }, 3000);
   }
 
   function stopAuto() {
-    if (autoInterval) {
-      clearInterval(autoInterval);
-      autoInterval = null;
-    }
+    if (autoInterval) { clearInterval(autoInterval); autoInterval = null; }
   }
 
-  // Inicialização e Resize
   if (window.innerWidth <= 768) startAuto();
-
   window.addEventListener('resize', () => {
     stopAuto();
     if (window.innerWidth <= 768) startAuto();
   });
 });
-
 </script>
 
 </body>

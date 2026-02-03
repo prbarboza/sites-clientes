@@ -19043,6 +19043,7 @@ main.service-page .service-summary h2 {
     background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
     z-index: 2;
     pointer-events: none;
+    
 }
 
 .mosaico-item img {
@@ -19068,7 +19069,7 @@ main.service-page .service-summary h2 {
     }
 }
 
-/* --- 3. MOBILE (CORRIGINDO O CORTE) --- */
+
 /* --- 3. MOBILE (VERSÃO FINAL COM DESLIZE DE DEDO) --- */
 @media (max-width: 768px) {
     /* Garante a altura do banner e o posicionamento do texto */
@@ -19105,6 +19106,7 @@ main.service-page .service-summary h2 {
         height: 100% !important;
         object-fit: cover !important;
         object-position: center 20% !important; /* Foca no barco, não no mar */
+        
     }
     
     .boats-video-cta {
@@ -19112,3 +19114,4 @@ main.service-page .service-summary h2 {
         pointer-events: none; /* Deixa o toque passar para as fotos abaixo */
     }
 }
+
