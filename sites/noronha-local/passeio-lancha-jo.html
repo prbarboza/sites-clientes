@@ -638,72 +638,72 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function () {
-  // 1. Aponta para o seu novo container
-  const gallery = document.querySelector('.mosaico-wrapper');
-  if (!gallery) return;
 
-  // 2. No mosaico, a 'foto principal' é a item-1
-  const mainWrapper = gallery.querySelector('.item-1 img');
-  const allItems = gallery.querySelectorAll('.mosaico-item img');
+  const wrapper = document.querySelector('.mosaico-wrapper');
+  if (!wrapper) return;
 
-  let currentIndex = 0;
-  let autoInterval = null;
+  const items = wrapper.querySelectorAll('.mosaico-item');
+  const mainItem = wrapper.querySelector('.item-1 img');
 
-  function showImage(index, isManualSwap = false) {
-    if (!allItems[index]) return;
+  /* =====================================================
+     DESKTOP — troca imagem principal ao clicar
+  ===================================================== */
+  items.forEach((item) => {
+    const img = item.querySelector('img');
 
-    // Transição suave
-    mainWrapper.style.opacity = '0.5';
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) return;
+      if (!mainItem || item.classList.contains('item-1')) return;
 
-    setTimeout(() => {
-      const currentMainSrc = mainWrapper.src;
-      const nextImgSrc = allItems[index].src;
-
-      // Troca a imagem principal
-      mainWrapper.src = nextImgSrc;
-      
-      // No Desktop, se clicar na pequena, elas trocam de lugar (Swap)
-      if (isManualSwap && window.innerWidth > 768) {
-        allItems[index].src = currentMainSrc;
-      }
-
-      mainWrapper.style.opacity = '1';
-      currentIndex = index;
-    }, 150);
-  }
-
-  // Cliques manuais (Desktop)
-  allItems.forEach((img, index) => {
-    img.addEventListener('click', () => {
-      if (window.innerWidth > 768) {
-        stopAuto();
-        showImage(index, true); 
-      }
+      const tempSrc = mainItem.src;
+      mainItem.src = img.src;
+      img.src = tempSrc;
     });
   });
 
-  // Mobile: Troca as fotos automaticamente na imagem principal
-  function startAuto() {
+  /* =====================================================
+     MOBILE — auto-scroll real (item por item)
+  ===================================================== */
+  let currentIndex = 0;
+  let autoScroll;
+
+  function scrollToIndex(index) {
+    const target = items[index];
+    if (!target) return;
+
+    wrapper.scrollTo({
+      left: target.offsetLeft,
+      behavior: 'smooth'
+    });
+  }
+
+  function startAutoScroll() {
     if (window.innerWidth > 768) return;
-    autoInterval = setInterval(() => {
-      let next = (currentIndex + 1) % allItems.length;
-      showImage(next, false);
-    }, 3000);
+
+    autoScroll = setInterval(() => {
+      currentIndex = (currentIndex + 1) % items.length;
+      scrollToIndex(currentIndex);
+    }, 3500);
   }
 
-  function stopAuto() {
-    if (autoInterval) { clearInterval(autoInterval); autoInterval = null; }
+  function stopAutoScroll() {
+    clearInterval(autoScroll);
   }
 
-  if (window.innerWidth <= 768) startAuto();
-  window.addEventListener('resize', () => {
-    stopAuto();
-    if (window.innerWidth <= 768) startAuto();
-  });
+  // pausa quando o usuário interage
+  wrapper.addEventListener('touchstart', stopAutoScroll);
+  wrapper.addEventListener('mouseenter', stopAutoScroll);
+
+  wrapper.addEventListener('touchend', startAutoScroll);
+  wrapper.addEventListener('mouseleave', startAutoScroll);
+
+  startAutoScroll();
 });
 </script>
+
+
+
 
 </body>
 </html>
