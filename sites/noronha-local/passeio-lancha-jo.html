@@ -551,6 +551,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/mosaico-fade.js"></script>
 
 <script>
   const tabs = document.querySelectorAll('.tab-btn');
@@ -606,7 +607,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
-</script>
 
 <script>
   const taImages = document.querySelectorAll('.ta-hero-images img');
@@ -636,73 +636,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  const wrapper = document.querySelector('.mosaico-wrapper');
-  if (!wrapper) return;
-
-  const items = wrapper.querySelectorAll('.mosaico-item');
-  const mainItem = wrapper.querySelector('.item-1 img');
-
-  /* =====================================================
-     DESKTOP — troca imagem principal ao clicar
-  ===================================================== */
-  items.forEach((item) => {
-    const img = item.querySelector('img');
-
-    item.addEventListener('click', () => {
-      if (window.innerWidth <= 768) return;
-      if (!mainItem || item.classList.contains('item-1')) return;
-
-      const tempSrc = mainItem.src;
-      mainItem.src = img.src;
-      img.src = tempSrc;
-    });
-  });
-
-  /* =====================================================
-     MOBILE — auto-scroll real (item por item)
-  ===================================================== */
-  let currentIndex = 0;
-  let autoScroll;
-
-  function scrollToIndex(index) {
-    const target = items[index];
-    if (!target) return;
-
-    wrapper.scrollTo({
-      left: target.offsetLeft,
-      behavior: 'smooth'
-    });
-  }
-
-  function startAutoScroll() {
-    if (window.innerWidth > 768) return;
-
-    autoScroll = setInterval(() => {
-      currentIndex = (currentIndex + 1) % items.length;
-      scrollToIndex(currentIndex);
-    }, 3500);
-  }
-
-  function stopAutoScroll() {
-    clearInterval(autoScroll);
-  }
-
-  // pausa quando o usuário interage
-  wrapper.addEventListener('touchstart', stopAutoScroll);
-  wrapper.addEventListener('mouseenter', stopAutoScroll);
-
-  wrapper.addEventListener('touchend', startAutoScroll);
-  wrapper.addEventListener('mouseleave', startAutoScroll);
-
-  startAutoScroll();
-});
-</script>
-
-
 
 
 </body>
