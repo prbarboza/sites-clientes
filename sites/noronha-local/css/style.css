@@ -17634,8 +17634,9 @@ html, body {
   .ta-gallery-main:not(.ta-video) img {
     width: 100%;
     height: auto;          /* 🔑 imagem natural */
-    object-fit: initial;  /* 🔑 igual página Passeios */
+    object-fit: contain;  /* 🔑 igual página Passeios */
     display: block;
+    margin: 0 auto;
   }
 }
 
@@ -19026,46 +19027,38 @@ main.service-page .service-summary h2 {
     font-weight: 400;
 }
 
-/* --- 1. CONFIGURAÇÃO GERAL (AFETA TODOS) --- */
+/* ======================================================
+   MOSAICO – HERO IMAGENS
+====================================================== */
+
 .mosaico-ativo {
     position: relative;
-    overflow: hidden;
     width: 100%;
+    overflow: hidden;
 }
 
-/* RECUPERANDO O OVERLAY: Ele precisa de z-index para ficar na frente das fotos */
-.boats-video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+.mosaico-wrapper {
     width: 100%;
-    height: 100%;
-    background: none !important;
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0 !important;
-    
 }
 
 .mosaico-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* REMOVIDO: transition: opacity 0.3s (Isso tirou o lag) */
-    transition: none !important; 
+    transition: none !important;
     opacity: 1 !important;
     cursor: pointer;
 }
 
-/* --- 2. DESKTOP (MOSAICO) --- */
+/* ---------- DESKTOP ---------- */
 @media (min-width: 992px) {
+
     .mosaico-wrapper {
         display: grid !important;
-        grid-template-columns: 1.5fr 1fr; 
-        grid-template-rows: 250px 250px; 
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: 250px 250px;
         gap: 10px;
-        width: 100%;
-        overflow: hidden !important; /* Impede scroll e repetição no PC */
+        overflow: hidden !important;
     }
 
     .item-1 {
@@ -19073,82 +19066,72 @@ main.service-page .service-summary h2 {
     }
 }
 
+/* ---------- MOBILE / TABLET ---------- */
+/* MOBILE – MOSAICO CORRETO */
+@media (max-width: 991px) {
 
-/* --- 3. MOBILE (VERSÃO FINAL COM DESLIZE DE DEDO) --- */
-@media (max-width: 768px) {
-    /* Garante a altura do banner e o posicionamento do texto */
     .mosaico-ativo {
-        height: 400px !important; 
-        position: relative;
-        overflow: hidden;
+        aspect-ratio: 9 / 16;   /* PROPORÇÃO DE STORIES */
+        height: auto !important;
     }
 
-    /* Transforma o container em uma fila horizontal infinita */
     .mosaico-wrapper {
-        display: flex !important; /* Coloca as fotos lado a lado */
-        height: 100% !important;
-        overflow-x: auto !important; /* Habilita o deslize lateral */
-        scroll-snap-type: x mandatory; /* Faz a foto "travar" no centro */
-        -webkit-overflow-scrolling: touch; /* Deixa o deslize suave no iPhone */
-        scrollbar-width: none; /* Esconde a barra de rolagem */
+        height: 100%;
     }
 
-    .mosaico-wrapper::-webkit-scrollbar {
-        display: none; /* Esconde a barra no Chrome e Safari */
-    }
-
-    /* Configura cada item para ocupar a tela inteira */
     .mosaico-item {
-        flex: 0 0 100%; /* Cada foto gasta 100% da largura disponível */
-        scroll-snap-align: start;
-        height: 100% !important;
-        display: block !important; /* MOSTRA todas as fotos para o dedo alcançar */
+        height: 100%;
     }
 
     .mosaico-item img {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: center 20% !important; /* Foca no barco, não no mar */
-        
-    }
-    
-    .boats-video-cta {
-        z-index: 10; /* Mantém o texto fixo sobre o carrossel */
-        pointer-events: none; /* Deixa o toque passar para as fotos abaixo */
+        object-position: center center !important;
     }
 }
 
-.page-boats-list .boats-video-cta {
+/* =========================================
+   MOSAICO – IMAGENS SEM FADE (overlay intacto)
+========================================= */
+
+.mosaico-item img {
+    opacity: 1 !important;
+    transition: none !important;
+    animation: none !important;
+    filter: none !important;
+    will-change: auto !important;
+}
+
+.mosaico-item {
+    transition: none !important;
+}
+
+
+
+/* ======================================================
+   HERO VIDEO + OVERLAYS + CTA
+====================================================== */
+
+.page-boats-list .boats-video-hero {
+    position: relative;
+}
+
+.boats-video-overlay {
     position: absolute;
-    bottom: 24px;
-    left: 24px;
-    z-index: 2; /* acima do ::after */
-    color: #fff;
+    inset: 0;
+    background: none !important;
+    pointer-events: none;
+    z-index: 1;
 }
 
-
-@media (max-width: 768px) {
-    .page-boats-list .boats-video-cta {
-        left: 16px;
-        right: 16px;
-        max-width: none;
-
-        background: none !important;
-    }
+.page-boats-list .boats-video-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 55%,
+        rgba(0,0,0,0.75) 100%
+    );
 }
-
-.page-boats-list .boats-video-cta strong {
-    font-size: 24px;
-    font-weight: 600;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-}
-
-.page-boats-list .boats-video-cta span {
-    font-size: 14px;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-}
-
 
 .page-boats-list .boats-video-hero::after {
     content: "";
@@ -19156,150 +19139,107 @@ main.service-page .service-summary h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 45%; /* controla até onde o degradê sobe */
+    height: 45%;
     background: linear-gradient(
         to top,
         rgba(0,0,0,0.55),
         rgba(0,0,0,0)
     );
-    z-index: 1;
     pointer-events: none;
+    z-index: 1;
 }
 
-/* DESKTOP – overlay mais discreto */
-@media (min-width: 769px) {
-  .page-boats-list .boats-video-hero::after {
-    height: 38%;   /* 👈 ajuste fino: 35% / 38% / 40% */
-  }
-}
-
-/* MOBILE – overlay um pouco mais alto */
-@media (max-width: 768px) {
-  .page-boats-list .boats-video-hero::after {
-    height: 50%;   /* 👈 ajuste fino: 45% / 50% / 55% */
-  }
-}
-
-/* DESKTOP */
-@media (min-width: 769px) {
-  .page-boats-list .boats-video-cta {
-    bottom: 32px;   /* ajuste fino: 24 / 32 / 40 */
-    left: 32px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .page-boats-list .boats-video-cta {
-    bottom: 24px;   /* ajuste fino: 20 / 24 / 28 */
-    left: 20px;
-    right: 20px;
-  }
+/* CTA */
+.page-boats-list .boats-video-cta {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 2;
+    color: #fff;
 }
 
 .page-boats-list .boats-video-cta strong {
-  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
+    font-size: 24px;
+    font-weight: 600;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.75);
 }
 
 .page-boats-list .boats-video-cta span {
-  text-shadow: 0 1px 4px rgba(0,0,0,0.65);
+    font-size: 14px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.65);
 }
 
-.page-boats-list .boats-video-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
+/* CTA – ajustes por breakpoint */
+@media (min-width: 769px) {
 
-  /* Overlay começa transparente e escurece só no rodapé */
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0) 55%,
-    rgba(0,0,0,0.75) 100%
-  );
+    .page-boats-list .boats-video-cta {
+        bottom: 32px;
+        left: 32px;
+    }
+
+    .page-boats-list .boats-video-hero::after {
+        height: 38%;
+    }
 }
 
-/* --- CONFIGURAÇÃO APENAS PARA DESKTOP --- */
+@media (max-width: 768px) {
+
+    .page-boats-list .boats-video-cta {
+        bottom: 24px;
+        left: 20px;
+        right: 20px;
+        max-width: none;
+        background: none !important;
+        pointer-events: none;
+    }
+
+    .page-boats-list .boats-video-hero::after {
+        height: 50%;
+    }
+}
+
+/* ======================================================
+   SLIDER DE CARDS – DESKTOP
+====================================================== */
+
 @media (min-width: 992px) {
-    /* O container pai limita a área de visão */
+
     .tours-slider-container {
         width: 100% !important;
         overflow-x: auto !important;
-        padding-bottom: 10px; /* Espaço para não cortar sombra se houver */
+        padding-bottom: 10px;
     }
 
-    /* O container interno alinha os cards */
     .tours-slider-premium {
         display: flex !important;
         flex-wrap: nowrap !important;
         gap: 20px !important;
-        width: max-content !important; /* Fundamental para os cards não esticarem */
-        padding-right: 100px !important; /* Garante que o último card fique "pela metade" na tela */
+        width: max-content !important;
+        padding-right: 100px !important;
     }
 
-    /* Trava o tamanho dos cards para não ficarem largos */
     .tour-card-standard {
-        flex: 0 0 280px !important; /* Largura fixa: não cresce nem diminui */
+        flex: 0 0 280px !important;
         width: 280px !important;
         min-width: 280px !important;
     }
-}
 
-@media (min-width: 992px) {
-    /* 1. Define a altura da linha de correr */
+    /* Scrollbar */
     .tours-slider-container::-webkit-scrollbar {
-        height: 12px !important; /* Aumente aqui se quiser mais grossa */
-        display: block !important;
+        height: 12px;
     }
 
-    /* 2. O trilho (fundo da barra) */
     .tours-slider-container::-webkit-scrollbar-track {
-        background: #f1f1f1 !important;
+        background: #f1f1f1;
         border-radius: 10px;
     }
 
-    /* 3. O "pegador" (a parte que você arrasta) */
     .tours-slider-container::-webkit-scrollbar-thumb {
-        background: #0088cc !important; /* Cor azul do seu site */
+        background: #0088cc;
         border-radius: 10px;
     }
 
-    /* 4. Cor ao passar o mouse */
     .tours-slider-container::-webkit-scrollbar-thumb:hover {
-        background: #005f99 !important;
+        background: #005f99;
     }
 }
-
-@media (max-width: 991px) { /* Ajustado para cobrir tablets também */
-    .mosaico-ativo {
-        height: 400px !important; 
-    }
-
-    .mosaico-wrapper {
-        display: flex !important;
-        flex-wrap: nowrap !important; /* PROÍBE REPETIÇÃO */
-        height: 100% !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .mosaico-item {
-        flex: 0 0 100% !important; 
-        width: 100% !important;
-        min-width: 100% !important; /* Garante que uma não "vaze" na outra errado */
-        scroll-snap-align: start;
-        height: 100% !important;
-    }
-
-    /* Força as fotos 2 e 3 a existirem e serem clicáveis */
-    .item-2, .item-3 {
-        display: block !important;
-    }
-
-    .mosaico-item img {
-        object-position: center 20% !important;
-        transition: none !important; /* Sem lag no toque */
-    }
-}
-
