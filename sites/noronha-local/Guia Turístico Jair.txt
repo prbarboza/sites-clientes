@@ -7,8 +7,23 @@ Registro = NORONHALOCAL.COM.BR
 
 BARRA TOPO #4B9391
 AMARELO #FDE02F
-AZUL #0083B8
-Azul petroleo #0C2B36
+AZUL #1a8af9
+Azul do banner home #1a8af9
+
+FONTES TITULOS
+AZUL 18
+PRETA 20
+PESO 600
+
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1a8af9;
+  margin-bottom: 12px;
+}
 
 
 =========================================================
@@ -169,7 +184,7 @@ ALTERAR A POSIÇÃO DA LOGO
 /* Hover e ativo */
 .ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link,
 .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-  color: #0083B8 !important; /* cor ao passar o mouse ou ativo */
+  color: #1a8af9 !important; /* cor ao passar o mouse ou ativo */
 }
 
 /* Estado NORMAL (barra transparente, fonte branca) */
@@ -184,7 +199,7 @@ ALTERAR A POSIÇÃO DA LOGO
 
 /* Hover em qualquer estado */
 .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-  color: #0083B8 !important; /* azul no hover, por exemplo */
+  color: #1a8af9 !important; /* azul no hover, por exemplo */
 }
 
 
@@ -204,15 +219,15 @@ ALTERAR A POSIÇÃO DA LOGO
 
 /* 2. Ajuste do botão CTA para contrastar com o novo fundo */
 .ftco-navbar-light .navbar-nav > .nav-item.cta > .nav-link {
-    background: #0083B8 !important; /* Mantemos o amarelo ouro */
-    border: 1px solid #0083B8 !important;
+    background: #1a8af9 !important; /* Mantemos o amarelo ouro */
+    border: 1px solid #1a8af9 !important;
     color: #0a2b38 !important; /* Texto em azul escuro para ler melhor no amarelo */
     font-weight: 700;
 }
 
 /* Hover real do botão CTA */
 .ftco-navbar-light .navbar-nav > .nav-item.cta > .nav-link:hover {
-    background: #0083B8 !important; /* Amarelo mais escuro */
+    background: #1a8af9 !important; /* Amarelo mais escuro */
     border-color: #ffffff !important;
     color: #0a2b38 !important;
 }

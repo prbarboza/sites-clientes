@@ -10808,7 +10808,7 @@ h5,
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   margin-top: -10px;
-  color: #0083B8 !important;
+  color: #1a8af9 !important;
   -moz-transition: all 0.7s ease;
   -o-transition: all 0.7s ease;
   -webkit-transition: all 0.7s ease;
@@ -12196,7 +12196,7 @@ textarea.form-control {
 .blog-entry .text .heading a:hover,
 .blog-entry .text .heading a:focus,
 .blog-entry .text .heading a:active {
-  color: #0083B8;
+  color: #1a8af9;
 }
 
 .blog-entry .text .meta-chat {
@@ -13394,17 +13394,17 @@ textarea.form-control {
 
 /* 2. Ajuste do botão CTA para contrastar com o novo fundo */
 .ftco-navbar-light .navbar-nav > .nav-item.cta > .nav-link {
-    background: #0066FF !important; /* Mantemos o amarelo ouro */
-    border: 1px solid #0083B8 !important;
+    background: #1a8af9 !important; /* Mantemos o amarelo ouro */
+    border: 1px solid #1a8af9 !important;
     color: #0a2b38 !important; /* Texto em azul escuro para ler melhor no amarelo */
     font-weight: 700;
 }
 
 /* Hover real do botão CTA */
 .ftco-navbar-light .navbar-nav > .nav-item.cta > .nav-link:hover {
-    background: #0044CC !important; /* Amarelo mais escuro */
+    background: #1a8af9 !important; /* Amarelo mais escuro */
     border-color: #ffffff !important;
-    color: #0044CC !important;
+    color: #1a8af9 !important;
 }
 
 
@@ -13453,7 +13453,7 @@ textarea.form-control {
 /* Hover e ativo */
 .ftco-navbar-light .navbar-nav > .nav-item.active > .nav-link,
 .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-  color: #0083B8 !important; /* cor ao passar o mouse ou ativo */
+  color: #1a8af9 !important; /* cor ao passar o mouse ou ativo */
 }
 
 /* Estado NORMAL (barra transparente, fonte branca) */
@@ -13463,7 +13463,7 @@ textarea.form-control {
 
 /* Estado SCROLLED (barra branca, fonte preta) */
 .ftco-navbar-light.scrolled .navbar-nav > .nav-item > .nav-link {
-  color: #0083B8 !important; /* fonte preta */
+  color: #1a8af9 !important; /* fonte preta */
 }
 
 /* Hover em qualquer estado */
@@ -13532,7 +13532,7 @@ html {
 
 .services-section .icon span {
     font-size: 60px;
-    color: #0083B8; /* O azul da sua barra */
+    color: #1a8af9; /* O azul da sua barra */
 }
 
 /* Títulos e Textos */
@@ -13549,7 +13549,7 @@ html {
 
 /* Paleta */
 :root {
-  --nl-blue-dark: #0083B8;
+  --nl-blue-dark: #1a8af9;
   --nl-blue: #58AEC3;
   --nl-yellow: #FDE02F;
 }
@@ -13660,7 +13660,7 @@ html {
 }
 
 .trilha-tag {
-  color: #0083B8;
+  color: #1a8af9;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 2px;
@@ -13783,9 +13783,9 @@ html {
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
-  color: #0083B8;
+  color: #1a8af9;
   text-decoration: none;
-  border-bottom: 2px solid #0083B8;
+  border-bottom: 2px solid #1a8af9;
   padding-bottom: 2px;
 }
 
@@ -13894,7 +13894,7 @@ html {
 }
 
 .badge-passeio {
-  background: #0083B8;
+  background: #1a8af9;
   color: #fff;
   padding: 6px 14px;
   border-radius: 20px;
@@ -13939,7 +13939,7 @@ html {
   cursor: pointer;
   font-weight: 500;
   font-size: 16px;
-  color: #0083B8;
+  color: #1a8af9;
   margin-top: 10px;
 }
 
@@ -13981,7 +13981,7 @@ html {
   height: 42px;
   border-radius: 50%;
   border: none;
-  background: linear-gradient(135deg, #0083B8, #00b4db);
+  background: linear-gradient(135deg, #1a8af9, #00b4db);
   color: #fff;
   font-size: 26px;
   font-weight: 700;
@@ -13994,7 +13994,7 @@ html {
 /* HOVER */
 .boat-nav-top button:hover {
   transform: scale(1.1);
-  background: linear-gradient(135deg, #00b4db, #0083B8);
+  background: linear-gradient(135deg, #00b4db, #1a8af9);
 }
 
 /* CONTADOR */
@@ -14047,7 +14047,7 @@ html {
   width: 50px;
   height: 50px;
   font-size: 20px;
-  color: #0083B8;
+  color: #1a8af9;
   margin: 0 8px;
   cursor: pointer;
   transition: background .3s, color .3s, transform .2s;
@@ -14182,7 +14182,7 @@ ou, em último caso:
 }
 
 .noronha-refined .noronha-why-list i {
-  color: #0083B8;
+  color: #1a8af9;
   font-size: 18px;
   margin-right: 12px;
 }
@@ -14195,7 +14195,7 @@ ou, em último caso:
 }
 
 .testimony-refined i {
-  color: #0083B8;
+  color: #1a8af9;
   font-size: 22px;
 }
 
@@ -14235,13 +14235,13 @@ ou, em último caso:
   top: 5px;
   width: 3px;
   height: 60px;
-  background: #0083B8;
+  background: #1a8af9;
   border-radius: 3px;
 }
 
 .testimony-refined i {
   color: #FDE02F;
-  background: #0083B8;
+  background: #1a8af9;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -14297,7 +14297,7 @@ ou, em último caso:
   display: inline-block;
   font-size: 11px;
   font-weight: 700;
-  color: #0083B8;
+  color: #1a8af9;
   background: rgba(0,131,184,0.1);
   padding: 4px 10px;
   border-radius: 20px;
@@ -14310,7 +14310,7 @@ ou, em último caso:
 }
 
 .noronha-blog-card h3 a:hover {
-  color: #0083B8;
+  color: #1a8af9;
   text-decoration: none;
 }
 
@@ -14328,8 +14328,8 @@ ou, em último caso:
   letter-spacing: .3px;
   text-transform: uppercase;
 
-  color: #0083B8;                 /* azul do site */
-  background: #0083B8;/* azul suave */
+  color: #1a8af9;                 /* azul do site */
+  background: #1a8af9;/* azul suave */
   
   padding: 5px 12px;
   border-radius: 20px;
@@ -14917,7 +14917,7 @@ body {
   height: 44px;
   border-radius: 50%;
   border: none;
-  background: #0083B8;
+  background: #1a8af9;
   color: #ffffff;
   font-size: 22px;
   cursor: pointer;
@@ -14950,7 +14950,7 @@ body {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #0083B8;
+  color: #1a8af9;
   display: block;
   margin-bottom: 8px;
 }
@@ -15125,14 +15125,14 @@ body {
 
 /* Altera a cor quando o cliente passa o mouse */
 .noronha-blog-card .heading a:hover {
-    color: #0083B8 !important;  /* Muda para o azul do site no hover */
+    color: #1a8af9 !important;  /* Muda para o azul do site no hover */
 }
 
   /* BOTÃO/LINK "VER MAIS" (Corrige o esticado no mobile) */
   .blog-date {
     display: inline-block; /* Impede que o botão estique no mobile */
     background-color: #F0F4F8; /* O cinza azulado clarinho */
-    color: #0083B8; /* Azul principal do seu site para o texto */
+    color: #1a8af9; /* Azul principal do seu site para o texto */
     padding: 8px 18px;
     border-radius: 50px; /* Deixa o botão oval */
     font-weight: 500;
@@ -15145,7 +15145,7 @@ body {
 }
 
 .blog-date:hover {
-    background-color: #0083B8;
+    background-color: #1a8af9;
     color: #ffffff;
     cursor: pointer;
     text-decoration: none;
@@ -15350,7 +15350,7 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #0083b8;
+  color: #1a8af9;
   margin-bottom: 12px;
 }
 
@@ -15378,7 +15378,7 @@ body {
   line-height: 1.2 !important;
   font-family: 'Poppins', sans-serif;
   display: block !important;
-  color: #0083b8 !important; /* Cor azul padronizada */
+  color: #1a8af9 !important; /* Cor azul padronizada */
     }
 }
 
@@ -15417,7 +15417,7 @@ body {
 
 .carrossel-premium__price {
   font-weight: 700;
-  color: #0083B8;
+  color: #1a8af9;
 }
 
 .carrossel-premium__stars {
@@ -15427,7 +15427,7 @@ body {
 
 /* Summary */
 .carrossel-premium__card summary {
-  color: #0083B8;
+  color: #1a8af9;
   font-weight: 700;
   cursor: pointer;
   font-size: 13px;
@@ -15511,8 +15511,8 @@ display: none !important;
   display: block;
   width: 10px;
   height: 10px;
-  border-top: 2px solid #0083B8;
-  border-right: 2px solid #0083B8;
+  border-top: 2px solid #1a8af9;
+  border-right: 2px solid #1a8af9;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -15641,7 +15641,7 @@ display: none !important;
   margin-top: 10px;
   background: none;
   border: none;
-  color: #0083b8;
+  color: #1a8af9;
   font-weight: 500;
 }
 
@@ -15672,7 +15672,7 @@ display: none !important;
 
   .trilhas-carousel .owl-nav button span {
     font-size: 22px;
-    color: #0083b8;
+    color: #1a8af9;
     font-weight: 700;
   }
 }
@@ -15700,7 +15700,7 @@ display: none !important;
 .trilha-meta i {
   font-size: 14px;
   margin-right: 4px;
-  color: #0083b8;
+  color: #1a8af9;
 }
 
 /* ===========================
@@ -15728,7 +15728,7 @@ display: none !important;
 .trilha-meta i {
   font-size: 15px;
   margin-right: 5px;
-  color: #0083b8;
+  color: #1a8af9;
 }
 
 /* ===========================
@@ -15812,7 +15812,7 @@ display: none !important;
     .trilhas-carousel .owl-nav button.owl-next {
         pointer-events: auto; /* Reativa o clique nos botões */
         background: #f8faff !important; /* Fundo branco semi-transparente */
-        color: #0083B8 !important; /* Cor da seta */
+        color: #1a8af9 !important; /* Cor da seta */
         width: 45px !important; /* TAMANHO DO CÍRCULO */
         height: 45px !important; /* TAMANHO DO CÍRCULO */
         font-size: 28px !important; /* TAMANHO DA SETA */
@@ -15951,7 +15951,7 @@ display: none !important;
     font-family: 'Poppins', sans-serif;
     font-size: 18px !important; /* */
     font-weight: 600 !important; 
-    color: #0083b8 !important;  /* */
+    color: #1a8af9 !important;  /* */
     display: block !important;
     text-transform: none !important;
     margin-bottom: 5px !important;
@@ -15994,9 +15994,9 @@ display: none !important;
 }
 
 .boat-nav-top button:hover {
-    background: #0083b8 !important;
+    background: #1a8af9 !important;
     color: #fff !important;
-    border-color: #0083b8 !important;
+    border-color: #1a8af9 !important;
 }
 
 #boat-counter {
@@ -16212,7 +16212,7 @@ display: none !important;
 /* Resolve o problema da seta minúscula */
 .trilhas-carousel .owl-nav button span {
     font-size: 30px !important; 
-    color: #0083b8 !important;
+    color: #1a8af9 !important;
     display: block;
     line-height: 1;
 }
@@ -16260,7 +16260,7 @@ display: none !important;
 .ta-hero-box {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  background: #0A6CFF !important; /* azul mais intenso */
+  background: #1a8af9 !important; /* azul mais intenso */
   border-radius: 8px !important;
   overflow: hidden;
   min-height: 420px;
@@ -16649,7 +16649,7 @@ display: none !important;
 /* HOVER (Passar o mouse) */
 .service-menu a:hover {
   background: #fcfdfd;
-  color: #0083b8;
+  color: #1a8af9;
   padding-left: 30px; /* Efeito de deslize */
 }
 
@@ -16661,14 +16661,14 @@ display: none !important;
 /* ITEM ATIVO (Onde o cliente está) */
 .service-menu a.active {
   background: linear-gradient(to right, rgba(0, 131, 184, 0.05), rgba(0, 131, 184, 0.01));
-  color: #0083b8;
-  border-left: 4px solid #0083b8; /* A barrinha aqui volta, mas só no ativo */
+  color: #1a8af9;
+  border-left: 4px solid #1a8af9; /* A barrinha aqui volta, mas só no ativo */
 }
 
 .service-menu a.active::after {
   opacity: 1;
   transform: translateX(0);
-  color: #0083b8;
+  color: #1a8af9;
 }
 
 
@@ -16687,7 +16687,7 @@ display: none !important;
   font-size: 28px;
   font-weight: 400;
   text-transform: none !important;
-  color: #0083b8;
+  color: #1a8af9;
   margin-bottom: 20px;
   margin-top: 0;
   line-height: 1.19; 
@@ -16701,7 +16701,7 @@ display: none !important;
 .service-section h3 {
   font-size: 22px;
   margin-bottom: 16px;
-  color: #0083b8;
+  color: #1a8af9;
 }
 
 .service-intro {
@@ -17059,7 +17059,7 @@ html, body {
 
 /* ativo */
 .mobile-passeio-card.active {
-  box-shadow: 0 0 0 2px #0083B8;
+  box-shadow: 0 0 0 2px #1a8af9;
   border-radius: 10px;
 }
 
@@ -17448,8 +17448,8 @@ html, body {
     /* 1. O BOTÃO (Link) - Aqui controlamos a caixa azul */
     #ftco-nav .nav-item.cta .nav-link {
         padding: 10px 20px !important; 
-        background: #0A6CFF !important; 
-        border: 1px solid #0A6CFF !important; 
+        background: #1a8af9 !important; 
+        border: 1px solid #1a8af9 !important; 
         
         display: table !important; /* Melhor para centralizar com margin auto */
         width: auto !important;
@@ -17993,7 +17993,7 @@ html, body {
 }
 
 .tour-card-premium:hover {
-  border-color: #0083b8;
+  border-color: #1a8af9;
   transform: translateX(5px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
@@ -18001,7 +18001,7 @@ html, body {
 .tour-card-info strong {
   display: block;
   font-size: 16px;
-  color: #0083b8;
+  color: #1a8af9;
   margin-bottom: 2px;
 }
 
@@ -18025,7 +18025,7 @@ html, body {
 }
 
 .link-back-all:hover {
-  color: #0083b8;
+  color: #1a8af9;
 }
 
 /* Espaçamento final para o rodapé */
@@ -18197,7 +18197,7 @@ html, body {
   display: inline-block;
   padding: 10px 16px;
   border-radius: 999px;
-  background: #0083b8;
+  background: #1a8af9;
   color: #fff;
   font-size: 14px;
   text-decoration: none;
