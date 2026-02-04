@@ -551,6 +551,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/mosaico-fade.js"></script>
+
 
 <script>
   const tabs = document.querySelectorAll('.tab-btn');
@@ -606,7 +608,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
-</script>
 
 <script>
   const taImages = document.querySelectorAll('.ta-hero-images img');
@@ -637,73 +638,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<script>
-
-document.addEventListener('DOMContentLoaded', function () {
-  // 1. Aponta para o seu novo container
-  const gallery = document.querySelector('.mosaico-wrapper');
-  if (!gallery) return;
-
-  // 2. No mosaico, a 'foto principal' é a item-1
-  const mainWrapper = gallery.querySelector('.item-1 img');
-  const allItems = gallery.querySelectorAll('.mosaico-item img');
-
-  let currentIndex = 0;
-  let autoInterval = null;
-
-  function showImage(index, isManualSwap = false) {
-    if (!allItems[index]) return;
-
-    // Transição suave
-    mainWrapper.style.opacity = '0.5';
-
-    setTimeout(() => {
-      const currentMainSrc = mainWrapper.src;
-      const nextImgSrc = allItems[index].src;
-
-      // Troca a imagem principal
-      mainWrapper.src = nextImgSrc;
-      
-      // No Desktop, se clicar na pequena, elas trocam de lugar (Swap)
-      if (isManualSwap && window.innerWidth > 768) {
-        allItems[index].src = currentMainSrc;
-      }
-
-      mainWrapper.style.opacity = '1';
-      currentIndex = index;
-    }, 150);
-  }
-
-  // Cliques manuais (Desktop)
-  allItems.forEach((img, index) => {
-    img.addEventListener('click', () => {
-      if (window.innerWidth > 768) {
-        stopAuto();
-        showImage(index, true); 
-      }
-    });
-  });
-
-  // Mobile: Troca as fotos automaticamente na imagem principal
-  function startAuto() {
-    if (window.innerWidth > 768) return;
-    autoInterval = setInterval(() => {
-      let next = (currentIndex + 1) % allItems.length;
-      showImage(next, false);
-    }, 3000);
-  }
-
-  function stopAuto() {
-    if (autoInterval) { clearInterval(autoInterval); autoInterval = null; }
-  }
-
-  if (window.innerWidth <= 768) startAuto();
-  window.addEventListener('resize', () => {
-    stopAuto();
-    if (window.innerWidth <= 768) startAuto();
-  });
-});
-</script>
 
 </body>
 </html>
