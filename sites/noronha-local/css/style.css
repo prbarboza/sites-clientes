@@ -18733,12 +18733,28 @@ html, body {
     }
 
     .page-boats-list .boats-video-hero {
-        max-width: 1140px;
-        margin: 0 auto 40px !important;
-        border-radius: 12px;
-        height: 500px !important;
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto 20px !important;
+      border-radius: 8px;
+      height: 500px !important;
+      overflow: hidden;
+      padding: 0; /* 👈 SEM padding aqui */
+      
+        
     }
 }
+
+@media (max-width: 768px) {
+  .page-boats-list .boats-video-hero {
+    margin-bottom: -10px !important;
+  }
+
+  .texto-introducao {
+    margin-bottom: 14px;
+  }
+}
+
 
 /* --- ESTILO PARA DESKTOP ---
 ------TEXTO ESCOLHA SUA EMBARCAÇÃO-- */
@@ -19130,6 +19146,7 @@ main.service-page .service-summary h2 {
 
 .page-boats-list .boats-video-hero {
     position: relative;
+    
 }
 
 .boats-video-overlay {
@@ -19246,15 +19263,182 @@ main.service-page .service-summary h2 {
 
     .tours-slider-container::-webkit-scrollbar-track {
         background: #f1f1f1;
-        border-radius: 10px;
+        border-radius: 8px;
     }
 
     .tours-slider-container::-webkit-scrollbar-thumb {
         background: #0088cc;
-        border-radius: 10px;
+        border-radius: 8px;
     }
 
     .tours-slider-container::-webkit-scrollbar-thumb:hover {
         background: #005f99;
     }
 }
+
+/*==========DIVISÃO============*/
+
+/* Container que centraliza e dá o espaço lateral de 40px */
+/* FORÇA O ALINHAMENTO DO PAI */
+body, main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.secao-barcos {
+    display: block !important;
+    width: 100% !important;
+    max-width: 1280px !important; /* Mesma largura do seu banner */
+    margin: 60px auto !important; /* O auto aqui VAI funcionar agora */
+    padding: 0 40px; 
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    align-self: stretch; /* 👈 ISSO RESOLVE */
+}
+
+/* DESKTOP – alinhado com o banner */
+.texto-introducao {
+  max-width: 1140px;      /* 👈 MESMO width do banner */
+  margin: 0 auto 30px;   /* centraliza o container */
+  padding: 0;   
+  padding-left: 0;   /* 👈 empurra pra direita */         /* sem empurrar texto */
+}
+
+.texto-introducao h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.texto-introducao p {
+  color: #666;
+  font-size: 16px;
+}
+
+
+/* Wrapper para segurar as setas em posição absoluta */
+.wrapper-carrossel {
+  position: relative;
+  width: 100%;
+}
+
+/* Janela que esconde o que sobra e a barra */
+.janela-scroll {
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  display: flex;
+ 
+  padding-left: 10px;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+/* Esconde a barra em todos os navegadores */
+.janela-scroll::-webkit-scrollbar { display: none; }
+.janela-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* O Trilho que impede o corte do último card */
+.trilho-cards {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0 30px 0;
+}
+
+/* O Card */
+.card-item {
+  flex: 0 0 280px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden; /* garante que nada vaze */
+}
+
+/* Container da imagem */
+.card-img-box {
+  height: 180px;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden; /* 👈 ESSENCIAL */
+}
+
+/* Imagem */
+.card-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Conteúdo */
+.card-txt {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-txt h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  min-height: 40px;
+}
+
+.stars {
+  color: #ffb400;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.card-txt p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+
+.btn-ir {
+  margin-top: auto;
+  background: #007aff;
+  color: #fff !important;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  font-weight: 700;
+}
+
+/* Setas - Agora elas usam o padding da secao-barcos para se posicionarem */
+.seta-btn {
+  position: absolute;
+  top: 40%;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.prev { left: -10px; }
+.next { right: -10px; }
+
+@media (max-width: 768px) {
+  .secao-barcos { padding: 0; }
+  .seta-btn { display: none; }
+  .card-item { flex: 0 0 80vw; }
+
+  .trilho-cards {
+    margin-left: 0; /* empurra levemente pra esquerda */
+    gap: 12px; /* ou 10px, se quiser mais fechado */
+  }
+}
+
+.texto-introducao {
+  max-width: 1280px;
+  margin: 0 auto 30px auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+

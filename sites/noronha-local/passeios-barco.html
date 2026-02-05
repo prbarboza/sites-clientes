@@ -131,156 +131,71 @@
 
 
   <!-- INTRO -->
-  <section class="service-summary container">
+  <section class="secao-barcos">
+  <div class="texto-introducao">
     <h2>Escolha sua embarcação</h2>
-    <p>
-      Cada barco oferece uma experiência diferente em Fernando de Noronha.
-      Compare as opções abaixo e escolha a que mais combina com o seu estilo de viagem.
-    </p>
-  </section>
+    <p>Cada barco oferece uma experiência diferente em Fernando de Noronha. Compare as opções abaixo e escolha a que mais combina com o seu estilo de viagem.</p>
+  </div>
 
-  <!-- GRID -->
-<section class="boats-list container">
-  <div class="boats-grid">
+  <div class="wrapper-carrossel">
+    <button class="seta-btn prev" onclick="mover( -1 )">❮</button>
+    <button class="seta-btn next" onclick="mover( 1 )">❯</button>
 
-    <!-- Albatroz -->
-    <article class="boat-card">
-      <img src="images/passeios/barcos/albatroz.jpg" alt="Passeio de barco Albatroz em Fernando de Noronha" loading="lazy" decoding="async">
-      <div class="boat-card-body">
-        <h3>Albatroz NX Invictus 50 Fly</h3>
+    <div class="janela-scroll" id="janelaScroll">
+      <div class="trilho-cards">
+        
+        <article class="card-item">
+          <img src="images/passeios/mini-card/albatroz.jpg" alt="Barco">
+          <div class="card-txt">
+            <h3>Albatroz NX Invictus 50 Fly</h3>
+            <div class="stars">★★★★★ 5.0</div>
+            <p>Premium Baía do Sancho • Até 20 pessoas</p>
+            <a href="passeio-albatroz.html" class="btn-ir">Conhecer o passeio</a>
+          </div>
+        </article>
 
-        <div class="rate">
-          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
-          <span>5.0</span>
-        </div>
+        <article class="card-item">
+          <img src="images/passeios/mini-card/catamara-davi.jpg" alt="Barco">
+          <div class="card-txt">
+            <h3>Catamarã Davi IL</h3>
+            <div class="stars">★★★★★ 5.0</div>
+            <p>Premium Baía do Sancho • Até 25 pessoas</p>
+            <a href="passeio-catamara-davi.html" class="btn-ir">Conhecer o passeio</a>
+          </div>
+        </article>
 
-        <p>Premium Baía do Sancho • Até 20 pessoas</p>
-        <p class="boat-highlight">🌊 Ritmo tranquilo para relaxar</p>
+        <article class="card-item">
+          <img src="images/passeios/mini-card/lancha-jo.jpg" alt="Barco">
+          <div class="card-txt">
+            <h3>Lancha Jô LL</h3>
+            <div class="stars">★★★★★ 5.0</div>
+            <p>Passeio privativo • Baía do Sancho</p>
+            <a href="passeio-lancha-jo.html" class="btn-ir">Conhecer o passeio</a>
+          </div>
+        </article>
 
-        <a 
-          href="passeio-albatroz.html" 
-          class="btn-card"
-          title="Ver informações completas e reservar pelo WhatsApp">
-          Conhecer o passeio
-        </a>
+        <article class="card-item">
+          <img src="images/passeios/mini-card/estrela-lunar.jpg" alt="Barco">
+          <div class="card-txt">
+            <h3>Estrela Lunar</h3>
+            <div class="stars">★★★★★ 5.0</div>
+            <p>Entardecer em Noronha • 12 pessoas</p>
+            <a href="passeio-estrela-lunar.html" class="btn-ir">Conhecer o passeio</a>
+          </div>
+        </article>
+
+        <article class="card-item">
+          <img src="images/passeios/mini-card/trovao-dos-mares.jpg" alt="Barco">
+          <div class="card-txt">
+            <h3>Trovão dos Mares</h3>
+            <div class="stars">★★★★★ 5.0</div>
+            <p>Roteiro dinâmico • Baía do Sancho</p>
+            <a href="passeio-trovao-dos-mares.html" class="btn-ir">Conhecer o passeio</a>
+          </div>
+        </article>
+
       </div>
-    </article>
-
-    <!-- Catamarã Davi -->
-    <article class="boat-card">
-      <img src="images/passeios/barcos/catamara-davi.jpg" alt="Passeio de barco Catamarã Davi em Fernando de Noronha" loading="lazy" decoding="async">
-      <div class="boat-card-body">
-        <h3>Catamarã Davi IL</h3>
-
-        <div class="rate">
-          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
-          <span>5.0</span>
-        </div>
-
-        <p>Premium Baía do Sancho • Até 25 pessoas</p>
-        <p class="boat-highlight">👨‍👩‍👧‍👦 Perfeito para famílias e grupos</p>
-
-        <a 
-          href="passeio-catamara-davi.html" 
-          class="btn-card"
-          title="Ver informações completas e reservar pelo WhatsApp">
-          Conhecer o passeio
-        </a>
-      </div>
-    </article>
-
-    <!-- Lancha Jô LL -->
-    <article class="boat-card">
-      <img src="images/passeios/barcos/jo-lancha-privativo.jpg" alt="Passeio privativo de lancha Jô LL em Fernando de Noronha" loading="lazy" decoding="async">
-      <div class="boat-card-body">
-        <h3>Lancha Jô LL</h3>
-
-        <div class="rate">
-          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
-          <span>5.0</span>
-        </div>
-
-        <p>Passeio privativo • Baía do Sancho</p>
-        <p class="boat-highlight">🌊 Parada para banho na Baía do Sancho</p>
-
-        <a 
-          href="passeio-lancha-jo.html" 
-          class="btn-card"
-          title="Ver informações completas e reservar pelo WhatsApp">
-          Conhecer o passeio
-        </a>
-      </div>
-    </article>
-
-    <!-- Estrela Lunar -->
-    <article class="boat-card">
-      <img src="images/passeios/barcos/estrela-lunar.jpg" alt="Passeio ao entardecer Estrela Lunar em Fernando de Noronha" loading="lazy" decoding="async">
-      <div class="boat-card-body">
-        <h3>Estrela Lunar</h3>
-
-        <div class="rate">
-          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
-          <span>5.0</span>
-        </div>
-
-        <p>Entardecer em Noronha • Até 12 pessoas</p>
-        <p class="boat-highlight">✨ Ideal para casais e momentos especiais</p>
-
-        <a 
-          href="passeio-estrela-lunar.html" 
-          class="btn-card"
-          title="Ver informações completas e reservar pelo WhatsApp">
-          Conhecer o passeio
-        </a>
-      </div>
-    </article>
-
-    <!-- Trovão dos Mares -->
-    <article class="boat-card">
-      <img src="images/passeios/barcos/trovao-dos-mares.jpg" alt="Passeio de barco Trovão dos Mares em Fernando de Noronha" loading="lazy" decoding="async">
-      <div class="boat-card-body">
-        <h3>Trovão dos Mares</h3>
-
-        <div class="rate">
-          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
-          <span>5.0</span>
-        </div>
-
-        <p>Roteiro dinâmico • Baía do Sancho</p>
-        <p class="boat-highlight">⚡ Para quem gosta de emoção no mar</p>
-
-        <a 
-          href="passeio-trovao-dos-mares.html" 
-          class="btn-card"
-          title="Ver informações completas e reservar pelo WhatsApp">
-          Conhecer o passeio
-        </a>
-      </div>
-    </article>
-
-    <!-- Escuna Só Deus VII -->
-    <article class="boat-card">
-      <img src="images/passeios/barcos/escuna-so-deus.jpg" alt="Passeio de escuna Só Deus VII em Fernando de Noronha" loading="lazy" decoding="async">
-      <div class="boat-card-body">
-        <h3>Escuna Só Deus VII</h3>
-
-        <div class="rate">
-          <i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
-          <span>4.9</span>
-        </div>
-
-        <p>Baía dos Golfinhos • Até 100 pessoas</p>
-        <p class="boat-highlight">🌊 Parada para banho na Baía do Sancho</p>
-
-        <a 
-          href="passeio-escuna-so-deus.html" 
-          class="btn-card"
-          title="Ver informações completas e reservar pelo WhatsApp">
-          Conhecer o passeio
-        </a>
-      </div>
-    </article>
-
+    </div>
   </div>
 </section>
 
@@ -492,6 +407,18 @@ document.addEventListener("DOMContentLoaded", function() {
   <i class="icon-whatsapp"></i>
 </a>
 
+<script>
+function mover(direcao) {
+  const container = document.getElementById('janelaScroll');
+  const scrollAmount = 300; // 280 card + 20 gap
+  
+  if (direcao === 1) {
+    container.scrollLeft += scrollAmount;
+  } else {
+    container.scrollLeft -= scrollAmount;
+  }
+}
+</script>
 
 </body>
 </html>
