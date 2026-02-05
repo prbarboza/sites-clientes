@@ -19337,7 +19337,7 @@ body, main {
 @media (max-width: 768px) {
   .janela-scroll {
     display: block;          /* 🔑 muda aqui */
-    padding-left: 16px;      /* mais confortável no mobile */
+    padding-left: 10px;      /* mais confortável no mobile */
     padding-right: 20px;
   }
 }
@@ -19452,6 +19452,7 @@ body, main {
     margin-left: 0;     /* mantém alinhado */
     gap: 10px;          /* diminui espaço entre cards */
     padding-right: 20px; /* espaço no final do último card */
+    
   }
 }
 
