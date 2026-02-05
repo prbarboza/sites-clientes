@@ -137,11 +137,18 @@
     <p>Compare as opções abaixo e escolha a que mais combina com o seu estilo de viagem.</p>
   </div>
 
+  <div class="intro-tags">
+  <span class="tag">Premium</span>
+  <span class="tag">Baía do Sancho</span>
+  <span class="tag">Mais procurados</span>
+</div>
+
+
   <div class="wrapper-carrossel">
     <button class="seta-btn prev" onclick="mover( -1 )">❮</button>
     <button class="seta-btn next" onclick="mover( 1 )">❯</button>
 
-    <div class="janela-scroll" id="janelaScroll">
+    <div class="janela-scroll">
       <div class="trilho-cards">
         
         <article class="card-item">
@@ -238,15 +245,16 @@
   <section class="secao-barcos">
   <div class="texto-introducao">
     <h2>Passeios Clássicos da Ilha</h2>
+    
     <!--<p>Cada barco oferece uma experiência diferente em Fernando de Noronha. Compare as opções abaixo e escolha a que mais combina com o seu estilo de viagem.</p>-->
   </div>
 
-  <div class="wrapper-carrossel">
-    <button class="seta-btn prev" onclick="mover( -1 )">❮</button>
-    <button class="seta-btn next" onclick="mover( 1 )">❯</button>
+  <div class="wrapper-carrossel" data-carousel>
+  <button class="seta-btn prev" data-dir="-1">❮</button>
+  <button class="seta-btn next" data-dir="1">❯</button>
 
-    <div class="janela-scroll" id="janelaScroll">
-      <div class="trilho-cards">
+  <div class="janela-scroll">
+    <div class="trilho-cards">
         
         <article class="card-item">
           <img src="images/passeios/mini-card/albatroz.jpg" alt="Barco">
@@ -546,17 +554,23 @@ document.addEventListener("DOMContentLoaded", function() {
 </a>
 
 <script>
-function mover(direcao) {
-  const container = document.getElementById('janelaScroll');
-  const scrollAmount = 300; // 280 card + 20 gap
-  
-  if (direcao === 1) {
-    container.scrollLeft += scrollAmount;
-  } else {
-    container.scrollLeft -= scrollAmount;
-  }
-}
+document.querySelectorAll('.wrapper-carrossel').forEach(carrossel => {
+  const janela = carrossel.querySelector('.janela-scroll');
+  const prev = carrossel.querySelector('.seta-btn.prev');
+  const next = carrossel.querySelector('.seta-btn.next');
+
+  const scrollAmount = 300; // ajuste fino aqui
+
+  prev.addEventListener('click', () => {
+    janela.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  next.addEventListener('click', () => {
+    janela.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+});
 </script>
+
 
 </body>
 </html>

@@ -19315,6 +19315,29 @@ body, main {
   font-size: 16px;
 }
 
+@media (max-width: 768px) {
+  .texto-introducao {
+    padding-left: 16px;   /* empurra pra direita */
+    padding-right: 16px;  /* mantém simetria */
+  }
+
+  .texto-introducao h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-left: 0;   /* empurra pra direita */
+  padding-right: 0;  /* mantém simetria */
+}
+
+  texto-introducao p {
+  color: #666;
+  font-size: 16px;
+  padding-left: 5px;   /* empurra pra direita */
+  padding-right: 5px;  /* mantém simetria */
+}
+}
+
+
 
 /* Wrapper para segurar as setas em posição absoluta */
 .wrapper-carrossel {
@@ -19337,7 +19360,7 @@ body, main {
 @media (max-width: 768px) {
   .janela-scroll {
     display: block;          /* 🔑 muda aqui */
-    padding-left: 10px;      /* mais confortável no mobile */
+    padding-left: 14px;      /* mais confortável no mobile */
     padding-right: 20px;
   }
 }
@@ -19465,13 +19488,6 @@ body, main {
 
 
 
-.texto-introducao {
-  max-width: 1280px;
-  margin: 0 auto 30px auto;
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-
 .card-title-rate {
   display: flex;
   align-items: center;
@@ -19511,4 +19527,20 @@ body, main {
   }
 }
 
+.intro-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0 24px;
+  padding-left: 16px;   /* 👈 empurra pra direita */
+}
+
+.intro-tags .tag {
+  background: #f1f5f9;
+  color: #1a1a1a;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 500;
+}
 
