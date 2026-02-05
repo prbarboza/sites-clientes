@@ -19333,6 +19333,15 @@ body, main {
   padding-right: 40px;
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  .janela-scroll {
+    display: block;          /* 🔑 muda aqui */
+    padding-left: 16px;      /* mais confortável no mobile */
+    padding-right: 16px;
+  }
+}
+
 /* Esconde a barra em todos os navegadores */
 .janela-scroll::-webkit-scrollbar { display: none; }
 .janela-scroll { -ms-overflow-style: none; scrollbar-width: none; }
@@ -19379,19 +19388,20 @@ body, main {
 }
 
 .card-txt h3 {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 8px;
   min-height: 40px;
 }
 
 .stars {
-  color: #ffb400;
-  font-size: 12px;
-  margin-bottom: 10px;
+  color: #0A6CFF;
+  font-size: 14px;
+  margin-bottom: 6px;
+  letter-spacing: -1px;
 }
 
 .card-txt p {
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   margin-bottom: 15px;
 }
@@ -19434,7 +19444,7 @@ body, main {
   }
 
   .card-item { 
-    flex: 0 0 80vw; 
+    flex: 0 0 60vw; 
   }
 
   .trilho-cards {
@@ -19451,6 +19461,34 @@ body, main {
   box-sizing: border-box;
 }
 
+.card-title-rate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.card-title-rate h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.card-title-rate .rate {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+  color: #1a73e8; /* azul das estrelas */
+  white-space: nowrap;
+}
+
+.card-title-rate .rate span {
+  margin-left: 4px;
+  color: #777;
+  font-size: 12px;
+}
 
 
 
