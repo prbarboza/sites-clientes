@@ -19298,14 +19298,14 @@ body, main {
 
 /* DESKTOP – alinhado com o banner */
 .texto-introducao {
-  max-width: 1140px;      /* 👈 MESMO width do banner */
+  max-width: 1160px;      /* 👈 MESMO width do banner */
   margin: 0 auto 30px;   /* centraliza o container */
   padding: 0;   
   padding-left: 0;   /* 👈 empurra pra direita */         /* sem empurrar texto */
 }
 
 .texto-introducao h2 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -19338,9 +19338,10 @@ body, main {
   .janela-scroll {
     display: block;          /* 🔑 muda aqui */
     padding-left: 16px;      /* mais confortável no mobile */
-    padding-right: 16px;
+    padding-right: 20px;
   }
 }
+
 
 /* Esconde a barra em todos os navegadores */
 .janela-scroll::-webkit-scrollbar { display: none; }
@@ -19449,9 +19450,18 @@ body, main {
 
   .trilho-cards {
     margin-left: 0;     /* mantém alinhado */
-    gap: 12px;          /* diminui espaço entre cards */
+    gap: 10px;          /* diminui espaço entre cards */
+    padding-right: 20px; /* espaço no final do último card */
   }
 }
+
+@media (max-width: 768px) {
+  .trilho-cards::after {
+    content: "";
+    flex: 0 0 12px; /* espaço no final */
+  }
+}
+
 
 
 .texto-introducao {
@@ -19479,7 +19489,7 @@ body, main {
   display: flex;
   align-items: center;
   gap: 2px;
-  font-size: 12px;
+  font-size: 10px;
   color: #1a73e8; /* azul das estrelas */
   white-space: nowrap;
 }
@@ -19487,8 +19497,17 @@ body, main {
 .card-title-rate .rate span {
   margin-left: 4px;
   color: #777;
-  font-size: 12px;
+  font-size: 10px;
 }
 
+@media (max-width: 768px) {
+  .card-title-rate h3 {
+    font-size: 15px;
+  }
+
+  .card-title-rate .rate {
+    font-size: 11px;
+  }
+}
 
 
