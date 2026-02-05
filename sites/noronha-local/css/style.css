@@ -19290,7 +19290,7 @@ body, main {
     display: block !important;
     width: 100% !important;
     max-width: 1280px !important; /* Mesma largura do seu banner */
-    margin: 60px auto !important; /* O auto aqui VAI funcionar agora */
+    margin: 34px auto !important; /* O auto aqui VAI funcionar agora */
     padding: 0 40px; 
     box-sizing: border-box; /* Garante que o padding não aumente a largura total */
     align-self: stretch; /* 👈 ISSO RESOLVE */
@@ -19425,15 +19425,24 @@ body, main {
 .next { right: -10px; }
 
 @media (max-width: 768px) {
-  .secao-barcos { padding: 0; }
-  .seta-btn { display: none; }
-  .card-item { flex: 0 0 80vw; }
+  .secao-barcos {
+    padding: 0;
+  }
+
+  .seta-btn { 
+    display: none;
+  }
+
+  .card-item { 
+    flex: 0 0 80vw; 
+  }
 
   .trilho-cards {
-    margin-left: 0; /* empurra levemente pra esquerda */
-    gap: 12px; /* ou 10px, se quiser mais fechado */
+    margin-left: 0;     /* mantém alinhado */
+    gap: 12px;          /* diminui espaço entre cards */
   }
 }
+
 
 .texto-introducao {
   max-width: 1280px;
@@ -19441,4 +19450,7 @@ body, main {
   padding: 0 10px;
   box-sizing: border-box;
 }
+
+
+
 
