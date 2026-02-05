@@ -10422,10 +10422,10 @@ a.text-dark:focus {
 body {
   font-family: "Poppins", Arial, sans-serif;
   background: #fff;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.8;
   font-weight: 400;
-  color: #444;
+  color: #000;
 }
 
 
@@ -11077,7 +11077,7 @@ h5,
 }
 
 .destination .text span.listing {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .destination .text .rate i {
@@ -19353,7 +19353,7 @@ body, main {
   display: flex;
  
   padding-left: 10px;
-  padding-right: 40px;
+  padding-right: 18px;
   box-sizing: border-box;
 }
 
@@ -19433,13 +19433,13 @@ body, main {
 
 .btn-ir {
   margin-top: auto;
-  background: #007aff;
+  background: #1A8AF9;
   color: #fff !important;
   text-align: center;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 999px;
   text-decoration: none !important;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* Setas - Agora elas usam o padding da secao-barcos para se posicionarem */
@@ -19482,7 +19482,7 @@ body, main {
 @media (max-width: 768px) {
   .trilho-cards::after {
     content: "";
-    flex: 0 0 12px; /* espaço no final */
+    flex: 0 0 5px; /* espaço no final */
   }
 }
 
@@ -19514,16 +19514,16 @@ body, main {
 .card-title-rate .rate span {
   margin-left: 4px;
   color: #777;
-  font-size: 10px;
+  font-size: 8px;
 }
 
 @media (max-width: 768px) {
   .card-title-rate h3 {
-    font-size: 15px;
+    font-size: 10px;
   }
 
   .card-title-rate .rate {
-    font-size: 11px;
+    font-size: 8px;
   }
 }
 
@@ -19544,3 +19544,25 @@ body, main {
   font-weight: 500;
 }
 
+/* SOMENTE cards do carrossel */
+.secao-barcos .card-txt h3 {
+  margin-bottom: -12px; /* cola no rate */
+}
+
+.secao-barcos .card-txt .rate {
+  margin: 0; /* zera qualquer resíduo */
+}
+
+.secao-barcos .card-txt p {
+  margin-top: 10px; /* controla o texto abaixo das estrelas */
+}
+
+/* Força o botão a ficar em uma única linha, não importa o tamanho do texto */
+.btn-reserva-premium, .btn-whatsapp-dynamic {
+    white-space: nowrap !important; /* Impede a quebra de linha */
+    display: inline-flex !important; /* Alinha o ícone e o texto lado a lado */
+    align-items: center;
+    justify-content: center;
+    min-width: max-content; /* Garante que o botão cresça conforme o texto */
+    padding: 10px 25px; /* Ajuste o respiro interno se necessário */
+}
