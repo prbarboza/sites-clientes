@@ -19648,6 +19648,61 @@ body, main {
   }
 }
 
+/* =========================================
+   MOBILE – EXPLORE OUTRAS EXPERIÊNCIAS
+========================================= */
+@media (max-width: 991px) {
+
+  /* SEÇÃO */
+  .explore-experiencias {
+    padding: 40px 0;
+  }
+
+  /* TÍTULO */
+  .explore-title {
+    font-size: 22px;
+    margin-bottom: 16px;
+    padding-right: 20px;
+  }
+
+  /* GRID → 1 coluna */
+  .explore-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* CARD */
+  .explore-card {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+  }
+
+  /* TEXTO NO CARD */
+  .explore-label {
+    min-height: 70px;
+    padding: 14px;
+
+    font-size: 20px;
+    line-height: 1.05;
+  }
+
+  /* TAGS (intro-tags da página de trilhas) */
+  .intro-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 12px;
+    margin-bottom: 24px;
+  }
+
+  .intro-tags .tag {
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+}
+
 /* ===============================
    BOTÃO CTA – FAIXA TRILHAS
    =============================== */
@@ -19695,9 +19750,11 @@ body, main {
 }
 
 .explore-title {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   margin-bottom: 24px;
+  transform: translateX(20px); /* MUDA SÓ ESSE NÚMERO */
+  line-height: 1.05;
 }
 
 /* GRID */
@@ -19753,18 +19810,6 @@ body, main {
   }
 }
 
-/* MOBILE */
-@media (max-width: 991px) {
-  .explore-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .explore-label {
-    font-size: 22px;
-  }
-}
-
-
 /* IMAGENS DOS CARDS – EXPLORE */
 
 .explore-barco {
@@ -19782,3 +19827,29 @@ body, main {
 .explore-aquatico {
   background-image: url('../images/trilhas/cards-experiencias/card-caiaque.jpg');
 }
+
+
+/* MOBILE */
+@media (max-width: 991px) {
+
+  /* MOVE O TÍTULO (não alinha o texto) */
+  .explore-title {
+    margin-left: auto;       /* joga o bloco pra direita */
+    margin-right: 10px;
+    max-width: fit-content;  /* título ocupa só o tamanho do texto */
+  }
+
+  /* GRID MAIS ESTREITO (cards menores) */
+  .explore-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* TEXTO DO CARD */
+  .explore-label {
+    font-size: 26px;
+  }
+}
+
