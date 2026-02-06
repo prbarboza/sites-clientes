@@ -465,7 +465,7 @@ hr {
 
 small,
 .small {
-  font-size: 80%;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -16257,14 +16257,24 @@ display: none !important;
   padding: 40px 0;
 }
 
+/* HERO PRINCIPAL */
 .ta-hero-box {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  background: #1a8af9 !important; /* azul mais intenso */
-  border-radius: 8px !important;
+  background: #1a8af9; /* cor oficial do banner */
+  border-radius: 0;
   overflow: hidden;
-  min-height: 420px;
-  color: #fff; /* garante contraste */
+  min-height: 30vh;   /* ocupa boa parte da tela */
+  color: #fff;
+  
+}
+
+@media (min-width: 769px) {
+  .ta-hero-box {
+    height: 65vh;          /* 👈 controla desktop */
+    min-height: unset;
+    max-height: 65vh;
+  }
 }
 
 
@@ -16273,7 +16283,7 @@ display: none !important;
   position: relative;
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
+  border-radius: 0;
   }
 
 .ta-hero-images img {
@@ -16284,7 +16294,7 @@ display: none !important;
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  border-radius: 8px;
+  border-radius: 0 !important;
 }
 
 .ta-hero-images img.active {
@@ -16297,23 +16307,26 @@ display: none !important;
   padding: 56px;
   display: flex;
   flex-direction: column;
+  
 }
 
 .ta-hero-content h1 {
   font-size: 50px;
   font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 16px;
+  line-height: 1.15;
+  margin-bottom: 34px;
   text-align: center;
+  
 }
 
 .ta-hero-content p {
-  font-size: 16px;
-  margin-top: 24px;     /* DESCE o texto */
+  font-size: 20px;
+  margin-top: 40px;     /* DESCE o texto */
   margin-bottom: 28px;
   text-align: center;
   color: #fff;
   font-weight: 400;
+  
 }
 
 
@@ -16330,27 +16343,10 @@ display: none !important;
 /* mobile */
 @media (max-width: 768px) {
 
-  .ta-hero-box {
-    grid-template-columns: 1fr;
-    border-radius: 8px;
-  }
-
-  .ta-hero-images {
-    height: 260px;
-  }
-
-  .ta-hero-content {
-    padding: 32px;
-    text-align: center !important;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center !important;
-  }
-
   .ta-hero-content h1 {
-    font-size: 36px;
+    font-size: 40px;
     text-align: center !important;
+    font-weight: 800;
   }
 
   .ta-hero-content p {
@@ -16364,7 +16360,7 @@ display: none !important;
   }
 
   .ta-image-card {
-    border-radius: 8px;
+    border-radius: 0;
   }
 }
 
@@ -16385,18 +16381,18 @@ display: none !important;
 
 .ta-hero-btn {
   display: inline-block;
-  margin-top: 70px !important;   /* desce o botão */
+  margin-top: 10px !important;   /* desce o botão */
 }
 
 .ta-hero-btn {
-  margin-top: 32px;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
 }
 
 .ta-hero-btn {
   display: inline-block;
-  margin-top: 70px; /* desktop */
+  margin-top: 50px; /* desktop */
 }
 
 /* ==============================
@@ -16411,16 +16407,6 @@ display: none !important;
 .service-subtitle {
   margin-bottom: 24px;
   color: #555;
-}
-
-/* HERO */
-.ta-hero-box {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  background: #00aa6c;
-  border-radius: 8px;
-  overflow: hidden;
-  min-height: 380px;
 }
 
 .ta-hero-images {
@@ -16442,10 +16428,13 @@ display: none !important;
   opacity: 1;
 }
 
-.ta-hero-content {
-  padding: 40px;
-  color: #fff;
+.ta-hero-video video,
+.ta-hero-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
 
 /* GRID */
 .service-grid {
@@ -16784,83 +16773,82 @@ display: none !important;
 }
 
 /* ===============================
-   HERO HOME – MOBILE (FINAL)
+   HERO HOME – MOBILE (FINAL LIMPO)
 ================================ */
 @media (max-width: 768px) {
 
-  .ta-hero-box {
-    grid-template-columns: 1fr;
-  }
-
-  .ta-hero-images {
-    height: 200px;              /* 🔥 altura retangular */
-    overflow: hidden;
-    border-radius: 12px 12px 0 0;
-  }
-
+  /* HERO */
   .ta-hero {
-    margin-top: 50px; /* mobile */
+    margin-left: calc(-1 * var(--container-padding, 16px));
+    margin-right: calc(-1 * var(--container-padding, 16px));
+    margin-left: -15px;
+    margin-right: -15px;
   }
 
-  .ta-hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 32px 20px; /* 🔥 ISSO impede colar nas laterais */
-  }
-
-  .ta-hero-content h1,
-  .ta-hero-content p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .ta-hero-btn {
-    margin-top: -5px !important;
-  }
-
- .ta-hero-images img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;          /* corta sem distorcer */
-    object-position: center;    /* foco no centro */
-  }
-
-}
-
-/* ===============================
-   HERO HOME – IMAGEM MOBILE (FINAL)
-================================ */
-@media (max-width: 768px) {
-
-  /* trava o grid */
+  /* CAIXA PRINCIPAL */
   .ta-hero-box {
-    grid-template-rows: auto auto; /* imagem + conteúdo */
-  }
-
-  /* CAIXA DA IMAGEM (ALTURA REAL) */
-  .ta-hero-images {
-    height: 200px !important;   /* 🔥 altura real */
-    min-height: 200px !important;
-    max-height: 200px !important;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    height: auto;          /* 🔥 NÃO trava altura */
+    border-radius: 0;
     overflow: hidden;
-    border-radius: inherit;
   }
 
-  /* IMAGEM DENTRO DA CAIXA */
-  .ta-hero-images img {
+  /* IMAGEM / VÍDEO */
+  .ta-hero-images {
+    height: 40vh;          /* 👈 CONTROLE REAL AQUI */
+    min-height: 280px;     /* segurança */
+    max-height: 520px;     /* não exagera */
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ta-hero-images img,
+  .ta-hero-images video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
   }
 
+  /* CONTEÚDO */
+  .ta-hero-content {
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .ta-hero-content h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .ta-hero-content p {
+    font-size: 16px;
+    line-height: 1.65;    /* 🔥 abre o texto */
+    max-width: 100%;
+    margin-top: 5px;
+  }
+
+  /* BOTÃO */
+  .ta-hero-btn {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  /* remove qualquer radius do hero */
+ .ta-hero-box,
+  .ta-hero-images,
+  .ta-hero-video,
+  .ta-hero-video::after {
+    border-radius: 0 !important;
+  }
 }
+
+
 
 /* ===== MOBILE MENU ESTILO DESKTOP ===== */
 @media (max-width: 991px) {
@@ -17525,7 +17513,7 @@ html, body {
 }
 
 .ta-hero-images {
-  border-radius: 8px !important;
+  border-radius: 0 !important;
 }
 
 @media (max-width: 991.98px) {
@@ -19191,7 +19179,7 @@ main.service-page .service-summary h2 {
 }
 
 .page-boats-list .boats-video-cta strong {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
     text-shadow: 0 2px 6px rgba(0,0,0,0.75);
 }
@@ -19566,3 +19554,4 @@ body, main {
     min-width: max-content; /* Garante que o botão cresça conforme o texto */
     padding: 10px 25px; /* Ajuste o respiro interno se necessário */
 }
+
