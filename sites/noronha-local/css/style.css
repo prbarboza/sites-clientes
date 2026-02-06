@@ -19753,7 +19753,7 @@ body, main {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 24px;
-  transform: translateX(10px); /* MUDA SÓ ESSE NÚMERO */
+  transform: translateX(9px); /* MUDA SÓ ESSE NÚMERO */
   line-height: 1.05;
 }
 
@@ -19791,8 +19791,8 @@ body, main {
   align-items: flex-end;
 
   color: #fff;
-  font-size: 26px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 800;
   line-height: 1.05;
 
   background: linear-gradient(
@@ -19835,7 +19835,7 @@ body, main {
   /* MOVE O TÍTULO (não alinha o texto) */
   .explore-title {
     margin-left: auto;       /* joga o bloco pra direita */
-    margin-right: 10px;
+    margin-right: 9px;
     max-width: fit-content;  /* título ocupa só o tamanho do texto */
   }
 
@@ -19849,7 +19849,8 @@ body, main {
 
   /* TEXTO DO CARD */
   .explore-label {
-    font-size: 26px;
+    font-size: 28px;
+    font-weight: 800;
   }
 }
 
