@@ -16784,6 +16784,8 @@ display: none !important;
     margin-right: calc(-1 * var(--container-padding, 16px));
     margin-left: -15px;
     margin-right: -15px;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
   /* CAIXA PRINCIPAL */
@@ -16823,7 +16825,7 @@ display: none !important;
   }
 
   .ta-hero-content h1 {
-    font-size: 34px;
+    font-size: 32px;
     line-height: 1.2;
     margin-bottom: 40px;
     margin-top: 5px;
@@ -16833,7 +16835,7 @@ display: none !important;
     font-size: 20px;
     line-height: 1.65;    /* 🔥 abre o texto */
     max-width: 100%;
-    margin-top: 0;
+    margin-top: -5px;
   }
 
   /* BOTÃO */
