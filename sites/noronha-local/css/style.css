@@ -16314,7 +16314,7 @@ display: none !important;
   font-size: 50px;
   font-weight: 800;
   line-height: 1.15;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-top: 40px;     /* DESCE o texto */
   text-align: center;
   
@@ -16784,8 +16784,8 @@ display: none !important;
     margin-right: calc(-1 * var(--container-padding, 16px));
     margin-left: -15px;
     margin-right: -15px;
-    margin-top: 5px !important;
-    padding-top: 5px !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
   /* CAIXA PRINCIPAL */
@@ -16827,16 +16827,16 @@ display: none !important;
   .ta-hero-content h1 {
     font-size: 30px;
     line-height: 1.2;
-    margin-bottom: 40px;
-    margin-top: -5px;
+    margin-bottom: 30px;
+    margin-top: 5px;
   }
 
   .ta-hero-content p {
     font-size: 18px;
     line-height: 1.65;    /* 🔥 abre o texto */
     max-width: 100%;
-    margin-top: -20px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
   }
 
   /* BOTÃO */
