@@ -16314,13 +16314,14 @@ display: none !important;
   font-size: 50px;
   font-weight: 800;
   line-height: 1.15;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
+  margin-top: 40px;     /* DESCE o texto */
   text-align: center;
   
 }
 
 .ta-hero-content p {
-  font-size: 20px;
+  font-size: 24px;
   margin-top: 40px;     /* DESCE o texto */
   margin-bottom: 28px;
   text-align: center;
@@ -16793,7 +16794,7 @@ display: none !important;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
     height: auto;          /* 🔥 NÃO trava altura */
-    border-radius: 0;
+    border-radius: 0 !important;
     overflow: hidden;
   }
 
@@ -16805,6 +16806,7 @@ display: none !important;
     overflow: hidden;
     width: 100%;
     max-width: 100%;
+    
   }
 
   .ta-hero-images img,
@@ -16821,22 +16823,24 @@ display: none !important;
   }
 
   .ta-hero-content h1 {
-    font-size: 32px;
+    font-size: 34px;
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-top: 5px;
   }
 
   .ta-hero-content p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.65;    /* 🔥 abre o texto */
     max-width: 100%;
-    margin-top: 5px;
+    margin-top: 0;
   }
 
   /* BOTÃO */
   .ta-hero-btn {
     margin-top: 40px;
     margin-bottom: 20px;
+    
   }
 
   /* remove qualquer radius do hero */
@@ -19179,7 +19183,7 @@ main.service-page .service-summary h2 {
 }
 
 .page-boats-list .boats-video-cta strong {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
     text-shadow: 0 2px 6px rgba(0,0,0,0.75);
 }
@@ -19553,5 +19557,17 @@ body, main {
     justify-content: center;
     min-width: max-content; /* Garante que o botão cresça conforme o texto */
     padding: 10px 25px; /* Ajuste o respiro interno se necessário */
+}
+
+@media (max-width: 768px) {
+  .ta-hero-box {
+    border-radius: 0 !important;
+  }
+
+  .ta-hero-images,
+  .ta-hero-images img,
+  .ta-hero-images video {
+    border-radius: 0 !important;
+  }
 }
 
