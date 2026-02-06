@@ -19753,7 +19753,7 @@ body, main {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 24px;
-  transform: translateX(20px); /* MUDA SÓ ESSE NÚMERO */
+  transform: translateX(10px); /* MUDA SÓ ESSE NÚMERO */
   line-height: 1.05;
 }
 
