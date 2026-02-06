@@ -19704,6 +19704,18 @@ body, main {
   }
 }
 
+@media (max-width: 768px) {
+  .trilho-cards .card-item h3 {
+    margin-bottom: -4px; /* espaço entre título e estrelas */
+    line-height: 1.25;  /* melhora leitura em 2 linhas */
+  }
+
+  .trilho-cards .rate {
+    margin-top: 4px; /* respiro extra se precisar */
+  }
+}
+
+
 /* ===============================
    BOTÃO CTA – FAIXA TRILHAS
    =============================== */
