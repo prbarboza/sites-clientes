@@ -19835,7 +19835,7 @@ body, main {
   /* MOVE O TÍTULO (não alinha o texto) */
   .explore-title {
     margin-left: auto;       /* joga o bloco pra direita */
-    margin-right: 9px;
+    margin-right: 7px;
     max-width: fit-content;  /* título ocupa só o tamanho do texto */
   }
 
