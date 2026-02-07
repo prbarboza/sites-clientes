@@ -19706,7 +19706,7 @@ body, main {
 
 @media (max-width: 768px) {
   .trilho-cards .card-item h3 {
-    margin-bottom: -4px; /* espaço entre título e estrelas */
+    margin-bottom: 0; /* espaço entre título e estrelas */
     line-height: 1.25;  /* melhora leitura em 2 linhas */
   }
 
@@ -19867,3 +19867,15 @@ body, main {
   }
 }
 
+.card-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.card-item * {
+  pointer-events: none;
+}
+
+.card-item a {
+  pointer-events: auto;
+}

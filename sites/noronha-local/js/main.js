@@ -336,6 +336,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+document.addEventListener("click", function (e) {
+  const card = e.target.closest(".card-item");
+  if (!card) return;
+
+  const link = card.querySelector("a[href]");
+  if (!link) return;
+
+  if (e.target.closest(".seta-btn")) return;
+
+  window.location.href = link.href;
+});
 
 
 })(jQuery);
