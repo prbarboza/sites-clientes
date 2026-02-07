@@ -1,0 +1,107 @@
+/* CONTAINER ESTRUTURAL */
+.aquatic-premium-section {
+    margin-top: 10px !important; /* Puxa a seção para cima do vídeo */
+    position: relative;
+    z-index: 10;
+    background: #fff; /* Garante que o fundo branco cubra o vídeo se necessário */
+    padding-top: 20px;
+}
+
+/* SIDEBAR PREMIUM ESTILO TRIPADVISOR */
+.premium-sidebar-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+}
+
+.premium-nav-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding-left: 12px;
+    border-left: 4px solid #0083b8;
+}
+
+/* MINI CARDS DA SIDEBAR */
+.mini-card-nav {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 15px;
+    text-decoration: none !important;
+    border: 1px solid #eee;
+    transition: opacity 0.4s ease; /* Efeito Fade solicitado */
+}
+
+.mini-card-nav:hover {
+    opacity: 0.6; /* Fade no hover */
+}
+
+.mini-card-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.mini-card-info h5 {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.mini-card-info span {
+    font-size: 0.75rem;
+    color: #0083b8;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* CARDS PRINCIPAIS DE SERVIÇO (CONTEÚDO) */
+.premium-service-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #efefef;
+    margin-bottom: 30px;
+    transition: opacity 0.4s ease;
+}
+
+.premium-service-card:hover {
+    opacity: 0.85; /* Fade sutil no card principal */
+}
+
+.premium-card-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 991px) {
+    .premium-sidebar-nav {
+        display: flex;
+        overflow-x: auto;
+        padding: 10px 0 20px 0;
+        gap: 12px;
+        white-space: nowrap;
+        position: static;
+    }
+    .mini-card-nav {
+        flex: 0 0 280px;
+        margin-bottom: 0;
+    }
+    .premium-nav-title {
+        display: none; /* Esconde título na lateral no mobile para ganhar espaço */
+    }
+}
