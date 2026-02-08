@@ -377,7 +377,7 @@ $(document).ready(function() {
         var itemNome = $('h2').first().text().trim(); 
         
         // 2. Define o número (o que você já usa no PDF)
-        var numero = "5581996315932"; 
+        var numero = "558196514045"; 
         
         // 3. Monta a mensagem personalizada
         var mensagem = "Olá! Gostaria de mais informações e disponibilidade sobre: " + itemNome;
