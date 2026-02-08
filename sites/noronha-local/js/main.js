@@ -368,6 +368,26 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function() {
+    // Escuta o clique em qualquer botão de reservar que aponte para o WhatsApp
+    $('a[href*="wa.me"]').on('click', function(e) {
+        e.preventDefault(); // Para o link padrão
+        
+        // 1. Pega o nome da lancha/experiência (ajuste o seletor se necessário)
+        var itemNome = $('h2').first().text().trim(); 
+        
+        // 2. Define o número (o que você já usa no PDF)
+        var numero = "5581996315932"; 
+        
+        // 3. Monta a mensagem personalizada
+        var mensagem = "Olá! Gostaria de mais informações e disponibilidade sobre: " + itemNome;
+        
+        // 4. Codifica para URL e redireciona
+        var urlFinal = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+        window.open(urlFinal, '_blank');
+    });
+});
+
 })(jQuery);
 
 

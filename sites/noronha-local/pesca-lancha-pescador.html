@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/style.css">
   
   <link rel="stylesheet" href="css/premium-aquatic.css">
+  <link rel="stylesheet" href="css/pesca.css">
 </head>
 
 <body>
@@ -80,6 +81,7 @@
             <a href="experiencias-aquaticas.html#mergulho" class="dropdown-item">Mergulhos</a>
             <a href="experiencias-aquaticas.html#pesca" class="dropdown-item">Pesca</a>
             <a href="experiencias-aquaticas.html#aventuras" class="dropdown-item">Aventuras Aquáticas</a>
+            
           </div>
         </li>
 
@@ -104,182 +106,131 @@
 
 <main class="service-page page-boats-list">
   
-<section class="page-water-experiences-hero">
-  <div class="water-hero-overlay"></div>
+<section class="page-fishing-hero">
+  <div class="fishing-hero-overlay"></div>
 
-  <div class="water-hero-cta">
+  <div class="fishing-hero-cta">
     <strong>
-      Mergulho, pesca e<br>
-      experiências aquáticas inesquecíveis
+      Viva a pesca em Noronha!<br>
+      experiência oceânica inesquecível
     </strong>
     <span>@noronhalocal</span>
   </div>
 </section>
 
-  
 
-  <section class="aquatic-premium-section mt-5">
+    <section class="aquatic-premium-section pb-5">
   <div class="container">
     <div class="row">
       
       <div class="col-lg-8">
-        <header class="mb-5 experiences-header">
-  <h2>Experiências no Mar</h2>
+        <header class="mb-4 experiences-header">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent p-0 small">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="pesca.html">Frota de Pesca</a></li>
+              <li class="breadcrumb-item active">Lancha Pescador</li>
+            </ol>
+          </nav>
+          <h2 class="display-5 font-weight-bold">Lancha Pescador</h2>
+          <div class="ta-rating mb-3">
+            <span style="color: #00b67a;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 
+            <span class="small text-muted ml-2">Equipamentos Profissionais</span>
+          </div>
+        </header>
 
-  <div class="ta-rating">
-    <span class="star-color">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 
-    <span>4,9 · Recomendado por 99% dos viajantes</span>
-  </div>
-
-  <p class="lead">
-    Do silêncio do mergulho à liberdade da bike aquática, escolha sua forma de explorar o azul de Noronha.
-  </p>
-</header>
-
-
-        <div id="mergulho" class="category-block mb-5">
-            <h3 class="h4 mb-4" style="font-weight: 700;"><i class="fa-solid fa-mask-snorkel mr-2" style="color:#0083b8;"></i> Mergulhos</h3>
+        <article class="pesca-card-individual">
+          <div class="custom-gallery-container">
+            <div class="custom-gallery-wrapper" id="galleryLancha">
+                <div class="gallery-item"><img src="images/pesca/card-lancha-pescador1.jpg" alt="Vista 1"></div>
+                <div class="gallery-item"><img src="images/pesca/card-lancha-pescador2.jpg" alt="Vista 2"></div>
+                <div class="gallery-item"><img src="images/pesca/card-lancha-pescador3.jpg" alt="Vista 3"></div>
+                <div class="gallery-item"><img src="images/pesca/card-lancha-pescador4.jpg" alt="Vista 4"></div>
+            </div>
             
-            <article class="premium-service-card mb-4">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/experiencias/img-mergulho-batismo.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Mergulho de Batismo">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #e3f2fd; color: #0083b8;">Para Todos</span>
-                        <h4>Mergulho de Batismo</h4>
-                        <p class="small text-muted">Sua primeira vez no fundo do mar com total segurança e instrutor exclusivo.</p>
-                        <a href="mergulhos.html" class="btn btn-sm btn-primary align-self-start">Ver Detalhes</a>
-                    </div>
-                </div>
-            </article>
+            <button class="gallery-nav prev" onclick="moveGallery(-1)">&#10094;</button>
+            <button class="gallery-nav next" onclick="moveGallery(1)">&#10095;</button>
 
-            <article class="premium-service-card">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/experiencias/img-megulho.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Mergulho Credenciado">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #f3e5f5; color: #7b1fa2;">Check-out / Avançado</span>
-                        <h4>Saída para Credenciados</h4>
-                        <p class="small text-muted">Mergulhos embarcados nos melhores pontos da ilha para quem já possui certificação.</p>
-                        <a href="mergulhos.html" class="btn btn-sm btn-outline-primary align-self-start">Ver Pontos de Mergulho</a>
-                    </div>
-                </div>
-            </article>
-        </div>
+            <div class="gallery-dots">
+                <span class="dot active" onclick="jumpToSlide(0)"></span>
+                <span class="dot" onclick="jumpToSlide(1)"></span>
+                <span class="dot" onclick="jumpToSlide(2)"></span>
+                <span class="dot" onclick="jumpToSlide(3)"></span>
+            </div>
 
-        <div id="aventuras" class="category-block mb-5">
-            <h3 class="h4 mb-4" style="font-weight: 700;"><i class="fa-solid fa-water mr-2" style="color:#2ecc71;"></i> Aventuras Aquáticas</h3>
+            <span class="premium-card-tag-floating">PROFISSIONAL • 32 PÉS</span>
+          </div>
+        </article>
+          
+          <div class="boat-details-body p-4 p-md-5">
+            <h3 class="h4 mb-3">Sobre a Embarcação</h3>
+            <p class="text-muted">Os pontos de pesca são predefinidos para garantir a melhor experiência. Operação profissional com material de ponta: <strong>Shimano, Daiwa, Rapala e Penn</strong>. Embarcação robusta e preparada para o mar de Fernando de Noronha.</p>
             
-            <article class="premium-service-card mb-4">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/experiencias/img-bike-aquatica.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Bike Aquática Noronha">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #e0f2f1; color: #00796b;">Exclusivo e Ecológico</span>
-                        <h4>Bike Aquática (Water Bike)</h4>
-                        <p class="small text-muted">Pedale sobre as águas cristalinas do Porto. Uma atividade estável, fácil e perfeita para observar a vida marinha por cima.</p>
-                        <div class="d-flex mb-3">
-                            <small class="mr-3"><i class="fa-solid fa-person-hiking mr-1"></i> Sem esforço</small>
-                            <small><i class="fa-solid fa-leaf mr-1"></i> 100% Eco</small>
-                        </div>
-                        <a href="aventuras.html" class="btn btn-sm btn-success align-self-start">Ver Experiência</a>
-                    </div>
-                </div>
-            </article>
+            <div class="row mt-4 mb-4">
+              <div class="col-md-6 border-right mb-4 mb-md-0">
+                <h5 class="small font-weight-bold text-uppercase text-primary mb-3">Equipamentos e Iscas</h5>
+                <ul class="list-unstyled small">
+                  <li class="mb-2"><i class="fa-solid fa-hook mr-2 text-primary"></i> Iscas artificiais, naturais e vivas</li>
+                  <li class="mb-2"><i class="fa-solid fa-circle-check mr-2 text-primary"></i> Sonda e GPS de precisão</li>
+                  <li><i class="fa-solid fa-circle-check mr-2 text-primary"></i> Área abrigada e estofada</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 class="small font-weight-bold text-uppercase text-primary mb-3">Principais Exemplares</h5>
+                <p class="small text-muted">Atum (Yellowfin), Cavala (Wahoo), Barracuda, Dourado, Sailfish (Agulhão) e Peixe-rei.</p>
+              </div>
+            </div>
 
-            <article class="premium-service-card">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/experiencias/img-plana-sub.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Prancha de Reboque">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #e8f5e9; color: #2ecc71;">Diversão em Grupo</span>
-                        <h4>Prancha de Reboque (Plana-Sub)</h4>
-                        <p class="small text-muted">O clássico de Noronha. Segure a prancha e deixe o barco te levar para um tour subaquático.</p>
-                        <a href="aventuras.html" class="btn btn-sm btn-outline-success align-self-start">Saber Mais</a>
-                    </div>
-                </div>
-            </article>
-        </div>
+            <div class="incluso-box p-3 bg-light rounded mb-5">
+              <p class="small mb-0"><strong><i class="fa-solid fa-bottle-water mr-2 text-primary"></i> Incluso:</strong> Cooler com gelo e água mineral à vontade durante toda a expedição.</p>
+            </div>
 
-        <div id="pesca" class="category-block mb-5">
-            <h3 class="h4 mb-4" style="font-weight: 700;"><i class="fa-solid fa-fish mr-2" style="color:#2c3e50;"></i> Pesca Esportiva</h3>
-            <article class="premium-service-card">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/experiencias/img-pesca.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Pesca Oceânica">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #56CAEB; color: #333;">Privativo</span>
-                        <h4>Expedição de Pesca Oceânica</h4>
-                        <p class="small text-muted">Em busca dos grandes gigantes de Noronha. Equipamento profissional e marinheiro local.</p>
-                        <a href="pesca-lancha-pescador.html" class="btn btn-sm btn-outline-dark align-self-start">Ver Frota Completa</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="premium-service-card">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/experiencias/mini-card-pesca-costeira.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Pesca Oceânica">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #56CAEB; color: #333;">Privativo</span>
-                        <h4>Pesca Costeira</h4>
-                        <p class="small text-muted">A emoção da fisgada nas águas cristalinas de Noronha. Equipamento profissional e marinheiro local.</p>
-                        <a href="pesca-lancha-pescador.html" class="btn btn-sm btn-outline-dark align-self-start">Ver Frota Completa</a>
-                    </div>
-                </div>
-            </article>
-        </div>
+            <div class="d-flex align-items-center justify-content-between boat-footer-cta border-top pt-4">
+              <div class="specs">
+                <div class="d-block mb-1"><i class="fa-solid fa-users text-muted mr-2"></i><strong>Até 6 Pessoas</strong></div>
+                <div class="d-block"><i class="fa-solid fa-clock text-muted mr-2"></i><strong>4h a 8h</strong> de duração</div>
+              </div>
+              <a href="https://wa.me/558196514045" class="btn btn-primary btn-lg px-4 shadow-sm">Reservar Agora</a>
+            </div>
+          </div>
       </div>
 
-      
-      <aside class="col-lg-4">
-        <div class="premium-sidebar-nav">
-          <h4 class="premium-nav-title">Navegue por Categoria</h4>
+      <aside class="col-lg-4 mt-5 mt-lg-0">
+        <div class="premium-sidebar-nav p-4 border rounded shadow-sm bg-white">
+          <h4 class="h5 font-weight-bold mb-4">Conheça nossa Frota</h4>
           
-          <a href="mergulhos.html" class="mini-card-nav">
-            <img src="images/experiencias/mini-card-mergulho.jpg" class="mini-card-img" alt="Mergulhos">
-            <div class="mini-card-info">
-              <span>🤿 Batismo & Saídas</span>
-              <h5>Mergulhos</h5>
-            </div>
+          <a href="pesca-lancha-pescador.html" class="mini-card-nav active">
+            <img src="images/pesca/lancha-pescador.jpg" class="mini-card-img" alt="Lancha Pescador">
+            <div class="mini-card-info"><span>32 PÉS</span><h5>Lancha Pescador</h5></div>
           </a>
 
-          <a href="pesca.html" class="mini-card-nav">
-            <img src="images/experiencias/mini-card-pesca.jpg" class="mini-card-img" alt="Pesca">
-            <div class="mini-card-info">
-              <span>🎣 Oceânica e Costeira</span>
-              <h5>Pesca Profissional</h5>
-            </div>
+          <a href="lancha-calebe.html" class="mini-card-nav">
+            <img src="images/pesca/mini-card-calebe.jpg" class="mini-card-img" alt="Lancha Calebe">
+            <div class="mini-card-info"><span>COSTEIRA</span><h5>Lancha Calebe</h5></div>
           </a>
 
-          <a href="aventuras.html" class="mini-card-nav">
-            <img src="images/experiencias/mini-card-experiencia.jpg" class="mini-card-img" alt="Bike Aquatica">
-            <div class="mini-card-info">
-              <span>🚤 Bike & Plana Sub</span>
-              <h5>Aventuras</h5>
-            </div>
+          <a href="lancha-fish-hunter.html" class="mini-card-nav">
+            <img src="images/pesca/mini-card-fish-hunter.jpg" class="mini-card-img" alt="Fish Hunter">
+            <div class="mini-card-info"><span>PERFORMANCE</span><h5>Fish Hunter</h5></div>
           </a>
 
-          <div class="mt-4 p-4 text-center" style="background: #f0f7fa; border-radius: 15px; border: 1px dashed #0083b8;">
-              <h6 style="font-weight: 700; color: #0083b8;">Qual escolher?</h6>
-              <p class="small text-muted">Nós conhecemos cada cantinho do mar de Noronha e te ajudamos a decidir.</p>
-              <a href="https://wa.me/558196514045" class="btn btn-primary btn-block btn-sm" style="font-weight: 700;">WHATSAPP</a>
-          </div>
+          <a href="lancha-yellow-tuna.html" class="mini-card-nav">
+            <img src="images/pesca/mini-card-yellow-tuna.jpg" class="mini-card-img" alt="Yellow Tuna">
+            <div class="mini-card-info"><span>SERVIÇO VIP</span><h5>Yellow Tuna</h5></div>
+          </a>
+
+          <hr class="my-4">
+          <a href="pesca.html" class="btn btn-block btn-outline-secondary btn-sm">
+            <i class="fa-solid fa-chevron-left mr-2"></i> Voltar para Categorias
+          </a>
         </div>
       </aside>
 
     </div>
   </div>
 </section>
-
+          
 </main>
-
 
 <!------ INICIO FOOTER ----------->
 <footer class="ftco-footer"
@@ -390,7 +341,7 @@
 </footer>
 <!-- FIM FOOTER -->  
 
-<script src="js/jquery.min.js"></script>
+  <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -407,6 +358,8 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/pesca-carrossel.js"></script>
+  
 
 
 
@@ -463,7 +416,6 @@ document.addEventListener("DOMContentLoaded", function() {
   <span class="whatsapp-text">Reservar agora</span>
   <i class="icon-whatsapp"></i>
 </a>
-
 
 </body>
 </html>

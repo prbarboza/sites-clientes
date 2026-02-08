@@ -127,6 +127,7 @@
   color: #fff;
   padding: 0 20px;
   max-width: 900px;
+  
 }
 
 .page-fishing-hero .fishing-hero-cta strong {
@@ -259,52 +260,73 @@
     border-radius: 10px;
 }
 
-/* --- AJUSTE MOBILE --- */
+/* --- AJUSTE MOBILE CORRIGIDO --- */
 @media (max-width: 991px) {
-    .custom-gallery-container { height: 280px; }
-    .gallery-nav { display: none; } /* Mobile usa apenas o dedo */
+    .custom-gallery-container { 
+        height: 280px; 
+        position: relative;
+        overflow: hidden;
+    }
+    .gallery-nav { display: none; }
 }
 
 .custom-gallery-wrapper {
     display: flex !important;
     width: 100%;
     height: 100%;
-    overflow-x: scroll !important; /* Mudamos de auto para scroll para forçar a barra invisível */
+    overflow-x: auto !important;
     scroll-snap-type: x mandatory;
-    touch-action: pan-x; /* Libera o movimento horizontal */
+    /* O SEGREDO: pan-x permite o carrossel, pan-y permite o scroll da página */
+    touch-action: pan-x pan-y !important; 
     -webkit-overflow-scrolling: touch;
-    scroll-behavior: auto !important; /* Remove o deslize lento padrão do navegador */
+    scroll-behavior: smooth;
     gap: 0;
 }
 
 .gallery-item {
     flex: 0 0 100% !important;
-    min-width: 100% !important; /* Força o item a ocupar a largura toda e empurrar o próximo */
+    min-width: 100% !important;
     height: 100%;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    /* Garante que o item também aceite ambos os movimentos */
+    touch-action: pan-x pan-y !important;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    pointer-events: none; /* Impede que a imagem 'segure' o dedo do usuário */
+    /* VOLTAMOS PARA AUTO: Se for none, o scroll horizontal para de funcionar no mobile */
+    pointer-events: auto; 
     user-select: none;
     -webkit-user-drag: none;
+    /* Reforça que a imagem não deve bloquear o scroll da página */
+    touch-action: pan-x pan-y !important;
 }
 
 @media (max-width: 768px) {
-
-  /* REMOVE O EMPURRÃO DO LAYOUT */
   .main-service-page {
     padding-top: 0 !important;
   }
 
-  /* GARANTE QUE O HERO ENCOSTE */
   .page-fishing-hero {
     margin-top: -38px !important;
     padding-top: 0 !important;
   }
-
 }
+
+/* ===== COLAR HERO NO TOPO – DESKTOP ===== */
+
+/* Remove empurrão do layout base */
+main.main-service-page {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Garante que o banner encoste */
+.page-fishing-hero {
+  margin-top: -55px !important;
+  padding-top: 0 !important;
+}
+
