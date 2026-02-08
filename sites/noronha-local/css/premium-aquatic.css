@@ -365,3 +365,8 @@
         margin-top: 0 !important;
     }
 }
+
+/* Ajusta o ponto de parada do scroll para não ficar atrás do menu */
+#mergulho, #pesca, #aventuras {
+    scroll-margin-top: 100px; /* Ajuste este valor de acordo com a altura do seu menu */
+}

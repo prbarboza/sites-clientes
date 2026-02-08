@@ -348,6 +348,25 @@ document.addEventListener("click", function (e) {
   window.location.href = link.href;
 });
 
+$(document).ready(function () {
+    // 1. Fecha o menu ao clicar em links simples (Home, Contato, etc)
+    // 2. Fecha o menu ao clicar nos itens de DENTRO do dropdown (Pesca, Mergulho, etc)
+    // 3. NÃO fecha ao clicar no "Pai" (Passeios)
+    $('.navbar-nav a').on('click', function (e) {
+        var $el = $(this);
+        var $navbarCollapse = $('.navbar-collapse');
+
+        // Se o link for o "Pai" do dropdown, não faz nada e deixa o Bootstrap abrir o submenu
+        if ($el.hasClass('dropdown-toggle')) {
+            return; 
+        }
+
+        // Se o menu estiver aberto (show), ele fecha ao clicar no link
+        if ($navbarCollapse.hasClass('show')) {
+            $navbarCollapse.collapse('hide');
+        }
+    });
+});
 
 })(jQuery);
 
