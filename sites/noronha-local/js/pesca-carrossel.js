@@ -34,3 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+$(document).ready(function () {
+    // Seleciona todos os links do menu que apontam para um ID (#)
+    $('.navbar-nav a[href*="#"]').on('click', function () {
+        // Verifica se o botão de "hambúrguer" está visível (indicando que é mobile)
+        if ($('.navbar-toggler').is(':visible')) {
+            // Simula o clique no botão para fechar o menu
+            $('.navbar-toggler').click();
+        }
+    });
+});

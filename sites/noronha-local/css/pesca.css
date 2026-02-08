@@ -142,16 +142,27 @@
   font-size: 0.9rem;
   letter-spacing: 0.08em;
   opacity: 0.85;
-  text-transform: uppercase;
+  text-transform: none !important;
 }
 
 /* ===============================
    MOBILE
 ================================ */
 
+/* Ajuste Geral */
+.page-fishing-hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
   .page-fishing-hero {
     min-height: 300px;
+    margin-top: 0 !important; /* Garante que não tenha margem no mobile */
   }
 
   .page-fishing-hero .fishing-hero-cta strong {
@@ -162,6 +173,7 @@
 @media (max-width: 480px) {
   .page-fishing-hero {
     min-height: 260px;
+    margin-top: 0 !important;
   }
 
   .page-fishing-hero .fishing-hero-cta strong {
@@ -280,4 +292,19 @@
     pointer-events: none; /* Impede que a imagem 'segure' o dedo do usuário */
     user-select: none;
     -webkit-user-drag: none;
+}
+
+@media (max-width: 768px) {
+
+  /* REMOVE O EMPURRÃO DO LAYOUT */
+  .main-service-page {
+    padding-top: 0 !important;
+  }
+
+  /* GARANTE QUE O HERO ENCOSTE */
+  .page-fishing-hero {
+    margin-top: -38px !important;
+    padding-top: 0 !important;
+  }
+
 }
