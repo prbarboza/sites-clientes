@@ -261,7 +261,7 @@
     scroll-snap-type: x mandatory;
     touch-action: pan-x; /* Libera o movimento horizontal */
     -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important; /* Remove o deslize lento padrão do navegador */
     gap: 0;
 }
 
