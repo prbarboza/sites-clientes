@@ -169,113 +169,115 @@
   }
 }
 
-/* --- ESTILOS DA PÁGINA INDIVIDUAL E CARROSSEL --- */
-
-/* --- ESTILOS DA PÁGINA INDIVIDUAL E CARROSSEL (VERSÃO FADE SECO) --- */
-
-.pesca-card-individual {
-    background: #fff;
-    border-radius: 20px !important;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border: 1px solid #eee;
-}
-
-/* Ajuste de Altura do Carrossel */
-.main-boat-img, 
-.main-boat-img .carousel-inner, 
-.main-boat-img .carousel-item {
-    height: 450px; 
+/* --- RESET E ESTRUTURA --- */
+.custom-gallery-container {
     position: relative;
-    background-color: #000; /* Fundo preto para não dar flash branco na troca */
-}
-
-/* --- EFEITO TRIPADVISOR ULTRA-RÁPIDO (SEM ENGASGO) --- */
-
-/* 1. Mata qualquer animação de translação (movimento pro lado) */
-.carousel-fade .carousel-item {
-    display: block !important;
-    float: none !important;
-    position: absolute !important;
-    top: 0;
-    left: 0;
     width: 100%;
-    opacity: 0 !important;
-    transition: opacity 0.1s ease-in-out !important; /* Tempo baixíssimo para ser instantâneo */
-    z-index: 1;
+    height: 450px;
+    background: #111;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
 }
 
-/* 2. Define a imagem ativa como visível e no topo */
-.carousel-fade .carousel-item.active {
-    opacity: 1 !important;
-    position: relative !important;
-    z-index: 2;
+.custom-gallery-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* 3. Remove os atrasos de transição das classes auxiliares do Bootstrap */
-.carousel-fade .carousel-item-next,
-.carousel-fade .carousel-item-prev,
-.carousel-fade .carousel-item.active,
-.carousel-fade .active.carousel-item-left,
-.carousel-fade .active.carousel-item-prev {
-    transform: none !important;
-    transform: translate3d(0, 0, 0) !important;
+.custom-gallery-wrapper::-webkit-scrollbar { display: none; }
+
+.gallery-item {
+    flex: 0 0 100%;
+    height: 100%;
+    scroll-snap-align: start;
 }
 
-/* 4. Ajuste das setas para não terem delay no clique */
-.carousel-control-prev, .carousel-control-next {
-    z-index: 20 !important;
-}
-
-/* 5. Previne flash branco entre as trocas */
-.main-boat-img {
-    background: #222 !important; /* Fundo escuro fixo */
-}
-
-.main-boat-img img {
+.gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Tag flutuante sobre o carrossel */
-.premium-card-tag-floating {
+/* --- SETAS (SÓ APARECEM NO DESKTOP) --- */
+.gallery-nav {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-    background: #0083b8;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
     color: white;
-    padding: 6px 18px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 800;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 18px;
 }
 
-/* Customização das setas */
-.carousel-control-prev, .carousel-control-next {
-    width: 10%;
-    z-index: 15;
+.gallery-nav.prev { left: 15px; }
+.gallery-nav.next { right: 15px; }
+
+/* --- PONTINHOS --- */
+.gallery-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
 }
 
-/* Responsivo para Mobile */
-@media (max-width: 767px) {
-    .main-boat-img, 
-    .main-boat-img .carousel-inner, 
-    .main-boat-img .carousel-item {
-        height: 280px;
-    }
-    
-    .carousel-control-prev, .carousel-control-next {
-        display: none; /* Mobile foca nos pontos ou swipe */
-    }
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+}
 
-    .boat-footer-cta {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .boat-footer-cta .btn {
-        width: 100%;
-    }
+.dot.active {
+    background: #fff;
+    width: 20px;
+    border-radius: 10px;
+}
+
+/* --- AJUSTE MOBILE --- */
+@media (max-width: 991px) {
+    .custom-gallery-container { height: 280px; }
+    .gallery-nav { display: none; } /* Mobile usa apenas o dedo */
+}
+
+.custom-gallery-wrapper {
+    display: flex !important;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll !important; /* Mudamos de auto para scroll para forçar a barra invisível */
+    scroll-snap-type: x mandatory;
+    touch-action: pan-x; /* Libera o movimento horizontal */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    gap: 0;
+}
+
+.gallery-item {
+    flex: 0 0 100% !important;
+    min-width: 100% !important; /* Força o item a ocupar a largura toda e empurrar o próximo */
+    height: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* Impede que a imagem 'segure' o dedo do usuário */
+    user-select: none;
+    -webkit-user-drag: none;
 }
