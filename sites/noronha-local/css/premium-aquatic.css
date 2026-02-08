@@ -104,7 +104,7 @@
         margin-bottom: 0;
     }
     .premium-nav-title {
-        display: none; /* Esconde título na lateral no mobile para ganhar espaço */
+        display: block !important;
     }
 }
 
@@ -116,7 +116,7 @@
         width: 100% !important;
         max-width: 100% !important;
         flex: 0 0 100% !important;
-        margin-top: 20px !important; /* Espaço para não grudar no card de cima */
+        margin-top: 10px !important; /* Espaço para não grudar no card de cima */
         padding: 0 15px !important;
     }
 
@@ -197,9 +197,10 @@
 
 .page-water-experiences-hero .water-hero-cta strong {
   display: block;
-  font-size: 2.4rem;
+  font-size: 28px;
   font-weight: 600;
   line-height: 1.2;
+  text-transform: none !important;
 }
 
 .page-water-experiences-hero .water-hero-cta span {
@@ -208,7 +209,7 @@
   font-size: 0.9rem;
   letter-spacing: 0.08em;
   opacity: 0.8;
-  text-transform: uppercase;
+  
 }
 
 /* ===============================
@@ -221,7 +222,9 @@
   }
 
   .page-water-experiences-hero .water-hero-cta strong {
-    font-size: 1.6rem;
+    font-size: 22px !important;
+    font-weight: 700;
+    text-transform: none !important;
   }
 }
 
@@ -229,11 +232,7 @@
   .page-water-experiences-hero {
     min-height: 260px;
     
-  }
-
-  .page-water-experiences-hero .water-hero-cta strong {
-    font-size: 1.4rem;
-  }
+  }  
 }
 
 /* Cabeçalho da seção */

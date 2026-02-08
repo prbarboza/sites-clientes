@@ -1,59 +1,281 @@
-/* CONTAINER PRINCIPAL DO CARD */
-.pesca-card-premium {
+/* Layout da Página Individual */
+.aquatic-premium-section {
+    padding-bottom: 80px !important; /* Evita colar no rodapé */
+}
+
+.pesca-card-individual {
     background: #fff;
-    border-radius: 15px !important; /* Arredondamento TripAdvisor */
-    overflow: hidden !important;    /* Força o corte da imagem nas bordas */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border-radius: 20px !important;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     border: 1px solid #eee;
-    display: block; /* Garante que o overflow funcione */
+}
+
+.main-boat-img {
     position: relative;
+    height: 450px; /* Proporção ideal para desktop */
 }
 
-/* AJUSTE DA IMAGEM NO DESKTOP */
-.pesca-card-premium .col-md-5 {
-    padding: 0 !important; /* Remove qualquer respiro que afaste a imagem da borda */
-}
-
-.pesca-card-premium img {
+.main-boat-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Arredonda apenas os cantos esquerdos no desktop */
-    border-radius: 15px 0 0 15px !important; 
-    display: block;
 }
 
-/* AJUSTE PARA MOBILE (VERTICAL) */
-@media (max-width: 767px) {
-    .pesca-card-premium .row.no-gutters {
-        display: flex;
-        flex-direction: column !important;
-    }
-
-    .pesca-card-premium .col-md-5 {
-        width: 100%;
-        height: 220px; /* Altura da imagem no celular */
-    }
-
-    /* No mobile, o arredondamento muda para o topo */
-    .pesca-card-premium img {
-        border-radius: 15px 15px 0 0 !important;
-    }
-
-    .pesca-card-premium .col-md-7 {
-        width: 100%;
-        padding: 25px !important;
-    }
-}
-
-/* ESTILO DAS TAGS E INFOS (Para manter o padrão Premium) */
-.premium-card-tag {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 4px 12px;
+.premium-card-tag-floating {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #0083b8;
+    color: white;
+    padding: 6px 18px;
     border-radius: 50px;
-    width: fit-content;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Sidebar de Navegação */
+.mini-card-nav {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
     margin-bottom: 12px;
-    display: inline-block;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+.mini-card-nav:hover {
+    transform: translateX(5px);
+    border-color: #0083b8;
+}
+
+.mini-card-nav.active {
+    border-color: #0083b8;
+    background: #f0faff;
+}
+
+.mini-card-img {
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.mini-card-info h5 {
+    font-size: 15px;
+    margin: 0;
+    color: #333;
+    font-weight: 700;
+}
+
+.mini-card-info span {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #0083b8;
+    font-weight: 800;
+}
+
+/* Responsivo */
+@media (max-width: 991px) {
+    .main-boat-img { height: 320px; }
+}
+
+@media (max-width: 767px) {
+    .main-boat-img { height: 250px; }
+    .boat-footer-cta { flex-direction: column; text-align: center; gap: 20px; }
+    .boat-footer-cta .btn { width: 100%; }
+    .aquatic-premium-section { padding-bottom: 50px !important; }
+}
+
+/* =========================================
+   HERO CTA – PÁGINA DE PESCA
+========================================= */
+
+.page-fishing-hero {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+
+  background-image: url("../images/pesca/banner-cta-pesca.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay verde */
+.page-fishing-hero .fishing-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 60, 40, 0.55); /* verde oceânico */
+  z-index: 1;
+}
+
+/* Texto */
+.page-fishing-hero .fishing-hero-cta {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+.page-fishing-hero .fishing-hero-cta strong {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.page-fishing-hero .fishing-hero-cta span {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  .page-fishing-hero {
+    min-height: 300px;
+  }
+
+  .page-fishing-hero .fishing-hero-cta strong {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-fishing-hero {
+    min-height: 260px;
+  }
+
+  .page-fishing-hero .fishing-hero-cta strong {
+    font-size: 1.4rem;
+  }
+}
+
+/* --- ESTILOS DA PÁGINA INDIVIDUAL E CARROSSEL --- */
+
+/* --- ESTILOS DA PÁGINA INDIVIDUAL E CARROSSEL (VERSÃO FADE SECO) --- */
+
+.pesca-card-individual {
+    background: #fff;
+    border-radius: 20px !important;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+}
+
+/* Ajuste de Altura do Carrossel */
+.main-boat-img, 
+.main-boat-img .carousel-inner, 
+.main-boat-img .carousel-item {
+    height: 450px; 
+    position: relative;
+    background-color: #000; /* Fundo preto para não dar flash branco na troca */
+}
+
+/* --- EFEITO TRIPADVISOR ULTRA-RÁPIDO (SEM ENGASGO) --- */
+
+/* 1. Mata qualquer animação de translação (movimento pro lado) */
+.carousel-fade .carousel-item {
+    display: block !important;
+    float: none !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0 !important;
+    transition: opacity 0.1s ease-in-out !important; /* Tempo baixíssimo para ser instantâneo */
+    z-index: 1;
+}
+
+/* 2. Define a imagem ativa como visível e no topo */
+.carousel-fade .carousel-item.active {
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 2;
+}
+
+/* 3. Remove os atrasos de transição das classes auxiliares do Bootstrap */
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active,
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-prev {
+    transform: none !important;
+    transform: translate3d(0, 0, 0) !important;
+}
+
+/* 4. Ajuste das setas para não terem delay no clique */
+.carousel-control-prev, .carousel-control-next {
+    z-index: 20 !important;
+}
+
+/* 5. Previne flash branco entre as trocas */
+.main-boat-img {
+    background: #222 !important; /* Fundo escuro fixo */
+}
+
+.main-boat-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tag flutuante sobre o carrossel */
+.premium-card-tag-floating {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    background: #0083b8;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* Customização das setas */
+.carousel-control-prev, .carousel-control-next {
+    width: 10%;
+    z-index: 15;
+}
+
+/* Responsivo para Mobile */
+@media (max-width: 767px) {
+    .main-boat-img, 
+    .main-boat-img .carousel-inner, 
+    .main-boat-img .carousel-item {
+        height: 280px;
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+        display: none; /* Mobile foca nos pontos ou swipe */
+    }
+
+    .boat-footer-cta {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .boat-footer-cta .btn {
+        width: 100%;
+    }
 }

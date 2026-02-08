@@ -106,110 +106,133 @@
 
 <main class="service-page page-boats-list">
   
-<section class="page-water-experiences-hero">
-  <div class="water-hero-overlay"></div>
+<section class="page-fishing-hero">
+  <div class="fishing-hero-overlay"></div>
 
-  <div class="water-hero-cta">
+  <div class="fishing-hero-cta">
     <strong>
-      Descubra Noronha pelo mar<br>
-      mergulho, pesca e experiências aquáticas inesquecíveis
+      Viva a pesca em Noronha<br>
+      experiência oceânica, técnica e inesquecível
     </strong>
     <span>@noronhalocal</span>
   </div>
 </section>
 
-    <section class="aquatic-premium-section mt-5">
+
+    <section class="aquatic-premium-section mt-5 pb-5">
   <div class="container">
     <div class="row">
       
       <div class="col-lg-8">
-        <header class="mb-5 experiences-header">
-          <h2>Nossa Frota de Pesca</h2>
-          <div class="ta-rating">
-            <span class="star-color">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 
-            <span>Equipamentos Profissionais</span>
+        <header class="mb-4 experiences-header">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent p-0 small">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="pesca.html">Frota de Pesca</a></li>
+              <li class="breadcrumb-item active">Lancha Pescador</li>
+            </ol>
+          </nav>
+          <h2 class="display-5 font-weight-bold">Lancha Pescador</h2>
+          <div class="ta-rating mb-3">
+            <span style="color: #00b67a;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 
+            <span class="small text-muted ml-2">Equipamentos Profissionais</span>
           </div>
-          <p class="lead">Barcos preparados para os gigantes de Noronha. Escolha sua expedição.</p>
         </header>
 
-        <div id="lista-barcos-pesca">
+        <article class="pesca-card-individual">
+          
+          <div id="carouselLancha" class="carousel slide carousel-fade main-boat-img" data-interval="false" data-ride="false">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselLancha" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselLancha" data-slide-to="1"></li>
+              <li data-target="#carouselLancha" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/pesca/card-lancha-pescador1.jpg" class="d-block w-100" alt="Lancha Pescador - Vista 1">
+              </div>
+              <div class="carousel-item">
+                <img src="images/pesca/card-lancha-pescador2.jpg" class="d-block w-100" alt="Lancha Pescador - Vista 2">
+              </div>
+              <div class="carousel-item">
+                <img src="images/pesca/card-lancha-pescador3.jpg" class="d-block w-100" alt="Lancha Pescador - Vista 3">
+              </div>
+              <div class="carousel-item">
+                <img src="images/pesca/card-lancha-pescador4.jpg" class="d-block w-100" alt="Lancha Pescador - Vista 3">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselLancha" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselLancha" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Próximo</span>
+            </a>
+            <span class="premium-card-tag-floating">PROFISSIONAL • 32 PÉS</span>
+          </div>
+          
+          <div class="boat-details-body p-4 p-md-5">
+            <h3 class="h4 mb-3">Sobre a Embarcação</h3>
+            <p class="text-muted">Os pontos de pesca são predefinidos para garantir a melhor experiência. Operação profissional com material de ponta: <strong>Shimano, Daiwa, Rapala e Penn</strong>. Embarcação robusta e preparada para o mar de Fernando de Noronha.</p>
             
-            <article class="pesca-card-premium mb-4">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/pesca/lancha-pescador.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Lancha Pescador">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #e3f2fd; color: #0083b8;">Profissional • 32 Pés</span>
-                        <h4>Lancha Pescador</h4>
-                        <p class="small text-muted">Modelo Carbrasmar com área abrigada, banheiro, cozinha, dois motores e som Bluetooth. Ideal para pesca oceânica fora do Parnamar.</p>
-                        <div class="d-flex mb-3">
-                            <small class="mr-3"><i class="fa-solid fa-users mr-1"></i> 6 Pessoas</small>
-                            <small><i class="fa-solid fa-clock mr-1"></i> 4h a 8h</small>
-                        </div>
-                        <a href="https://wa.me/558196514045" class="btn btn-sm btn-primary align-self-start">Ver Detalhes</a>
-                    </div>
-                </div>
-            </article>
+            <div class="row mt-4 mb-4">
+              <div class="col-md-6 border-right mb-4 mb-md-0">
+                <h5 class="small font-weight-bold text-uppercase text-primary mb-3">Equipamentos e Iscas</h5>
+                <ul class="list-unstyled small">
+                  <li class="mb-2"><i class="fa-solid fa-hook mr-2 text-primary"></i> Iscas artificiais, naturais e vivas</li>
+                  <li class="mb-2"><i class="fa-solid fa-circle-check mr-2 text-primary"></i> Sonda e GPS de precisão</li>
+                  <li><i class="fa-solid fa-circle-check mr-2 text-primary"></i> Área abrigada e estofada</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 class="small font-weight-bold text-uppercase text-primary mb-3">Principais Exemplares</h5>
+                <p class="small text-muted">Atum (Yellowfin), Cavala (Wahoo), Barracuda, Dourado, Sailfish (Agulhão) e Peixe-rei.</p>
+              </div>
+            </div>
 
-            <article class="pesca-card-premium mb-4">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/pesca/mini-card-calebe.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Pesca Costeira">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #e8f5e9; color: #2ecc71;">Marinheiro Local</span>
-                        <h4>Lancha Calebe</h4>
-                        <p class="small text-muted">Focada em Cavalas e Atuns próximos à costa. Agilidade e conhecimento local para garantir a melhor fisgada.</p>
-                        <a href="#" class="btn btn-sm btn-outline-success align-self-start">Ver Detalhes</a>
-                    </div>
-                </div>
-            </article>
+            <div class="incluso-box p-3 bg-light rounded mb-5">
+              <p class="small mb-0"><strong><i class="fa-solid fa-bottle-water mr-2 text-primary"></i> Incluso:</strong> Cooler com gelo e água mineral à vontade durante toda a expedição.</p>
+            </div>
 
-            <article class="pesca-card-premium mb-4">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/pesca/mini-card-fish-hunter.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Ocean Pro">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #fff3e0; color: #ef6c00;">Performance</span>
-                        <h4>Fish Hunter</h4>
-                        <p class="small text-muted">Lancha rápida para pontos distantes. Equipada com material Daiwa e Rapala para grandes exemplares.</p>
-                        <a href="#" class="btn btn-sm btn-outline-warning align-self-start">Ver Detalhes</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="pesca-card-premium mb-4">
-                <div class="row no-gutters">
-                    <div class="col-md-5">
-                        <img src="images/pesca/mini-card-yellow-tuna.jpg" class="img-fluid h-100" style="object-fit:cover;" alt="Pesca VIP">
-                    </div>
-                    <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
-                        <span class="premium-card-tag" style="background: #f3e5f5; color: #7b1fa2;">Serviço VIP</span>
-                        <h4>Yellow Tuna</h4>
-                        <p class="small text-muted">Pesca oceânica com serviço premium: cooler com gelo, água mineral e opção de churrasco a bordo.</p>
-                        <a href="#" class="btn btn-sm btn-outline-dark align-self-start">Ver Detalhes</a>
-                    </div>
-                </div>
-            </article>
-        </div>
+            <div class="d-flex align-items-center justify-content-between boat-footer-cta border-top pt-4">
+              <div class="specs">
+                <div class="d-block mb-1"><i class="fa-solid fa-users text-muted mr-2"></i><strong>Até 6 Pessoas</strong></div>
+                <div class="d-block"><i class="fa-solid fa-clock text-muted mr-2"></i><strong>4h a 8h</strong> de duração</div>
+              </div>
+              <a href="https://wa.me/558196514045" class="btn btn-primary btn-lg px-4 shadow-sm">Reservar Agora</a>
+            </div>
+          </div>
+        </article>
       </div>
 
-      <aside class="col-lg-4">
-        <div class="premium-sidebar-nav">
-          <h4 class="premium-nav-title">Navegue por Categoria</h4>
-          <a href="mergulhos.html" class="mini-card-nav">
-            <img src="images/experiencias/mini-card-mergulho.jpg" class="mini-card-img" alt="Mergulhos">
-            <div class="mini-card-info"><span>🤿 Batismo</span><h5>Mergulhos</h5></div>
+      <aside class="col-lg-4 mt-5 mt-lg-0">
+        <div class="premium-sidebar-nav p-4 border rounded shadow-sm bg-white">
+          <h4 class="h5 font-weight-bold mb-4">Conheça nossa Frota</h4>
+          
+          <a href="lancha-pescador.html" class="mini-card-nav active">
+            <img src="images/pesca/lancha-pescador.jpg" class="mini-card-img" alt="Lancha Pescador">
+            <div class="mini-card-info"><span>32 PÉS</span><h5>Lancha Pescador</h5></div>
           </a>
-          <a href="pesca.html" class="mini-card-nav active">
-            <img src="images/experiencias/mini-card-pesca.jpg" class="mini-card-img" alt="Pesca">
-            <div class="mini-card-info"><span>🎣 Oceânica</span><h5>Pesca Profissional</h5></div>
+
+          <a href="lancha-calebe.html" class="mini-card-nav">
+            <img src="images/pesca/mini-card-calebe.jpg" class="mini-card-img" alt="Lancha Calebe">
+            <div class="mini-card-info"><span>COSTEIRA</span><h5>Lancha Calebe</h5></div>
           </a>
-          <a href="experiencias-aquaticas.html" class="mini-card-nav">
-            <img src="images/experiencias/mini-card-experiencia.jpg" class="mini-card-img" alt="Aventuras">
-            <div class="mini-card-info"><span>🚤 Bike & Reboque</span><h5>Experiências</h5></div>
+
+          <a href="lancha-fish-hunter.html" class="mini-card-nav">
+            <img src="images/pesca/mini-card-fish-hunter.jpg" class="mini-card-img" alt="Fish Hunter">
+            <div class="mini-card-info"><span>PERFORMANCE</span><h5>Fish Hunter</h5></div>
+          </a>
+
+          <a href="lancha-yellow-tuna.html" class="mini-card-nav">
+            <img src="images/pesca/mini-card-yellow-tuna.jpg" class="mini-card-img" alt="Yellow Tuna">
+            <div class="mini-card-info"><span>SERVIÇO VIP</span><h5>Yellow Tuna</h5></div>
+          </a>
+
+          <hr class="my-4">
+          <a href="pesca.html" class="btn btn-block btn-outline-secondary btn-sm">
+            <i class="fa-solid fa-chevron-left mr-2"></i> Voltar para Categorias
           </a>
         </div>
       </aside>
