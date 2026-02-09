@@ -35,3 +35,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+/* --- SISTEMA INDEPENDENTE PARA AVENTURAS --- */
+window.moveGalleryCustom = function(btn, direction) {
+    const container = btn.closest('.custom-gallery-container');
+    const wrapper = container.querySelector('.custom-gallery-wrapper');
+    
+    if (wrapper) {
+        const scrollAmount = wrapper.clientWidth;
+        wrapper.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+};
+
+window.jumpToSlideCustom = function(dot, index) {
+    const container = dot.closest('.custom-gallery-container');
+    const wrapper = container.querySelector('.custom-gallery-wrapper');
+    
+    if (wrapper) {
+        const scrollAmount = wrapper.clientWidth;
+        wrapper.scrollTo({
+            left: index * scrollAmount,
+            behavior: 'smooth'
+        });
+    }
+};
+
+// Faz os pontinhos (dots) das aventuras acenderem sozinhos no scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const adventureWrappers = document.querySelectorAll('.adventure-block .custom-gallery-wrapper');
+    adventureWrappers.forEach(wrapper => {
+        wrapper.addEventListener('scroll', function() {
+            const container = this.closest('.custom-gallery-container');
+            const dots = container.querySelectorAll('.dot');
+            const index = Math.round(this.scrollLeft / this.clientWidth);
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        });
+    });
+});

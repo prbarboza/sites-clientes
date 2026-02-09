@@ -388,6 +388,27 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    // 1. Localiza todos os cards de serviço
+    $('.premium-service-card').each(function() {
+        // 2. Encontra o link que já existe dentro dele (o botão "Ver Frota" ou "Saiba Mais")
+        var linkDestino = $(this).find('a').attr('href');
+        
+        if(linkDestino) {
+            // 3. Muda o cursor para "mãozinha" ao passar sobre o card
+            $(this).css('cursor', 'pointer');
+            
+            // 4. Quando clicar em qualquer lugar do card...
+            $(this).on('click', function(e) {
+                // Se o usuário não clicou diretamente no botão (para não disparar dois cliques)
+                if (!$(e.target).is('a, button')) {
+                    window.location.href = linkDestino;
+                }
+            });
+        }
+    });
+});
+
 })(jQuery);
 
 
