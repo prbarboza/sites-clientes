@@ -335,3 +335,86 @@ main.main-service-page {
   padding-top: 0 !important;
 }
 
+/* ==============================
+   HERO CTA – AVENTURAS
+============================== */
+
+.page-adventures-hero {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+
+  background-image: url("../images/aventuras/cta-banner1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay alegre (turquesa + verde) */
+.page-adventures-hero .adventures-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 160, 210, 0.55),
+    rgba(0, 120, 190, 0.55)
+  );
+  z-index: 1;
+}
+
+
+/* Texto */
+.page-adventures-hero .adventures-hero-cta {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #000;
+  padding: 0 20px;
+  max-width: 900px;
+  margin-top: 120px; /* ajusta o quanto quiser */
+  font-weight: 800;
+}
+
+.page-adventures-hero .adventures-hero-cta strong {
+  display: block;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.page-adventures-hero .adventures-hero-cta span {
+  display: block;
+  margin-top: 12px;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+  text-transform: none;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  .page-adventures-hero {
+    min-height: 300px;
+  }
+
+  .page-adventures-hero .adventures-hero-cta strong {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-adventures-hero {
+    min-height: 260px;
+  }
+
+  .page-adventures-hero .adventures-hero-cta strong {
+    font-size: 1.4rem;
+  }
+}
