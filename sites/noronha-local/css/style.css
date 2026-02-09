@@ -19880,6 +19880,279 @@ body, main {
   pointer-events: auto;
 }
 
+.btn-white {
+    background: #fff;
+    color: #0083B8;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.btn-white:hover {
+    background: #FDE02F;
+    color: #333;
+}
 
+/* --- ESTILO GLOBAL DO BLOG NORONHA LOCAL --- */
 
+.blog-hero-custom {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    background-image: url('../images/blog/cta-blog3.jpg'); /* Verifique se o caminho da imagem está correto */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    padding-top: 160px; /* Ajuste para descer da Navbar */
+    padding-bottom: 60px;
+}
 
+.blog-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 74, 111, 0.9) 0%, rgba(0, 74, 111, 0.2) 100%);
+    z-index: 1;
+}
+
+.blog-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.blog-badge {
+    background-color: #FDE02F;
+    color: #333;
+    padding: 6px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.blog-title {
+    color: #fff;
+    font-weight: 700;
+}
+
+.blog-title .highlight {
+    color: #FDE02F;
+}
+
+.blog-divider {
+    width: 60px;
+    height: 4px;
+    background: #FDE02F;
+    margin-bottom: 25px;
+}
+
+.blog-lead {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+}
+
+/* Curadoria no Hero */
+.blog-curator {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.curator-img img {
+    width: 48px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin-right: 15px;
+}
+
+.curator-name {
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.curator-tag {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+/* Cards e Artigos */
+.tag-category {
+    color: #0083B8;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.tag-category-small {
+    color: #0083B8;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ajuste para o Card em Destaque */
+.featured-post {
+    display: flex;
+    flex-direction: row; /* Lado a lado no computador */
+    min-height: 400px;
+}
+
+.featured-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* Adicione isso para o navegador reservar o espaço antes da foto carregar */
+    aspect-ratio: 16 / 9;
+}
+
+.featured-text {
+    width: 50%; /* Metade da largura no PC */
+    padding: 40px;
+}
+
+/* --- CORREÇÃO PARA MOBILE (Onde a foto some ou fica pequena) --- */
+@media (max-width: 768px) {
+    .featured-post {
+        flex-direction: column; /* Foto em cima, texto embaixo */
+    }
+
+    .featured-img {
+        width: 100%; /* Largura total */
+        min-height: 250px; /* Altura fixa para a foto aparecer bem */
+    }
+
+    .featured-text {
+        width: 100%; /* Largura total */
+        padding: 30px 20px;
+    }
+}
+
+.card-img-top {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.link-more {
+    font-weight: 700;
+    font-size: 13px;
+    color: #0083B8;
+    text-decoration: none;
+}
+
+/* Banner de CTA Final */
+.blog-cta-box {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cta-title {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.cta-text {
+    color: #777;
+    margin-bottom: 0;
+}
+
+.btn-cta-wa {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .blog-hero-custom {
+        min-height: 350px; /* Reduzimos a altura no celular para não ocupar a tela toda */
+        padding-top: 100px; /* Ajuste para não ficar colado no topo */
+        padding-bottom: 40px;
+        text-align: center; /* Centraliza o texto no mobile */
+        background-attachment: scroll; /* Melhora a performance do scroll no celular */
+    }
+
+    .blog-hero-overlay {
+        /* Overlay mais escura no mobile para garantir que o texto branco seja lido */
+        background: rgba(0, 74, 111, 0.8); 
+    }
+
+    .blog-title {
+        font-size: 26px !important; /* Diminui o título para não quebrar em muitas linhas */
+        line-height: 1.2;
+    }
+
+    .blog-lead {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .blog-divider {
+        margin: 0 auto 20px auto; /* Centraliza a barrinha amarela */
+    }
+
+    .blog-curator {
+        justify-content: center; /* Centraliza a foto e o nome do curador */
+        margin-top: 25px;
+    }
+    
+    /* Breadcrumb no Mobile */
+    .blog-breadcrumb-outer {
+        text-align: center;
+        font-size: 12px;
+        padding: 15px 0;
+    }
+}
+
+/* Previne saltos de layout antes do carregamento total */
+.ftco-animate {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Otimização de GPU para o Hero */
+.blog-hero-custom {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Estilização dos Breadcrumbs no Banner */
+.blog-breadcrumb {
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6); /* Cor do texto e das barras / */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.blog-breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.blog-breadcrumb a:hover {
+    color: #FDE02F; /* Amarelo Noronha ao passar o mouse */
+}
+
+.blog-breadcrumb span {
+    color: #fff; /* A página atual fica em branco sólido */
+    font-weight: 700;
+}
+
+/* Ajuste de espaçamento para o título não colar no breadcrumb */
+.blog-title {
+    margin-top: 10px;
+}
