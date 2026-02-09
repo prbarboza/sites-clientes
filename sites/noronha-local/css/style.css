@@ -20418,3 +20418,10 @@ html.mfp-helper {
     font-size: 1.6rem;
   }
 }
+
+/* Faz o banner encostar na navbar */
+.page-essence-hero {
+  margin-top: -75px; /* ajuste fino conforme a altura da sua navbar */
+  position: relative;
+  z-index: 1;
+}
