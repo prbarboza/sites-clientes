@@ -344,7 +344,7 @@ main.main-service-page {
   width: 100%;
   min-height: 480px;
 
-  background-image: url("../images/aventuras/cta-banner1.jpg");
+  background-image: url("../images/aventuras/cta-banner3.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -354,45 +354,30 @@ main.main-service-page {
   justify-content: center;
 }
 
-/* Overlay alegre (turquesa + verde) */
-.page-adventures-hero .adventures-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 160, 210, 0.55),
-    rgba(0, 120, 190, 0.55)
-  );
-  z-index: 1;
-}
-
-
 /* Texto */
 .page-adventures-hero .adventures-hero-cta {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: #000;
+  color: #fff;
   padding: 0 20px;
   max-width: 900px;
-  margin-top: 120px; /* ajusta o quanto quiser */
-  font-weight: 800;
 }
 
 .page-adventures-hero .adventures-hero-cta strong {
   display: block;
-  font-size: 40px;
-  font-weight: 900;
+  font-size: 34px;
+  font-weight: 700;
   line-height: 1.2;
+  text-transform: none !important;
 }
 
 .page-adventures-hero .adventures-hero-cta span {
   display: block;
   margin-top: 12px;
-  font-size: 18px;
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
-  opacity: 0.9;
-  text-transform: none;
+  opacity: 0.8;
 }
 
 /* ===============================
@@ -417,4 +402,44 @@ main.main-service-page {
   .page-adventures-hero .adventures-hero-cta strong {
     font-size: 1.4rem;
   }
+}
+
+/* 2. Sobe o banner CTA de Aventuras para encostar na Navbar */
+.page-adventures-hero {
+  margin-top: -55px !important; /* ajuste fino se a navbar for maior/menor */
+  position: relative;
+  z-index: 1;
+}
+
+/* 3. Garante que o container principal não tenha respiro no topo */
+main.service-page,
+.service-page-header {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* OVERLAY AZUL VIBRANTE (AGORA APARECE) */
+.page-adventures-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 110, 170, 0.65);
+  z-index: 1;
+}
+
+
+@media (max-width: 768px) {
+
+  /* Remove o empurrão do layout base */
+  main.service-page,
+  main.main-service-page {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Sobe o banner de Aventuras */
+  .page-adventures-hero {
+    margin-top: -55px !important; /* ajuste se a navbar for maior */
+  }
+
 }
