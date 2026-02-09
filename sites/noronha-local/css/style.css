@@ -10309,6 +10309,7 @@ a.text-dark:focus {
 
 .text-muted {
   color: #6c757d !important;
+  
 }
 
 .text-black-50 {
@@ -14929,7 +14930,8 @@ body {
 
 #backToTop:hover {
   transform: translateY(-3px);
-  background: #00a85f;
+  background: #FDE02F;
+  color: #333; /* Coloque aqui a cor que deseja para a seta no hover */
 }
 
 /* AJUSTE DEFINITIVO – ESPAÇO ENTRE AS DUAS LINHAS DO H1 */
@@ -20155,4 +20157,264 @@ body, main {
 /* Ajuste de espaçamento para o título não colar no breadcrumb */
 .blog-title {
     margin-top: 10px;
+}
+
+
+/* ESTRUTURA DO MOSAICO - TRAVADA */
+.custom-gallery-mosaic {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.gallery-item-premium {
+    display: block !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 8px;
+}
+
+/* ALTURAS FIXAS (Garante que nada pule) */
+.gallery-item-premium.large { height: 500px !important; }
+.gallery-item-premium.medium { height: 245px !important; }
+.gallery-item-premium:not(.large):not(.medium) { height: 245px !important; }
+
+.gallery-item-premium img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* GALERIA (O que abre ao clicar) */
+.mfp-bg {
+    z-index: 999999 !important;
+    cursor: pointer !important; /* Força o clique fora */
+}
+
+.mfp-wrap {
+    z-index: 1000000 !important;
+}
+
+/* Remove scroll duplo ao abrir imagem */
+html.mfp-helper {
+    overflow: hidden !important;
+}
+
+.custom-gallery-mosaic { display: flex !important; flex-wrap: wrap !important; }
+.gallery-item-premium { display: block; overflow: hidden; width: 100%; position: relative; }
+.gallery-item-premium.large { height: 500px !important; }
+.gallery-item-premium:not(.large) { height: 245px !important; }
+.gallery-item-premium img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Garante o fundo preto e o X visível */
+.mfp-bg { z-index: 10000 !important; background: #000; opacity: 0.8; }
+.mfp-wrap { z-index: 10001 !important; }
+.mfp-close { color: #FFF !important; font-size: 50px !important; cursor: pointer !important; }
+
+.mfp-close {
+  color: #FFF !important;
+  font-size: 40px !important;
+  top: 10px !important;
+  right: 10px !important;
+  position: absolute !important;
+  z-index: 10002 !important;
+  cursor: pointer !important;
+}
+
+/* FAQ INTERATIVO */
+.custom-faq .btn-link { 
+    text-decoration: none !important; 
+    font-size: 1.1rem;
+}
+
+.custom-faq .btn-link i.fa-chevron-down { 
+    transition: transform 0.3s ease; 
+}
+
+.custom-faq .btn-link:not(.collapsed) i.fa-chevron-down { 
+    transform: rotate(180deg); 
+    color: #0083B8;
+}
+
+.custom-faq .card { 
+    transition: all 0.3s ease; 
+}
+
+.custom-faq .card:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+@media (max-width: 767.98px) {
+    /* Ajusta o Banner que estava sumido/escondido */
+    .page-adventures-hero {
+        height: 300px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+       
+    }
+
+    /* Diminui os textos do topo que estavam enormes */
+    .page-adventures-hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .service-page h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .lead {
+        font-size: 1rem !important;
+    }
+
+    /* Corrige o FAQ ultrapassando as bordas */
+    .custom-faq {
+        padding: 0 5px !important;
+        width: 100% !important;
+    }
+
+    .custom-faq .card-header button {
+        font-size: 0.95rem !important;
+        padding: 15px !important;
+        white-space: normal !important; /* Faz o texto da pergunta quebrar linha */
+    }
+
+    .ftco-section.pt-0 {
+    padding-top: 0 !important; /* Diminua esse valor (ex: 0 ou 1em) para subir mais */
+    margin-top: -60px !important; /* Ajuste negativo para compensar o padding e evitar espaço extra */
+  }
+
+  
+}
+
+@media (min-width: 992px) {
+    /* Ajusta o parágrafo "Aqui não existem apenas clientes..." */
+    .service-page .lead {
+        font-size: 16px !important; /* Diminua para 1rem ou o valor que desejar */
+        max-width: 700px; /* Opcional: limita a largura para não ficar uma linha gigante */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+    
+/* Ajustes exclusivos para Desktop */
+@media (min-width: 992px) {
+    /* Força o banner a aparecer e ter altura */
+    .page-adventures-hero {
+        display: block !important;
+        height: 450px !important; /* Altura ideal para desktop */
+        min-height: 400px !important;
+        background-size: cover !important;
+        background-position: center 30% !important;
+        margin-top: -65px !important;
+    }
+
+    /* Diminui a fonte da descrição do título */
+    .service-page .lead {
+        font-size: 1.1rem !important; /* Tamanho menor que o padrão lead */
+        max-width: 800px;
+        margin: 0 auto 30px auto !important;
+    }
+}
+
+/* Reset seguro – NÃO afeta banners */
+.service-page section:not(.page-adventures-hero):not(.page-water-experiences-hero):not(.page-fishing-hero):not(.boats-video-hero) {
+  position: relative;
+}
+
+.page-adventures-hero {
+  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: -65px !important;
+  padding-top: 0 !important;
+  top: 0 !important;
+}
+
+.page-adventures-hero .adventures-hero-cta {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+@media (max-width: 767.98px) {
+    /* 1. Sobe o banner até o topo absoluto */
+    .service-page .page-adventures-hero {
+        margin-top: -80px !important; /* Puxa o banner para cima do limite do menu */
+        padding-top: 0 !important;
+        height: 350px !important; /* Garante que o banner apareça */
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    /* 2. Remove o espaço branco entre o banner e o menu */
+    .service-page main {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+  }
+
+  .page-essence-hero {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay elegante, mais institucional */
+.page-essence-hero .essence-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 40, 70, 0.55); /* azul profundo emocional */
+  z-index: 1;
+}
+
+/* Texto */
+.page-essence-hero .essence-hero-cta {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+.page-essence-hero .essence-hero-cta strong {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.page-essence-hero .essence-hero-cta span {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  text-transform: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-essence-hero {
+    min-height: 300px;
+  }
+
+  .page-essence-hero .essence-hero-cta strong {
+    font-size: 1.6rem;
+  }
 }

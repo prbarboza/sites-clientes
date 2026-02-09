@@ -5,11 +5,18 @@
 
 .pesca-card-individual {
     background: #fff;
-    border-radius: 20px !important;
+    border-radius: 2px !important;   /* um pouco mais discreto */
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(90, 90, 90, 0.08);
+    border: none !important;         /* REMOVE a borda */
+    .pesca-card-individual img 
+    
+    {
+    border-radius: inherit !important;
 }
+
+}
+
 
 .main-boat-img {
     position: relative;
@@ -443,3 +450,4 @@ main.service-page,
   }
 
 }
+
