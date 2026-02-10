@@ -488,6 +488,54 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
 })(jQuery);
+
+/* =========================================
+====CONTATO RÁPIDO (WhatsApp) – SIMPLES====*/
+
+// Função para capturar o formulário e enviar para o WhatsApp
+function sendToWhatsapp() {
+    console.log("Botão clicado!"); // Isso aparecerá no F12 para teste
+
+    // Pega os elementos do HTML pelos IDs que você criou
+    const nomeInput = document.getElementById('userName');
+    const dataInput = document.getElementById('userDate');
+    const checkboxes = document.querySelectorAll('input[name="servico"]:checked');
+    
+    // Validação básica
+    if (!nomeInput.value || nomeInput.value.trim() === "") {
+        alert("Por favor, digite seu nome.");
+        nomeInput.focus();
+        return;
+    }
+
+    // Monta a lista de serviços selecionados
+    let servicos = [];
+    checkboxes.forEach((cb) => {
+        servicos.push(cb.value);
+    });
+
+    // Monta o texto da mensagem
+    let texto = `Olá Noronha Local! Meu nome é ${nomeInput.value}.`;
+    
+    if (dataInput.value) {
+        texto += ` Planejo ir em ${dataInput.value}.`;
+    }
+
+    if (servicos.length > 0) {
+        texto += ` Gostaria de informações sobre: *${servicos.join(', ')}*.`;
+    } else {
+        texto += ` Gostaria de conhecer melhor os passeios da Noronha Local.`;
+    }
+
+    // URL do WhatsApp (substitua pelo seu número se necessário)
+    const fone = "558196514045";
+    const url = `https://wa.me/${fone}?text=${encodeURIComponent(texto)}`;
+    
+    // Abre em uma nova aba
+    window.open(url, '_blank');
+}
 
 

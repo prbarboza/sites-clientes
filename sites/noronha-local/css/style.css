@@ -10318,7 +10318,7 @@ a.text-dark:focus {
 }
 
 .text-white-50 {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: #fff !important;
 }
 
 .text-hide {
@@ -11600,7 +11600,7 @@ textarea.form-control {
 }
 
 .bg-primary {
-  background: #f85959 !important;
+  background: #2bb0a6 !important;
 }
 
 .ftco-section .ftco-sub-title {
@@ -19885,10 +19885,10 @@ body, main {
 }
 
 .btn-white {
-    background: #fff;
-    color: #0083B8;
-    border-radius: 50px;
-    font-weight: 700;
+    background: #eaf7f3;
+    color: #1f8a70;
+    border-radius: 999px;
+    font-weight: 600;
     transition: 0.3s;
 }
 .btn-white:hover {
@@ -21170,21 +21170,13 @@ main.service-page,
   max-width: 900px;
 }
 
-.page-water-experiences-hero .water-hero-cta strong {
-  display: block;
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-transform: none !important;
-}
-
 .page-water-experiences-hero .water-hero-cta span {
   display: block;
   margin-top: 12px;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.08em;
   opacity: 0.8;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
   
 }
@@ -21195,21 +21187,70 @@ main.service-page,
 
 @media (max-width: 768px) {
   .page-water-experiences-hero {
-    min-height: 300px;
+    /* Força o tamanho e impede que o padding aumente o total */
+    height: 400px !important;
+    min-height: 400px !important;
+    max-height: 400px !important;
+    
+    /* Garante que o cálculo da altura inclua as bordas/paddings */
+    box-sizing: border-box !important;
+    
+    /* Remove paddings excessivos que podem estar somando na altura */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
   }
 
-  .page-water-experiences-hero .water-hero-cta strong {
-    font-size: 22px !important;
-    font-weight: 700;
-    text-transform: none !important;
+  /* Se houver um conteúdo interno ocupando muito espaço */
+  .page-water-experiences-hero .container,
+  .page-water-experiences-hero .water-hero-cta {
+    margin: 0 !important;
+    padding: 20px !important;
   }
 }
 
-@media (max-width: 480px) {
+  @media (max-width: 480px) {
   .page-water-experiences-hero {
     min-height: 260px;
     
   }  
+}
+
+/* --- COMPORTAMENTO NO DESKTOP (PC) --- */
+@media (min-width: 769px) {
+  .page-water-experiences-hero .water-hero-cta strong {
+    font-size: 36px !important;
+    font-weight: 700;
+    text-transform: none !important;
+    display: block;
+  }
+}
+
+/* --- COMPORTAMENTO NO MOBILE (CELULAR) --- */
+@media (max-width: 768px) {
+  /* Ajusta o banner para 400px exatos */
+  .page-water-experiences-hero {
+    height: 400px !important;
+    min-height: 400px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  /* Ajusta o texto para não ficar gigante no celular */
+  .page-water-experiences-hero .water-hero-cta strong {
+    font-size: 26px !important; /* Diminuído para caber bem nos 400px */
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: none !important;
+    display: block !important;
+    padding: 0 15px; /* Margem interna para o texto não bater nas bordas */
+  }
 }
 
 /* Cabeçalho da seção */
@@ -21450,7 +21491,190 @@ main.service-page,
   }
 }
 
+.page-contact-hero {
+  height: 60vh !important;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center center;
+  margin-top: -55px !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 30px;
+}
 
+@media (max-width: 768px) {
+  .page-contact-hero {
+    height: 390px !important;
+    min-height: 400px !important;
+    margin-top: 50px;
+  }
+}
 
+@media (max-width: 768px) {
+  .page-contact-hero h1 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+}
 
+.btn-whatsapp-noronha {
+  background: linear-gradient(135deg, #1f8a70 0%, #2bb0a6 100%);
+  border: none;
+  color: #ffffff;
 
+  font-weight: 600;
+  font-size: 0.95rem;   /* ↓ menor */
+  letter-spacing: 0.15px;
+
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;             /* ↓ menor */
+
+  padding: 12px 20px;   /* ↓ mais compacto */
+
+  box-shadow: 0 8px 20px rgba(31, 138, 112, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-whatsapp-noronha:hover,
+.btn-whatsapp-noronha:focus {
+  background: linear-gradient(135deg, #1e6f5c 0%, #239d93 100%);
+  box-shadow: 0 12px 28px rgba(31, 138, 112, 0.4);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+/* Ícone mais proporcional */
+.btn-whatsapp-noronha i {
+  font-size: 1.05rem;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .btn-whatsapp-noronha {
+    font-size: 0.95rem;
+    padding: 13px 18px;
+  }
+}
+
+/* ==============================
+   HERO CTA – PÁGINA CONTATO
+============================== */
+
+.contact-hero {
+  position: relative;
+  height: 420px;          /* ALTURA DESKTOP */
+  margin-top: 75px;       /* SUBIR/DESCER BANNER */
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay */
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 40, 60, 0.45),
+    rgba(0, 40, 60, 0.75)
+  );
+}
+
+/* Conteúdo */
+.contact-hero-content {
+  position: relative;
+  text-align: center;
+  max-width: 560px;
+  padding: 0 20px;
+
+  transform: translateY(0px); /* SUBIR/DESCER TEXTO */
+}
+
+/* Texto */
+.contact-hero-title {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.contact-hero-text {
+  font-size: 17px;
+  line-height: 23px;
+  color: rgba(255,255,255,.88);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .contact-hero {
+    height: 400px;
+    margin-top: 40px;
+  }
+
+  .contact-hero-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .contact-hero-text {
+    font-size: 15px;
+    line-height: 21px;
+  }
+}
+
+/* Estilo para posicionar as bolinhas */
+.gallery-indicators {
+    position: absolute;
+    bottom: 15px; /* Altura em relação ao fundo da imagem */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.5); /* Bolinha apagada */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #fff; /* Bolinha acesa */
+    width: 18px; /* Transforma em tracinho quando ativa */
+    border-radius: 4px;
+}
+
+/* Overlay para destacar os indicadores */
+.custom-gallery-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%; /* Pega só a parte de baixo */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+    pointer-events: none; /* Deixa os cliques passarem para as setas/bolinhas */
+    z-index: 4; /* Fica atrás das bolinhas (z-index 5) */
+}
+
+/* Garantir que as bolinhas e setas fiquem acima do gradiente */
+.gallery-indicators {
+    z-index: 5 !important;
+}
+
+.gallery-nav {
+    z-index: 7 !important;
+}
