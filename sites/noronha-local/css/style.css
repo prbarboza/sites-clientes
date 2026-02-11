@@ -20696,7 +20696,9 @@ html.mfp-helper {
 
 @media (max-width: 768px) {
   .page-fishing-hero {
-    min-height: 300px;
+    height: 400px;
+    min-height: 350px !important;
+    max-height: 350px !important;
     margin-top: 0 !important; /* Garante que não tenha margem no mobile */
   }
 
@@ -21234,8 +21236,9 @@ main.service-page,
 @media (max-width: 768px) {
   /* Ajusta o banner para 400px exatos */
   .page-water-experiences-hero {
-    height: 400px !important;
-    min-height: 400px !important;
+    height: 390px !important;
+    min-height: 350px !important;
+    max-height: 350px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -21618,6 +21621,8 @@ main.service-page,
 @media (max-width: 768px) {
   .contact-hero {
     height: 400px;
+    min-height: 350px !important;
+    max-height: 350px !important;
     margin-top: 40px;
   }
 
@@ -21677,4 +21682,13 @@ main.service-page,
 
 .gallery-nav {
     z-index: 7 !important;
+}
+
+@media (max-width: 768px) {
+  section.page-essence-hero {
+    height: 390px !important;
+    min-height: 350px !important;
+    max-height: 350px !important;
+    overflow: hidden;
+  }
 }
