@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- HOME -->
+  <url>
+    <loc>https://noronhalocal.com.br/</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- PÁGINAS PRINCIPAIS -->
+  <url>
+    <loc>https://noronhalocal.com.br/contato</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://noronhalocal.com.br/nossa-essencia</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://noronhalocal.com.br/passeios-barco</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://noronhalocal.com.br/experiencias-aquaticas</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- BLOG -->
+  <url>
+    <loc>https://noronhalocal.com.br/blog</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://noronhalocal.com.br/blog-checklist</loc>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://noronhalocal.com.br/blog-dicas</loc>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://noronhalocal.com.br/blog-horarios</loc>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://noronhalocal.com.br/blog-trilhas</loc>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+
+  <!-- PASSEIOS -->
+  <url><loc>https://noronhalocal.com.br/passeio-albatroz</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-calebe</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-catamara-davi</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-escuna-so-deus</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-estrela-lunar</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-fish-hunter</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-intrometida</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-lancha-jo</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-makaira</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-pescador</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-trovao-dos-mares</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-use-noronha</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/passeio-yellow-tuna</loc><lastmod>2026-02-11</lastmod></url>
+
+  <!-- PESCA -->
+  <url><loc>https://noronhalocal.com.br/pesca-barco-makaira</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/pesca-lancha-calebe</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/pesca-lancha-fish-hunter</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/pesca-lancha-pescador</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/pesca-lancha-yellow-tuna</loc><lastmod>2026-02-11</lastmod></url>
+
+  <!-- TRILHAS -->
+  <url><loc>https://noronhalocal.com.br/trilha-atalala</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/trilha-capim-acu</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/trilha-das-esmeraldas</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/trilha-morro-sao-jose</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/trilha-piquinho</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/trilha-pontinha-caieira</loc><lastmod>2026-02-11</lastmod></url>
+  <url><loc>https://noronhalocal.com.br/trilhas</loc><lastmod>2026-02-11</lastmod></url>
+  
+    <!-- AVENTURAS -->
+  <url>
+    <loc>https://noronhalocal.com.br/aventuras</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- A VOZ DA ILHA -->
+  <url>
+    <loc>https://noronhalocal.com.br/a-voz-da-ilha</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- MERGULHOS -->
+  <url>
+    <loc>https://noronhalocal.com.br/mergulhos</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
+</urlset>
