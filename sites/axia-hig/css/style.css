@@ -604,3 +604,79 @@ html, body {
     min-width: 220px;
   }
 }
+
+/* CTA SECTION */
+.cta-section {
+  background: #f8f9fa;
+}
+
+/* CTA BOX */
+.cta-box {
+  background: #fff;
+  border: 1px dashed rgba(0, 185, 142, .3);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+/* Buttons */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.cta-buttons .btn {
+  padding: 14px;
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .cta-box {
+    padding: 48px;
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+  }
+
+  .cta-buttons .btn {
+    min-width: 220px;
+  }
+}
+
+.cta-wide {
+  width: 100%;
+}
+
+/* Desktop: controla largura máxima sem matar o mobile */
+@media (min-width: 992px) {
+  .cta-wide {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.footer-premium {
+  margin-top: 24px; /* espaçamento elegante */
+}
+
+.btn-cta {
+  padding: 14px 24px;
+  white-space: normal;      /* permite quebra de linha */
+  text-align: center;
+  line-height: 1.3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+/* Mobile: botão mais largo e confortável */
+@media (max-width: 768px) {
+  .btn-cta {
+    width: 100%;
+  }
+}
